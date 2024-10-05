@@ -1,0 +1,1827 @@
+# Copyright (C) 2024 BloomPixel
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Max Addons for Bricks 1.4.2\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/max-addons-bricks\n"
+"POT-Creation-Date: 2024-09-07 18:16:25+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: classes/class-mab-admin-settings.php:75 includes/elements/cta-button.php:17
+msgid "CTA Button"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:76
+#: includes/elements/content-ticker.php:18
+msgid "Content Ticker"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:77 includes/elements/flip-box.php:18
+msgid "Flip Box"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:78 includes/elements/icon-list.php:17
+msgid "Icon List"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:79
+#: includes/elements/image-accordion.php:19
+msgid "Image Accordion"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:80
+#: includes/elements/image-comparison.php:18
+msgid "Image Comparison"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:81
+#: includes/elements/multi-heading.php:16
+msgid "Multi Heading"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:82
+#: includes/elements/random-image.php:17
+msgid "Random Image"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:83 includes/elements/rating.php:18
+#: includes/elements/rating.php:49
+msgid "Rating"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:88 includes/elements/cf7-styler.php:20
+msgid "Contact Form 7 Styler"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:93
+#: includes/elements/gravity-forms-styler.php:20
+msgid "Gravity Forms Styler"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:98
+#: includes/elements/fluent-forms-styler.php:20
+msgid "Fluent Forms Styler"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:165
+msgid "Settings updated!"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:206
+#: includes/admin/admin-settings-elements.php:13
+msgid "Elements"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:243
+msgid "Setting page file could not be located."
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:265
+msgid "You do not have permission to view this setting."
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:396
+msgid "Elements settings updated!"
+msgstr ""
+
+#: classes/class-mab-helper.php:159
+msgid "No contact forms found!"
+msgstr ""
+
+#: classes/class-mab-plugin.php:83
+#. translators: 1: Max Addons 2: Bricks Builder
+msgid "%1$s requires %2$s to be installed and activated."
+msgstr ""
+
+#: classes/class-mab-plugin.php:194
+msgid "Max Addons"
+msgstr ""
+
+#: includes/admin/admin-settings-elements.php:17
+msgid "Toggle All"
+msgstr ""
+
+#: includes/admin/admin-settings.php:145
+msgid "%s Settings"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:32 includes/elements/cf7-styler.php:96
+#: includes/elements/fluent-forms-styler.php:32
+#: includes/elements/fluent-forms-styler.php:118
+#: includes/elements/gravity-forms-styler.php:26
+msgid "Contact Form"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:37
+#: includes/elements/fluent-forms-styler.php:37
+#: includes/elements/gravity-forms-styler.php:36
+msgid "Input Fields"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:42 includes/elements/content-ticker.php:687
+#: includes/elements/flip-box.php:474 includes/elements/flip-box.php:691
+#: includes/elements/flip-box.php:1003
+#: includes/elements/fluent-forms-styler.php:42
+#: includes/elements/gravity-forms-styler.php:41
+msgid "Spacing"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:47
+#: includes/elements/fluent-forms-styler.php:52
+#: includes/elements/gravity-forms-styler.php:61
+msgid "Radio And Checkbox"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:52
+#: includes/elements/fluent-forms-styler.php:57
+#: includes/elements/gravity-forms-styler.php:66
+msgid "Submit Button"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:76
+#: includes/elements/fluent-forms-styler.php:97
+#: includes/elements/gravity-forms-styler.php:126
+msgid "Select Form"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:81
+#: includes/elements/fluent-forms-styler.php:102
+#: includes/elements/gravity-forms-styler.php:131
+#: includes/elements/random-image.php:444
+msgid "Select"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:87
+#: includes/elements/fluent-forms-styler.php:108
+msgid "Show Custom Title"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:95 includes/elements/content-ticker.php:79
+#: includes/elements/content-ticker.php:118
+#: includes/elements/content-ticker.php:132
+#: includes/elements/fluent-forms-styler.php:117
+#: includes/elements/gravity-forms-styler.php:137
+#: includes/elements/icon-list.php:98 includes/elements/image-accordion.php:83
+#: includes/elements/image-accordion.php:217
+msgid "Title"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:103
+#: includes/elements/fluent-forms-styler.php:153
+#: includes/elements/gravity-forms-styler.php:165
+#: includes/elements/gravity-forms-styler.php:502
+#: includes/elements/image-accordion.php:393
+msgid "Title Typography"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:122
+#: includes/elements/fluent-forms-styler.php:235
+#: includes/elements/gravity-forms-styler.php:320
+msgid "Labels Typography"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:137
+#: includes/elements/fluent-forms-styler.php:250
+#: includes/elements/gravity-forms-styler.php:335
+msgid "Placeholder Typography"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:152
+#: includes/elements/fluent-forms-styler.php:269
+#: includes/elements/gravity-forms-styler.php:350
+msgid "Fields Typography"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:175 includes/elements/cf7-styler.php:510
+#: includes/elements/content-ticker.php:337
+#: includes/elements/content-ticker.php:606 includes/elements/flip-box.php:169
+#: includes/elements/flip-box.php:330 includes/elements/flip-box.php:972
+#: includes/elements/fluent-forms-styler.php:292
+#: includes/elements/fluent-forms-styler.php:634
+#: includes/elements/gravity-forms-styler.php:365
+#: includes/elements/gravity-forms-styler.php:739
+#: includes/elements/gravity-forms-styler.php:828
+#: includes/elements/image-accordion.php:438
+#: includes/elements/image-comparison.php:170
+#: includes/elements/multi-heading.php:84
+msgid "Background"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:198 includes/elements/cf7-styler.php:525
+#: includes/elements/content-ticker.php:188
+#: includes/elements/content-ticker.php:376
+#: includes/elements/content-ticker.php:622 includes/elements/flip-box.php:546
+#: includes/elements/flip-box.php:645 includes/elements/flip-box.php:768
+#: includes/elements/flip-box.php:867 includes/elements/flip-box.php:988
+#: includes/elements/fluent-forms-styler.php:315
+#: includes/elements/fluent-forms-styler.php:649
+#: includes/elements/fluent-forms-styler.php:722
+#: includes/elements/fluent-forms-styler.php:785
+#: includes/elements/gravity-forms-styler.php:380
+#: includes/elements/gravity-forms-styler.php:531
+#: includes/elements/gravity-forms-styler.php:754
+#: includes/elements/gravity-forms-styler.php:843
+#: includes/elements/gravity-forms-styler.php:950
+#: includes/elements/gravity-forms-styler.php:1154
+#: includes/elements/icon-list.php:252
+#: includes/elements/image-accordion.php:305
+#: includes/elements/image-accordion.php:453
+#: includes/elements/image-accordion.php:616
+#: includes/elements/image-comparison.php:186
+#: includes/elements/multi-heading.php:120
+msgid "Border"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:220 includes/elements/cf7-styler.php:540
+#: includes/elements/fluent-forms-styler.php:337
+#: includes/elements/fluent-forms-styler.php:664
+#: includes/elements/fluent-forms-styler.php:737
+#: includes/elements/fluent-forms-styler.php:799
+#: includes/elements/gravity-forms-styler.php:394
+#: includes/elements/gravity-forms-styler.php:769
+#: includes/elements/gravity-forms-styler.php:858
+#: includes/elements/gravity-forms-styler.php:965
+#: includes/elements/image-accordion.php:319
+#: includes/elements/image-accordion.php:630
+#: includes/elements/image-comparison.php:201
+msgid "Box Shadow"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:254
+#: includes/elements/fluent-forms-styler.php:360
+#: includes/elements/gravity-forms-styler.php:409
+msgid "Input Width"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:272
+#: includes/elements/fluent-forms-styler.php:378
+#: includes/elements/gravity-forms-styler.php:423
+msgid "Textarea Width"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:287 includes/elements/cf7-styler.php:581
+#: includes/elements/content-ticker.php:324 includes/elements/flip-box.php:660
+#: includes/elements/flip-box.php:882 includes/elements/flip-box.php:1020
+#: includes/elements/fluent-forms-styler.php:407
+#: includes/elements/fluent-forms-styler.php:679
+#: includes/elements/fluent-forms-styler.php:814
+#: includes/elements/gravity-forms-styler.php:451
+#: includes/elements/gravity-forms-styler.php:784
+#: includes/elements/gravity-forms-styler.php:873
+#: includes/elements/gravity-forms-styler.php:1168
+#: includes/elements/icon-list.php:209
+#: includes/elements/image-accordion.php:515
+#: includes/elements/image-accordion.php:678
+#: includes/elements/image-comparison.php:228
+#: includes/elements/multi-heading.php:146
+#: includes/elements/random-image.php:246
+msgid "Padding"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:304 includes/elements/flip-box.php:565
+#: includes/elements/flip-box.php:787
+#: includes/elements/fluent-forms-styler.php:428
+#: includes/elements/gravity-forms-styler.php:464
+msgid "Text align"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:331
+#: includes/elements/fluent-forms-styler.php:175
+#: includes/elements/gravity-forms-styler.php:246
+msgid "Labels Spacing"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:345
+#: includes/elements/fluent-forms-styler.php:189
+#: includes/elements/gravity-forms-styler.php:260
+msgid "Fields Spacing"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:362
+#: includes/elements/fluent-forms-styler.php:473
+#: includes/elements/gravity-forms-styler.php:595
+msgid "Custom Styles"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:369 includes/elements/cta-button.php:72
+#: includes/elements/flip-box.php:500 includes/elements/flip-box.php:530
+#: includes/elements/flip-box.php:722 includes/elements/flip-box.php:752
+#: includes/elements/flip-box.php:903
+#: includes/elements/fluent-forms-styler.php:480
+#: includes/elements/gravity-forms-styler.php:602
+#: includes/elements/image-accordion.php:531
+#: includes/elements/random-image.php:454
+msgid "Size"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:398 includes/elements/flip-box.php:515
+#: includes/elements/flip-box.php:737
+#: includes/elements/fluent-forms-styler.php:509
+#: includes/elements/gravity-forms-styler.php:622
+#: includes/elements/icon-list.php:794
+msgid "Color"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:414
+#: includes/elements/fluent-forms-styler.php:549
+#: includes/elements/gravity-forms-styler.php:654
+msgid "Checkbox Border"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:430
+#: includes/elements/fluent-forms-styler.php:565
+#: includes/elements/gravity-forms-styler.php:670
+msgid "Radio Border"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:450
+#: includes/elements/fluent-forms-styler.php:584
+#: includes/elements/gravity-forms-styler.php:196
+#: includes/elements/gravity-forms-styler.php:689
+#: includes/elements/gravity-forms-styler.php:1187
+msgid "Alignment"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:453
+#: includes/elements/content-ticker.php:274 includes/elements/flip-box.php:432
+#: includes/elements/flip-box.php:465 includes/elements/flip-box.php:682
+#: includes/elements/fluent-forms-styler.php:587
+#: includes/elements/gravity-forms-styler.php:692
+#: includes/elements/image-accordion.php:492
+msgid "Left"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:454
+#: includes/elements/content-ticker.php:316 includes/elements/flip-box.php:574
+#: includes/elements/flip-box.php:594 includes/elements/flip-box.php:796
+#: includes/elements/flip-box.php:816
+#: includes/elements/fluent-forms-styler.php:588
+#: includes/elements/gravity-forms-styler.php:693
+#: includes/elements/image-accordion.php:493
+msgid "Center"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:455
+#: includes/elements/content-ticker.php:272 includes/elements/flip-box.php:433
+#: includes/elements/flip-box.php:463 includes/elements/flip-box.php:680
+#: includes/elements/fluent-forms-styler.php:589
+#: includes/elements/gravity-forms-styler.php:694
+#: includes/elements/image-accordion.php:494
+msgid "Right"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:477
+#: includes/elements/content-ticker.php:202
+#: includes/elements/content-ticker.php:391
+#: includes/elements/cta-button.php:274
+#: includes/elements/fluent-forms-styler.php:606
+#: includes/elements/gravity-forms-styler.php:711
+#: includes/elements/gravity-forms-styler.php:800
+#: includes/elements/icon-list.php:497 includes/elements/icon-list.php:597
+msgid "Width"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:496
+#: includes/elements/content-ticker.php:162
+#: includes/elements/content-ticker.php:357
+#: includes/elements/content-ticker.php:637
+#: includes/elements/cta-button.php:213
+#: includes/elements/fluent-forms-styler.php:456
+#: includes/elements/fluent-forms-styler.php:620
+#: includes/elements/fluent-forms-styler.php:702
+#: includes/elements/fluent-forms-styler.php:755
+#: includes/elements/gravity-forms-styler.php:484
+#: includes/elements/gravity-forms-styler.php:725
+#: includes/elements/gravity-forms-styler.php:814
+#: includes/elements/gravity-forms-styler.php:1008
+#: includes/elements/gravity-forms-styler.php:1124
+#: includes/elements/icon-list.php:618 includes/elements/icon-list.php:666
+#: includes/elements/icon-list.php:698 includes/elements/icon-list.php:716
+#: includes/elements/image-accordion.php:570
+#: includes/elements/image-comparison.php:154
+#: includes/elements/multi-heading.php:70
+#: includes/elements/multi-heading.php:219
+msgid "Typography"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:555
+msgid "Spacing from Top"
+msgstr ""
+
+#: includes/elements/cf7-styler.php:597
+#: includes/elements/fluent-forms-styler.php:840
+#: includes/elements/gravity-forms-styler.php:1210
+msgid "No contact form selected."
+msgstr ""
+
+#: includes/elements/content-ticker.php:36 includes/elements/flip-box.php:44
+#: includes/elements/image-accordion.php:35
+#: includes/elements/image-comparison.php:55
+#: includes/elements/random-image.php:281 max-addons-bricks.php:44
+msgid "Settings"
+msgstr ""
+
+#: includes/elements/content-ticker.php:41
+#: includes/elements/image-accordion.php:45
+#: includes/elements/image-accordion.php:88
+msgid "Content"
+msgstr ""
+
+#: includes/elements/content-ticker.php:46
+msgid "Header"
+msgstr ""
+
+#: includes/elements/content-ticker.php:51
+msgid "Arrows"
+msgstr ""
+
+#: includes/elements/content-ticker.php:72
+#: includes/elements/content-ticker.php:75
+msgid "Ticker Items"
+msgstr ""
+
+#: includes/elements/content-ticker.php:85 includes/elements/cta-button.php:141
+#: includes/elements/flip-box.php:298 includes/elements/icon-list.php:141
+#: includes/elements/image-accordion.php:100
+msgid "Link"
+msgstr ""
+
+#: includes/elements/content-ticker.php:90
+#: includes/elements/content-ticker.php:119
+#: includes/elements/content-ticker.php:180
+#: includes/elements/cta-button.php:160 includes/elements/cta-button.php:206
+#: includes/elements/flip-box.php:97 includes/elements/flip-box.php:124
+#: includes/elements/flip-box.php:226 includes/elements/flip-box.php:253
+#: includes/elements/icon-list.php:108 includes/elements/icon-list.php:127
+#: includes/elements/icon-list.php:558 includes/elements/image-accordion.php:92
+#: includes/elements/image-comparison.php:80
+#: includes/elements/image-comparison.php:112
+#: includes/elements/random-image.php:281
+msgid "Image"
+msgstr ""
+
+#: includes/elements/content-ticker.php:97
+msgid "Content Ticker Item 1"
+msgstr ""
+
+#: includes/elements/content-ticker.php:100
+msgid "Content Ticker Item 2"
+msgstr ""
+
+#: includes/elements/content-ticker.php:103
+msgid "Content Ticker Item 3"
+msgstr ""
+
+#: includes/elements/content-ticker.php:106
+msgid "Content Ticker Item 4"
+msgstr ""
+
+#: includes/elements/content-ticker.php:115
+msgid "Apply Link To"
+msgstr ""
+
+#: includes/elements/content-ticker.php:120
+msgid "Title + Image"
+msgstr ""
+
+#: includes/elements/content-ticker.php:139
+msgid "HTML Tag"
+msgstr ""
+
+#: includes/elements/content-ticker.php:142 includes/elements/flip-box.php:145
+#: includes/elements/flip-box.php:274
+#: includes/elements/fluent-forms-styler.php:132
+msgid "Heading 1 (h1)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:143 includes/elements/flip-box.php:146
+#: includes/elements/flip-box.php:275
+#: includes/elements/fluent-forms-styler.php:133
+#: includes/elements/icon-list.php:653
+msgid "Heading 2 (h2)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:144 includes/elements/flip-box.php:147
+#: includes/elements/flip-box.php:276
+#: includes/elements/fluent-forms-styler.php:134
+#: includes/elements/icon-list.php:654
+msgid "Heading 3 (h3)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:145 includes/elements/flip-box.php:148
+#: includes/elements/flip-box.php:277
+#: includes/elements/fluent-forms-styler.php:135
+#: includes/elements/icon-list.php:655
+msgid "Heading 4 (h4)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:146 includes/elements/flip-box.php:149
+#: includes/elements/flip-box.php:278
+#: includes/elements/fluent-forms-styler.php:136
+#: includes/elements/icon-list.php:656
+msgid "Heading 5 (h5)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:147 includes/elements/flip-box.php:150
+#: includes/elements/flip-box.php:279
+#: includes/elements/fluent-forms-styler.php:137
+#: includes/elements/icon-list.php:657
+msgid "Heading 6 (h6)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:148
+msgid "Div (div)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:149
+msgid "Span (span)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:150
+msgid "Paragraph (p)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:217
+#: includes/elements/gravity-forms-styler.php:546
+#: includes/elements/icon-list.php:196 includes/elements/icon-list.php:637
+#: includes/elements/icon-list.php:685
+#: includes/elements/image-comparison.php:270
+msgid "Margin"
+msgstr ""
+
+#: includes/elements/content-ticker.php:233
+msgid "Show Heading"
+msgstr ""
+
+#: includes/elements/content-ticker.php:243
+msgid "Heading Text"
+msgstr ""
+
+#: includes/elements/content-ticker.php:256 includes/elements/cta-button.php:33
+#: includes/elements/cta-button.php:159 includes/elements/cta-button.php:188
+#: includes/elements/flip-box.php:96 includes/elements/flip-box.php:106
+#: includes/elements/flip-box.php:225 includes/elements/flip-box.php:235
+#: includes/elements/icon-list.php:43 includes/elements/icon-list.php:107
+#: includes/elements/icon-list.php:117 includes/elements/random-image.php:272
+#: includes/elements/random-image.php:286 includes/elements/rating.php:57
+msgid "Icon"
+msgstr ""
+
+#: includes/elements/content-ticker.php:268
+msgid "Icon position"
+msgstr ""
+
+#: includes/elements/content-ticker.php:271 includes/elements/flip-box.php:462
+#: includes/elements/flip-box.php:468 includes/elements/flip-box.php:679
+#: includes/elements/flip-box.php:685 includes/elements/image-accordion.php:470
+msgid "Top"
+msgstr ""
+
+#: includes/elements/content-ticker.php:273 includes/elements/flip-box.php:464
+#: includes/elements/flip-box.php:681 includes/elements/image-accordion.php:472
+msgid "Bottom"
+msgstr ""
+
+#: includes/elements/content-ticker.php:287
+msgid "Show Arrow"
+msgstr ""
+
+#: includes/elements/content-ticker.php:298 includes/elements/cta-button.php:82
+#: includes/elements/flip-box.php:915 includes/elements/icon-list.php:741
+#: includes/elements/image-accordion.php:542
+#: includes/elements/multi-heading.php:287
+msgid "Style"
+msgstr ""
+
+#: includes/elements/content-ticker.php:306
+msgid "Text align vertical"
+msgstr ""
+
+#: includes/elements/content-ticker.php:407
+msgid "Icon Style"
+msgstr ""
+
+#: includes/elements/content-ticker.php:418
+msgid "Icon Typography"
+msgstr ""
+
+#: includes/elements/content-ticker.php:447
+msgid "Icon spacing"
+msgstr ""
+
+#: includes/elements/content-ticker.php:481
+msgid "Mode"
+msgstr ""
+
+#: includes/elements/content-ticker.php:484
+#: includes/elements/image-accordion.php:233
+#: includes/elements/image-accordion.php:248
+#: includes/elements/image-comparison.php:410
+msgid "Horizontal"
+msgstr ""
+
+#: includes/elements/content-ticker.php:485
+#: includes/elements/image-accordion.php:232
+#: includes/elements/image-accordion.php:247
+#: includes/elements/image-accordion.php:250
+#: includes/elements/image-comparison.php:409
+msgid "Vertical"
+msgstr ""
+
+#: includes/elements/content-ticker.php:486 includes/elements/flip-box.php:419
+msgid "Fade"
+msgstr ""
+
+#: includes/elements/content-ticker.php:496
+msgid "Slider Speed"
+msgstr ""
+
+#: includes/elements/content-ticker.php:497
+msgid "Duration of transition between slides (in ms)"
+msgstr ""
+
+#: includes/elements/content-ticker.php:509
+msgid "Loop"
+msgstr ""
+
+#: includes/elements/content-ticker.php:519
+msgid "Autoplay"
+msgstr ""
+
+#: includes/elements/content-ticker.php:528
+msgid "Pause on Hover"
+msgstr ""
+
+#: includes/elements/content-ticker.php:538
+msgid "Autoplay Speed in Ms"
+msgstr ""
+
+#: includes/elements/content-ticker.php:555
+msgid "Show Arrows"
+msgstr ""
+
+#: includes/elements/content-ticker.php:566 includes/elements/icon-list.php:778
+msgid "Height in px"
+msgstr ""
+
+#: includes/elements/content-ticker.php:588 includes/elements/icon-list.php:757
+msgid "Width in px"
+msgstr ""
+
+#: includes/elements/content-ticker.php:663
+msgid "Prev arrow"
+msgstr ""
+
+#: includes/elements/content-ticker.php:675
+msgid "Next arrow"
+msgstr ""
+
+#: includes/elements/content-ticker.php:802
+#: includes/elements/cta-button.php:330 includes/elements/flip-box.php:1073
+#: includes/elements/icon-list.php:846
+#: includes/elements/image-comparison.php:476
+#: includes/elements/image-comparison.php:514
+msgid ""
+"Can't render element, as the selected ACF field is not available. Please "
+"activate ACF or edit the element to select different data."
+msgstr ""
+
+#: includes/elements/content-ticker.php:804
+#: includes/elements/cta-button.php:332 includes/elements/flip-box.php:1075
+#: includes/elements/icon-list.php:848
+#: includes/elements/image-comparison.php:478
+#: includes/elements/image-comparison.php:516
+msgid "No featured image set."
+msgstr ""
+
+#: includes/elements/content-ticker.php:806
+#: includes/elements/cta-button.php:334 includes/elements/flip-box.php:1077
+#: includes/elements/icon-list.php:850
+#: includes/elements/image-comparison.php:480
+#: includes/elements/image-comparison.php:518
+msgid "Dynamic Data %1$s (%2$s) is empty."
+msgstr ""
+
+#: includes/elements/content-ticker.php:827
+#: includes/elements/cta-button.php:353 includes/elements/flip-box.php:1098
+#: includes/elements/image-comparison.php:533
+#: includes/elements/random-image.php:642
+msgid "No image selected."
+msgstr ""
+
+#: includes/elements/content-ticker.php:835
+#: includes/elements/cta-button.php:361 includes/elements/flip-box.php:1106
+#: includes/elements/image-comparison.php:496
+#: includes/elements/image-comparison.php:541
+msgid "Image ID (%s) no longer exist. Please select another image."
+msgstr ""
+
+#: includes/elements/content-ticker.php:923
+msgid "No ticker item added."
+msgstr ""
+
+#: includes/elements/cta-button.php:28 includes/elements/cta-button.php:45
+#: includes/elements/flip-box.php:29 includes/elements/icon-list.php:48
+#: includes/elements/icon-list.php:109 includes/elements/icon-list.php:133
+#: includes/elements/icon-list.php:612
+#: includes/elements/image-comparison.php:30
+msgid "Text"
+msgstr ""
+
+#: includes/elements/cta-button.php:47
+msgid "Sign up now!"
+msgstr ""
+
+#: includes/elements/cta-button.php:54 includes/elements/flip-box.php:161
+#: includes/elements/flip-box.php:290
+#: includes/elements/gravity-forms-styler.php:145
+#: includes/elements/icon-list.php:58 includes/elements/icon-list.php:152
+msgid "Description"
+msgstr ""
+
+#: includes/elements/cta-button.php:57
+msgid "Free for first 30 days"
+msgstr ""
+
+#: includes/elements/cta-button.php:62 includes/elements/random-image.php:47
+msgid "HTML tag"
+msgstr ""
+
+#: includes/elements/cta-button.php:77 includes/elements/flip-box.php:908
+#: includes/elements/image-accordion.php:536
+msgid "Medium"
+msgstr ""
+
+#: includes/elements/cta-button.php:88 includes/elements/flip-box.php:921
+#: includes/elements/image-accordion.php:223
+#: includes/elements/image-accordion.php:265
+#: includes/elements/image-accordion.php:273
+#: includes/elements/image-accordion.php:548
+#: includes/elements/multi-heading.php:292
+#: includes/elements/random-image.php:218
+msgid "None"
+msgstr ""
+
+#: includes/elements/cta-button.php:93 includes/elements/flip-box.php:928
+#: includes/elements/image-accordion.php:554
+msgid "Circle"
+msgstr ""
+
+#: includes/elements/cta-button.php:100 includes/elements/flip-box.php:946
+#: includes/elements/image-accordion.php:562
+msgid "Outline"
+msgstr ""
+
+#: includes/elements/cta-button.php:110
+msgid "Text Typography"
+msgstr ""
+
+#: includes/elements/cta-button.php:125
+#: includes/elements/gravity-forms-styler.php:181
+#: includes/elements/gravity-forms-styler.php:517
+msgid "Description Typography"
+msgstr ""
+
+#: includes/elements/cta-button.php:147
+msgid "Link type"
+msgstr ""
+
+#: includes/elements/cta-button.php:156 includes/elements/flip-box.php:93
+#: includes/elements/flip-box.php:222 includes/elements/icon-list.php:104
+msgid "Icon Type"
+msgstr ""
+
+#: includes/elements/cta-button.php:171 includes/elements/flip-box.php:459
+#: includes/elements/flip-box.php:676
+#: includes/elements/image-comparison.php:242
+#: includes/elements/image-comparison.php:256
+#: includes/elements/random-image.php:477
+msgid "Position"
+msgstr ""
+
+#: includes/elements/cta-button.php:174
+msgid "Before Title"
+msgstr ""
+
+#: includes/elements/cta-button.php:175
+msgid "After Title"
+msgstr ""
+
+#: includes/elements/cta-button.php:176
+msgid "Before Title & Description"
+msgstr ""
+
+#: includes/elements/cta-button.php:177 includes/elements/cta-button.php:180
+msgid "After Title & Description"
+msgstr ""
+
+#: includes/elements/cta-button.php:239
+msgid "Gap"
+msgstr ""
+
+#: includes/elements/cta-button.php:259 includes/elements/flip-box.php:382
+#: includes/elements/gravity-forms-styler.php:980
+#: includes/elements/icon-list.php:483 includes/elements/icon-list.php:583
+#: includes/elements/image-accordion.php:166
+msgid "Height"
+msgstr ""
+
+#: includes/elements/flip-box.php:34
+msgid "Front"
+msgstr ""
+
+#: includes/elements/flip-box.php:39
+msgid "Back"
+msgstr ""
+
+#: includes/elements/flip-box.php:49
+msgid "Front Icon Style"
+msgstr ""
+
+#: includes/elements/flip-box.php:54
+msgid "Front Style"
+msgstr ""
+
+#: includes/elements/flip-box.php:59
+msgid "Back Icon Style"
+msgstr ""
+
+#: includes/elements/flip-box.php:64
+msgid "Back Style"
+msgstr ""
+
+#: includes/elements/flip-box.php:131 includes/elements/flip-box.php:260
+#: includes/elements/multi-heading.php:27
+#: includes/elements/multi-heading.php:58
+#: includes/elements/multi-heading.php:60
+#: includes/elements/multi-heading.php:64
+msgid "Heading"
+msgstr ""
+
+#: includes/elements/flip-box.php:142 includes/elements/flip-box.php:271
+msgid "Heading Tag"
+msgstr ""
+
+#: includes/elements/flip-box.php:151 includes/elements/flip-box.php:280
+#: includes/elements/fluent-forms-styler.php:138
+msgid "Division (div)"
+msgstr ""
+
+#: includes/elements/flip-box.php:195 includes/elements/flip-box.php:356
+#: includes/elements/multi-heading.php:101
+msgid "Gradient Background"
+msgstr ""
+
+#: includes/elements/flip-box.php:305
+msgid "Apply Link On"
+msgstr ""
+
+#: includes/elements/flip-box.php:308
+msgid "Whole Box"
+msgstr ""
+
+#: includes/elements/flip-box.php:309
+msgid "Button Only"
+msgstr ""
+
+#: includes/elements/flip-box.php:319 includes/elements/image-accordion.php:105
+msgid "Button Text"
+msgstr ""
+
+#: includes/elements/flip-box.php:321 includes/elements/image-accordion.php:135
+#: includes/elements/image-accordion.php:140
+msgid "Click Here"
+msgstr ""
+
+#: includes/elements/flip-box.php:397
+msgid "Border Radius"
+msgstr ""
+
+#: includes/elements/flip-box.php:411
+msgid "Flip Effect"
+msgstr ""
+
+#: includes/elements/flip-box.php:414
+msgid "Flip"
+msgstr ""
+
+#: includes/elements/flip-box.php:415
+msgid "Slide"
+msgstr ""
+
+#: includes/elements/flip-box.php:416
+msgid "Push"
+msgstr ""
+
+#: includes/elements/flip-box.php:417
+msgid "Zoom In"
+msgstr ""
+
+#: includes/elements/flip-box.php:418
+msgid "Zoom Out"
+msgstr ""
+
+#: includes/elements/flip-box.php:429
+msgid "Flip Direction"
+msgstr ""
+
+#: includes/elements/flip-box.php:434
+msgid "Up"
+msgstr ""
+
+#: includes/elements/flip-box.php:435
+msgid "Down"
+msgstr ""
+
+#: includes/elements/flip-box.php:446
+msgid "3D Effect"
+msgstr ""
+
+#: includes/elements/flip-box.php:581 includes/elements/flip-box.php:803
+msgid "Vertical align"
+msgstr ""
+
+#: includes/elements/flip-box.php:601 includes/elements/flip-box.php:823
+msgid "Heading typography"
+msgstr ""
+
+#: includes/elements/flip-box.php:615 includes/elements/flip-box.php:837
+msgid "Heading spacing"
+msgstr ""
+
+#: includes/elements/flip-box.php:630 includes/elements/flip-box.php:852
+msgid "Content typography"
+msgstr ""
+
+#: includes/elements/flip-box.php:895 includes/elements/image-accordion.php:50
+msgid "Button"
+msgstr ""
+
+#: includes/elements/flip-box.php:937 includes/elements/random-image.php:180
+msgid "Stretch"
+msgstr ""
+
+#: includes/elements/flip-box.php:956
+msgid "Button typography"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:47
+msgid "Help Message"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:62
+#: includes/elements/gravity-forms-styler.php:81
+msgid "Errors"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:67
+msgid "Confirmation Message"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:129
+msgid "Title Tag"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:203
+msgid "Help Message Top Spacing"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:217
+#: includes/elements/gravity-forms-styler.php:302
+msgid "Button Top Spacing"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:393
+#: includes/elements/gravity-forms-styler.php:437
+msgid "Textarea Height"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:529
+#: includes/elements/gravity-forms-styler.php:638
+msgid "Checked Color"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:696
+msgid "Error Message"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:716
+msgid "Error Field"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:769
+#: includes/elements/gravity-forms-styler.php:1138
+#: includes/elements/image-accordion.php:601
+msgid "Background Color"
+msgstr ""
+
+#: includes/elements/fluent-forms-styler.php:836
+msgid "Fluent Forms is not installed or activated."
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:31
+msgid "Title and Description"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:46
+msgid "Field Description"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:51
+msgid "Section Field"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:56
+msgid "Price"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:71
+msgid "Pagination"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:76
+msgid "Progress"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:86
+msgid "Thank You Message"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:153
+msgid "Use Ajax"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:154
+msgid "Use ajax to submit the form"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:216
+#: includes/elements/image-accordion.php:408
+msgid "Title Spacing"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:231
+msgid "Description Spacing"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:274
+msgid "Field Description Top Spacing"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:288
+msgid "Pagination Top Spacing"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:562
+msgid "Price Label Color"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:577
+msgid "Price Color"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:890
+msgid "Label Typography"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:905
+msgid "Percentage Typography"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:920
+msgid "Bar Background Color"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:935
+msgid "Percentage Background Color"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1002
+msgid "Error Messages"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1023
+msgid "Validation Errors"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1029
+msgid "Error Typography"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1043
+msgid "Error Border Color"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1062
+msgid "Error Field Background Color"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1077
+msgid "Error Field Label Typography"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1092
+msgid "Error Field Input Border Color"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1107
+msgid "Error Field Input Border Width"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:1206
+msgid "Gravity forms is not installed or activated."
+msgstr ""
+
+#: includes/elements/icon-list.php:28 includes/elements/image-accordion.php:40
+msgid "Items"
+msgstr ""
+
+#: includes/elements/icon-list.php:33
+msgid "List item"
+msgstr ""
+
+#: includes/elements/icon-list.php:38 includes/elements/icon-list.php:158
+msgid "Highlight"
+msgstr ""
+
+#: includes/elements/icon-list.php:53 includes/elements/icon-list.php:146
+msgid "Meta"
+msgstr ""
+
+#: includes/elements/icon-list.php:63
+msgid "Separator"
+msgstr ""
+
+#: includes/elements/icon-list.php:93
+msgid "List items"
+msgstr ""
+
+#: includes/elements/icon-list.php:163
+msgid "Highlight label"
+msgstr ""
+
+#: includes/elements/icon-list.php:171
+msgid "List item #1"
+msgstr ""
+
+#: includes/elements/icon-list.php:179
+msgid "List item #2"
+msgstr ""
+
+#: includes/elements/icon-list.php:222
+msgid "Odd background"
+msgstr ""
+
+#: includes/elements/icon-list.php:237
+msgid "Even background"
+msgstr ""
+
+#: includes/elements/icon-list.php:267
+msgid "Auto width"
+msgstr ""
+
+#: includes/elements/icon-list.php:289
+msgid "Block"
+msgstr ""
+
+#: includes/elements/icon-list.php:303
+msgid "Label padding"
+msgstr ""
+
+#: includes/elements/icon-list.php:316
+msgid "Label background"
+msgstr ""
+
+#: includes/elements/icon-list.php:331
+msgid "Label border"
+msgstr ""
+
+#: includes/elements/icon-list.php:346
+msgid "Label typography"
+msgstr ""
+
+#: includes/elements/icon-list.php:361
+msgid "Content padding"
+msgstr ""
+
+#: includes/elements/icon-list.php:374
+msgid "Content background"
+msgstr ""
+
+#: includes/elements/icon-list.php:389
+msgid "Content border"
+msgstr ""
+
+#: includes/elements/icon-list.php:404
+msgid "Content text color"
+msgstr ""
+
+#: includes/elements/icon-list.php:431
+#: includes/elements/image-accordion.php:467
+msgid "Vertical Align"
+msgstr ""
+
+#: includes/elements/icon-list.php:448
+msgid "Icon size"
+msgstr ""
+
+#: includes/elements/icon-list.php:462
+msgid "Icon color"
+msgstr ""
+
+#: includes/elements/icon-list.php:477
+msgid "SVG"
+msgstr ""
+
+#: includes/elements/icon-list.php:511
+msgid "Stroke width"
+msgstr ""
+
+#: includes/elements/icon-list.php:527
+msgid "Stroke color"
+msgstr ""
+
+#: includes/elements/icon-list.php:542 includes/elements/icon-list.php:569
+msgid "Fill"
+msgstr ""
+
+#: includes/elements/icon-list.php:564
+msgid "Object Fit"
+msgstr ""
+
+#: includes/elements/icon-list.php:567 includes/elements/random-image.php:461
+#: includes/elements/random-image.php:464
+msgid "Contain"
+msgstr ""
+
+#: includes/elements/icon-list.php:568 includes/elements/random-image.php:460
+msgid "Cover"
+msgstr ""
+
+#: includes/elements/icon-list.php:650 includes/elements/multi-heading.php:169
+msgid "Tag"
+msgstr ""
+
+#: includes/elements/icon-list.php:734
+msgid "Enable"
+msgstr ""
+
+#: includes/elements/icon-list.php:896
+msgid "No list items defined."
+msgstr ""
+
+#: includes/elements/image-accordion.php:73
+msgid "Accordion"
+msgstr ""
+
+#: includes/elements/image-accordion.php:78
+#: includes/elements/image-accordion.php:216
+msgid "Item Label"
+msgstr ""
+
+#: includes/elements/image-accordion.php:96
+msgid "Show Button"
+msgstr ""
+
+#: includes/elements/image-accordion.php:111
+msgid "Button Icon"
+msgstr ""
+
+#: includes/elements/image-accordion.php:121
+msgid "Icon Position"
+msgstr ""
+
+#: includes/elements/image-accordion.php:133
+msgid "Accordion title 1"
+msgstr ""
+
+#: includes/elements/image-accordion.php:134
+#: includes/elements/image-accordion.php:139
+msgid "Accordion content goes here .."
+msgstr ""
+
+#: includes/elements/image-accordion.php:138
+msgid "Accordion title 2"
+msgstr ""
+
+#: includes/elements/image-accordion.php:153
+msgid "Default Active Item"
+msgstr ""
+
+#: includes/elements/image-accordion.php:154
+msgid "Add item index to make an item active by default"
+msgstr ""
+
+#: includes/elements/image-accordion.php:180
+msgid "Accordion Action"
+msgstr ""
+
+#: includes/elements/image-accordion.php:183
+msgid "On Hover"
+msgstr ""
+
+#: includes/elements/image-accordion.php:184
+msgid "On Click"
+msgstr ""
+
+#: includes/elements/image-accordion.php:195
+msgid "On Mouse Out"
+msgstr ""
+
+#: includes/elements/image-accordion.php:198
+msgid "Close all"
+msgstr ""
+
+#: includes/elements/image-accordion.php:199
+msgid "Open last active"
+msgstr ""
+
+#: includes/elements/image-accordion.php:200
+msgid "Open default active"
+msgstr ""
+
+#: includes/elements/image-accordion.php:201
+msgid "Open first item"
+msgstr ""
+
+#: includes/elements/image-accordion.php:213
+msgid "Item Label Type"
+msgstr ""
+
+#: includes/elements/image-accordion.php:229
+#: includes/elements/image-comparison.php:406
+msgid "Orientation"
+msgstr ""
+
+#: includes/elements/image-accordion.php:244
+msgid "Label Direction"
+msgstr ""
+
+#: includes/elements/image-accordion.php:270
+msgid "Stack On"
+msgstr ""
+
+#: includes/elements/image-accordion.php:286
+msgid "Spacing between Items"
+msgstr ""
+
+#: includes/elements/image-accordion.php:334
+msgid "Overlay Color"
+msgstr ""
+
+#: includes/elements/image-accordion.php:355
+msgid "Item Label Typography"
+msgstr ""
+
+#: includes/elements/image-accordion.php:371
+msgid "Title HTML Tag"
+msgstr ""
+
+#: includes/elements/image-accordion.php:422
+msgid "Content Typography"
+msgstr ""
+
+#: includes/elements/image-accordion.php:471
+msgid "Middle"
+msgstr ""
+
+#: includes/elements/image-accordion.php:489
+msgid "Horizontal Align"
+msgstr ""
+
+#: includes/elements/image-accordion.php:585
+msgid "Button Spacing"
+msgstr ""
+
+#: includes/elements/image-accordion.php:645 includes/elements/rating.php:112
+msgid "Icon Size"
+msgstr ""
+
+#: includes/elements/image-accordion.php:659 includes/elements/rating.php:125
+msgid "Icon Spacing"
+msgstr ""
+
+#: includes/elements/image-accordion.php:899
+msgid "No accordion items added."
+msgstr ""
+
+#: includes/elements/image-comparison.php:35
+msgid "Before Image"
+msgstr ""
+
+#: includes/elements/image-comparison.php:40
+msgid "After Image"
+msgstr ""
+
+#: includes/elements/image-comparison.php:45
+msgid "Labels"
+msgstr ""
+
+#: includes/elements/image-comparison.php:50
+msgid "Handle"
+msgstr ""
+
+#: includes/elements/image-comparison.php:87
+#: includes/elements/image-comparison.php:119
+msgid "Label"
+msgstr ""
+
+#: includes/elements/image-comparison.php:88
+msgid "Before"
+msgstr ""
+
+#: includes/elements/image-comparison.php:94
+#: includes/elements/image-comparison.php:126
+msgid "CSS filters"
+msgstr ""
+
+#: includes/elements/image-comparison.php:120
+msgid "After"
+msgstr ""
+
+#: includes/elements/image-comparison.php:144
+msgid "Show Labels"
+msgstr ""
+
+#: includes/elements/image-comparison.php:288
+msgid "Handle Color"
+msgstr ""
+
+#: includes/elements/image-comparison.php:307
+msgid "Arrows Color"
+msgstr ""
+
+#: includes/elements/image-comparison.php:334
+msgid "Circle Background Color"
+msgstr ""
+
+#: includes/elements/image-comparison.php:348
+msgid "Circle Size"
+msgstr ""
+
+#: includes/elements/image-comparison.php:367
+msgid "Handle Thickness"
+msgstr ""
+
+#: includes/elements/image-comparison.php:394
+msgid "Visible Ratio"
+msgstr ""
+
+#: includes/elements/image-comparison.php:421
+msgid "Move Slider"
+msgstr ""
+
+#: includes/elements/image-comparison.php:424
+msgid "Drag"
+msgstr ""
+
+#: includes/elements/image-comparison.php:425
+msgid "Mouse Move"
+msgstr ""
+
+#: includes/elements/image-comparison.php:489
+msgid "\"%1$s Image\" is not selected."
+msgstr ""
+
+#: includes/elements/multi-heading.php:32
+#: includes/elements/multi-heading.php:211
+msgid "Background Text"
+msgstr ""
+
+#: includes/elements/multi-heading.php:37
+msgid "Heading Style"
+msgstr ""
+
+#: includes/elements/multi-heading.php:133
+msgid "Box shadow"
+msgstr ""
+
+#: includes/elements/multi-heading.php:158
+msgid "Heading Text #1"
+msgstr ""
+
+#: includes/elements/multi-heading.php:161
+msgid "Heading Text #2"
+msgstr ""
+
+#: includes/elements/multi-heading.php:179
+#: includes/elements/random-image.php:53 includes/elements/random-image.php:139
+#: includes/elements/random-image.php:406
+#: includes/elements/random-image.php:462
+msgid "Custom"
+msgstr ""
+
+#: includes/elements/multi-heading.php:189
+#: includes/elements/random-image.php:61
+msgid "Custom tag"
+msgstr ""
+
+#: includes/elements/multi-heading.php:199
+msgid "Link to"
+msgstr ""
+
+#: includes/elements/multi-heading.php:235
+msgid "Horizontal Position"
+msgstr ""
+
+#: includes/elements/multi-heading.php:250
+msgid "Vertical Position"
+msgstr ""
+
+#: includes/elements/multi-heading.php:269
+msgid "Gap between headings"
+msgstr ""
+
+#: includes/elements/multi-heading.php:298
+msgid "Display"
+msgstr ""
+
+#: includes/elements/multi-heading.php:302
+msgid "Inline"
+msgstr ""
+
+#: includes/elements/multi-heading.php:303
+msgid "Stack"
+msgstr ""
+
+#: includes/elements/multi-heading.php:320
+msgid "No heading added."
+msgstr ""
+
+#: includes/elements/random-image.php:74
+msgid "Aspect ratio"
+msgstr ""
+
+#: includes/elements/random-image.php:93
+msgid "Object fit"
+msgstr ""
+
+#: includes/elements/random-image.php:110
+msgid "Object position"
+msgstr ""
+
+#: includes/elements/random-image.php:129
+msgid "Custom alt text"
+msgstr ""
+
+#: includes/elements/random-image.php:137
+msgid "No caption"
+msgstr ""
+
+#: includes/elements/random-image.php:138
+#: includes/elements/random-image.php:150
+msgid "Attachment"
+msgstr ""
+
+#: includes/elements/random-image.php:146
+msgid "Caption Type"
+msgstr ""
+
+#: includes/elements/random-image.php:155
+msgid "Custom caption"
+msgstr ""
+
+#: includes/elements/random-image.php:157
+msgid "Here goes your caption ..."
+msgstr ""
+
+#: includes/elements/random-image.php:162
+msgid "Loading"
+msgstr ""
+
+#: includes/elements/random-image.php:173
+msgid "Show title"
+msgstr ""
+
+#: includes/elements/random-image.php:192
+msgid "Image Overlay"
+msgstr ""
+
+#: includes/elements/random-image.php:206
+msgid "Link To"
+msgstr ""
+
+#: includes/elements/random-image.php:212
+#: includes/elements/random-image.php:222
+#: includes/elements/random-image.php:230
+#: includes/elements/random-image.php:239
+#: includes/elements/random-image.php:246
+#: includes/elements/random-image.php:252
+msgid "Lightbox"
+msgstr ""
+
+#: includes/elements/random-image.php:213
+msgid "Attachment Page"
+msgstr ""
+
+#: includes/elements/random-image.php:214
+msgid "Media File"
+msgstr ""
+
+#: includes/elements/random-image.php:215
+msgid "Other (URL)"
+msgstr ""
+
+#: includes/elements/random-image.php:222
+msgid "Image size"
+msgstr ""
+
+#: includes/elements/random-image.php:225
+msgid "Full"
+msgstr ""
+
+#: includes/elements/random-image.php:230
+msgid "Animation"
+msgstr ""
+
+#: includes/elements/random-image.php:233
+msgid "Zoom"
+msgstr ""
+
+#: includes/elements/random-image.php:239
+msgid "Caption"
+msgstr ""
+
+#: includes/elements/random-image.php:256
+msgid "Images of the same lightbox ID are grouped together."
+msgstr ""
+
+#: includes/elements/random-image.php:260
+msgid "Open in new tab"
+msgstr ""
+
+#: includes/elements/random-image.php:280
+msgid "Disable icon"
+msgstr ""
+
+#: includes/elements/random-image.php:281
+msgid "Theme styles"
+msgstr ""
+
+#: includes/elements/random-image.php:295
+msgid "Icon background color"
+msgstr ""
+
+#: includes/elements/random-image.php:307
+msgid "Icon border"
+msgstr ""
+
+#: includes/elements/random-image.php:319
+msgid "Icon box shadow"
+msgstr ""
+
+#: includes/elements/random-image.php:331
+msgid "Icon typography"
+msgstr ""
+
+#: includes/elements/random-image.php:356
+msgid "Icon height"
+msgstr ""
+
+#: includes/elements/random-image.php:369
+msgid "Icon width"
+msgstr ""
+
+#: includes/elements/random-image.php:382
+msgid "Icon transition"
+msgstr ""
+
+#: includes/elements/random-image.php:398
+#: includes/elements/random-image.php:402
+msgid "Mask"
+msgstr ""
+
+#: includes/elements/random-image.php:459
+msgid "Auto"
+msgstr ""
+
+#: includes/elements/random-image.php:469
+msgid "Custom size"
+msgstr ""
+
+#: includes/elements/random-image.php:481
+#: includes/elements/random-image.php:491
+msgid "Center center"
+msgstr ""
+
+#: includes/elements/random-image.php:482
+msgid "Center left"
+msgstr ""
+
+#: includes/elements/random-image.php:483
+msgid "Center right"
+msgstr ""
+
+#: includes/elements/random-image.php:484
+msgid "Top center"
+msgstr ""
+
+#: includes/elements/random-image.php:485
+msgid "Top left"
+msgstr ""
+
+#: includes/elements/random-image.php:486
+msgid "Top right"
+msgstr ""
+
+#: includes/elements/random-image.php:487
+msgid "Bottom center"
+msgstr ""
+
+#: includes/elements/random-image.php:488
+msgid "Bottom left"
+msgstr ""
+
+#: includes/elements/random-image.php:489
+msgid "Bottom right"
+msgstr ""
+
+#: includes/elements/random-image.php:496
+#: includes/elements/random-image.php:501
+msgid "Repeat"
+msgstr ""
+
+#: includes/elements/random-image.php:500
+#: includes/elements/random-image.php:507
+msgid "No repeat"
+msgstr ""
+
+#: includes/elements/random-image.php:502
+msgid "Repeat-x"
+msgstr ""
+
+#: includes/elements/random-image.php:503
+msgid "Repeat-y"
+msgstr ""
+
+#: includes/elements/random-image.php:504
+msgid "Round"
+msgstr ""
+
+#: includes/elements/random-image.php:505
+msgid "Space"
+msgstr ""
+
+#: includes/elements/random-image.php:635
+msgid "Dynamic data is empty."
+msgstr ""
+
+#: includes/elements/rating.php:40
+msgid "Rating Scale"
+msgstr ""
+
+#: includes/elements/rating.php:72
+msgid "Marked Icon color"
+msgstr ""
+
+#: includes/elements/rating.php:92
+msgid "Unmarked Icon color"
+msgstr ""
+
+#: includes/elements/rating.php:216
+msgid "Rated %1$s out of %2$s"
+msgstr ""
+
+#: max-addons-bricks.php:24
+msgid "Sorry, you are not allowed to access this page directly."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Max Addons for Bricks"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.bloompixel.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Extend Bricks Page Builder with 15+ Creative Elements and exciting "
+"extensions."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "BloomPixel"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.bloompixel.com/about/"
+msgstr ""

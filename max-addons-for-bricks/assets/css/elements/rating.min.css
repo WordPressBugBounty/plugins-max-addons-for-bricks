@@ -1,0 +1,1 @@
+.mab-rating{display:flex}.mab-rating-wrapper{display:flex;justify-content:inherit;flex-direction:row;flex-wrap:wrap;width:fit-content}.mab-rating .mab-icon{position:relative}.mab-rating .mab-icon-marked{color:#f0ad4e;width:var(--mab-rating-icon-marked-width);position:absolute;z-index:1;height:100%;left:0;top:0;overflow:hidden}.mab-rating .mab-icon-unmarked{color:#ccd6df}
