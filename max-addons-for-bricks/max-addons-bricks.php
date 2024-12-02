@@ -3,7 +3,7 @@
  * Plugin Name: Max Addons for Bricks
  * Plugin URI: https://www.bloompixel.com
  * Description: Extend Bricks Page Builder with 15+ Creative Elements and exciting extensions.
- * Version: 1.4.2
+ * Version: 1.4.3
  * Author: BloomPixel
  * Author URI: https://www.bloompixel.com/about/
  * License: GPLv2 or later
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // * Define constants
-define( 'MAB_VER', '1.4.2' );
+define( 'MAB_VER', '1.4.3' );
 define( 'MAB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MAB_BASE', plugin_basename( __FILE__ ) );
 define( 'MAB_URL', plugins_url( '/', __FILE__ ) );

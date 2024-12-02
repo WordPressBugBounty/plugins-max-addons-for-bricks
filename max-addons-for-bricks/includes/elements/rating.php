@@ -19,7 +19,7 @@ class Star_Rating_Element extends \Bricks\Element {
 	}
 
 	public function get_keywords() {
-		return [ 'star', 'review' ];
+		return [ 'rating', 'stars', 'review' ];
 	}
 
 	// Enqueue element styles and scripts
@@ -34,22 +34,22 @@ class Star_Rating_Element extends \Bricks\Element {
 
 	// Set primary controls
 	public function set_rating_controls() {
-
 		$this->controls['ratingScale'] = [
-			'tab'      => 'content',
-			'label'    => esc_html__( 'Rating Scale', 'max-addons' ),
-			'type'     => 'number',
-			'min'      => 1,
-			'max'      => 10,
-			'default'  => 5,
+			'tab'            => 'content',
+			'label'          => esc_html__( 'Rating Scale', 'max-addons' ),
+			'type'           => 'number',
+			'hasDynamicData' => true,
+			'min'            => 1,
+			'max'            => 10,
+			'default'        => 5,
 		];
 
 		$this->controls['rating'] = [
-			'tab'      => 'content',
-			'label'    => esc_html__( 'Rating', 'max-addons' ),
-			'type'     => 'text',
-			'inline'   => false,
-			'default'  => '5',
+			'tab'            => 'content',
+			'label'          => esc_html__( 'Rating', 'max-addons' ),
+			'type'           => 'number',
+			'hasDynamicData' => true,
+			'default'        => 5,
 		];
 
 		$this->controls['ratingIcon'] = [
@@ -138,21 +138,35 @@ class Star_Rating_Element extends \Bricks\Element {
 	public function get_rating_scale(): int {
 		$settings = $this->settings;
 
-		$rating_scale = isset( $settings['ratingScale'] ) ? (int) $settings['ratingScale'] : 5;
+		$rating_scale = isset( $settings['ratingScale'] ) ? $settings['ratingScale'] : 5;
+		if ( is_string( $rating_scale ) && strpos( $rating_scale, '{' ) !== false && strpos( $rating_scale, '}' ) !== false ) {
+			$rating_scale = intval( $this->render_dynamic_data( $rating_scale ) );
+		}
+
+		if ( ! is_numeric( $rating_scale ) || $rating_scale < 1 ) {
+			$rating_scale = 5;
+		}
 
 		return intval( $rating_scale );
 	}
 
 	public function get_rating_value(): float {
-		$settings = $this->settings;
+		$settings      = $this->settings;
 		$initial_value = $this->get_rating_scale();
-		$rating_value = $settings['rating'];
+		$rating_value  = $settings['rating'];
+
+		if ( is_string( $rating_value ) && strpos( $rating_value, '{' ) !== false && strpos( $rating_value, '}' ) !== false ) {
+			$rating_value = floatval( $this->render_dynamic_data( $rating_value ) );
+		}
 
 		if ( '' === $rating_value ) {
 			$rating_value = $initial_value;
 		}
 
 		$rating_value = floatval( $rating_value );
+
+		// If rating is less than 0, default to 0 and if it's higher than max rating, default to max rating
+		$rating_value = max( 0, min( $rating_value, $initial_value ) );
 
 		return round( $rating_value, 2 );
 	}

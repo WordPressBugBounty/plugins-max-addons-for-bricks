@@ -33,6 +33,12 @@ class Multi_Heading_Element extends \Bricks\Element {
 			'tab'   => 'content',
 		];
 
+		$this->control_groups['separator'] = [
+			'title'      => esc_html__( 'Separator', 'max-addons' ),
+			'tab'        => 'content',
+			'fullAccess' => true, // NOTE: Undocumented (show if user role has full_access capability)
+		];
+
 		$this->control_groups['headingStyle'] = [
 			'title' => esc_html__( 'Heading Style', 'max-addons' ),
 			'tab'   => 'content',
@@ -46,6 +52,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 
 		$this->set_items_controls();
 		$this->set_bg_text_controls();
+		$this->set_separator_controls();
 		$this->set_style_controls();
 	}
 
@@ -260,6 +267,129 @@ class Multi_Heading_Element extends \Bricks\Element {
 		];
 	}
 
+	// Set separator controls
+	public function set_separator_controls() {
+		$this->controls['separator'] = [
+			'tab'         => 'content',
+			'group'       => 'separator',
+			'label'       => esc_html__( 'Separator', 'max-addons' ),
+			'type'        => 'select',
+			'options'     => [
+				'right' => esc_html__( 'Right', 'max-addons' ),
+				'left'  => esc_html__( 'Left', 'max-addons' ),
+				'both'  => esc_html__( 'Both', 'max-addons' ),
+				'none'  => esc_html__( 'None', 'max-addons' ),
+			],
+			'inline'      => true,
+			'pasteStyles' => true,
+			'placeholder' => esc_html__( 'None', 'max-addons' ),
+		];
+
+		$this->controls['separatorWidth'] = [
+			'tab'   => 'content',
+			'group' => 'separator',
+			'label' => esc_html__( 'Width', 'max-addons' ),
+			'type'  => 'number',
+			'units' => true,
+			'css'   => [
+				[
+					'property' => 'width',
+					'selector' => '.separator',
+				],
+				[
+					'property' => 'flex-grow',
+					'selector' => '.separator',
+					'value'    => 0,
+				],
+				// To allow self-align heading
+				[
+					'property' => 'width',
+					'selector' => '',
+					'value'    => 'auto',
+				],
+			],
+		];
+
+		$this->controls['separatorHeight'] = [
+			'tab'   => 'content',
+			'group' => 'separator',
+			'label' => esc_html__( 'Height', 'max-addons' ),
+			'type'  => 'number',
+			'units' => true,
+			'css'   => [
+				[
+					'property' => 'border-top-width',
+					'selector' => '.separator',
+				],
+				[
+					'property' => 'height',
+					'selector' => '.separator',
+				],
+			],
+		];
+
+		$this->controls['separatorSpacing'] = [
+			'tab'         => 'content',
+			'group'       => 'separator',
+			'label'       => esc_html__( 'Spacing', 'max-addons' ),
+			'type'        => 'number',
+			'units'       => true,
+			'small'       => false,
+			'css'         => [
+				[
+					'property' => 'gap',
+					'selector' => '&.has-separator',
+				],
+			],
+			'placeholder' => 20,
+		];
+
+		$this->controls['separatorStyle'] = [
+			'tab'     => 'content',
+			'group'   => 'separator',
+			'label'   => esc_html__( 'Style', 'max-addons' ),
+			'type'    => 'select',
+			'options' => $this->control_options['borderStyle'],
+			'css'     => [
+				[
+					'property' => 'border-top-style',
+					'selector' => '.separator',
+				],
+			],
+			'inline'  => true,
+		];
+
+		$this->controls['separatorAlignItems'] = [
+			'tab'       => 'content',
+			'group'     => 'separator',
+			'label'     => esc_html__( 'Align', 'max-addons' ),
+			'type'      => 'align-items',
+			'direction' => 'row',
+			'exclude'   => 'stretch',
+			'inline'    => true,
+			'css'       => [
+				[
+					'property'  => 'align-items',
+					'selector'  => '&.has-separator',
+					'important' => true,
+				],
+			],
+		];
+
+		$this->controls['separatorColor'] = [
+			'tab'   => 'content',
+			'group' => 'separator',
+			'label' => esc_html__( 'Color', 'max-addons' ),
+			'type'  => 'color',
+			'css'   => [
+				[
+					'property' => 'border-top-color',
+					'selector' => '.separator',
+				],
+			],
+		];
+	}
+
 	// Set heading style controls
 	public function set_style_controls() {
 
@@ -334,12 +464,31 @@ class Multi_Heading_Element extends \Bricks\Element {
 
 		$this->set_attribute( '_root', 'class', $heading_classes );
 
+		// Separator (check theme style, then element settings)
+		$separator = ! empty( $this->theme_styles['separator'] ) ? $this->theme_styles['separator'] : 'none';
+
+		if ( ! empty( $settings['separator'] ) ) {
+			$separator = $settings['separator'];
+		}
+
+		if ( $separator !== 'none' ) {
+			$this->set_attribute( '_root', 'class', 'has-separator' );
+		}
+
 		$output = '<' . esc_html( $this->tag ) . ' ' . $this->render_attributes( '_root' ) . '>';
+
+		if ( $separator === 'left' || $separator === 'both' ) {
+			$output .= '<span class="separator left"></span>';
+		}
 
 		// Link
 		if ( isset( $settings['link'] ) ) {
 			$this->set_link_attributes( 'heading-link', $settings['link'] );
 			$output .= '<a ' . $this->render_attributes( 'heading-link' ) . '>';
+		}
+
+		if ( isset( $settings['separator'] ) ) {
+			$output .= '<span class="text">';
 		}
 
 		foreach ( $settings['items'] as $index => $item ) {
@@ -356,14 +505,23 @@ class Multi_Heading_Element extends \Bricks\Element {
 			$output .= '</span>';
 		}
 
-		if ( isset( $settings['link'] ) ) {
-			$output .= '</a>';
-		}
-
 		if ( isset( $settings['bgText'] ) ) {
 			$output .= '<div class="mab-multi-heading-bg-text">';
 			$output .= esc_attr( $settings['bgText'] );
 			$output .= '</div>';
+		}
+
+		if ( isset( $settings['separator'] ) ) {
+			$output .= '</span>';
+		}
+
+		if ( isset( $settings['link'] ) ) {
+			$output .= '</a>';
+		}
+
+		// Separator
+		if ( $separator === 'right' || $separator === 'both' ) {
+			$output .= '<span class="separator right"></span>';
 		}
 
 		$output .= '</' . esc_html( $this->tag ) . '>';

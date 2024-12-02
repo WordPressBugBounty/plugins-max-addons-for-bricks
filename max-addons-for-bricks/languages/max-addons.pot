@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Max Addons for Bricks 1.4.2\n"
+"Project-Id-Version: Max Addons for Bricks 1.4.3\n"
 "Report-Msgid-Bugs-To: "
-"https://wordpress.org/support/plugin/max-addons-bricks\n"
-"POT-Creation-Date: 2024-09-07 18:16:25+00:00\n"
+"https://wordpress.org/support/plugin/max-addons-for-bricks\n"
+"POT-Creation-Date: 2024-12-02 17:21:38+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -141,6 +141,7 @@ msgstr ""
 #: includes/elements/flip-box.php:1003
 #: includes/elements/fluent-forms-styler.php:42
 #: includes/elements/gravity-forms-styler.php:41
+#: includes/elements/multi-heading.php:334
 msgid "Spacing"
 msgstr ""
 
@@ -180,33 +181,33 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:117
 #: includes/elements/gravity-forms-styler.php:137
 #: includes/elements/icon-list.php:98 includes/elements/image-accordion.php:83
-#: includes/elements/image-accordion.php:217
+#: includes/elements/image-accordion.php:259
 msgid "Title"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:103
 #: includes/elements/fluent-forms-styler.php:153
-#: includes/elements/gravity-forms-styler.php:165
-#: includes/elements/gravity-forms-styler.php:502
-#: includes/elements/image-accordion.php:393
+#: includes/elements/gravity-forms-styler.php:204
+#: includes/elements/gravity-forms-styler.php:541
+#: includes/elements/image-accordion.php:435
 msgid "Title Typography"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:122
 #: includes/elements/fluent-forms-styler.php:235
-#: includes/elements/gravity-forms-styler.php:320
+#: includes/elements/gravity-forms-styler.php:359
 msgid "Labels Typography"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:137
 #: includes/elements/fluent-forms-styler.php:250
-#: includes/elements/gravity-forms-styler.php:335
+#: includes/elements/gravity-forms-styler.php:374
 msgid "Placeholder Typography"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:152
 #: includes/elements/fluent-forms-styler.php:269
-#: includes/elements/gravity-forms-styler.php:350
+#: includes/elements/gravity-forms-styler.php:389
 msgid "Fields Typography"
 msgstr ""
 
@@ -216,12 +217,12 @@ msgstr ""
 #: includes/elements/flip-box.php:330 includes/elements/flip-box.php:972
 #: includes/elements/fluent-forms-styler.php:292
 #: includes/elements/fluent-forms-styler.php:634
-#: includes/elements/gravity-forms-styler.php:365
-#: includes/elements/gravity-forms-styler.php:739
-#: includes/elements/gravity-forms-styler.php:828
-#: includes/elements/image-accordion.php:438
+#: includes/elements/gravity-forms-styler.php:404
+#: includes/elements/gravity-forms-styler.php:778
+#: includes/elements/gravity-forms-styler.php:867
+#: includes/elements/image-accordion.php:480
 #: includes/elements/image-comparison.php:170
-#: includes/elements/multi-heading.php:84
+#: includes/elements/multi-heading.php:91
 msgid "Background"
 msgstr ""
 
@@ -235,18 +236,18 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:649
 #: includes/elements/fluent-forms-styler.php:722
 #: includes/elements/fluent-forms-styler.php:785
-#: includes/elements/gravity-forms-styler.php:380
-#: includes/elements/gravity-forms-styler.php:531
-#: includes/elements/gravity-forms-styler.php:754
-#: includes/elements/gravity-forms-styler.php:843
-#: includes/elements/gravity-forms-styler.php:950
-#: includes/elements/gravity-forms-styler.php:1154
+#: includes/elements/gravity-forms-styler.php:419
+#: includes/elements/gravity-forms-styler.php:570
+#: includes/elements/gravity-forms-styler.php:793
+#: includes/elements/gravity-forms-styler.php:882
+#: includes/elements/gravity-forms-styler.php:989
+#: includes/elements/gravity-forms-styler.php:1193
 #: includes/elements/icon-list.php:252
-#: includes/elements/image-accordion.php:305
-#: includes/elements/image-accordion.php:453
-#: includes/elements/image-accordion.php:616
+#: includes/elements/image-accordion.php:347
+#: includes/elements/image-accordion.php:495
+#: includes/elements/image-accordion.php:658
 #: includes/elements/image-comparison.php:186
-#: includes/elements/multi-heading.php:120
+#: includes/elements/multi-heading.php:127
 msgid "Border"
 msgstr ""
 
@@ -255,25 +256,25 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:664
 #: includes/elements/fluent-forms-styler.php:737
 #: includes/elements/fluent-forms-styler.php:799
-#: includes/elements/gravity-forms-styler.php:394
-#: includes/elements/gravity-forms-styler.php:769
-#: includes/elements/gravity-forms-styler.php:858
-#: includes/elements/gravity-forms-styler.php:965
-#: includes/elements/image-accordion.php:319
-#: includes/elements/image-accordion.php:630
+#: includes/elements/gravity-forms-styler.php:433
+#: includes/elements/gravity-forms-styler.php:808
+#: includes/elements/gravity-forms-styler.php:897
+#: includes/elements/gravity-forms-styler.php:1004
+#: includes/elements/image-accordion.php:361
+#: includes/elements/image-accordion.php:672
 #: includes/elements/image-comparison.php:201
 msgid "Box Shadow"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:254
 #: includes/elements/fluent-forms-styler.php:360
-#: includes/elements/gravity-forms-styler.php:409
+#: includes/elements/gravity-forms-styler.php:448
 msgid "Input Width"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:272
 #: includes/elements/fluent-forms-styler.php:378
-#: includes/elements/gravity-forms-styler.php:423
+#: includes/elements/gravity-forms-styler.php:462
 msgid "Textarea Width"
 msgstr ""
 
@@ -283,15 +284,15 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:407
 #: includes/elements/fluent-forms-styler.php:679
 #: includes/elements/fluent-forms-styler.php:814
-#: includes/elements/gravity-forms-styler.php:451
-#: includes/elements/gravity-forms-styler.php:784
-#: includes/elements/gravity-forms-styler.php:873
-#: includes/elements/gravity-forms-styler.php:1168
+#: includes/elements/gravity-forms-styler.php:490
+#: includes/elements/gravity-forms-styler.php:823
+#: includes/elements/gravity-forms-styler.php:912
+#: includes/elements/gravity-forms-styler.php:1207
 #: includes/elements/icon-list.php:209
-#: includes/elements/image-accordion.php:515
-#: includes/elements/image-accordion.php:678
+#: includes/elements/image-accordion.php:557
+#: includes/elements/image-accordion.php:720
 #: includes/elements/image-comparison.php:228
-#: includes/elements/multi-heading.php:146
+#: includes/elements/multi-heading.php:153
 #: includes/elements/random-image.php:246
 msgid "Padding"
 msgstr ""
@@ -299,25 +300,25 @@ msgstr ""
 #: includes/elements/cf7-styler.php:304 includes/elements/flip-box.php:565
 #: includes/elements/flip-box.php:787
 #: includes/elements/fluent-forms-styler.php:428
-#: includes/elements/gravity-forms-styler.php:464
+#: includes/elements/gravity-forms-styler.php:503
 msgid "Text align"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:331
 #: includes/elements/fluent-forms-styler.php:175
-#: includes/elements/gravity-forms-styler.php:246
+#: includes/elements/gravity-forms-styler.php:285
 msgid "Labels Spacing"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:345
 #: includes/elements/fluent-forms-styler.php:189
-#: includes/elements/gravity-forms-styler.php:260
+#: includes/elements/gravity-forms-styler.php:299
 msgid "Fields Spacing"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:362
 #: includes/elements/fluent-forms-styler.php:473
-#: includes/elements/gravity-forms-styler.php:595
+#: includes/elements/gravity-forms-styler.php:634
 msgid "Custom Styles"
 msgstr ""
 
@@ -326,8 +327,8 @@ msgstr ""
 #: includes/elements/flip-box.php:722 includes/elements/flip-box.php:752
 #: includes/elements/flip-box.php:903
 #: includes/elements/fluent-forms-styler.php:480
-#: includes/elements/gravity-forms-styler.php:602
-#: includes/elements/image-accordion.php:531
+#: includes/elements/gravity-forms-styler.php:641
+#: includes/elements/image-accordion.php:573
 #: includes/elements/random-image.php:454
 msgid "Size"
 msgstr ""
@@ -335,28 +336,28 @@ msgstr ""
 #: includes/elements/cf7-styler.php:398 includes/elements/flip-box.php:515
 #: includes/elements/flip-box.php:737
 #: includes/elements/fluent-forms-styler.php:509
-#: includes/elements/gravity-forms-styler.php:622
-#: includes/elements/icon-list.php:794
+#: includes/elements/gravity-forms-styler.php:661
+#: includes/elements/icon-list.php:794 includes/elements/multi-heading.php:382
 msgid "Color"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:414
 #: includes/elements/fluent-forms-styler.php:549
-#: includes/elements/gravity-forms-styler.php:654
+#: includes/elements/gravity-forms-styler.php:693
 msgid "Checkbox Border"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:430
 #: includes/elements/fluent-forms-styler.php:565
-#: includes/elements/gravity-forms-styler.php:670
+#: includes/elements/gravity-forms-styler.php:709
 msgid "Radio Border"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:450
 #: includes/elements/fluent-forms-styler.php:584
-#: includes/elements/gravity-forms-styler.php:196
-#: includes/elements/gravity-forms-styler.php:689
-#: includes/elements/gravity-forms-styler.php:1187
+#: includes/elements/gravity-forms-styler.php:235
+#: includes/elements/gravity-forms-styler.php:728
+#: includes/elements/gravity-forms-styler.php:1226
 msgid "Alignment"
 msgstr ""
 
@@ -364,8 +365,9 @@ msgstr ""
 #: includes/elements/content-ticker.php:274 includes/elements/flip-box.php:432
 #: includes/elements/flip-box.php:465 includes/elements/flip-box.php:682
 #: includes/elements/fluent-forms-styler.php:587
-#: includes/elements/gravity-forms-styler.php:692
-#: includes/elements/image-accordion.php:492
+#: includes/elements/gravity-forms-styler.php:731
+#: includes/elements/image-accordion.php:534
+#: includes/elements/multi-heading.php:279
 msgid "Left"
 msgstr ""
 
@@ -374,8 +376,8 @@ msgstr ""
 #: includes/elements/flip-box.php:594 includes/elements/flip-box.php:796
 #: includes/elements/flip-box.php:816
 #: includes/elements/fluent-forms-styler.php:588
-#: includes/elements/gravity-forms-styler.php:693
-#: includes/elements/image-accordion.php:493
+#: includes/elements/gravity-forms-styler.php:732
+#: includes/elements/image-accordion.php:535
 msgid "Center"
 msgstr ""
 
@@ -383,8 +385,9 @@ msgstr ""
 #: includes/elements/content-ticker.php:272 includes/elements/flip-box.php:433
 #: includes/elements/flip-box.php:463 includes/elements/flip-box.php:680
 #: includes/elements/fluent-forms-styler.php:589
-#: includes/elements/gravity-forms-styler.php:694
-#: includes/elements/image-accordion.php:494
+#: includes/elements/gravity-forms-styler.php:733
+#: includes/elements/image-accordion.php:536
+#: includes/elements/multi-heading.php:278
 msgid "Right"
 msgstr ""
 
@@ -393,9 +396,10 @@ msgstr ""
 #: includes/elements/content-ticker.php:391
 #: includes/elements/cta-button.php:274
 #: includes/elements/fluent-forms-styler.php:606
-#: includes/elements/gravity-forms-styler.php:711
-#: includes/elements/gravity-forms-styler.php:800
+#: includes/elements/gravity-forms-styler.php:750
+#: includes/elements/gravity-forms-styler.php:839
 #: includes/elements/icon-list.php:497 includes/elements/icon-list.php:597
+#: includes/elements/multi-heading.php:291
 msgid "Width"
 msgstr ""
 
@@ -408,17 +412,17 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:620
 #: includes/elements/fluent-forms-styler.php:702
 #: includes/elements/fluent-forms-styler.php:755
-#: includes/elements/gravity-forms-styler.php:484
-#: includes/elements/gravity-forms-styler.php:725
-#: includes/elements/gravity-forms-styler.php:814
-#: includes/elements/gravity-forms-styler.php:1008
-#: includes/elements/gravity-forms-styler.php:1124
+#: includes/elements/gravity-forms-styler.php:523
+#: includes/elements/gravity-forms-styler.php:764
+#: includes/elements/gravity-forms-styler.php:853
+#: includes/elements/gravity-forms-styler.php:1047
+#: includes/elements/gravity-forms-styler.php:1163
 #: includes/elements/icon-list.php:618 includes/elements/icon-list.php:666
 #: includes/elements/icon-list.php:698 includes/elements/icon-list.php:716
-#: includes/elements/image-accordion.php:570
+#: includes/elements/image-accordion.php:612
 #: includes/elements/image-comparison.php:154
-#: includes/elements/multi-heading.php:70
-#: includes/elements/multi-heading.php:219
+#: includes/elements/multi-heading.php:77
+#: includes/elements/multi-heading.php:226
 msgid "Typography"
 msgstr ""
 
@@ -428,7 +432,7 @@ msgstr ""
 
 #: includes/elements/cf7-styler.php:597
 #: includes/elements/fluent-forms-styler.php:840
-#: includes/elements/gravity-forms-styler.php:1210
+#: includes/elements/gravity-forms-styler.php:1249
 msgid "No contact form selected."
 msgstr ""
 
@@ -560,7 +564,7 @@ msgid "Paragraph (p)"
 msgstr ""
 
 #: includes/elements/content-ticker.php:217
-#: includes/elements/gravity-forms-styler.php:546
+#: includes/elements/gravity-forms-styler.php:585
 #: includes/elements/icon-list.php:196 includes/elements/icon-list.php:637
 #: includes/elements/icon-list.php:685
 #: includes/elements/image-comparison.php:270
@@ -591,12 +595,12 @@ msgstr ""
 
 #: includes/elements/content-ticker.php:271 includes/elements/flip-box.php:462
 #: includes/elements/flip-box.php:468 includes/elements/flip-box.php:679
-#: includes/elements/flip-box.php:685 includes/elements/image-accordion.php:470
+#: includes/elements/flip-box.php:685 includes/elements/image-accordion.php:512
 msgid "Top"
 msgstr ""
 
 #: includes/elements/content-ticker.php:273 includes/elements/flip-box.php:464
-#: includes/elements/flip-box.php:681 includes/elements/image-accordion.php:472
+#: includes/elements/flip-box.php:681 includes/elements/image-accordion.php:514
 msgid "Bottom"
 msgstr ""
 
@@ -606,8 +610,9 @@ msgstr ""
 
 #: includes/elements/content-ticker.php:298 includes/elements/cta-button.php:82
 #: includes/elements/flip-box.php:915 includes/elements/icon-list.php:741
-#: includes/elements/image-accordion.php:542
-#: includes/elements/multi-heading.php:287
+#: includes/elements/image-accordion.php:584
+#: includes/elements/multi-heading.php:350
+#: includes/elements/multi-heading.php:417
 msgid "Style"
 msgstr ""
 
@@ -632,16 +637,16 @@ msgid "Mode"
 msgstr ""
 
 #: includes/elements/content-ticker.php:484
-#: includes/elements/image-accordion.php:233
-#: includes/elements/image-accordion.php:248
+#: includes/elements/image-accordion.php:275
+#: includes/elements/image-accordion.php:290
 #: includes/elements/image-comparison.php:410
 msgid "Horizontal"
 msgstr ""
 
 #: includes/elements/content-ticker.php:485
-#: includes/elements/image-accordion.php:232
-#: includes/elements/image-accordion.php:247
-#: includes/elements/image-accordion.php:250
+#: includes/elements/image-accordion.php:274
+#: includes/elements/image-accordion.php:289
+#: includes/elements/image-accordion.php:292
 #: includes/elements/image-comparison.php:409
 msgid "Vertical"
 msgstr ""
@@ -695,42 +700,33 @@ msgid "Next arrow"
 msgstr ""
 
 #: includes/elements/content-ticker.php:802
-#: includes/elements/cta-button.php:330 includes/elements/flip-box.php:1073
-#: includes/elements/icon-list.php:846
-#: includes/elements/image-comparison.php:476
-#: includes/elements/image-comparison.php:514
+#: includes/elements/cta-button.php:330 includes/elements/icon-list.php:846
 msgid ""
 "Can't render element, as the selected ACF field is not available. Please "
 "activate ACF or edit the element to select different data."
 msgstr ""
 
 #: includes/elements/content-ticker.php:804
-#: includes/elements/cta-button.php:332 includes/elements/flip-box.php:1075
-#: includes/elements/icon-list.php:848
-#: includes/elements/image-comparison.php:478
-#: includes/elements/image-comparison.php:516
+#: includes/elements/cta-button.php:332 includes/elements/icon-list.php:848
 msgid "No featured image set."
 msgstr ""
 
 #: includes/elements/content-ticker.php:806
-#: includes/elements/cta-button.php:334 includes/elements/flip-box.php:1077
-#: includes/elements/icon-list.php:850
-#: includes/elements/image-comparison.php:480
-#: includes/elements/image-comparison.php:518
+#: includes/elements/cta-button.php:334 includes/elements/icon-list.php:850
 msgid "Dynamic Data %1$s (%2$s) is empty."
 msgstr ""
 
 #: includes/elements/content-ticker.php:827
-#: includes/elements/cta-button.php:353 includes/elements/flip-box.php:1098
-#: includes/elements/image-comparison.php:533
+#: includes/elements/cta-button.php:353 includes/elements/flip-box.php:1095
+#: includes/elements/image-comparison.php:498
 #: includes/elements/random-image.php:642
 msgid "No image selected."
 msgstr ""
 
 #: includes/elements/content-ticker.php:835
-#: includes/elements/cta-button.php:361 includes/elements/flip-box.php:1106
-#: includes/elements/image-comparison.php:496
-#: includes/elements/image-comparison.php:541
+#: includes/elements/cta-button.php:361 includes/elements/flip-box.php:1101
+#: includes/elements/image-comparison.php:504
+#. translators: %s: Image ID
 msgid "Image ID (%s) no longer exist. Please select another image."
 msgstr ""
 
@@ -766,27 +762,29 @@ msgid "HTML tag"
 msgstr ""
 
 #: includes/elements/cta-button.php:77 includes/elements/flip-box.php:908
-#: includes/elements/image-accordion.php:536
+#: includes/elements/image-accordion.php:578
 msgid "Medium"
 msgstr ""
 
 #: includes/elements/cta-button.php:88 includes/elements/flip-box.php:921
-#: includes/elements/image-accordion.php:223
 #: includes/elements/image-accordion.php:265
-#: includes/elements/image-accordion.php:273
-#: includes/elements/image-accordion.php:548
-#: includes/elements/multi-heading.php:292
+#: includes/elements/image-accordion.php:307
+#: includes/elements/image-accordion.php:315
+#: includes/elements/image-accordion.php:590
+#: includes/elements/multi-heading.php:281
+#: includes/elements/multi-heading.php:285
+#: includes/elements/multi-heading.php:422
 #: includes/elements/random-image.php:218
 msgid "None"
 msgstr ""
 
 #: includes/elements/cta-button.php:93 includes/elements/flip-box.php:928
-#: includes/elements/image-accordion.php:554
+#: includes/elements/image-accordion.php:596
 msgid "Circle"
 msgstr ""
 
 #: includes/elements/cta-button.php:100 includes/elements/flip-box.php:946
-#: includes/elements/image-accordion.php:562
+#: includes/elements/image-accordion.php:604
 msgid "Outline"
 msgstr ""
 
@@ -795,8 +793,8 @@ msgid "Text Typography"
 msgstr ""
 
 #: includes/elements/cta-button.php:125
-#: includes/elements/gravity-forms-styler.php:181
-#: includes/elements/gravity-forms-styler.php:517
+#: includes/elements/gravity-forms-styler.php:220
+#: includes/elements/gravity-forms-styler.php:556
 msgid "Description Typography"
 msgstr ""
 
@@ -838,9 +836,10 @@ msgid "Gap"
 msgstr ""
 
 #: includes/elements/cta-button.php:259 includes/elements/flip-box.php:382
-#: includes/elements/gravity-forms-styler.php:980
+#: includes/elements/gravity-forms-styler.php:1019
 #: includes/elements/icon-list.php:483 includes/elements/icon-list.php:583
-#: includes/elements/image-accordion.php:166
+#: includes/elements/image-accordion.php:208
+#: includes/elements/multi-heading.php:316
 msgid "Height"
 msgstr ""
 
@@ -870,9 +869,9 @@ msgstr ""
 
 #: includes/elements/flip-box.php:131 includes/elements/flip-box.php:260
 #: includes/elements/multi-heading.php:27
-#: includes/elements/multi-heading.php:58
-#: includes/elements/multi-heading.php:60
-#: includes/elements/multi-heading.php:64
+#: includes/elements/multi-heading.php:65
+#: includes/elements/multi-heading.php:67
+#: includes/elements/multi-heading.php:71
 msgid "Heading"
 msgstr ""
 
@@ -886,7 +885,7 @@ msgid "Division (div)"
 msgstr ""
 
 #: includes/elements/flip-box.php:195 includes/elements/flip-box.php:356
-#: includes/elements/multi-heading.php:101
+#: includes/elements/multi-heading.php:108
 msgid "Gradient Background"
 msgstr ""
 
@@ -906,8 +905,8 @@ msgstr ""
 msgid "Button Text"
 msgstr ""
 
-#: includes/elements/flip-box.php:321 includes/elements/image-accordion.php:135
-#: includes/elements/image-accordion.php:140
+#: includes/elements/flip-box.php:321 includes/elements/image-accordion.php:145
+#: includes/elements/image-accordion.php:150
 msgid "Click Here"
 msgstr ""
 
@@ -983,6 +982,12 @@ msgstr ""
 msgid "Button typography"
 msgstr ""
 
+#: includes/elements/flip-box.php:1088
+#: includes/elements/image-comparison.php:491
+#: includes/elements/random-image.php:635
+msgid "Dynamic data is empty."
+msgstr ""
+
 #: includes/elements/fluent-forms-styler.php:47
 msgid "Help Message"
 msgstr ""
@@ -1005,17 +1010,17 @@ msgid "Help Message Top Spacing"
 msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:217
-#: includes/elements/gravity-forms-styler.php:302
+#: includes/elements/gravity-forms-styler.php:341
 msgid "Button Top Spacing"
 msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:393
-#: includes/elements/gravity-forms-styler.php:437
+#: includes/elements/gravity-forms-styler.php:476
 msgid "Textarea Height"
 msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:529
-#: includes/elements/gravity-forms-styler.php:638
+#: includes/elements/gravity-forms-styler.php:677
 msgid "Checked Color"
 msgstr ""
 
@@ -1028,8 +1033,8 @@ msgid "Error Field"
 msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:769
-#: includes/elements/gravity-forms-styler.php:1138
-#: includes/elements/image-accordion.php:601
+#: includes/elements/gravity-forms-styler.php:1177
+#: includes/elements/image-accordion.php:643
 msgid "Background Color"
 msgstr ""
 
@@ -1073,80 +1078,100 @@ msgstr ""
 msgid "Use ajax to submit the form"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:216
-#: includes/elements/image-accordion.php:408
+#: includes/elements/gravity-forms-styler.php:162
+#: includes/elements/gravity-forms-styler.php:179
+#: includes/elements/gravity-forms-styler.php:180
+msgid "Field Values"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:170
+msgid ""
+"Dynamically populate contact form with field values. Read more about field "
+"values %1$shere%2$s."
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:185
+msgid "Parameter name"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:190
+msgid "Field value"
+msgstr ""
+
+#: includes/elements/gravity-forms-styler.php:255
+#: includes/elements/image-accordion.php:450
 msgid "Title Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:231
+#: includes/elements/gravity-forms-styler.php:270
 msgid "Description Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:274
+#: includes/elements/gravity-forms-styler.php:313
 msgid "Field Description Top Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:288
+#: includes/elements/gravity-forms-styler.php:327
 msgid "Pagination Top Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:562
+#: includes/elements/gravity-forms-styler.php:601
 msgid "Price Label Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:577
+#: includes/elements/gravity-forms-styler.php:616
 msgid "Price Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:890
+#: includes/elements/gravity-forms-styler.php:929
 msgid "Label Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:905
+#: includes/elements/gravity-forms-styler.php:944
 msgid "Percentage Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:920
+#: includes/elements/gravity-forms-styler.php:959
 msgid "Bar Background Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:935
+#: includes/elements/gravity-forms-styler.php:974
 msgid "Percentage Background Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1002
+#: includes/elements/gravity-forms-styler.php:1041
 msgid "Error Messages"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1023
+#: includes/elements/gravity-forms-styler.php:1062
 msgid "Validation Errors"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1029
+#: includes/elements/gravity-forms-styler.php:1068
 msgid "Error Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1043
+#: includes/elements/gravity-forms-styler.php:1082
 msgid "Error Border Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1062
+#: includes/elements/gravity-forms-styler.php:1101
 msgid "Error Field Background Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1077
+#: includes/elements/gravity-forms-styler.php:1116
 msgid "Error Field Label Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1092
+#: includes/elements/gravity-forms-styler.php:1131
 msgid "Error Field Input Border Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1107
+#: includes/elements/gravity-forms-styler.php:1146
 msgid "Error Field Input Border Width"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1206
+#: includes/elements/gravity-forms-styler.php:1245
 msgid "Gravity forms is not installed or activated."
 msgstr ""
 
@@ -1166,7 +1191,8 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: includes/elements/icon-list.php:63
+#: includes/elements/icon-list.php:63 includes/elements/multi-heading.php:37
+#: includes/elements/multi-heading.php:275
 msgid "Separator"
 msgstr ""
 
@@ -1235,7 +1261,7 @@ msgid "Content text color"
 msgstr ""
 
 #: includes/elements/icon-list.php:431
-#: includes/elements/image-accordion.php:467
+#: includes/elements/image-accordion.php:509
 msgid "Vertical Align"
 msgstr ""
 
@@ -1276,7 +1302,7 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: includes/elements/icon-list.php:650 includes/elements/multi-heading.php:169
+#: includes/elements/icon-list.php:650 includes/elements/multi-heading.php:176
 msgid "Tag"
 msgstr ""
 
@@ -1293,7 +1319,7 @@ msgid "Accordion"
 msgstr ""
 
 #: includes/elements/image-accordion.php:78
-#: includes/elements/image-accordion.php:216
+#: includes/elements/image-accordion.php:258
 msgid "Item Label"
 msgstr ""
 
@@ -1309,117 +1335,137 @@ msgstr ""
 msgid "Icon Position"
 msgstr ""
 
-#: includes/elements/image-accordion.php:133
+#: includes/elements/image-accordion.php:131
+msgid "Overlay"
+msgstr ""
+
+#: includes/elements/image-accordion.php:143
 msgid "Accordion title 1"
 msgstr ""
 
-#: includes/elements/image-accordion.php:134
-#: includes/elements/image-accordion.php:139
+#: includes/elements/image-accordion.php:144
+#: includes/elements/image-accordion.php:149
 msgid "Accordion content goes here .."
 msgstr ""
 
-#: includes/elements/image-accordion.php:138
+#: includes/elements/image-accordion.php:148
 msgid "Accordion title 2"
 msgstr ""
 
-#: includes/elements/image-accordion.php:153
+#: includes/elements/image-accordion.php:163
 msgid "Default Active Item"
 msgstr ""
 
-#: includes/elements/image-accordion.php:154
+#: includes/elements/image-accordion.php:164
 msgid "Add item index to make an item active by default"
 msgstr ""
 
-#: includes/elements/image-accordion.php:180
-msgid "Accordion Action"
+#: includes/elements/image-accordion.php:176
+msgid "Disable Default Active Item on Stack"
 msgstr ""
 
-#: includes/elements/image-accordion.php:183
-msgid "On Hover"
+#: includes/elements/image-accordion.php:177
+msgid "Turn on this option to disable default active item when items are stacked"
 msgstr ""
 
-#: includes/elements/image-accordion.php:184
-msgid "On Click"
-msgstr ""
-
-#: includes/elements/image-accordion.php:195
-msgid "On Mouse Out"
+#: includes/elements/image-accordion.php:190
+msgid "Words limit"
 msgstr ""
 
 #: includes/elements/image-accordion.php:198
+msgid "Read more"
+msgstr ""
+
+#: includes/elements/image-accordion.php:222
+msgid "Accordion Action"
+msgstr ""
+
+#: includes/elements/image-accordion.php:225
+msgid "On Hover"
+msgstr ""
+
+#: includes/elements/image-accordion.php:226
+msgid "On Click"
+msgstr ""
+
+#: includes/elements/image-accordion.php:237
+msgid "On Mouse Out"
+msgstr ""
+
+#: includes/elements/image-accordion.php:240
 msgid "Close all"
 msgstr ""
 
-#: includes/elements/image-accordion.php:199
+#: includes/elements/image-accordion.php:241
 msgid "Open last active"
 msgstr ""
 
-#: includes/elements/image-accordion.php:200
+#: includes/elements/image-accordion.php:242
 msgid "Open default active"
 msgstr ""
 
-#: includes/elements/image-accordion.php:201
+#: includes/elements/image-accordion.php:243
 msgid "Open first item"
 msgstr ""
 
-#: includes/elements/image-accordion.php:213
+#: includes/elements/image-accordion.php:255
 msgid "Item Label Type"
 msgstr ""
 
-#: includes/elements/image-accordion.php:229
+#: includes/elements/image-accordion.php:271
 #: includes/elements/image-comparison.php:406
 msgid "Orientation"
 msgstr ""
 
-#: includes/elements/image-accordion.php:244
+#: includes/elements/image-accordion.php:286
 msgid "Label Direction"
 msgstr ""
 
-#: includes/elements/image-accordion.php:270
+#: includes/elements/image-accordion.php:312
 msgid "Stack On"
 msgstr ""
 
-#: includes/elements/image-accordion.php:286
+#: includes/elements/image-accordion.php:328
 msgid "Spacing between Items"
 msgstr ""
 
-#: includes/elements/image-accordion.php:334
+#: includes/elements/image-accordion.php:376
 msgid "Overlay Color"
 msgstr ""
 
-#: includes/elements/image-accordion.php:355
+#: includes/elements/image-accordion.php:397
 msgid "Item Label Typography"
 msgstr ""
 
-#: includes/elements/image-accordion.php:371
+#: includes/elements/image-accordion.php:413
 msgid "Title HTML Tag"
 msgstr ""
 
-#: includes/elements/image-accordion.php:422
+#: includes/elements/image-accordion.php:464
 msgid "Content Typography"
 msgstr ""
 
-#: includes/elements/image-accordion.php:471
+#: includes/elements/image-accordion.php:513
 msgid "Middle"
 msgstr ""
 
-#: includes/elements/image-accordion.php:489
+#: includes/elements/image-accordion.php:531
 msgid "Horizontal Align"
 msgstr ""
 
-#: includes/elements/image-accordion.php:585
+#: includes/elements/image-accordion.php:627
 msgid "Button Spacing"
 msgstr ""
 
-#: includes/elements/image-accordion.php:645 includes/elements/rating.php:112
+#: includes/elements/image-accordion.php:687 includes/elements/rating.php:112
 msgid "Icon Size"
 msgstr ""
 
-#: includes/elements/image-accordion.php:659 includes/elements/rating.php:125
+#: includes/elements/image-accordion.php:701 includes/elements/rating.php:125
 msgid "Icon Spacing"
 msgstr ""
 
-#: includes/elements/image-accordion.php:899
+#: includes/elements/image-accordion.php:960
 msgid "No accordion items added."
 msgstr ""
 
@@ -1497,72 +1543,76 @@ msgstr ""
 msgid "Mouse Move"
 msgstr ""
 
-#: includes/elements/image-comparison.php:489
-msgid "\"%1$s Image\" is not selected."
-msgstr ""
-
 #: includes/elements/multi-heading.php:32
-#: includes/elements/multi-heading.php:211
+#: includes/elements/multi-heading.php:218
 msgid "Background Text"
 msgstr ""
 
-#: includes/elements/multi-heading.php:37
+#: includes/elements/multi-heading.php:43
 msgid "Heading Style"
 msgstr ""
 
-#: includes/elements/multi-heading.php:133
+#: includes/elements/multi-heading.php:140
 msgid "Box shadow"
 msgstr ""
 
-#: includes/elements/multi-heading.php:158
+#: includes/elements/multi-heading.php:165
 msgid "Heading Text #1"
 msgstr ""
 
-#: includes/elements/multi-heading.php:161
+#: includes/elements/multi-heading.php:168
 msgid "Heading Text #2"
 msgstr ""
 
-#: includes/elements/multi-heading.php:179
+#: includes/elements/multi-heading.php:186
 #: includes/elements/random-image.php:53 includes/elements/random-image.php:139
 #: includes/elements/random-image.php:406
 #: includes/elements/random-image.php:462
 msgid "Custom"
 msgstr ""
 
-#: includes/elements/multi-heading.php:189
+#: includes/elements/multi-heading.php:196
 #: includes/elements/random-image.php:61
 msgid "Custom tag"
 msgstr ""
 
-#: includes/elements/multi-heading.php:199
+#: includes/elements/multi-heading.php:206
 msgid "Link to"
 msgstr ""
 
-#: includes/elements/multi-heading.php:235
+#: includes/elements/multi-heading.php:242
 msgid "Horizontal Position"
 msgstr ""
 
-#: includes/elements/multi-heading.php:250
+#: includes/elements/multi-heading.php:257
 msgid "Vertical Position"
 msgstr ""
 
-#: includes/elements/multi-heading.php:269
+#: includes/elements/multi-heading.php:280
+msgid "Both"
+msgstr ""
+
+#: includes/elements/multi-heading.php:365
+msgid "Align"
+msgstr ""
+
+#: includes/elements/multi-heading.php:399
 msgid "Gap between headings"
 msgstr ""
 
-#: includes/elements/multi-heading.php:298
+#: includes/elements/multi-heading.php:428
 msgid "Display"
 msgstr ""
 
-#: includes/elements/multi-heading.php:302
+#: includes/elements/multi-heading.php:432
 msgid "Inline"
 msgstr ""
 
-#: includes/elements/multi-heading.php:303
+#: includes/elements/multi-heading.php:433
 msgid "Stack"
 msgstr ""
 
-#: includes/elements/multi-heading.php:320
+#: includes/elements/multi-heading.php:450
 msgid "No heading added."
 msgstr ""
 
@@ -1780,11 +1830,7 @@ msgstr ""
 msgid "Space"
 msgstr ""
 
-#: includes/elements/random-image.php:635
-msgid "Dynamic data is empty."
-msgstr ""
-
-#: includes/elements/rating.php:40
+#: includes/elements/rating.php:39
 msgid "Rating Scale"
 msgstr ""
 
@@ -1796,7 +1842,7 @@ msgstr ""
 msgid "Unmarked Icon color"
 msgstr ""
 
-#: includes/elements/rating.php:216
+#: includes/elements/rating.php:230
 msgid "Rated %1$s out of %2$s"
 msgstr ""
 

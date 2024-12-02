@@ -154,6 +154,45 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'description' => esc_html__( 'Use ajax to submit the form', 'max-addons' ),
 			'type'        => 'checkbox',
 		];
+
+		$this->controls['fieldValuesSep'] = [
+			'tab'      => 'content',
+			'group'    => 'form',
+			'type'     => 'separator',
+			'label'    => esc_html__( 'Field Values', 'max-addons' ),
+		];
+
+		$this->controls['fieldValuesInfo'] = [
+			'tab'     => 'content',
+			'group'   => 'form',
+			'type'    => 'info',
+			'content' => sprintf(
+				esc_html__( 'Dynamically populate contact form with field values. Read more about field values %1$shere%2$s.', 'max-addons' ),
+				'<a href="https://www.gravityforms.com/blog/dynamic-population-tutorial/" target="_blank">',
+				'</a>',
+			),
+		];
+
+		$this->controls['fieldValues'] = [
+			'tab'           => 'content',
+			'group'         => 'form',
+			'label'         => esc_html__( 'Field Values', 'max-addons' ),
+			'placeholder'   => esc_html__( 'Field Values', 'max-addons' ),
+			'type'          => 'repeater',
+			'titleProperty' => 'parameterName',
+			'fields'        => [
+				'parameterName'         => [
+					'label'          => esc_html__( 'Parameter name', 'max-addons' ),
+					'type'           => 'text',
+					'hasDynamicData' => 'text',
+				],
+				'fieldValue'         => [
+					'label'          => esc_html__( 'Field value', 'max-addons' ),
+					'type'           => 'text',
+					'hasDynamicData' => 'text',
+				],
+			],
+		];
 	}
 
 	// Set labels controls
@@ -1234,10 +1273,23 @@ class Gravity_Forms_Element extends \Bricks\Element {
 				$form_title       = isset( $settings['formTitle'] );
 				$form_description = isset( $settings['formDescription'] );
 
+				$field_values = [];
+
+				if ( ! empty( $settings['fieldValues'] ) ) {
+					foreach ( $settings['fieldValues'] as $field_value ) {
+						$name  = isset( $field_value['parameterName'] ) ? $field_value['parameterName'] : '';
+						$value = isset( $field_value['fieldValue'] ) ? $field_value['fieldValue'] : '';
+
+						if ( $name ) {
+							$field_values[ $name ] = $value;
+						}
+					}
+				}
+
 				$form_id   = $settings['selectForm'];
 				$form_ajax = isset( $settings['form_ajax'] );
 
-				gravity_form( $form_id, $form_title, $form_description, $display_inactive = false, $field_values = null, $form_ajax, '', $echo = true );
+				gravity_form( $form_id, $form_title, $form_description, $display_inactive = false, $field_values, $form_ajax, '', $echo = true );
 				?>
 			</div>
 		</div>

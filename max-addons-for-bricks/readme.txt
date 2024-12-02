@@ -122,6 +122,17 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 == Changelog ==
 
+= 1.4.3 - December 2, 2024 =
+* 	Enhancement: Multi Heading - Added Separator option
+* 	Enhancement: Image Accordion - Added option to limit the words
+* 	Enhancement: Gravity Forms - Added option to add field values to the form
+* 	Enhancement: Image Accordion - Added option to disable default active item when items are stacked
+* 	Enhancement: Image Accordion - Added overlay color option for repeater items
+* 	Fixed: Image Comparison - Dynamic data was not working with ACF flexible content
+* 	Fixed: Multi Heading - Background text was not showing
+* 	Fixed: Rating - Issue with dynamic tags
+* 	Fixed: Flip Box - Size option for SVG icon
+
 = 1.4.2 - September 8, 2024 =
 * 	Enhancement: Random Image - Added options to apply image mask
 * 	Enhancement: Random Image - Added Caption support for Bricks lightbox

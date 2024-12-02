@@ -432,130 +432,98 @@ class Image_Comparison_Element extends \Bricks\Element {
 	}
 
 	public function get_normalized_image_settings( $settings, $image_type ) {
-		if ( ! isset( $settings[ $image_type ] ) ) {
-			$settings[ $image_type ] = [
-				'id'  => 0,
-				'url' => '',
+		if ( empty( $settings[ $image_type ] ) ) {
+			return [
+				'id'   => 0,
+				'url'  => false,
+				'size' => BRICKS_DEFAULT_IMAGE_SIZE,
 			];
-			return $settings;
 		}
 
 		$image = $settings[ $image_type ];
 
-		if ( isset( $image['useDynamicData']['name'] ) ) {
-			$images = $this->render_dynamic_data_tag( $image['useDynamicData']['name'], $image_type, [ 'size' => $image['size'] ] );
-			$image['id'] = empty( $images ) ? 0 : $images[0];
-		} else {
-			$image['id'] = isset( $image['id'] ) ? $image['id'] : 0;
+		// Size
+		$image['size'] = empty( $image['size'] ) ? BRICKS_DEFAULT_IMAGE_SIZE : $settings[ $image_type ]['size'];
+
+		// Image ID or URL from dynamic data
+		if ( ! empty( $image['useDynamicData'] ) ) {
+			$images = $this->render_dynamic_data_tag( $image['useDynamicData'], $image_type, [ 'size' => $image['size'] ] );
+
+			if ( ! empty( $images[0] ) ) {
+				if ( is_numeric( $images[0] ) ) {
+					$image['id'] = $images[0];
+				} else {
+					$image['url'] = $images[0];
+				}
+			}
+
+			// No dynamic data image found (@since 1.6)
+			else {
+				return;
+			}
 		}
 
-		// Image Size
-		$image['size'] = isset( $image['size'] ) ? $settings[ $image_type ]['size'] : BRICKS_DEFAULT_IMAGE_SIZE;
+		$image['id'] = empty( $image['id'] ) ? 0 : $image['id'];
 
-		// Image URL
+		// If External URL, $image['url'] is already set
 		if ( ! isset( $image['url'] ) ) {
-			$image['url'] = wp_get_attachment_image_url( $image['id'], $image['size'] );
+			$image['url'] = ! empty( $image['id'] ) ? wp_get_attachment_image_url( $image['id'], $image['size'] ) : false;
+		} else {
+			// Parse dynamic data in the external URL
+			$image['url'] = $this->render_dynamic_data( $image['url'] );
 		}
 
-		$settings[ $image_type ] = $image;
-
-		return $settings;
+		return $image;
 	}
 
 	// Print no image message in editor
 	public function no_image_message( $image_type ) {
-		$settings = $this->settings;
-		$settings = $this->get_normalized_image_settings( $settings, $image_type );
-		$no_image_message = '';
+		$settings   = $this->settings;
+		$image      = $this->get_normalized_image_settings( $settings, $image_type );
+		$image_id   = isset( $image['id'] ) ? $image['id'] : '';
+		$image_url  = isset( $image['url'] ) ? $image['url'] : '';
+		$image_size = isset( $image['size'] ) ? $image['size'] : '';
 
-		if ( isset( $settings[ $image_type ]['useDynamicData']['name'] ) ) {
-
-			if ( empty( $settings[ $image_type ]['id'] ) ) {
-
-				if ( 'ACF' === $settings[ $image_type ]['useDynamicData']['group'] && ! class_exists( 'ACF' ) ) {
-					$message = esc_html__( 'Can\'t render element, as the selected ACF field is not available. Please activate ACF or edit the element to select different data.', 'max-addons' );
-				} elseif ( '{featured_image}' == $settings[ $image_type ]['useDynamicData']['name'] ) {
-					$message = esc_html__( 'No featured image set.', 'max-addons' );
-				} else {
-					$message = esc_html__( 'Dynamic Data %1$s (%2$s) is empty.', 'max-addons' );
-				}
-
-				return $no_image_message = sprintf( $message, '"' . $settings[ $image_type ]['useDynamicData']['label'] . '"', $settings[ $image_type ]['useDynamicData']['group'] );
-			}
-		} else {
-			// No image
-			if ( empty( $settings[ $image_type ]['id'] ) ) {
-				$no_image_type = ucfirst( str_replace('Image','',$image_type) );
-				$message = esc_html__( '"%1$s Image" is not selected.', 'max-addons' );
-
-				return $no_image_message = sprintf( $message, $no_image_type );
-			}
-
-			// Return if image ID does not exist
-			if ( ! wp_get_attachment_image_src( $settings[ $image_type ]['id'] ) ) {
-				return $no_image_message = sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $settings[ $image_type ]['id'] );
-			}
+		// STEP: Dynamic data image not found: Show placeholder text
+		if ( ! empty( $settings[ $image_type ]['useDynamicData'] ) && ! $image ) {
+			return $this->render_element_placeholder(
+				[
+					'title' => esc_html__( 'Dynamic data is empty.', 'max-addons' )
+				]
+			);
 		}
 
-		return $no_image_message;
+		// Check: No image selected: No image ID provided && not a placeholder URL
+		if ( ! isset( $image['external'] ) && ! $image_id && ! $image_url ) {
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No image selected.', 'max-addons' ) ] );
+		}
+
+		// Check: Image with ID doesn't exist
+		if ( ! isset( $image['external'] ) && ! $image_url ) {
+			// translators: %s: Image ID
+			return $this->render_element_placeholder( [ 'title' => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $image_id ) ] );
+		}
 	}
 
 	// Render element HTML
 	public function render_image( $image_type ) {
-		$settings = $this->settings;
-		$settings = $this->get_normalized_image_settings( $settings, $image_type );
+		$settings   = $this->settings;
+		$image      = $this->get_normalized_image_settings( $settings, $image_type );
+		$image_id   = isset( $image['id'] ) ? $image['id'] : '';
+		$image_url  = isset( $image['url'] ) ? $image['url'] : '';
+		$image_size = isset( $image['size'] ) ? $image['size'] : '';
 
-		// Dynamic Data is empty
-		if ( isset( $settings[ $image_type ]['useDynamicData']['name'] ) ) {
+		$image_attributes = [];
+		$img_classes      = [ 'css-filter' ];
+		$img_classes[]    = 'attachment-' . $image_size;
+		$img_classes[]    = 'size-' . $image_size;
 
-			if ( empty( $settings[ $image_type ]['id'] ) ) {
+		$image_attributes['class'] = join( ' ', $img_classes );
 
-				if ( 'ACF' === $settings[ $image_type ]['useDynamicData']['group'] && ! class_exists( 'ACF' ) ) {
-					$message = esc_html__( 'Can\'t render element, as the selected ACF field is not available. Please activate ACF or edit the element to select different data.', 'max-addons' );
-				} elseif ( '{featured_image}' == $settings[ $image_type ]['useDynamicData']['name'] ) {
-					$message = esc_html__( 'No featured image set.', 'max-addons' );
-				} else {
-					$message = esc_html__( 'Dynamic Data %1$s (%2$s) is empty.', 'max-addons' );
-				}
-
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => sprintf( $message, '"' . $settings[ $image_type ]['useDynamicData']['label'] . '"', $settings[ $image_type ]['useDynamicData']['group'] ),
-				] );
-			}
-		} else {
-			// Image id is empty or doesn't exist
-
-			// No image
-			if ( empty( $settings[ $image_type ]['id'] ) ) {
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => esc_html__( 'No image selected.', 'max-addons' ),
-				] );
-			}
-
-			// Return if image ID does not exist
-			if ( ! wp_get_attachment_image_src( $settings[ $image_type ]['id'] ) ) {
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $settings[ $image_type ]['id'] ),
-				] );
-			}
-		}
-
-		$image_atts = [];
-		$image_atts['id'] = 'image-' . $settings[ $image_type ]['id'];
-
-		$image_wrapper_classes = [ 'image-wrapper' ];
-		$img_classes = [ 'post-thumbnail', 'css-filter' ];
-
-		$img_classes[] = 'size-' . $settings[ $image_type ]['size'];
-		$image_atts['class'] = join( ' ', $img_classes );
-
-		if ( isset( $settings[ $image_type ]['id'] ) ) {
-			echo wp_get_attachment_image( $settings[ $image_type ]['id'], $settings[ $image_type ]['size'], false, $image_atts );
-		} elseif ( ! empty( $settings[ $image_type ]['url'] ) ) {
-			echo '<img src="' . esc_url( $settings[ $image_type ]['url'] ) . '">';
+		if ( isset( $image_id ) ) {
+			echo wp_get_attachment_image( $image_id, $image_size, false, $image_attributes );
+		} elseif ( ! empty( $image_url ) ) {
+			echo '<img src="' . esc_url( $image_url ) . '">';
 		}
 	}
 

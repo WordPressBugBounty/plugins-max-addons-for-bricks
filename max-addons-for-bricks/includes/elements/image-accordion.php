@@ -127,6 +127,16 @@ class Image_Accordion_Element extends \Bricks\Element {
 					'default'     => 'after',
 					'required'    => [ 'showButton', '!=', '' ],
 				],
+				'overlay'            => [
+					'label' => esc_html__( 'Overlay', 'max-addons' ),
+					'type'  => 'color',
+					'css'   => [
+						[
+							'property' => 'background-color',
+							'selector' => '.mab-image-accordion-overlay',
+						],
+					],
+				],
 			],
 			'default'     => [
 				[
@@ -158,6 +168,38 @@ class Image_Accordion_Element extends \Bricks\Element {
 			'step'        => 1,
 			'inline'      => true,
 			'default'     => 1,
+		];
+
+		$this->controls['disableActiveTab'] = [
+			'tab'         => 'content',
+			'group'       => 'settings',
+			'label'       => esc_html__( 'Disable Default Active Item on Stack', 'max-addons' ),
+			'description' => __( 'Turn on this option to disable default active item when items are stacked', 'max-addons' ),
+			'type'        => 'checkbox',
+			'reset'       => true,
+			'required'    => [
+				[ 'activeTab', '>=', 1 ],
+				[ 'orientation', '=', [ 'vertical' ] ],
+				[ 'stackOn', '!=', [ '', 'none' ] ],
+			],
+		];
+
+		$this->controls['wordsLimit'] = [
+			'tab'   => 'content',
+			'group' => 'settings',
+			'label' => esc_html__( 'Words limit', 'max-addons' ),
+			'type'  => 'number',
+			'min'   => 1,
+		];
+
+		$this->controls['readMore'] = [
+			'tab'            => 'content',
+			'group'          => 'settings',
+			'label'          => esc_html__( 'Read more', 'max-addons' ),
+			'type'           => 'text',
+			'inline'         => true,
+			'hasDynamicData' => false,
+			'required'       => [ 'wordsLimit', '!=', '' ],
 		];
 
 		$this->controls['accordionHeight'] = [
@@ -219,7 +261,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 			'inline'      => true,
 			'clearable'   => true,
 			'pasteStyles' => false,
-			'default'     => '',
+			'default'     => 'item-label',
 			'placeholder' => esc_html__( 'None', 'max-addons' ),
 		];
 
@@ -743,24 +785,31 @@ class Image_Accordion_Element extends \Bricks\Element {
 			$this->set_attribute( 'accordion-item-' . $index, 'style', 'background-image: url(' . esc_url( $image['url'] ) . ');' );
 		}
 
+		$item_styles = [];
+
+		// Accordion item overlay color
+		if ( ! empty( $item['overlay'] ) ) {
+			$item_styles[] = 'background-color: ' . \Bricks\Assets::generate_css_color( $item['overlay'] );
+		}
+
+		$this->set_attribute( 'accordion-overlay-' . $index, 'class', [ 'mab-image-accordion-overlay', 'mab-media-content' ] );
+		$this->set_attribute( 'accordion-overlay-' . $index, 'style', join( '; ', $item_styles ) );
+
 		$this->set_attribute( 'accordion-content-' . $index, 'class', 'mab-image-accordion-content' );
 
 		if ( isset( $item['showButton'] ) ) {
-			$button_size = isset( $settings['size'] ) ? $settings['size'] : 'md';
-			$icon_html = '';
-
-			$button_classes[] = 'mab-image-accordion-button';
-			$button_classes[] = 'bricks-button';
-			$button_classes[] = $button_size;
+			$button_size    = isset( $settings['size'] ) ? esc_attr( $settings['size'] ) : 'md';
+			$icon_html      = '';
+			$button_classes = [ 'mab-image-accordion-button', 'bricks-button', $button_size ];
 
 			if ( isset( $settings['buttonStyle'] ) ) {
 				// Outline
 				if ( isset( $settings['buttonOutline'] ) ) {
 					$button_classes[] = 'outline';
-					$button_classes[] = 'bricks-color-' . $settings['buttonStyle'];
+					$button_classes[] = 'bricks-color-' . esc_attr( $settings['buttonStyle'] );
 				} else {
 					// Fill (default)
-					$button_classes[] = 'bricks-background-' . $settings['buttonStyle'];
+					$button_classes[] = 'bricks-background-' . esc_attr( $settings['buttonStyle'] );
 				}
 			}
 
@@ -776,12 +825,12 @@ class Image_Accordion_Element extends \Bricks\Element {
 			}
 
 			if ( isset( $item['buttonIcon'] ) ) {
-				$icon_html = isset( $item['buttonIcon'] ) ? self::render_icon( $item['buttonIcon'] ) : false;
+				$icon_html = isset( $item['buttonIcon'] ) ? self::render_icon( $item['buttonIcon'] ) : '';
 			}
 		}
 
 		if ( isset( $settings['activeTab'] ) ) {
-			$tab_count = $settings['activeTab'] - 1;
+			$tab_count = absint( $settings['activeTab'] ) - 1;
 
 			if ( $index === $tab_count ) {
 				$this->set_attribute( 'accordion-item-' . $index, 'class', 'mab-image-accordion-active' );
@@ -790,18 +839,18 @@ class Image_Accordion_Element extends \Bricks\Element {
 		}
 
 		$output .= '<div ' . wp_kses_post( $this->render_attributes( 'accordion-item-' . $index ) ) . '>';
-		$output .= '<div class="mab-image-accordion-overlay mab-media-content">';
-		if ( ! empty( $settings['itemLabelType'] ) ) {
-			if ( ! empty( $item['itemLabel'] ) || ! empty( $item['title'] ) ) {
-				$output .= '<div class="mab-image-accordion-item-label">';
-				if ( 'item-label' == $settings['itemLabelType'] && ! empty( $item['itemLabel'] ) ) {
-					$output .= wp_kses_post( $item['itemLabel'] );
-				} else {
-					$output .= wp_kses_post( $item['title'] );
-				}
-				$output .= '</div>';
+		$output .= '<div ' . wp_kses_post( $this->render_attributes( 'accordion-overlay-' . $index ) ) . '>';
+	
+		if ( ! empty( $settings['itemLabelType'] ) && ( ! empty( $item['itemLabel'] ) || ! empty( $item['title'] ) ) ) {
+			$output .= '<div class="mab-image-accordion-item-label">';
+			if ( 'item-label' === $settings['itemLabelType'] && ! empty( $item['itemLabel'] ) ) {
+				$output .= wp_kses_post( $item['itemLabel'] );
+			} else {
+				$output .= wp_kses_post( $item['title'] );
 			}
+			$output .= '</div>';
 		}
+
 		$output .= '<div ' . wp_kses_post( $this->render_attributes( 'accordion-content-' . $index ) ) . '>';
 
 			if ( ! empty( $item['title'] ) ) {
@@ -811,19 +860,27 @@ class Image_Accordion_Element extends \Bricks\Element {
 			}
 
 			if ( isset( $item['content'] ) ) {
+				$content = $item['content'];
+
+				// Enforce words limit (@since 1.4.3)
+				if ( ! empty( $settings['wordsLimit'] ) && is_numeric( $settings['wordsLimit'] ) ) {
+					$more    = $settings['readMore'] ?? '';
+					$content = \Bricks\Helpers::trim_words( $content, $settings['wordsLimit'], $more, true, false );
+				}
+
 				$output .= '<div class="mab-image-accordion-description">';
-				$output .= wp_kses_post( $item['content'] );
+				$output .= wp_kses_post( $content );
 				$output .= '</div>';
 			}
 
 			if ( isset( $item['showButton'] ) ) {
-				$button_icon_position = isset( $item['buttonIconPosition'] ) ? $item['buttonIconPosition'] : 'right';
-				$button_tag = isset( $item['link'] ) ? 'a' : 'span';
+				$button_icon_position = isset( $item['buttonIconPosition'] ) ? esc_attr( $item['buttonIconPosition'] ) : 'right';
+				$button_tag           = isset( $item['link'] ) ? 'a' : 'span';
 
 				$output .= '<div class="mab-image-accordion-button-wrap">';
 				$output .= '<' . esc_html( $button_tag ) . ' ' . $this->render_attributes( 'button-' . $index ) . '>';
 
-				if ( '' !== $icon_html && 'left' === $button_icon_position ) {
+				if ( ! empty( $icon_html ) && 'left' === $button_icon_position ) {
 					$output .= '<span class="mab-button-icon mab-button-icon-left">';
 					$output .= $icon_html;
 					$output .= '</span>';
@@ -831,22 +888,23 @@ class Image_Accordion_Element extends \Bricks\Element {
 
 				if ( ! empty( $item['buttonText'] ) ) {
 					$output .= '<span class="mab-button-text">';
-					$output .= esc_attr( $item['buttonText'] );
+					$output .= esc_html( $item['buttonText'] );
 					$output .= '</span>';
 				}
 
-				if ( '' !== $icon_html && 'right' === $button_icon_position ) {
+				if ( ! empty( $icon_html ) && 'right' === $button_icon_position ) {
 					$output .= '<span class="mab-button-icon mab-button-icon-right">';
 					$output .= $icon_html;
 					$output .= '</span>';
 				}
+
 				$output .= '</' . esc_html( $button_tag ) . '>';
 				$output .= '</div>';
 			}
 
 			$output .= '</div>';
 			$output .= '</div>';
-			$output .= '</div>';
+		$output .= '</div>';
 
 		$this->loop_index++;
 
@@ -857,45 +915,48 @@ class Image_Accordion_Element extends \Bricks\Element {
 	public function render() {
 		$settings = $this->settings;
 
-		$accordion_items  = empty( $settings['accordionItems'] ) ? false : $settings['accordionItems'];
-		$accordion_action = ! empty( $settings['accordionAction'] ) ? $settings['accordionAction'] : 'on-hover';
-		$orientation      = ! empty( $settings['orientation'] ) ? $settings['orientation'] : 'vertical';
-		$label_direction  = ! empty( $settings['itemLabelDirection'] ) ? $settings['itemLabelDirection'] : 'vertical';
+		$accordion_items  = ! empty( $settings['accordionItems'] ) ? $settings['accordionItems'] : false;
+		$accordion_action = ! empty( $settings['accordionAction'] ) ? esc_attr( $settings['accordionAction'] ) : 'on-hover';
+		$orientation      = ! empty( $settings['orientation'] ) ? esc_attr( $settings['orientation'] ) : 'vertical';
+		$label_direction  = ! empty( $settings['itemLabelDirection'] ) ? esc_attr( $settings['itemLabelDirection'] ) : 'vertical';
 
-		$this->set_attribute( '_root', 'class', [
+		$this->set_attribute( '_root', 'class', array(
 			'mab-image-accordion',
-			'mab-image-accordion-' . $settings['orientation']
-		] );
+			'mab-image-accordion-' . esc_attr( $orientation ),
+		) );
 
-		$img_accordion_settings = [
-			'action' => $accordion_action
-		];
+		$img_accordion_settings = array(
+			'action' => esc_attr( $accordion_action ),
+		);
 
 		if ( 'on-hover' === $accordion_action && isset( $settings['onMouseOut'] ) ) {
-			$img_accordion_settings['onmouseout'] = $settings['onMouseOut'];
-			
+			$img_accordion_settings['onmouseout'] = esc_attr( $settings['onMouseOut'] );
+
 			if ( isset( $settings['activeTab'] ) ) {
-				$tab_count = $settings['activeTab'] - 1;
+				$tab_count = absint( $settings['activeTab'] ) - 1;
 				$img_accordion_settings['default'] = $tab_count;
 			}
 		}
 
 		if ( 'vertical' === $orientation ) {
 			if ( $label_direction ) {
-				$this->set_attribute( '_root', 'class', 'mab-image-accordion-label-' . $label_direction );
+				$this->set_attribute( '_root', 'class', 'mab-image-accordion-label-' . esc_attr( $label_direction ) );
 			}
 
-			if ( isset( $settings['stackOn'] ) ) {
-				$breakpoint = \Bricks\Breakpoints::get_breakpoint_by( 'key', $settings['stackOn'] );
+			if ( isset( $settings['stackOn'] ) && 'none' !== $settings['stackOn'] ) {
+				$breakpoint = \Bricks\Breakpoints::get_breakpoint_by( 'key', esc_attr( $settings['stackOn'] ) );
+				$img_accordion_settings['stackOn'] = esc_attr( $breakpoint['width'] );
 
-				$img_accordion_settings['stackOn'] = $breakpoint['width'];
+				if ( isset( $settings['disableActiveTab'] ) ) {
+					$img_accordion_settings['disableActiveTab'] = $settings['disableActiveTab'];
+				}
 			}
 		}
 
 		// Element placeholder
 		if ( empty( $accordion_items ) ) {
 			return $this->render_element_placeholder( [
-				'icon-class' => $this->icon,
+				'icon-class' => esc_attr( $this->icon ),
 				'title'      => esc_html__( 'No accordion items added.', 'max-addons' ),
 			] );
 		}
@@ -917,7 +978,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 
 				$output .= $query->render( [ $this, 'render_repeater_item' ], compact( 'item' ) );
 
-				// We need to destroy the Query to explicitly remove it from the global store
+				// Destroy the Query to explicitly remove it from the global store
 				$query->destroy();
 				unset( $query );
 			} else {

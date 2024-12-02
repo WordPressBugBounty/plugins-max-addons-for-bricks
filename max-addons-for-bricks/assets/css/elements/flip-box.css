@@ -6,6 +6,10 @@
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d; }
+  .mab-flipbox .mab-icon {
+    display: inline-block;
+    font-size: 50px;
+    line-height: 1; }
   .mab-flipbox .bricks-button {
     display: inline-flex; }
 
