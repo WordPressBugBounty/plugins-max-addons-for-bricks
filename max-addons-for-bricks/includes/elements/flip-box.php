@@ -111,7 +111,7 @@ class FlipBox_Element extends \Bricks\Element {
 			],
 			'css' => [
 				[
-					'selector' => '.mab-flipbox-front .icon-svg',
+					'selector' => '.mab-flipbox-front .mab-icon svg',
 				],
 			],
 			'required' => [ 'frontIconType', '=', [ 'icon' ] ],
@@ -240,7 +240,7 @@ class FlipBox_Element extends \Bricks\Element {
 			],
 			'css' => [
 				[
-					'selector' => '.mab-flipbox-back .icon-svg',
+					'selector' => '.mab-flipbox-back .mab-icon svg',
 				],
 			],
 			'required' => [ 'backIconType', '=', [ 'icon' ] ],
@@ -518,7 +518,11 @@ class FlipBox_Element extends \Bricks\Element {
 			'css'      => [
 				[
 					'property' => 'color',
-					'selector' => '.mab-flipbox-front i',
+					'selector' => '.mab-flipbox-front .mab-icon i',
+				],
+				[
+					'property' => 'fill',
+					'selector' => '.mab-flipbox-front .mab-icon svg',
 				],
 			],
 			'required' => [ 'frontIconType', '=', [ 'icon' ] ],
@@ -740,7 +744,11 @@ class FlipBox_Element extends \Bricks\Element {
 			'css'      => [
 				[
 					'property' => 'color',
-					'selector' => '.mab-flipbox-back i',
+					'selector' => '.mab-flipbox-back .mab-icon i',
+				],
+				[
+					'property' => 'fill',
+					'selector' => '.mab-flipbox-back .mab-icon svg',
 				],
 			],
 			'required' => [ 'backIconType', '=', [ 'icon' ] ],

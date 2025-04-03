@@ -1,0 +1,67 @@
+.brxe-max-unfold {
+  position: relative; }
+  .brxe-max-unfold .mab-unfold-content-wrapper {
+    overflow: hidden;
+    transition: all 0.4s ease-in-out; }
+  .brxe-max-unfold .mab-unfold-saparator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+    height: 50px;
+    max-height: 100%;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.4s ease-in-out; }
+    .brxe-max-unfold .mab-unfold-saparator.hide {
+      opacity: 0;
+      visibility: hidden; }
+  .brxe-max-unfold .mab-unfold-buttons-wrapper {
+    display: flex; }
+  .brxe-max-unfold .mab-unfold-button-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    cursor: pointer; }
+    .brxe-max-unfold .mab-unfold-button-inner .mab-unfold-button-closed {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      height: 0; }
+    .brxe-max-unfold .mab-unfold-button-inner.mab-unfolded .mab-unfold-button-open {
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      padding: 0; }
+    .brxe-max-unfold .mab-unfold-button-inner.mab-unfolded .mab-unfold-button-closed {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+      height: auto; }
+  .brxe-max-unfold .mab-unfold-button {
+    min-width: 100%; }
+    .brxe-max-unfold .mab-unfold-button .mab-button-icon {
+      transition: all 0.4s ease-in-out; }
+  .brxe-max-unfold .mab-unfold-button-content {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center; }
+  .brxe-max-unfold .mab-button-icon-after .mab-unfold-button-content {
+    flex-direction: row-reverse; }
+
+.mab-unfold-button span,
+.mab-unfold-button i {
+  display: inline-block;
+  vertical-align: middle; }

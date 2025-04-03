@@ -261,10 +261,66 @@ class MAB_Plugin {
 			true
 		);
 
+		wp_register_script(
+			'lottie-player',
+			MAB_URL . 'assets/lib/lottie/lottie-player.js',
+			'',
+			MAB_VER,
+			true
+		);
+
+		wp_register_script(
+			'lottie-interactivity',
+			MAB_URL . 'assets/lib/lottie/lottie-interactivity.min.js',
+			'',
+			MAB_VER,
+			true
+		);
+
+		wp_register_script(
+			'tippy',
+			MAB_URL . 'assets/lib/tippy/tippy.js',
+			'',
+			MAB_VER,
+			true
+		);
+
+		wp_register_script(
+			'vivus',
+			MAB_URL . 'assets/lib/vivus/vivus.min.js',
+			'',
+			MAB_VER,
+			true
+		);
+
 		// Internal scripts.
+		wp_register_script(
+			'mab-hotspots',
+			$this->get_script_url( 'hotspots' ),
+			[ 'tippy' ],
+			MAB_VER,
+			true
+		);
+	
 		wp_register_script(
 			'mab-image-accordion',
 			$this->get_script_url( 'image-accordion' ),
+			'',
+			MAB_VER,
+			true
+		);
+
+		wp_register_script(
+			'mab-lottie',
+			$this->get_script_url( 'lottie' ),
+			'',
+			MAB_VER,
+			true
+		);
+
+		wp_register_script(
+			'mab-svg-animation',
+			$this->get_script_url( 'svg-animation' ),
 			'',
 			MAB_VER,
 			true
@@ -278,8 +334,20 @@ class MAB_Plugin {
 			true
 		);
 
+		wp_register_script(
+			'mab-unfold',
+			$this->get_script_url( 'unfold' ),
+			'',
+			MAB_VER,
+			true
+		);
+
 		if ( bricks_is_builder_iframe() ) {
 			wp_enqueue_script( 'image-compare' );
+			wp_enqueue_script( 'vivus' );
+			wp_enqueue_script( 'lottie-player' );
+			wp_enqueue_script( 'lottie-interactivity' );
+			wp_enqueue_script( 'mab-lottie' );
 		}
 	}
 

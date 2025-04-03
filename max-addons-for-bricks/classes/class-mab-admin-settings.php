@@ -72,30 +72,39 @@ final class MAB_Admin_Settings {
 	 */
 	public static function get_elements() {
 		$elements = array(
-			'cta-button'       => __( 'CTA Button', 'max-addons' ),
-			'content-ticker'   => __( 'Content Ticker', 'max-addons' ),
-			'flip-box'         => __( 'Flip Box', 'max-addons' ),
-			'icon-list'        => __( 'Icon List', 'max-addons' ),
-			'image-accordion'  => __( 'Image Accordion', 'max-addons' ),
-			'image-comparison' => __( 'Image Comparison', 'max-addons' ),
-			'multi-heading'    => __( 'Multi Heading', 'max-addons' ),
-			'random-image'     => __( 'Random Image', 'max-addons' ),
-			'rating'           => __( 'Rating', 'max-addons' ),
+			'cta-button'       => esc_html__( 'CTA Button', 'max-addons' ),
+			'content-ticker'   => esc_html__( 'Content Ticker', 'max-addons' ),
+			'flip-box'         => esc_html__( 'Flip Box', 'max-addons' ),
+			'hotspots'         => esc_html__( 'Hotspots', 'max-addons' ),
+			'icon-list'        => esc_html__( 'Icon List', 'max-addons' ),
+			'image-accordion'  => esc_html__( 'Image Accordion', 'max-addons' ),
+			'image-comparison' => esc_html__( 'Image Comparison', 'max-addons' ),
+			'lottie'           => esc_html__( 'Lottie', 'max-addons' ),
+			'multi-heading'    => esc_html__( 'Multi Heading', 'max-addons' ),
+			'random-image'     => esc_html__( 'Random Image', 'max-addons' ),
+			'rating'           => esc_html__( 'Rating', 'max-addons' ),
+			'svg-animation'    => esc_html__( 'SVG Animation', 'max-addons' ),
+			'unfold'           => esc_html__( 'Unfold', 'max-addons' ),
 		);
 
 		// Contact Form 7
 		if ( function_exists( 'wpcf7' ) ) {
-			$elements['cf7-styler'] = __( 'Contact Form 7 Styler', 'max-addons' );
+			$elements['cf7-styler'] = esc_html__( 'Contact Form 7 Styler', 'max-addons' );
 		}
 
 		// Gravity Forms
 		if ( class_exists( 'GFForms' ) ) {
-			$elements['gravity-forms-styler'] = __( 'Gravity Forms Styler', 'max-addons' );
+			$elements['gravity-forms-styler'] = esc_html__( 'Gravity Forms Styler', 'max-addons' );
 		}
 
 		// Fluent Forms
 		if ( function_exists( 'wpFluentForm' ) ) {
-			$elements['fluent-forms-styler'] = __( 'Fluent Forms Styler', 'max-addons' );
+			$elements['fluent-forms-styler'] = esc_html__( 'Fluent Forms Styler', 'max-addons' );
+		}
+
+		// Formidable Forms
+		if ( class_exists( 'FrmForm' ) ) {
+			$elements['formidable-forms-styler'] = __( 'Formidable Forms Styler', 'max-addons' );
 		}
 
 		ksort( $elements );

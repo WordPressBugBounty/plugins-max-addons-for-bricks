@@ -122,6 +122,14 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 == Changelog ==
 
+= 1.5.0 - April 3, 2025 =
+* 	New: Element - Hotspots
+* 	New: Element - Lottie
+* 	New: Element - SVG Animation
+* 	New: Element - Unfold
+* 	New: Element - Formidable Forms Styler
+* 	Fixed: Flip Box - Style options for SVG icons
+
 = 1.4.3 - December 2, 2024 =
 * 	Enhancement: Multi Heading - Added Separator option
 * 	Enhancement: Image Accordion - Added option to limit the words
