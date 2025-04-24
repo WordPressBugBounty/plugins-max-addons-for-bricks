@@ -1,6 +1,5 @@
-MabHotspots = function( args ) {
-	this.id       = args.id;
-	this.element  = args.element;
+MabHotspots = function( element ) {
+	this.element  = element;
 	this.hotspots = [];
 
 	this.init();

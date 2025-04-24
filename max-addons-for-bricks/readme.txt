@@ -2,7 +2,7 @@
 Contributors: bloompixel, simrandeep, gurpreetbassi
 Tags: bricks, addons, bricks addon, bricks widgets, elements, bricks builder, addons for bricks builder
 Requires at least: 6.3
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: trunk
 License: GPLv2 or later
@@ -22,7 +22,7 @@ Supercharge Bricks Builder with **Powerful**, **Creative**, and **Fully Customiz
 ## Key Features Of Max Addons
 
 1.  AII-in-One Package of Bricks Elements
-2.  Lightweight and Fast Loading 
+2.  Lightweight and Fast Loading
 3.  Multiple Styling Options
 4.  Mobile Responsive
 5.  Customizable
@@ -31,16 +31,21 @@ Supercharge Bricks Builder with **Powerful**, **Creative**, and **Fully Customiz
 
 1. [**Call To Action Button**](https://wpbricksaddons.com/bricks-elements/cta-button/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create an attractive call-to-action button with a stylish Title and Description. Entice your visitors to take action with an eye-catchy call-to-action block.
 2. [**Flip Box**](https://wpbricksaddons.com/bricks-elements/flip-box/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display content impressively with the Flip Box element. With Flip Box, you create an info box and add dual side content with flip animations.
-3. [**Icon List**](https://wpbricksaddons.com/bricks-elements/icon-list/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a beautiful feature section and highlight features with multiple icon types.
-4. [**Image Accordion**](https://wpbricksaddons.com/bricks-elements/image-accordion/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a gorgeous image showcase and toggle between image panels easily.
-5. [**Image Comparison**](https://wpbricksaddons.com/bricks-elements/image-comparison/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display Before and After versions of images.
-6. [**Multi Heading**](https://wpbricksaddons.com/bricks-elements/multi-heading/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Decor your page headings with multiple styling options available with the Multi Heading element.
-7. [**Contact Form 7 Styler**](https://wpbricksaddons.com/bricks-elements/contact-form-7-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Contact Form 7 fields and create stylish contact forms with the Contact Form 7 Form Styler Element.
-8. [**Gravity Forms Styler**](https://wpbricksaddons.com/bricks-elements/gravity-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Gravity Forms fields and create stylish contact forms with the Gravity Forms Styler Element.
-9. [**Fluent Forms Styler**](https://wpbricksaddons.com/bricks-elements/fluent-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Fluent Forms fields and create stylish contact forms with the Fluent Forms Styler Element.
-10. [**Random Image**](https://wpbricksaddons.com/bricks-elements/random-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show different image on your webpage on each page refresh with Random Image Element.
-11. [**Content Ticker**](https://wpbricksaddons.com/bricks-elements/content-ticker/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show latest updates, breaking news or featured posts with Content Ticker element.
-12. [**Rating**](https://wpbricksaddons.com/bricks-elements/rating/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show ratings on your pages with dynamic icon options with Rating element.
+3. [**Hotspots**](https://wpbricksaddons.com/bricks-elements/hotspots/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - The Image Hotspot Element allows you to display product features, create virtual tours, and display information easily and interactively.
+4. [**Unfold**](https://wpbricksaddons.com/bricks-elements/unfold/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Fold/Unfold content on your web pages using the Unfold Element. This creative element helps you display more content in less space.
+5. [**Icon List**](https://wpbricksaddons.com/bricks-elements/icon-list/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a beautiful feature section and highlight features with multiple icon types.
+6. [**Image Accordion**](https://wpbricksaddons.com/bricks-elements/image-accordion/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a gorgeous image showcase and toggle between image panels easily.
+7. [**Image Comparison**](https://wpbricksaddons.com/bricks-elements/image-comparison/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display Before and After versions of images.
+8. [**Multi Heading**](https://wpbricksaddons.com/bricks-elements/multi-heading/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Decor your page headings with multiple styling options available with the Multi Heading element.
+9. [**Lottie**](https://wpbricksaddons.com/bricks-elements/lottie/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add amazing Lottie animations to your website.
+10. [**SVG Animation**](https://wpbricksaddons.com/bricks-elements/svg-animation/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add impressive animations to SVG files on your website without any coding.
+11. [**Random Image**](https://wpbricksaddons.com/bricks-elements/random-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show different image on your webpage on each page refresh with Random Image Element.
+12. [**Content Ticker**](https://wpbricksaddons.com/bricks-elements/content-ticker/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show latest updates, breaking news or featured posts with Content Ticker element.
+13. [**Rating**](https://wpbricksaddons.com/bricks-elements/rating/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show ratings on your pages with dynamic icon options with Rating element.
+14. [**Contact Form 7 Styler**](https://wpbricksaddons.com/bricks-elements/contact-form-7-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Contact Form 7 fields and create stylish contact forms with the Contact Form 7 Form Styler Element.
+15. [**Gravity Forms Styler**](https://wpbricksaddons.com/bricks-elements/gravity-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Gravity Forms fields and create stylish contact forms with the Gravity Forms Styler Element.
+16. [**Fluent Forms Styler**](https://wpbricksaddons.com/bricks-elements/fluent-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Fluent Forms fields and create stylish contact forms with the Fluent Forms Styler Element.
+17. [**Formidable Forms Styler**](https://wpbricksaddons.com/bricks-elements/formidable-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Formidable Forms fields and create stylish contact forms with the Formidable Forms Styler Element.
 
 ## REVIEWS FROM OUR HAPPY CUSTOMERS 💚
 *Fast, performant and great support – best Addon for Bricks Builder - Joachim B.* ⭐⭐⭐⭐⭐
@@ -48,40 +53,37 @@ Supercharge Bricks Builder with **Powerful**, **Creative**, and **Fully Customiz
 *Some Good Free Elements in Here - tbutcher* ⭐⭐⭐⭐
 
 ## 🏆 MORE CREATIVE ELEMENTS ON PRO VERSION
- 
-1. [**Post Tiles**](https://wpbricksaddons.com/bricks-elements/post-tiles/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display your website's posts in a beautiful magazine tile layout. 
+
+1. [**Post Tiles**](https://wpbricksaddons.com/bricks-elements/post-tiles/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display your website's posts in a beautiful magazine tile layout.
 2. [**Dynamic Table**](https://wpbricksaddons.com/bricks-elements/table/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create data tables with advanced styling and functionalities.
 3. [**Timeline**](https://wpbricksaddons.com/bricks-elements/timeline/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display content on your website in customizable horizontal & vertical timelines.
 4. [**Content Toggle**](https://wpbricksaddons.com/bricks-elements/toggle/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Switch between two types of content, such as primary/secondary or annual/monthly, by using the Content Toggle Element.
-5. [**Unfold**](https://wpbricksaddons.com/bricks-elements/unfold/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Fold/Unfold content on your web pages using the Unfold Element. This creative element helps you display more content in less space.
-6. [**SVG Animation**](https://wpbricksaddons.com/bricks-elements/svg-animation/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add impressive animations to SVG files on your website without any coding.
-7. [**Hotspots**](https://wpbricksaddons.com/bricks-elements/hotspots/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - The Image Hotspot Element allows you to display product features, create virtual tours, and display information easily and interactively.
-8. [**Image Gallery**](https://wpbricksaddons.com/bricks-elements/image-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase beautiful images on your website using advanced filters and customizable features.
-9. [**Off Canvas**](https://wpbricksaddons.com/bricks-elements/off-canvas/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add a beautiful flyout navigator and create an advanced off-canvas menu that displays the content when the trigger is activated.
-10. [**Slide Menu**](https://wpbricksaddons.com/bricks-elements/slide-menu/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create responsive menus with amazing sliding effects. 
-11. **[Video**](https://wpbricksaddons.com/bricks-elements/video/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Allow to embed video on WordPress sites from popular video sources. 
-12. [**Video Gallery**](https://wpbricksaddons.com/bricks-elements/video-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a fast-loading video gallery with advanced filters and powerful customizations.
-13. [**Breadcrumbs**](https://wpbricksaddons.com/docs-category/elements/breadcrumbs/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add breadcrumbs to any page of your website with extensive styling options.
-14. [**Instagram Feed**](https://wpbricksaddons.com/bricks-elements/instagram-feed/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display images from your Instagram profile on your website.
-15. [**Lottie**](https://wpbricksaddons.com/bricks-elements/lottie/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add amazing Lottie animations to your website.
-16. [**Table of Contents**](https://wpbricksaddons.com/bricks-elements/table-of-contents/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add table of contents to your blog posts for easy navigation.
-17. [**Reviews**](https://wpbricksaddons.com/bricks-elements/reviews/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Simple and easy to add business reviews from Google & Yelp.
-18. [**Modal Popup**](https://wpbricksaddons.com/bricks-elements/modal-popup/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create conversion optimized popups for your website.
-19. [**Album**](https://wpbricksaddons.com/bricks-elements/album/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create and show photo albums on your pages with advanced lightbox options with Album element.
-20. [**Reusable Block**](https://wpbricksaddons.com/docs/elements/reusable-block/reusable-block-overview/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Use WordPress [Reusable Blocks](https://wordpress.org/support/article/reusable-blocks/) in Bricks builder.
-21. [**Author List**] -  Effortlessly showcase a list or grid of post authors (or any user role) with links to their archive pages. Highlight the faces behind the content with style.
-22. [**Nestable Table**](https://wpbricksaddons.com/bricks-elements/nestable-table/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create dynamic and interactive tables by nesting various elements within a single table. Perfect for organizing data like a pro.
-23. [**WooCommerce Add to Cart**](https://wpbricksaddons.com/bricks-elements/woocommerce-add-to-cart/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Design custom Add-to-Cart buttons to let your shoppers add products in a flash—seamless and user-friendly.
-24. [**WooCommerce Buy Now**](https://wpbricksaddons.com/bricks-elements/woocommerce-buy-now-button/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Boost sales with a "Buy Now" button on your WooCommerce product or shop pages. Quick, easy, and conversion-focused.
-25. [**WooCommerce Empty Cart Button**](https://wpbricksaddons.com/bricks-elements/woocommerce-empty-cart-button/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Make cart management easy by integrating an "Empty Cart" button directly into your Bricks Builder site.
-26. [**WooCommerce Free Shipping Bar**](https://wpbricksaddons.com/bricks-elements/woocommerce-free-shipping-bar/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase a sleek free shipping progress bar to encourage customers to meet the shipping threshold. Increase cart value effortlessly!
-27. [**WooCommerce Stock Progress Bar**](https://wpbricksaddons.com/bricks-elements/woocommerce-stock-progress-bar/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Let your customers know the stock status at a glance! Display how many items are left to create urgency and drive sales.
-28. [**WooCommerce Product Badge**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-badges/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Use this creative element to add attractive sales badges to your WooCommerce products. 
-29. [**WooCommerce Product Gallery**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Turn plain product pages into stunning showcases with captivating galleries. Let your products shine with the Product Gallery element!
-30. [**WooCommerce Product Image**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase product images like never before! Add stunning hover effects to capture attention and drive more clicks.
-31. [**WooCommerce Product Reviews**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-reviews/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display product reviews anywhere on your site. Build trust and highlight your customer love.
-32. [**WooCommerce Checkout Builder**](https://wpbricksaddons.com/bricks-elements/woocommerce-checkout-builder/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Redesign your checkout process using Max Addons' Checkout Page Builder. You get three simple elements — **Billing Fields,** **Shipping Fields**, and **Checkout Hooks** — to easily customize your page.
-33. [**WooCommerce Thank You Page Builder**](https://wpbricksaddons.com/bricks-elements/woocommerce-thank-you-page-builder/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Turn your generic WooCommerce "Thank You" page into an engaging post-purchase experience. 
+5. [**Image Gallery**](https://wpbricksaddons.com/bricks-elements/image-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase beautiful images on your website using advanced filters and customizable features.
+6. [**Off Canvas**](https://wpbricksaddons.com/bricks-elements/off-canvas/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add a beautiful flyout navigator and create an advanced off-canvas menu that displays the content when the trigger is activated.
+7. [**Slide Menu**](https://wpbricksaddons.com/bricks-elements/slide-menu/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create responsive menus with amazing sliding effects.
+8. [**Video**](https://wpbricksaddons.com/bricks-elements/video/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Allow to embed video on WordPress sites from popular video sources.
+9. [**Video Gallery**](https://wpbricksaddons.com/bricks-elements/video-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a fast-loading video gallery with advanced filters and powerful customizations.
+10. [**Breadcrumbs**](https://wpbricksaddons.com/docs-category/elements/breadcrumbs/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add breadcrumbs to any page of your website with extensive styling options.
+11. [**Instagram Feed**](https://wpbricksaddons.com/bricks-elements/instagram-feed/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display images from your Instagram profile on your website.
+12. [**Table of Contents**](https://wpbricksaddons.com/bricks-elements/table-of-contents/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add table of contents to your blog posts for easy navigation.
+13. [**Reviews**](https://wpbricksaddons.com/bricks-elements/reviews/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Simple and easy to add business reviews from Google & Yelp.
+14. [**Modal Popup**](https://wpbricksaddons.com/bricks-elements/modal-popup/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create conversion optimized popups for your website.
+15. [**Album**](https://wpbricksaddons.com/bricks-elements/album/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create and show photo albums on your pages with advanced lightbox options with Album element.
+16. [**Reusable Block**](https://wpbricksaddons.com/docs/elements/reusable-block/reusable-block-overview/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Use WordPress [Reusable Blocks](https://wordpress.org/support/article/reusable-blocks/) in Bricks builder.
+17. [**Author List**](https://wpbricksaddons.com/bricks-elements/author-list/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) -  Effortlessly showcase a list or grid of post authors (or any user role) with links to their archive pages. Highlight the faces behind the content with style.
+18. [**Nestable Table**](https://wpbricksaddons.com/bricks-elements/nestable-table/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create dynamic and interactive tables by nesting various elements within a single table. Perfect for organizing data like a pro.
+19. [**Dynamic Charts**](https://wpbricksaddons.com/bricks-elements/dynamic-charts/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create dynamic charts and show display business metrics, survey results, website analytics, and more with Dynamic Charts in Bricks builder.
+20. [**WooCommerce Add to Cart**](https://wpbricksaddons.com/bricks-elements/woocommerce-add-to-cart/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Design custom Add-to-Cart buttons to let your shoppers add products in a flash—seamless and user-friendly.
+21. [**WooCommerce Buy Now**](https://wpbricksaddons.com/bricks-elements/woocommerce-buy-now-button/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Boost sales with a "Buy Now" button on your WooCommerce product or shop pages. Quick, easy, and conversion-focused.
+22. [**WooCommerce Empty Cart Button**](https://wpbricksaddons.com/bricks-elements/woocommerce-empty-cart-button/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Make cart management easy by integrating an "Empty Cart" button directly into your Bricks Builder site.
+23. [**WooCommerce Free Shipping Bar**](https://wpbricksaddons.com/bricks-elements/woocommerce-free-shipping-bar/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase a sleek free shipping progress bar to encourage customers to meet the shipping threshold. Increase cart value effortlessly!
+24. [**WooCommerce Stock Progress Bar**](https://wpbricksaddons.com/bricks-elements/woocommerce-stock-progress-bar/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Let your customers know the stock status at a glance! Display how many items are left to create urgency and drive sales.
+25. [**WooCommerce Product Badge**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-badges/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Use this creative element to add attractive sales badges to your WooCommerce products.
+26. [**WooCommerce Product Gallery**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Turn plain product pages into stunning showcases with captivating galleries. Let your products shine with the Product Gallery element!
+27. [**WooCommerce Product Image**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase product images like never before! Add stunning hover effects to capture attention and drive more clicks.
+28. [**WooCommerce Product Reviews**](https://wpbricksaddons.com/bricks-elements/woocommerce-product-reviews/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display product reviews anywhere on your site. Build trust and highlight your customer love.
+29. [**WooCommerce Checkout Builder**](https://wpbricksaddons.com/bricks-elements/woocommerce-checkout-builder/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Redesign your checkout process using Max Addons' Checkout Page Builder. You get three simple elements — **Billing Fields,** **Shipping Fields**, and **Checkout Hooks** — to easily customize your page.
+30. [**WooCommerce Thank You Page Builder**](https://wpbricksaddons.com/bricks-elements/woocommerce-thank-you-page-builder/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Turn your generic WooCommerce "Thank You" page into an engaging post-purchase experience.
 
 ## PRODUCT BY BLOOMPIXEL
 
@@ -121,6 +123,9 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 
 == Changelog ==
+
+= 1.5.1 - April 24, 2025 =
+* 	Fix: Hotspots - JS error
 
 = 1.5.0 - April 3, 2025 =
 * 	New: Element - Hotspots
