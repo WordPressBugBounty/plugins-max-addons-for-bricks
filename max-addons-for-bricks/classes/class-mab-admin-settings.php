@@ -76,7 +76,7 @@ final class MAB_Admin_Settings {
 			'content-ticker'   => esc_html__( 'Content Ticker', 'max-addons' ),
 			'flip-box'         => esc_html__( 'Flip Box', 'max-addons' ),
 			'hotspots'         => esc_html__( 'Hotspots', 'max-addons' ),
-			'icon-list'        => esc_html__( 'Icon List', 'max-addons' ),
+			'icon-list'        => esc_html__( 'Dynamic List', 'max-addons' ),
 			'image-accordion'  => esc_html__( 'Image Accordion', 'max-addons' ),
 			'image-comparison' => esc_html__( 'Image Comparison', 'max-addons' ),
 			'lottie'           => esc_html__( 'Lottie', 'max-addons' ),
@@ -107,7 +107,7 @@ final class MAB_Admin_Settings {
 			$elements['formidable-forms-styler'] = __( 'Formidable Forms Styler', 'max-addons' );
 		}
 
-		ksort( $elements );
+		asort( $elements );
 
 		return $elements;
 	}

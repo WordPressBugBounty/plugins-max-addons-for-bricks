@@ -33,7 +33,7 @@ Supercharge Bricks Builder with **Powerful**, **Creative**, and **Fully Customiz
 2. [**Flip Box**](https://wpbricksaddons.com/bricks-elements/flip-box/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display content impressively with the Flip Box element. With Flip Box, you create an info box and add dual side content with flip animations.
 3. [**Hotspots**](https://wpbricksaddons.com/bricks-elements/hotspots/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - The Image Hotspot Element allows you to display product features, create virtual tours, and display information easily and interactively.
 4. [**Unfold**](https://wpbricksaddons.com/bricks-elements/unfold/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Fold/Unfold content on your web pages using the Unfold Element. This creative element helps you display more content in less space.
-5. [**Icon List**](https://wpbricksaddons.com/bricks-elements/icon-list/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a beautiful feature section and highlight features with multiple icon types.
+5. [**Dynamic List**](https://wpbricksaddons.com/bricks-elements/icon-list/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a beautiful feature section and highlight features with multiple icon types.
 6. [**Image Accordion**](https://wpbricksaddons.com/bricks-elements/image-accordion/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a gorgeous image showcase and toggle between image panels easily.
 7. [**Image Comparison**](https://wpbricksaddons.com/bricks-elements/image-comparison/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display Before and After versions of images.
 8. [**Multi Heading**](https://wpbricksaddons.com/bricks-elements/multi-heading/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Decor your page headings with multiple styling options available with the Multi Heading element.
@@ -123,6 +123,11 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 
 == Changelog ==
+
+= 1.5.2 - April 28, 2025 =
+* 	Enhancement: Icon List - Added support for Query Loop
+* 	Enhancement: Renamed Icon List to Dynamic List
+* 	Fix: Hotspots - Fixed issue with hotspot transparent background color
 
 = 1.5.1 - April 24, 2025 =
 * 	Fix: Hotspots - JS error

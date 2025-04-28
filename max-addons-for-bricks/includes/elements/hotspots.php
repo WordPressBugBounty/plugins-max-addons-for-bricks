@@ -393,7 +393,6 @@ class Hotspots_Element extends \Bricks\Element {
 			'inline'      => true,
 			'clearable'   => false,
 			'pasteStyles' => false,
-			'default'     => 'hover',
 			'required'    => [ 'tooltip_always_open', '=', '' ],
 		];
 
@@ -417,7 +416,6 @@ class Hotspots_Element extends \Bricks\Element {
 				'right'  		=> __( 'Right', 'max-addons' ),
 				'rightbottom'  	=> __( 'Right Bottom', 'max-addons' ),
 			],
-			'default' => 'top',
 			'inline'  => true,
 			'reset'   => true,
 		];
@@ -582,17 +580,24 @@ class Hotspots_Element extends \Bricks\Element {
 		$image_url  = isset( $image['url'] ) ? $image['url'] : '';
 		$image_size = isset( $image['size'] ) ? $image['size'] : '';
 
-		$image_attributes = [];
-		$img_classes      = [ 'css-filter' ];
-		$img_classes[]    = 'attachment-' . $image_size;
-		$img_classes[]    = 'size-' . $image_size;
+		$image_classes = [
+			'css-filter',
+			'attachment-' . sanitize_html_class( $image_size ),
+			'size-' . sanitize_html_class( $image_size ),
+		];
 
-		$image_attributes['class'] = join( ' ', $img_classes );
+		$image_attributes = [
+			'class' => implode( ' ', $image_classes ),
+		];
 
-		if ( isset( $image_id ) ) {
+		if ( $image_id ) {
 			echo wp_get_attachment_image( $image_id, $image_size, false, $image_attributes );
 		} elseif ( ! empty( $image_url ) ) {
-			echo '<img src="' . esc_url( $image_url ) . '">';
+			printf(
+				'<img src="%1$s" class="%2$s" alt="" />',
+				esc_url( $image_url ),
+				esc_attr( implode( ' ', $image_classes ) )
+			);
 		}
 	}
 
@@ -620,29 +625,22 @@ class Hotspots_Element extends \Bricks\Element {
 		$horizontal_position = ! empty( $hotspot['horizontalPosition'] ) ? $this->render_dynamic_data( $hotspot['horizontalPosition'] ) : '30';
 		$vertical_position   = ! empty( $hotspot['verticalPosition'] ) ? $this->render_dynamic_data( $hotspot['verticalPosition'] ) : '30';
 
-		if ( '' === $horizontal_position ) {
-			$horizontal_position = '30';
-		}
+		$horizontal_position = '' === $horizontal_position ? '30' : $horizontal_position;
+		$vertical_position   = '' === $vertical_position ? '30' : $vertical_position;
 
-		if ( '' === $vertical_position ) {
-			$vertical_position = '30';
-		}
-
-		$this->set_attribute( $hotspot_key, 'class', 'mab-hotspot' );
+		$this->set_attribute( $hotspot_key, 'class', 'mab-hotspot' . ( $is_icon_only ? ' mab-hotspot-has-icon' : '' ) );
 		$this->set_attribute( $hotspot_key, 'style', [
 			'left: ' . $horizontal_position . '%;',
 			'top: ' . $vertical_position . '%;',
 		] );
 
-		if ( $is_icon_only ) {
-			$this->set_attribute( $hotspot_key, 'class', 'mab-hotspot-has-icon' );
+		$content_classes = [ 'mab-hotspot-content' ];
+
+		if ( ! empty( $settings['hotspotAnimation'] ) ) {
+			$content_classes[] = 'mab-hotspot-animation-' . sanitize_html_class( $settings['hotspotAnimation'] );
 		}
 
-		$this->set_attribute( $hotspot_content_key, 'class', 'mab-hotspot-content' );
-
-		if ( isset( $settings['hotspotAnimation'] ) ) {
-			$this->set_attribute( $hotspot_content_key, 'class', 'mab-hotspot-animation-'.$settings['hotspotAnimation'] );
-		}
+		$this->set_attribute( $hotspot_content_key, 'class', $content_classes );
 
 		// Hotsppot icon
 		if ( isset( $hotspot['hotspotIcon']['icon'] ) ) {
@@ -653,7 +651,9 @@ class Hotspots_Element extends \Bricks\Element {
 		}
 
 		if ( ! empty( $hotspot['hotspotLink'] ) ) {
-			if ( ! isset( $hotspot['showTooltip'] ) || ( isset( $hotspot['showTooltip'] ) && 'hover' === $settings['tooltipTrigger'] ) ) {
+			$tooltip_trigger = isset( $settings['tooltipTrigger'] ) ? $settings['tooltipTrigger'] : 'hover';
+
+			if ( ! isset( $hotspot['showTooltip'] ) || ( isset( $hotspot['showTooltip'] ) && 'hover' === $tooltip_trigger ) ) {
 				$hotspot_tag = 'a';
 
 				$this->set_link_attributes( $hotspot_key, $hotspot['hotspotLink'] );
@@ -668,39 +668,57 @@ class Hotspots_Element extends \Bricks\Element {
 		$output .= '<' . esc_html( $hotspot_tag ) . ' ' . $this->render_attributes( $hotspot_key ) . '>';
 		$output .= '<span ' . $this->render_attributes( $hotspot_content_key ) . '>';
 
-		if ( isset( $hotspot['hotspotType'] ) && 'icon' === $hotspot['hotspotType'] ) {
-			if ( isset( $hotspot['hotspotIcon']['icon'] ) ) {
-				$output .= '<span class="mab-hotspot-icon mab-icon">';
-				$output .= '<i ' . $this->render_attributes( $icon_key ) . '></i>';
-				$output .= '</span>';
-			}
-		} elseif ( isset( $hotspot['hotspotType'] ) && 'text' === $hotspot['hotspotType'] ) {
-			$output .= sprintf( '<span class="mab-hotspot-icon mab-hotspot-text">%1$s</span>', esc_attr( $hotspot['hotspotText'] ) );
-		} elseif ( isset( $hotspot['hotspotType'] ) && 'image' === $hotspot['hotspotType'] ) {
-			$url = '';
+		if ( isset( $hotspot['hotspotType'] ) ) {
+			switch ( $hotspot['hotspotType'] ) {
+				case 'icon':
+					if ( ! empty( $hotspot['hotspotIcon']['icon'] ) ) {
+						$output .= '<span class="mab-hotspot-icon mab-icon">';
+						$output .= '<i ' . $this->render_attributes( $icon_key ) . '></i>';
+						$output .= '</span>';
+					}
+					break;
 
-			if ( isset( $hotspot['hotspotImage']['useDynamicData']['name'] ) ) {
-				$images = $this->render_dynamic_data_tag( $hotspot['hotspotImage']['useDynamicData']['name'], 'image' );
-				$size   = isset( $hotspot['hotspotImage']['size'] ) ? $hotspot['hotspotImage']['size'] : BRICKS_DEFAULT_IMAGE_SIZE;
-				$url    = $images ? wp_get_attachment_image_url( $images[0], $size ) : $hotspot['hotspotImage']['url'];
-			} elseif ( isset( $hotspot['hotspotImage'] ) && '' !== $hotspot['hotspotImage']['url'] ) {
-				$url = $hotspot['hotspotImage']['url'];
-			}
+				case 'text':
+					if ( ! empty( $hotspot['hotspotText'] ) ) {
+						$output .= sprintf(
+							'<span class="mab-hotspot-icon mab-hotspot-text">%s</span>',
+							esc_html( $hotspot['hotspotText'] )
+						);
+					}
+					break;
 
-			if ( '' !== $url ) {
-				$output .= sprintf( '<span class="mab-hotspot-icon mab-hotspot-icon-image"><img src="%1$s" /></span>', esc_attr( $url ) );
+				case 'image':
+					$url = '';
+
+					if ( ! empty( $hotspot['hotspotImage']['useDynamicData']['name'] ) ) {
+						$images = $this->render_dynamic_data_tag( $hotspot['hotspotImage']['useDynamicData']['name'], 'image' );
+						$size   = $hotspot['hotspotImage']['size'] ?? BRICKS_DEFAULT_IMAGE_SIZE;
+						$url    = $images ? wp_get_attachment_image_url( $images[0], $size ) : ( $hotspot['hotspotImage']['url'] ?? '' );
+					} elseif ( ! empty( $hotspot['hotspotImage']['url'] ) ) {
+						$url = $hotspot['hotspotImage']['url'];
+					}
+
+					if ( ! empty( $url ) ) {
+						$output .= sprintf(
+							'<span class="mab-hotspot-icon mab-hotspot-icon-image"><img src="%s" alt="" /></span>',
+							esc_url( $url )
+						);
+					}
+					break;
 			}
 		}
 
-		$output .= '</span>';
+		$output .= '</span>'; // Close hotspot content
 		$output .= '</' . esc_html( $hotspot_tag ) . '>';
-			if ( isset( $hotspot['showTooltip'] ) && isset( $hotspot['tooltipContent'] ) ) {
-				$output .= '<div class="mab-tooltip">';
-					$output .= '<div class="mab-tooltip-content">';
-						$output .= wp_kses_post( $hotspot['tooltipContent'] );
-					$output .= '</div>';
+
+		if ( isset( $hotspot['showTooltip'] ) && isset( $hotspot['tooltipContent'] ) ) {
+			$output .= '<div class="mab-tooltip">';
+				$output .= '<div class="mab-tooltip-content">';
+					$output .= wp_kses_post( $hotspot['tooltipContent'] );
 				$output .= '</div>';
-			}
+			$output .= '</div>';
+		}
+
 		$output .= '</div>';
 
 		$this->loop_index++;
@@ -732,22 +750,37 @@ class Hotspots_Element extends \Bricks\Element {
 		// Check: Image with ID doesn't exist
 		if ( ! isset( $image['external'] ) && ! $image_url ) {
 			// translators: %s: Image ID
-			return $this->render_element_placeholder( [ 'title' => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $image_id ) ] );
+			return $this->render_element_placeholder(
+				[
+					'title' => sprintf(
+						// Translators: %s: Image ID.
+						esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ),
+						$image_id
+					)
+				]
+			);
 		}
 
 		$this->set_attribute( '_root', 'class', 'mab-image-hotspots' );
 
 		$tooltip_position = isset( $settings['tooltipPosition'] ) ? $settings['tooltipPosition'] : 'top';
 		$tooltip_position = str_replace(
-			array('topright', 'topleft', 'bottomright', 'bottomleft', 'lefttop', 'leftbottom', 'righttop', 'rightbottom' ), 
-			array('top-start', 'top-end', 'bottom-start', 'bottom-end', 'left-end', 'left-start', 'right-end', 'right-start' ), 
+			[
+				'topright', 'topleft', 'bottomright', 'bottomleft',
+				'lefttop', 'leftbottom', 'righttop', 'rightbottom',
+			],
+			[
+				'top-start', 'top-end', 'bottom-start', 'bottom-end',
+				'left-end', 'left-start', 'right-end', 'right-start',
+			],
 			$tooltip_position
 		);
-		$tooltip_trigger = isset( $settings['tooltipTrigger'] ) ? ( ( 'click' === $settings['tooltipTrigger'] ) ? 'click' : 'mouseenter' ) : 'mouseenter';
+
+		$tooltip_trigger = isset( $settings['tooltipTrigger'] ) ? $settings['tooltipTrigger'] : 'hover';
 
 		$tooltip_settings = array(
 			'position' => $tooltip_position,
-			'trigger'  => isset( $settings['tooltipTrigger'] ) ? ( ( 'click' === $settings['tooltipTrigger'] ) ? 'click' : 'mouseenter' ) : 'mouseenter',
+			'trigger'  => ( 'click' === $tooltip_trigger ) ? 'click' : 'mouseenter',
 			'arrow'    => isset( $settings['tooltipArrow'] ) ? true : false,
 			'width'    => isset( $settings['tooltipMaxWidth'] ) ? $settings['tooltipMaxWidth'] : '',
 			'distance' => isset( $settings['tooltipDistance'] ) ? $settings['tooltipDistance'] : 10,

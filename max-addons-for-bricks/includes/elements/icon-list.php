@@ -11,10 +11,11 @@ class Icon_List_Element extends \Bricks\Element {
 	public $name         = 'max-icon-list'; // Make sure to prefix your elements
 	public $icon         = 'ti-layout-list-thumb max-element'; // Themify icon font class
 	public $css_selector = ''; // Default CSS selector
+	public $loop_index   = 0;
 	public $scripts      = []; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public function get_label() {
-		return esc_html__( 'Icon List', 'max-addons' );
+		return esc_html__( 'Dynamic List', 'max-addons' );
 	}
 
 	// Enqueue element styles and scripts
@@ -93,6 +94,7 @@ class Icon_List_Element extends \Bricks\Element {
 			'placeholder'   => esc_html__( 'List items', 'max-addons' ),
 			'type'          => 'repeater',
 			'titleProperty' => 'title',
+			'checkLoop'     => true,
 			'fields'        => [
 				'title'          => [
 					'label'          => esc_html__( 'Title', 'max-addons' ),
@@ -185,6 +187,8 @@ class Icon_List_Element extends \Bricks\Element {
 				],
 			],
 		];
+
+		$this->controls = array_replace_recursive( $this->controls, $this->get_loop_builder_controls('items') );
 	}
 
 	// Set list item controls
@@ -888,110 +892,141 @@ class Icon_List_Element extends \Bricks\Element {
 		return $img_html;
 	}
 
-	public function render() {
-		$settings = $this->settings;
-
-		// Element placeholder
-		if ( ! isset( $settings['items'] ) || empty( $settings['items'] ) ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No list items defined.', 'max-addons' ) ] );
-		}
-
-		$this->set_attribute( '_root', 'class', 'mab-icon-list' );
-
+	public function render_repeater_item( $item ) {
+		$settings  = $this->settings;
+		$index     = $this->loop_index;
+		$meta      = false;
 		$separator = false;
+		$output    = '';
 
 		if ( isset( $settings['separatorEnable'] ) ) {
 			$separator = true;
 		}
 
-		$output = '<ul ' . $this->render_attributes( '_root' ) . '>';
+		if ( isset( $item['meta'] ) && ! empty( $item['meta'] ) ) {
+			$meta = true;
+		}
 
-		foreach ( $settings['items'] as $index => $list_item ) {
+		$highlight = isset( $item['highlight'] ) && ! empty( $item['highlightLabel'] ) ? $item['highlightLabel'] : false;
 
-			$meta = false;
-			if ( isset( $list_item['meta'] ) && ! empty( $list_item['meta'] ) ) {
-				$meta = true;
+		if ( $highlight ) {
+			$this->set_attribute( "list-item-$index", 'data-highlight', $highlight );
+		}
+
+		if ( isset( $item['icon'] ) ) {
+			$icon_html = isset( $item['icon'] ) ? self::render_icon( $item['icon'], [ 'mab-icon-list-icon' ] ) : false;
+		}
+
+		$item_link = ! empty( $item['link'] ) ? $item['link'] : false;
+		$this->set_attribute( "list-item-{$index}", 'class', 'repeater-item' );
+		$this->set_attribute( "list-item-{$index}", 'class', $item_link ? 'has-link' : 'no-link' );
+
+		$output .= '<li ' . $this->render_attributes( "list-item-$index" ) . '>';
+
+		if ( $separator || $meta ) {
+			$output .= '<div class="content">';
+		}
+
+		if ( isset( $item['title'] ) && ! empty( $item['title'] ) ) {
+
+			if ( isset( $item['link'] ) ) {
+				$this->set_link_attributes( "a-$index", $item['link'] );
+				$output .= '<a ' . $this->render_attributes( "a-$index" ) . '>';
 			}
 
-			$highlight = isset( $list_item['highlight'] ) && ! empty( $list_item['highlightLabel'] ) ? $list_item['highlightLabel'] : false;
+			$output .= '<div class="title-wrapper">';
 
-			if ( $highlight ) {
-				$this->set_attribute( "list-item-$index", 'data-highlight', $highlight );
-			}
-
-			if ( isset( $list_item['icon'] ) ) {
-				$icon_html = isset( $list_item['icon'] ) ? self::render_icon( $list_item['icon'], [ 'mab-icon-list-icon' ] ) : false;
-			}
-
-			$item_link = ! empty( $list_item['link'] ) ? $list_item['link'] : false;
-			$this->set_attribute( "list-item-{$index}", 'class', 'repeater-item' );
-			$this->set_attribute( "list-item-{$index}", 'class', $item_link ? 'has-link' : 'no-link' );
-
-			$output .= '<li ' . $this->render_attributes( "list-item-$index" ) . '>';
-
-			if ( $separator || $meta ) {
-				$output .= '<div class="content">';
-			}
-
-			if ( isset( $list_item['title'] ) && ! empty( $list_item['title'] ) ) {
-
-				if ( isset( $list_item['link'] ) ) {
-					$this->set_link_attributes( "a-$index", $list_item['link'] );
-					$output .= '<a ' . $this->render_attributes( "a-$index" ) . '>';
-				}
-
-				$output .= '<div class="title-wrapper">';
-
-				if ( isset( $list_item['iconType'] ) ) {
-					if ( 'image' === $list_item['iconType'] ) {
-						$image_settings = $this->get_normalized_image_settings( $list_item );
-						$output .= $this->render_icon_image( $image_settings );
-					} elseif ( 'text' === $list_item['iconType'] ) {
-						$output .= '<span class="mab-icon-list-icon-text">';
-						$output .= $list_item['iconText'];
-						$output .= '</span>';
-					} else {
-						if ( isset( $list_item['icon'] ) ) {
-							$output .= $icon_html;
-						}
+			if ( isset( $item['iconType'] ) ) {
+				if ( 'image' === $item['iconType'] ) {
+					$image_settings = $this->get_normalized_image_settings( $item );
+					$output .= $this->render_icon_image( $image_settings );
+				} elseif ( 'text' === $item['iconType'] ) {
+					$output .= '<span class="mab-icon-list-icon-text">';
+					$output .= $item['iconText'];
+					$output .= '</span>';
+				} else {
+					if ( isset( $item['icon'] ) ) {
+						$output .= $icon_html;
 					}
 				}
-
-				$title_tag = isset( $settings['textTag'] ) ? esc_attr( $settings['textTag'] ) : 'span';
-
-				$this->set_attribute( "title-$index", $title_tag );
-				$this->set_attribute( "title-$index", 'class', [ 'title' ] );
-
-				$output .= '<' . $this->render_attributes( "title-$index" ) . '>' . $list_item['title'] . '</' . $title_tag . '>';
-
-				$output .= '</div>'; // .title-wrapper
-
-				if ( isset( $list_item['link'] ) ) {
-					$output .= '</a>';
-				}
 			}
 
-			if ( isset( $settings['separatorEnable'] ) ) {
-				$output .= '<span class="separator"></span>';
+			$title_tag = isset( $settings['textTag'] ) ? esc_attr( $settings['textTag'] ) : 'span';
+
+			$this->set_attribute( "title-$index", $title_tag );
+			$this->set_attribute( "title-$index", 'class', [ 'title' ] );
+
+			$output .= '<' . $this->render_attributes( "title-$index" ) . '>' . $item['title'] . '</' . $title_tag . '>';
+
+			$output .= '</div>'; // .title-wrapper
+
+			if ( isset( $item['link'] ) ) {
+				$output .= '</a>';
 			}
+		}
 
-			if ( isset( $list_item['meta'] ) && ! empty( $list_item['meta'] ) ) {
-				$this->set_attribute( "meta-$index", 'class', [ 'meta' ] );
+		if ( isset( $settings['separatorEnable'] ) ) {
+			$output .= '<span class="separator"></span>';
+		}
 
-				$output .= '<span ' . $this->render_attributes( "meta-$index" ) . '>' . $list_item['meta'] . '</span>';
+		if ( isset( $item['meta'] ) && ! empty( $item['meta'] ) ) {
+			$this->set_attribute( "meta-$index", 'class', [ 'meta' ] );
+
+			$output .= '<span ' . $this->render_attributes( "meta-$index" ) . '>' . $item['meta'] . '</span>';
+		}
+
+		if ( $separator || $meta ) {
+			$output .= '</div>'; // .content
+		}
+
+		if ( isset( $item['description'] ) && ! empty( $item['description'] ) ) {
+			$this->set_attribute( "description-$index", 'class', [ 'description' ] );
+
+			$output .= '<div ' . $this->render_attributes( "description-$index" ) . '>' . $item['description'] . '</div>';
+		}
+
+		$output .= '</li>';
+
+		$this->loop_index++;
+
+		return $output;
+	}
+
+	public function render() {
+		$settings = $this->settings;
+		$items  = empty( $settings['items'] ) ? false : $settings['items'];
+
+		// Element placeholder
+		if ( empty( $items ) ) {
+			return $this->render_element_placeholder(
+				[
+					'title' => esc_html__( 'No list items defined.', 'max-addons' ),
+				]
+			);
+		}
+
+		$this->set_attribute( '_root', 'class', 'mab-icon-list' );
+
+		$output = '<ul ' . $this->render_attributes( '_root' ) . '>';
+
+		// Query Loop
+		if ( isset( $settings['hasLoop'] ) ) {
+			$query = new \Bricks\Query( [
+				'id'       => $this->id,
+				'settings' => $settings,
+			] );
+
+			$item = $items[0];
+
+			$output .= $query->render( [ $this, 'render_repeater_item' ], compact( 'item' ) );
+
+			// We need to destroy the Query to explicitly remove it from the global store
+			$query->destroy();
+			unset( $query );
+		} else {
+			foreach ( $items as $index => $item ) {
+				$output .= self::render_repeater_item( $item );
 			}
-
-			if ( $separator || $meta ) {
-				$output .= '</div>'; // .content
-			}
-
-			if ( isset( $list_item['description'] ) && ! empty( $list_item['description'] ) ) {
-				$this->set_attribute( "description-$index", 'class', [ 'description' ] );
-
-				$output .= '<div ' . $this->render_attributes( "description-$index" ) . '>' . $list_item['description'] . '</div>';
-			}
-
-			$output .= '</li>';
 		}
 
 		$output .= '</ul>';
