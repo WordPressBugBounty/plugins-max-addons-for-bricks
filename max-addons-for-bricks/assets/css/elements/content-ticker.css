@@ -53,6 +53,7 @@
       color: inherit;
       font-size: inherit; }
   .mab-ticker .repeater-item {
+    max-height: 0;
     width: 100%; }
   .mab-ticker:not(.swiper-initialized) .swiper-slide:not(:first-child) {
     display: none; }
@@ -61,7 +62,7 @@
   grid-auto-flow: row; }
 
 .mab-ticker-content {
-  display: flex;
+  display: inline-flex;
   align-items: center; }
 
 .mab-ticker-image {

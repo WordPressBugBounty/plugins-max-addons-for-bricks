@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Max Addons for Bricks 1.5.1\n"
+"Project-Id-Version: Max Addons for Bricks 1.6.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/max-addons-for-bricks\n"
-"POT-Creation-Date: 2025-04-24 04:08:03+00:00\n"
+"POT-Creation-Date: 2025-07-23 11:48:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,8 +43,8 @@ msgstr ""
 msgid "Hotspots"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:79 includes/elements/icon-list.php:17
-msgid "Icon List"
+#: classes/class-mab-admin-settings.php:79 includes/elements/icon-list.php:18
+msgid "Dynamic List"
 msgstr ""
 
 #: classes/class-mab-admin-settings.php:80
@@ -77,52 +77,57 @@ msgid "Rating"
 msgstr ""
 
 #: classes/class-mab-admin-settings.php:86
+#: includes/elements/scroll-image.php:16
+msgid "Scroll Image"
+msgstr ""
+
+#: classes/class-mab-admin-settings.php:87
 #: includes/elements/svg-animation.php:17
 msgid "SVG Animation"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:87 includes/elements/unfold.php:18
+#: classes/class-mab-admin-settings.php:88 includes/elements/unfold.php:18
 #: includes/elements/unfold.php:200
 msgid "Unfold"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:92 includes/elements/cf7-styler.php:20
+#: classes/class-mab-admin-settings.php:93 includes/elements/cf7-styler.php:20
 msgid "Contact Form 7 Styler"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:97
+#: classes/class-mab-admin-settings.php:98
 #: includes/elements/gravity-forms-styler.php:20
 msgid "Gravity Forms Styler"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:102
+#: classes/class-mab-admin-settings.php:103
 #: includes/elements/fluent-forms-styler.php:20
 msgid "Fluent Forms Styler"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:107
+#: classes/class-mab-admin-settings.php:108
 #: includes/elements/formidable-forms-styler.php:20
 msgid "Formidable Forms Styler"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:174
+#: classes/class-mab-admin-settings.php:175
 msgid "Settings updated!"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:215
+#: classes/class-mab-admin-settings.php:216
 #: includes/admin/admin-settings-elements.php:13
 msgid "Elements"
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:252
+#: classes/class-mab-admin-settings.php:253
 msgid "Setting page file could not be located."
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:274
+#: classes/class-mab-admin-settings.php:275
 msgid "You do not have permission to view this setting."
 msgstr ""
 
-#: classes/class-mab-admin-settings.php:405
+#: classes/class-mab-admin-settings.php:406
 msgid "Elements settings updated!"
 msgstr ""
 
@@ -162,7 +167,7 @@ msgstr ""
 msgid "Input Fields"
 msgstr ""
 
-#: includes/elements/cf7-styler.php:42 includes/elements/content-ticker.php:687
+#: includes/elements/cf7-styler.php:42 includes/elements/content-ticker.php:684
 #: includes/elements/flip-box.php:474 includes/elements/flip-box.php:695
 #: includes/elements/flip-box.php:1011
 #: includes/elements/fluent-forms-styler.php:42
@@ -213,7 +218,7 @@ msgstr ""
 #: includes/elements/formidable-forms-styler.php:115
 #: includes/elements/formidable-forms-styler.php:155
 #: includes/elements/gravity-forms-styler.php:137
-#: includes/elements/icon-list.php:98 includes/elements/image-accordion.php:83
+#: includes/elements/icon-list.php:100 includes/elements/image-accordion.php:83
 #: includes/elements/image-accordion.php:259
 msgid "Title"
 msgstr ""
@@ -249,8 +254,8 @@ msgid "Fields Typography"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:175 includes/elements/cf7-styler.php:510
-#: includes/elements/content-ticker.php:337
-#: includes/elements/content-ticker.php:606 includes/elements/flip-box.php:169
+#: includes/elements/content-ticker.php:334
+#: includes/elements/content-ticker.php:603 includes/elements/flip-box.php:169
 #: includes/elements/flip-box.php:330 includes/elements/flip-box.php:980
 #: includes/elements/fluent-forms-styler.php:292
 #: includes/elements/fluent-forms-styler.php:634
@@ -259,7 +264,7 @@ msgstr ""
 #: includes/elements/gravity-forms-styler.php:404
 #: includes/elements/gravity-forms-styler.php:778
 #: includes/elements/gravity-forms-styler.php:867
-#: includes/elements/hotspots.php:289 includes/elements/hotspots.php:459
+#: includes/elements/hotspots.php:289 includes/elements/hotspots.php:457
 #: includes/elements/image-accordion.php:480
 #: includes/elements/image-comparison.php:170
 #: includes/elements/multi-heading.php:91 includes/elements/unfold.php:163
@@ -268,9 +273,9 @@ msgid "Background"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:198 includes/elements/cf7-styler.php:525
-#: includes/elements/content-ticker.php:188
-#: includes/elements/content-ticker.php:376
-#: includes/elements/content-ticker.php:622 includes/elements/flip-box.php:550
+#: includes/elements/content-ticker.php:185
+#: includes/elements/content-ticker.php:373
+#: includes/elements/content-ticker.php:619 includes/elements/flip-box.php:550
 #: includes/elements/flip-box.php:649 includes/elements/flip-box.php:776
 #: includes/elements/flip-box.php:875 includes/elements/flip-box.php:996
 #: includes/elements/fluent-forms-styler.php:315
@@ -288,12 +293,13 @@ msgstr ""
 #: includes/elements/gravity-forms-styler.php:989
 #: includes/elements/gravity-forms-styler.php:1193
 #: includes/elements/hotspots.php:303 includes/elements/hotspots.php:368
-#: includes/elements/hotspots.php:494 includes/elements/icon-list.php:252
+#: includes/elements/hotspots.php:492 includes/elements/icon-list.php:256
 #: includes/elements/image-accordion.php:347
 #: includes/elements/image-accordion.php:495
 #: includes/elements/image-accordion.php:658
 #: includes/elements/image-comparison.php:186
-#: includes/elements/multi-heading.php:127 includes/elements/unfold.php:352
+#: includes/elements/multi-heading.php:127
+#: includes/elements/scroll-image.php:373 includes/elements/unfold.php:352
 msgid "Border"
 msgstr ""
 
@@ -331,7 +337,7 @@ msgid "Textarea Width"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:287 includes/elements/cf7-styler.php:581
-#: includes/elements/content-ticker.php:324 includes/elements/flip-box.php:664
+#: includes/elements/content-ticker.php:321 includes/elements/flip-box.php:664
 #: includes/elements/flip-box.php:890 includes/elements/flip-box.php:1028
 #: includes/elements/fluent-forms-styler.php:407
 #: includes/elements/fluent-forms-styler.php:679
@@ -343,8 +349,8 @@ msgstr ""
 #: includes/elements/gravity-forms-styler.php:823
 #: includes/elements/gravity-forms-styler.php:912
 #: includes/elements/gravity-forms-styler.php:1207
-#: includes/elements/hotspots.php:331 includes/elements/hotspots.php:522
-#: includes/elements/icon-list.php:209
+#: includes/elements/hotspots.php:331 includes/elements/hotspots.php:520
+#: includes/elements/icon-list.php:213
 #: includes/elements/image-accordion.php:557
 #: includes/elements/image-accordion.php:720
 #: includes/elements/image-comparison.php:228
@@ -392,7 +398,8 @@ msgstr ""
 #: includes/elements/gravity-forms-styler.php:641
 #: includes/elements/hotspots.php:239 includes/elements/hotspots.php:350
 #: includes/elements/image-accordion.php:573
-#: includes/elements/random-image.php:454 includes/elements/unfold.php:312
+#: includes/elements/random-image.php:454
+#: includes/elements/scroll-image.php:296 includes/elements/unfold.php:312
 msgid "Size"
 msgstr ""
 
@@ -401,8 +408,9 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:509
 #: includes/elements/formidable-forms-styler.php:578
 #: includes/elements/gravity-forms-styler.php:661
-#: includes/elements/hotspots.php:181 includes/elements/icon-list.php:794
+#: includes/elements/hotspots.php:181 includes/elements/icon-list.php:798
 #: includes/elements/multi-heading.php:382
+#: includes/elements/scroll-image.php:341
 msgid "Color"
 msgstr ""
 
@@ -432,19 +440,19 @@ msgid "Alignment"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:453
-#: includes/elements/content-ticker.php:274 includes/elements/flip-box.php:432
+#: includes/elements/content-ticker.php:271 includes/elements/flip-box.php:432
 #: includes/elements/flip-box.php:465 includes/elements/flip-box.php:686
 #: includes/elements/fluent-forms-styler.php:587
 #: includes/elements/formidable-forms-styler.php:656
 #: includes/elements/formidable-forms-styler.php:660
 #: includes/elements/gravity-forms-styler.php:731
-#: includes/elements/hotspots.php:414 includes/elements/image-accordion.php:534
+#: includes/elements/hotspots.php:413 includes/elements/image-accordion.php:534
 #: includes/elements/multi-heading.php:279
 msgid "Left"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:454
-#: includes/elements/content-ticker.php:316 includes/elements/flip-box.php:578
+#: includes/elements/content-ticker.php:313 includes/elements/flip-box.php:578
 #: includes/elements/flip-box.php:598 includes/elements/flip-box.php:804
 #: includes/elements/flip-box.php:824
 #: includes/elements/fluent-forms-styler.php:588
@@ -455,34 +463,35 @@ msgid "Center"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:455
-#: includes/elements/content-ticker.php:272 includes/elements/flip-box.php:433
+#: includes/elements/content-ticker.php:269 includes/elements/flip-box.php:433
 #: includes/elements/flip-box.php:463 includes/elements/flip-box.php:684
 #: includes/elements/fluent-forms-styler.php:589
 #: includes/elements/formidable-forms-styler.php:658
 #: includes/elements/gravity-forms-styler.php:733
-#: includes/elements/hotspots.php:417 includes/elements/image-accordion.php:536
+#: includes/elements/hotspots.php:416 includes/elements/image-accordion.php:536
 #: includes/elements/multi-heading.php:278 includes/elements/unfold.php:306
 msgid "Right"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:477
-#: includes/elements/content-ticker.php:202
-#: includes/elements/content-ticker.php:391
+#: includes/elements/content-ticker.php:199
+#: includes/elements/content-ticker.php:388
 #: includes/elements/cta-button.php:274
 #: includes/elements/fluent-forms-styler.php:606
 #: includes/elements/formidable-forms-styler.php:675
 #: includes/elements/gravity-forms-styler.php:750
 #: includes/elements/gravity-forms-styler.php:839
-#: includes/elements/icon-list.php:497 includes/elements/icon-list.php:597
+#: includes/elements/icon-list.php:501 includes/elements/icon-list.php:601
 #: includes/elements/multi-heading.php:291
+#: includes/elements/scroll-image.php:311
 #: includes/elements/svg-animation.php:71
 msgid "Width"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:496
 #: includes/elements/content-ticker.php:162
-#: includes/elements/content-ticker.php:357
-#: includes/elements/content-ticker.php:637
+#: includes/elements/content-ticker.php:354
+#: includes/elements/content-ticker.php:634
 #: includes/elements/cta-button.php:213
 #: includes/elements/fluent-forms-styler.php:456
 #: includes/elements/fluent-forms-styler.php:620
@@ -497,9 +506,9 @@ msgstr ""
 #: includes/elements/gravity-forms-styler.php:853
 #: includes/elements/gravity-forms-styler.php:1047
 #: includes/elements/gravity-forms-styler.php:1163
-#: includes/elements/hotspots.php:274 includes/elements/hotspots.php:480
-#: includes/elements/icon-list.php:618 includes/elements/icon-list.php:666
-#: includes/elements/icon-list.php:698 includes/elements/icon-list.php:716
+#: includes/elements/hotspots.php:274 includes/elements/hotspots.php:478
+#: includes/elements/icon-list.php:622 includes/elements/icon-list.php:670
+#: includes/elements/icon-list.php:702 includes/elements/icon-list.php:720
 #: includes/elements/image-accordion.php:612
 #: includes/elements/image-comparison.php:154
 #: includes/elements/multi-heading.php:77
@@ -522,7 +531,7 @@ msgstr ""
 #: includes/elements/content-ticker.php:36 includes/elements/flip-box.php:44
 #: includes/elements/image-accordion.php:35
 #: includes/elements/image-comparison.php:55
-#: includes/elements/random-image.php:281
+#: includes/elements/random-image.php:281 includes/elements/scroll-image.php:35
 #: includes/elements/svg-animation.php:30 includes/elements/unfold.php:45
 #: max-addons-bricks.php:44
 msgid "Settings"
@@ -550,24 +559,24 @@ msgstr ""
 
 #: includes/elements/content-ticker.php:85 includes/elements/cta-button.php:141
 #: includes/elements/flip-box.php:298 includes/elements/hotspots.php:158
-#: includes/elements/icon-list.php:141
+#: includes/elements/icon-list.php:143
 #: includes/elements/image-accordion.php:100 includes/elements/lottie.php:47
 msgid "Link"
 msgstr ""
 
 #: includes/elements/content-ticker.php:90
 #: includes/elements/content-ticker.php:119
-#: includes/elements/content-ticker.php:180
+#: includes/elements/content-ticker.php:177
 #: includes/elements/cta-button.php:160 includes/elements/cta-button.php:206
 #: includes/elements/flip-box.php:97 includes/elements/flip-box.php:124
 #: includes/elements/flip-box.php:226 includes/elements/flip-box.php:253
 #: includes/elements/hotspots.php:40 includes/elements/hotspots.php:127
 #: includes/elements/hotspots.php:146 includes/elements/hotspots.php:344
-#: includes/elements/icon-list.php:108 includes/elements/icon-list.php:127
-#: includes/elements/icon-list.php:558 includes/elements/image-accordion.php:92
+#: includes/elements/icon-list.php:110 includes/elements/icon-list.php:129
+#: includes/elements/icon-list.php:562 includes/elements/image-accordion.php:92
 #: includes/elements/image-comparison.php:80
 #: includes/elements/image-comparison.php:112
-#: includes/elements/random-image.php:281
+#: includes/elements/random-image.php:281 includes/elements/scroll-image.php:30
 msgid "Image"
 msgstr ""
 
@@ -608,35 +617,35 @@ msgstr ""
 #: includes/elements/content-ticker.php:143 includes/elements/flip-box.php:146
 #: includes/elements/flip-box.php:275
 #: includes/elements/fluent-forms-styler.php:133
-#: includes/elements/icon-list.php:653
+#: includes/elements/icon-list.php:657
 msgid "Heading 2 (h2)"
 msgstr ""
 
 #: includes/elements/content-ticker.php:144 includes/elements/flip-box.php:147
 #: includes/elements/flip-box.php:276
 #: includes/elements/fluent-forms-styler.php:134
-#: includes/elements/icon-list.php:654
+#: includes/elements/icon-list.php:658
 msgid "Heading 3 (h3)"
 msgstr ""
 
 #: includes/elements/content-ticker.php:145 includes/elements/flip-box.php:148
 #: includes/elements/flip-box.php:277
 #: includes/elements/fluent-forms-styler.php:135
-#: includes/elements/icon-list.php:655
+#: includes/elements/icon-list.php:659
 msgid "Heading 4 (h4)"
 msgstr ""
 
 #: includes/elements/content-ticker.php:146 includes/elements/flip-box.php:149
 #: includes/elements/flip-box.php:278
 #: includes/elements/fluent-forms-styler.php:136
-#: includes/elements/icon-list.php:656
+#: includes/elements/icon-list.php:660
 msgid "Heading 5 (h5)"
 msgstr ""
 
 #: includes/elements/content-ticker.php:147 includes/elements/flip-box.php:150
 #: includes/elements/flip-box.php:279
 #: includes/elements/fluent-forms-styler.php:137
-#: includes/elements/icon-list.php:657
+#: includes/elements/icon-list.php:661
 msgid "Heading 6 (h6)"
 msgstr ""
 
@@ -652,93 +661,94 @@ msgstr ""
 msgid "Paragraph (p)"
 msgstr ""
 
-#: includes/elements/content-ticker.php:217
+#: includes/elements/content-ticker.php:214
 #: includes/elements/formidable-forms-styler.php:179
 #: includes/elements/formidable-forms-styler.php:217
 #: includes/elements/gravity-forms-styler.php:585
-#: includes/elements/icon-list.php:196 includes/elements/icon-list.php:637
-#: includes/elements/icon-list.php:685
+#: includes/elements/icon-list.php:200 includes/elements/icon-list.php:641
+#: includes/elements/icon-list.php:689
 #: includes/elements/image-comparison.php:270
 msgid "Margin"
 msgstr ""
 
-#: includes/elements/content-ticker.php:233
+#: includes/elements/content-ticker.php:230
 msgid "Show Heading"
 msgstr ""
 
-#: includes/elements/content-ticker.php:243
+#: includes/elements/content-ticker.php:240
 msgid "Heading Text"
 msgstr ""
 
-#: includes/elements/content-ticker.php:256 includes/elements/cta-button.php:33
+#: includes/elements/content-ticker.php:253 includes/elements/cta-button.php:33
 #: includes/elements/cta-button.php:159 includes/elements/cta-button.php:188
 #: includes/elements/flip-box.php:96 includes/elements/flip-box.php:106
 #: includes/elements/flip-box.php:225 includes/elements/flip-box.php:235
 #: includes/elements/hotspots.php:126 includes/elements/hotspots.php:136
-#: includes/elements/icon-list.php:43 includes/elements/icon-list.php:107
-#: includes/elements/icon-list.php:117 includes/elements/random-image.php:272
+#: includes/elements/icon-list.php:44 includes/elements/icon-list.php:109
+#: includes/elements/icon-list.php:119 includes/elements/random-image.php:272
 #: includes/elements/random-image.php:286 includes/elements/rating.php:57
+#: includes/elements/scroll-image.php:45 includes/elements/scroll-image.php:288
 #: includes/elements/unfold.php:218 includes/elements/unfold.php:253
 msgid "Icon"
 msgstr ""
 
-#: includes/elements/content-ticker.php:268
+#: includes/elements/content-ticker.php:265
 msgid "Icon position"
 msgstr ""
 
-#: includes/elements/content-ticker.php:271 includes/elements/flip-box.php:462
+#: includes/elements/content-ticker.php:268 includes/elements/flip-box.php:462
 #: includes/elements/flip-box.php:468 includes/elements/flip-box.php:683
-#: includes/elements/flip-box.php:689 includes/elements/hotspots.php:404
-#: includes/elements/hotspots.php:408 includes/elements/image-accordion.php:512
+#: includes/elements/flip-box.php:689 includes/elements/hotspots.php:403
+#: includes/elements/hotspots.php:407 includes/elements/image-accordion.php:512
 msgid "Top"
 msgstr ""
 
-#: includes/elements/content-ticker.php:273 includes/elements/flip-box.php:464
-#: includes/elements/flip-box.php:685 includes/elements/hotspots.php:411
+#: includes/elements/content-ticker.php:270 includes/elements/flip-box.php:464
+#: includes/elements/flip-box.php:685 includes/elements/hotspots.php:410
 #: includes/elements/image-accordion.php:514
 msgid "Bottom"
 msgstr ""
 
-#: includes/elements/content-ticker.php:287 includes/elements/hotspots.php:428
+#: includes/elements/content-ticker.php:284 includes/elements/hotspots.php:426
 msgid "Show Arrow"
 msgstr ""
 
-#: includes/elements/content-ticker.php:298 includes/elements/cta-button.php:82
-#: includes/elements/flip-box.php:923 includes/elements/icon-list.php:741
+#: includes/elements/content-ticker.php:295 includes/elements/cta-button.php:82
+#: includes/elements/flip-box.php:923 includes/elements/icon-list.php:745
 #: includes/elements/image-accordion.php:584
 #: includes/elements/multi-heading.php:350
 #: includes/elements/multi-heading.php:417 includes/elements/unfold.php:323
 msgid "Style"
 msgstr ""
 
-#: includes/elements/content-ticker.php:306
+#: includes/elements/content-ticker.php:303
 msgid "Text align vertical"
 msgstr ""
 
-#: includes/elements/content-ticker.php:407
+#: includes/elements/content-ticker.php:404
 msgid "Icon Style"
 msgstr ""
 
-#: includes/elements/content-ticker.php:418 includes/elements/unfold.php:277
+#: includes/elements/content-ticker.php:415 includes/elements/unfold.php:277
 msgid "Icon Typography"
 msgstr ""
 
-#: includes/elements/content-ticker.php:447
+#: includes/elements/content-ticker.php:444
 msgid "Icon spacing"
 msgstr ""
 
-#: includes/elements/content-ticker.php:481
+#: includes/elements/content-ticker.php:478
 msgid "Mode"
 msgstr ""
 
-#: includes/elements/content-ticker.php:484
+#: includes/elements/content-ticker.php:481
 #: includes/elements/image-accordion.php:275
 #: includes/elements/image-accordion.php:290
 #: includes/elements/image-comparison.php:410
 msgid "Horizontal"
 msgstr ""
 
-#: includes/elements/content-ticker.php:485
+#: includes/elements/content-ticker.php:482
 #: includes/elements/image-accordion.php:274
 #: includes/elements/image-accordion.php:289
 #: includes/elements/image-accordion.php:292
@@ -746,96 +756,99 @@ msgstr ""
 msgid "Vertical"
 msgstr ""
 
-#: includes/elements/content-ticker.php:486 includes/elements/flip-box.php:419
+#: includes/elements/content-ticker.php:483 includes/elements/flip-box.php:419
 msgid "Fade"
 msgstr ""
 
-#: includes/elements/content-ticker.php:496
+#: includes/elements/content-ticker.php:493
 msgid "Slider Speed"
 msgstr ""
 
-#: includes/elements/content-ticker.php:497
+#: includes/elements/content-ticker.php:494
 msgid "Duration of transition between slides (in ms)"
 msgstr ""
 
-#: includes/elements/content-ticker.php:509 includes/elements/lottie.php:141
+#: includes/elements/content-ticker.php:506 includes/elements/lottie.php:141
 msgid "Loop"
 msgstr ""
 
-#: includes/elements/content-ticker.php:519
+#: includes/elements/content-ticker.php:516
 msgid "Autoplay"
 msgstr ""
 
-#: includes/elements/content-ticker.php:528
+#: includes/elements/content-ticker.php:525
 msgid "Pause on Hover"
 msgstr ""
 
-#: includes/elements/content-ticker.php:538
+#: includes/elements/content-ticker.php:535
 msgid "Autoplay Speed in Ms"
 msgstr ""
 
-#: includes/elements/content-ticker.php:555
+#: includes/elements/content-ticker.php:552
 msgid "Show Arrows"
 msgstr ""
 
-#: includes/elements/content-ticker.php:566 includes/elements/icon-list.php:778
+#: includes/elements/content-ticker.php:563 includes/elements/icon-list.php:782
 msgid "Height in px"
 msgstr ""
 
-#: includes/elements/content-ticker.php:588 includes/elements/icon-list.php:757
+#: includes/elements/content-ticker.php:585 includes/elements/icon-list.php:761
 msgid "Width in px"
 msgstr ""
 
-#: includes/elements/content-ticker.php:663
+#: includes/elements/content-ticker.php:660
 msgid "Prev arrow"
 msgstr ""
 
-#: includes/elements/content-ticker.php:675
+#: includes/elements/content-ticker.php:672
 msgid "Next arrow"
 msgstr ""
 
-#: includes/elements/content-ticker.php:802
-#: includes/elements/cta-button.php:330 includes/elements/icon-list.php:846
+#: includes/elements/content-ticker.php:799
+#: includes/elements/cta-button.php:330 includes/elements/icon-list.php:850
 msgid ""
 "Can't render element, as the selected ACF field is not available. Please "
 "activate ACF or edit the element to select different data."
 msgstr ""
 
-#: includes/elements/content-ticker.php:804
-#: includes/elements/cta-button.php:332 includes/elements/icon-list.php:848
+#: includes/elements/content-ticker.php:801
+#: includes/elements/cta-button.php:332 includes/elements/icon-list.php:852
 msgid "No featured image set."
 msgstr ""
 
-#: includes/elements/content-ticker.php:806
-#: includes/elements/cta-button.php:334 includes/elements/icon-list.php:850
+#: includes/elements/content-ticker.php:803
+#: includes/elements/cta-button.php:334 includes/elements/icon-list.php:854
 msgid "Dynamic Data %1$s (%2$s) is empty."
 msgstr ""
 
-#: includes/elements/content-ticker.php:827
+#: includes/elements/content-ticker.php:824
 #: includes/elements/cta-button.php:353 includes/elements/flip-box.php:1103
-#: includes/elements/hotspots.php:729
+#: includes/elements/hotspots.php:747
 #: includes/elements/image-comparison.php:498
 #: includes/elements/random-image.php:642
+#: includes/elements/scroll-image.php:640
 msgid "No image selected."
 msgstr ""
 
-#: includes/elements/content-ticker.php:835
+#: includes/elements/content-ticker.php:832
 #: includes/elements/cta-button.php:361 includes/elements/flip-box.php:1109
-#: includes/elements/hotspots.php:735
+#: includes/elements/hotspots.php:757
 #: includes/elements/image-comparison.php:504
+#. translators: %s: Image ID
+#. Translators: %s: Image ID.
 #. translators: %s: Image ID
 msgid "Image ID (%s) no longer exist. Please select another image."
 msgstr ""
 
-#: includes/elements/content-ticker.php:923
+#: includes/elements/content-ticker.php:920
 msgid "No ticker item added."
 msgstr ""
 
 #: includes/elements/cta-button.php:28 includes/elements/cta-button.php:45
 #: includes/elements/flip-box.php:29 includes/elements/hotspots.php:35
 #: includes/elements/hotspots.php:128 includes/elements/hotspots.php:152
-#: includes/elements/icon-list.php:48 includes/elements/icon-list.php:109
-#: includes/elements/icon-list.php:133 includes/elements/icon-list.php:612
+#: includes/elements/icon-list.php:49 includes/elements/icon-list.php:111
+#: includes/elements/icon-list.php:135 includes/elements/icon-list.php:616
 #: includes/elements/image-comparison.php:30 includes/elements/unfold.php:208
 #: includes/elements/unfold.php:243
 msgid "Text"
@@ -850,7 +863,7 @@ msgstr ""
 #: includes/elements/formidable-forms-styler.php:123
 #: includes/elements/formidable-forms-styler.php:193
 #: includes/elements/gravity-forms-styler.php:145
-#: includes/elements/icon-list.php:58 includes/elements/icon-list.php:152
+#: includes/elements/icon-list.php:59 includes/elements/icon-list.php:154
 msgid "Description"
 msgstr ""
 
@@ -875,7 +888,9 @@ msgstr ""
 #: includes/elements/multi-heading.php:281
 #: includes/elements/multi-heading.php:285
 #: includes/elements/multi-heading.php:422
-#: includes/elements/random-image.php:218 includes/elements/unfold.php:329
+#: includes/elements/random-image.php:218
+#: includes/elements/scroll-image.php:130
+#: includes/elements/scroll-image.php:168 includes/elements/unfold.php:329
 msgid "None"
 msgstr ""
 
@@ -905,7 +920,7 @@ msgid "Link type"
 msgstr ""
 
 #: includes/elements/cta-button.php:156 includes/elements/flip-box.php:93
-#: includes/elements/flip-box.php:222 includes/elements/icon-list.php:104
+#: includes/elements/flip-box.php:222 includes/elements/icon-list.php:106
 msgid "Icon Type"
 msgstr ""
 
@@ -939,9 +954,10 @@ msgstr ""
 
 #: includes/elements/cta-button.php:259 includes/elements/flip-box.php:382
 #: includes/elements/gravity-forms-styler.php:1019
-#: includes/elements/icon-list.php:483 includes/elements/icon-list.php:583
+#: includes/elements/icon-list.php:487 includes/elements/icon-list.php:587
 #: includes/elements/image-accordion.php:208
 #: includes/elements/multi-heading.php:316
+#: includes/elements/scroll-image.php:326
 #: includes/elements/svg-animation.php:53 includes/elements/unfold.php:147
 msgid "Height"
 msgstr ""
@@ -1079,6 +1095,7 @@ msgid "Button"
 msgstr ""
 
 #: includes/elements/flip-box.php:945 includes/elements/random-image.php:180
+#: includes/elements/scroll-image.php:99
 msgid "Stretch"
 msgstr ""
 
@@ -1086,9 +1103,10 @@ msgstr ""
 msgid "Button typography"
 msgstr ""
 
-#: includes/elements/flip-box.php:1096 includes/elements/hotspots.php:722
+#: includes/elements/flip-box.php:1096 includes/elements/hotspots.php:740
 #: includes/elements/image-comparison.php:491
 #: includes/elements/random-image.php:635
+#: includes/elements/scroll-image.php:631
 msgid "Dynamic data is empty."
 msgstr ""
 
@@ -1357,209 +1375,213 @@ msgstr ""
 msgid "Expand"
 msgstr ""
 
-#: includes/elements/hotspots.php:317 includes/elements/hotspots.php:508
+#: includes/elements/hotspots.php:317 includes/elements/hotspots.php:506
 #: includes/elements/multi-heading.php:140
+#: includes/elements/scroll-image.php:387
 msgid "Box shadow"
 msgstr ""
 
 #: includes/elements/hotspots.php:386 includes/elements/lottie.php:62
+#: includes/elements/scroll-image.php:188
 msgid "Trigger"
 msgstr ""
 
 #: includes/elements/hotspots.php:387 includes/elements/hotspots.php:390
-#: includes/elements/lottie.php:67
+#: includes/elements/lottie.php:67 includes/elements/scroll-image.php:191
+#: includes/elements/scroll-image.php:197
 msgid "Hover"
 msgstr ""
 
 #: includes/elements/hotspots.php:391 includes/elements/lottie.php:66
+#: includes/elements/scroll-image.php:192
 msgid "Click"
 msgstr ""
 
-#: includes/elements/hotspots.php:403
+#: includes/elements/hotspots.php:402
 msgid "Tooltip Position"
 msgstr ""
 
-#: includes/elements/hotspots.php:407
+#: includes/elements/hotspots.php:406
 msgid "Top Left"
 msgstr ""
 
-#: includes/elements/hotspots.php:409
+#: includes/elements/hotspots.php:408
 msgid "Top Right"
 msgstr ""
 
-#: includes/elements/hotspots.php:410
+#: includes/elements/hotspots.php:409
 msgid "Bottom Left"
 msgstr ""
 
-#: includes/elements/hotspots.php:412
+#: includes/elements/hotspots.php:411
 msgid "Bottom Right"
 msgstr ""
 
-#: includes/elements/hotspots.php:413
+#: includes/elements/hotspots.php:412
 msgid "Left Top"
 msgstr ""
 
-#: includes/elements/hotspots.php:415
+#: includes/elements/hotspots.php:414
 msgid "Left Bottom"
 msgstr ""
 
-#: includes/elements/hotspots.php:416
+#: includes/elements/hotspots.php:415
 msgid "Right Top"
 msgstr ""
 
-#: includes/elements/hotspots.php:418
+#: includes/elements/hotspots.php:417
 msgid "Right Bottom"
 msgstr ""
 
-#: includes/elements/hotspots.php:436
+#: includes/elements/hotspots.php:434
 msgid "Max Width"
 msgstr ""
 
-#: includes/elements/hotspots.php:447
+#: includes/elements/hotspots.php:445
 msgid "Distance"
 msgstr ""
 
-#: includes/elements/hotspots.php:448
+#: includes/elements/hotspots.php:446
 msgid "Distance between hotspot and tooltip"
 msgstr ""
 
-#: includes/elements/icon-list.php:28 includes/elements/image-accordion.php:40
+#: includes/elements/icon-list.php:29 includes/elements/image-accordion.php:40
 msgid "Items"
 msgstr ""
 
-#: includes/elements/icon-list.php:33
+#: includes/elements/icon-list.php:34
 msgid "List item"
 msgstr ""
 
-#: includes/elements/icon-list.php:38 includes/elements/icon-list.php:158
+#: includes/elements/icon-list.php:39 includes/elements/icon-list.php:160
 msgid "Highlight"
 msgstr ""
 
-#: includes/elements/icon-list.php:53 includes/elements/icon-list.php:146
+#: includes/elements/icon-list.php:54 includes/elements/icon-list.php:148
 msgid "Meta"
 msgstr ""
 
-#: includes/elements/icon-list.php:63 includes/elements/multi-heading.php:37
+#: includes/elements/icon-list.php:64 includes/elements/multi-heading.php:37
 #: includes/elements/multi-heading.php:275 includes/elements/unfold.php:35
 msgid "Separator"
 msgstr ""
 
-#: includes/elements/icon-list.php:93
+#: includes/elements/icon-list.php:94
 msgid "List items"
 msgstr ""
 
-#: includes/elements/icon-list.php:163
+#: includes/elements/icon-list.php:165
 msgid "Highlight label"
 msgstr ""
 
-#: includes/elements/icon-list.php:171
+#: includes/elements/icon-list.php:173
 msgid "List item #1"
 msgstr ""
 
-#: includes/elements/icon-list.php:179
+#: includes/elements/icon-list.php:181
 msgid "List item #2"
 msgstr ""
 
-#: includes/elements/icon-list.php:222
+#: includes/elements/icon-list.php:226
 msgid "Odd background"
 msgstr ""
 
-#: includes/elements/icon-list.php:237
+#: includes/elements/icon-list.php:241
 msgid "Even background"
 msgstr ""
 
-#: includes/elements/icon-list.php:267
+#: includes/elements/icon-list.php:271
 msgid "Auto width"
 msgstr ""
 
-#: includes/elements/icon-list.php:289
+#: includes/elements/icon-list.php:293
 msgid "Block"
 msgstr ""
 
-#: includes/elements/icon-list.php:303
+#: includes/elements/icon-list.php:307
 msgid "Label padding"
 msgstr ""
 
-#: includes/elements/icon-list.php:316
+#: includes/elements/icon-list.php:320
 msgid "Label background"
 msgstr ""
 
-#: includes/elements/icon-list.php:331
+#: includes/elements/icon-list.php:335
 msgid "Label border"
 msgstr ""
 
-#: includes/elements/icon-list.php:346
+#: includes/elements/icon-list.php:350
 msgid "Label typography"
 msgstr ""
 
-#: includes/elements/icon-list.php:361
+#: includes/elements/icon-list.php:365
 msgid "Content padding"
 msgstr ""
 
-#: includes/elements/icon-list.php:374
+#: includes/elements/icon-list.php:378
 msgid "Content background"
 msgstr ""
 
-#: includes/elements/icon-list.php:389
+#: includes/elements/icon-list.php:393
 msgid "Content border"
 msgstr ""
 
-#: includes/elements/icon-list.php:404
+#: includes/elements/icon-list.php:408
 msgid "Content text color"
 msgstr ""
 
-#: includes/elements/icon-list.php:431
+#: includes/elements/icon-list.php:435
 #: includes/elements/image-accordion.php:509
 msgid "Vertical Align"
 msgstr ""
 
-#: includes/elements/icon-list.php:448
+#: includes/elements/icon-list.php:452
 msgid "Icon size"
 msgstr ""
 
-#: includes/elements/icon-list.php:462
+#: includes/elements/icon-list.php:466
 msgid "Icon color"
 msgstr ""
 
-#: includes/elements/icon-list.php:477 includes/elements/lottie.php:198
+#: includes/elements/icon-list.php:481 includes/elements/lottie.php:198
 msgid "SVG"
 msgstr ""
 
-#: includes/elements/icon-list.php:511
+#: includes/elements/icon-list.php:515
 msgid "Stroke width"
 msgstr ""
 
-#: includes/elements/icon-list.php:527
+#: includes/elements/icon-list.php:531
 msgid "Stroke color"
 msgstr ""
 
-#: includes/elements/icon-list.php:542 includes/elements/icon-list.php:569
+#: includes/elements/icon-list.php:546 includes/elements/icon-list.php:573
 #: includes/elements/svg-animation.php:100
 msgid "Fill"
 msgstr ""
 
-#: includes/elements/icon-list.php:564
+#: includes/elements/icon-list.php:568
 msgid "Object Fit"
 msgstr ""
 
-#: includes/elements/icon-list.php:567 includes/elements/random-image.php:461
+#: includes/elements/icon-list.php:571 includes/elements/random-image.php:461
 #: includes/elements/random-image.php:464
 msgid "Contain"
 msgstr ""
 
-#: includes/elements/icon-list.php:568 includes/elements/random-image.php:460
+#: includes/elements/icon-list.php:572 includes/elements/random-image.php:460
 msgid "Cover"
 msgstr ""
 
-#: includes/elements/icon-list.php:650 includes/elements/multi-heading.php:176
+#: includes/elements/icon-list.php:654 includes/elements/multi-heading.php:176
 msgid "Tag"
 msgstr ""
 
-#: includes/elements/icon-list.php:734
+#: includes/elements/icon-list.php:738
 msgid "Enable"
 msgstr ""
 
-#: includes/elements/icon-list.php:896
+#: includes/elements/icon-list.php:1003
 msgid "No list items defined."
 msgstr ""
 
@@ -1585,6 +1607,7 @@ msgid "Icon Position"
 msgstr ""
 
 #: includes/elements/image-accordion.php:131
+#: includes/elements/scroll-image.php:40
 msgid "Overlay"
 msgstr ""
 
@@ -1804,11 +1827,11 @@ msgstr ""
 msgid "Cursor Movement"
 msgstr ""
 
-#: includes/elements/lottie.php:69
+#: includes/elements/lottie.php:69 includes/elements/scroll-image.php:193
 msgid "Scroll"
 msgstr ""
 
-#: includes/elements/lottie.php:70
+#: includes/elements/lottie.php:70 includes/elements/scroll-image.php:194
 msgid "Viewport"
 msgstr ""
 
@@ -1956,7 +1979,7 @@ msgstr ""
 msgid "Object position"
 msgstr ""
 
-#: includes/elements/random-image.php:129
+#: includes/elements/random-image.php:129 includes/elements/scroll-image.php:67
 msgid "Custom alt text"
 msgstr ""
 
@@ -1981,11 +2004,11 @@ msgstr ""
 msgid "Here goes your caption ..."
 msgstr ""
 
-#: includes/elements/random-image.php:162
+#: includes/elements/random-image.php:162 includes/elements/scroll-image.php:77
 msgid "Loading"
 msgstr ""
 
-#: includes/elements/random-image.php:173
+#: includes/elements/random-image.php:173 includes/elements/scroll-image.php:90
 msgid "Show title"
 msgstr ""
 
@@ -1994,6 +2017,7 @@ msgid "Image Overlay"
 msgstr ""
 
 #: includes/elements/random-image.php:206
+#: includes/elements/scroll-image.php:119
 msgid "Link To"
 msgstr ""
 
@@ -2015,6 +2039,7 @@ msgid "Media File"
 msgstr ""
 
 #: includes/elements/random-image.php:215
+#: includes/elements/scroll-image.php:127
 msgid "Other (URL)"
 msgstr ""
 
@@ -2039,6 +2064,7 @@ msgid "Images of the same lightbox ID are grouped together."
 msgstr ""
 
 #: includes/elements/random-image.php:260
+#: includes/elements/scroll-image.php:136
 msgid "Open in new tab"
 msgstr ""
 
@@ -2168,6 +2194,112 @@ msgstr ""
 
 #: includes/elements/rating.php:230
 msgid "Rated %1$s out of %2$s"
+msgstr ""
+
+#: includes/elements/scroll-image.php:152
+msgid "Frame"
+msgstr ""
+
+#: includes/elements/scroll-image.php:158
+msgid "Image frame"
+msgstr ""
+
+#: includes/elements/scroll-image.php:158
+msgid "Pro"
+msgstr ""
+
+#: includes/elements/scroll-image.php:161
+msgid "Phone"
+msgstr ""
+
+#: includes/elements/scroll-image.php:162
+msgid "Tablet"
+msgstr ""
+
+#: includes/elements/scroll-image.php:163
+msgid "Laptop"
+msgstr ""
+
+#: includes/elements/scroll-image.php:164
+msgid "Desktop"
+msgstr ""
+
+#: includes/elements/scroll-image.php:165
+msgid "Window"
+msgstr ""
+
+#: includes/elements/scroll-image.php:175
+msgid "Image Frame option is available in %1$sMax Addons Pro%2$s."
+msgstr ""
+
+#: includes/elements/scroll-image.php:203
+msgid "Scroll Direction"
+msgstr ""
+
+#: includes/elements/scroll-image.php:206
+#: includes/elements/scroll-image.php:212
+msgid "Top to Bottom"
+msgstr ""
+
+#: includes/elements/scroll-image.php:207
+msgid "Bottom to Top"
+msgstr ""
+
+#: includes/elements/scroll-image.php:208
+msgid "Left to Right"
+msgstr ""
+
+#: includes/elements/scroll-image.php:209
+msgid "Right to Left"
+msgstr ""
+
+#: includes/elements/scroll-image.php:219
+msgid "Scroll speed (s)"
+msgstr ""
+
+#: includes/elements/scroll-image.php:239
+msgid "Image height"
+msgstr ""
+
+#: includes/elements/scroll-image.php:257
+msgid "Image overlay"
+msgstr ""
+
+#: includes/elements/scroll-image.php:271
+msgid "Overlay visibility"
+msgstr ""
+
+#: includes/elements/scroll-image.php:274
+#: includes/elements/scroll-image.php:404
+msgid "Always Visible"
+msgstr ""
+
+#: includes/elements/scroll-image.php:275
+#: includes/elements/scroll-image.php:405
+msgid "Show on Hover"
+msgstr ""
+
+#: includes/elements/scroll-image.php:276
+#: includes/elements/scroll-image.php:280
+#: includes/elements/scroll-image.php:406
+#: includes/elements/scroll-image.php:410
+msgid "Hide on Hover"
+msgstr ""
+
+#: includes/elements/scroll-image.php:359
+msgid "Background color"
+msgstr ""
+
+#: includes/elements/scroll-image.php:401
+msgid "Icon visibility"
+msgstr ""
+
+#: includes/elements/scroll-image.php:417
+msgid "Transition duration (ms)"
+msgstr ""
+
+#: includes/elements/scroll-image.php:646
+msgid "Image ID (%s) no longer exists. Please select another image."
 msgstr ""
 
 #: includes/elements/svg-animation.php:48

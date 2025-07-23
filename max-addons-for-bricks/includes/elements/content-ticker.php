@@ -163,11 +163,8 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'css'     => [
 				[
 					'property' => 'font',
-					'selector' => '.mab-ticker-item-title',
+					'selector' => '.repeater-item',
 				],
-			],
-			'exclude' => [
-				'text-align',
 			],
 			'inline'  => true,
 			'small'   => true,

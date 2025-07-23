@@ -1,6 +1,6 @@
 === Max Addons for Bricks Builder ===
 Contributors: bloompixel, simrandeep, gurpreetbassi
-Tags: bricks, addons, bricks addon, bricks widgets, elements, bricks builder, addons for bricks builder
+Tags: bricks, addons, bricks addon, elements, bricks builder
 Requires at least: 6.3
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -42,10 +42,11 @@ Supercharge Bricks Builder with **Powerful**, **Creative**, and **Fully Customiz
 11. [**Random Image**](https://wpbricksaddons.com/bricks-elements/random-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show different image on your webpage on each page refresh with Random Image Element.
 12. [**Content Ticker**](https://wpbricksaddons.com/bricks-elements/content-ticker/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show latest updates, breaking news or featured posts with Content Ticker element.
 13. [**Rating**](https://wpbricksaddons.com/bricks-elements/rating/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show ratings on your pages with dynamic icon options with Rating element.
-14. [**Contact Form 7 Styler**](https://wpbricksaddons.com/bricks-elements/contact-form-7-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Contact Form 7 fields and create stylish contact forms with the Contact Form 7 Form Styler Element.
-15. [**Gravity Forms Styler**](https://wpbricksaddons.com/bricks-elements/gravity-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Gravity Forms fields and create stylish contact forms with the Gravity Forms Styler Element.
-16. [**Fluent Forms Styler**](https://wpbricksaddons.com/bricks-elements/fluent-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Fluent Forms fields and create stylish contact forms with the Fluent Forms Styler Element.
-17. [**Formidable Forms Styler**](https://wpbricksaddons.com/bricks-elements/formidable-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Formidable Forms fields and create stylish contact forms with the Formidable Forms Styler Element.
+14. [**Scroll Image**](https://wpbricksaddons.com/bricks-elements/scroll-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add dynamic vertical and horizontal scroll effects to your images with Scroll Image element.
+15. [**Contact Form 7 Styler**](https://wpbricksaddons.com/bricks-elements/contact-form-7-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Contact Form 7 fields and create stylish contact forms with the Contact Form 7 Form Styler Element.
+17. [**Gravity Forms Styler**](https://wpbricksaddons.com/bricks-elements/gravity-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Gravity Forms fields and create stylish contact forms with the Gravity Forms Styler Element.
+17. [**Fluent Forms Styler**](https://wpbricksaddons.com/bricks-elements/fluent-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Fluent Forms fields and create stylish contact forms with the Fluent Forms Styler Element.
+18. [**Formidable Forms Styler**](https://wpbricksaddons.com/bricks-elements/formidable-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Formidable Forms fields and create stylish contact forms with the Formidable Forms Styler Element.
 
 ## REVIEWS FROM OUR HAPPY CUSTOMERS 💚
 *Fast, performant and great support – best Addon for Bricks Builder - Joachim B.* ⭐⭐⭐⭐⭐
@@ -103,6 +104,10 @@ If you ever feel lost or need help, Our expert support team is always available 
 
 We bet you do! Share your love and support by liking our page on Facebook. Do share your thoughts and reviews; your feedback is always motivating our team to do better.
 
+= OUR OTHER BRICKS BUILDER ADDONS =
+[EasyDash for Bricks](https://wordpress.org/plugins/easydash-for-bricks/ "EasyDash for Bricks") - Create custom WordPress dashboards using Bricks Builder.
+[Bricks Element Manager](https://wordpress.org/plugins/bricks-element-manager/ "Bricks Element Manager") - Manage default Bricks Builder elements with easy to use interface within WP admin dashboard.
+
 
 == Installation ==
 
@@ -123,6 +128,10 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 
 == Changelog ==
+
+= 1.6.0 - July 23, 2025 =
+* 	New: Element - Scroll Image
+* 	Enhancement: Content Ticker - Added option to align the content text
 
 = 1.5.2 - April 28, 2025 =
 * 	Enhancement: Icon List - Added support for Query Loop

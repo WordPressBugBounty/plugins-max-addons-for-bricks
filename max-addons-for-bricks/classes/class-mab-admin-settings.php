@@ -83,6 +83,7 @@ final class MAB_Admin_Settings {
 			'multi-heading'    => esc_html__( 'Multi Heading', 'max-addons' ),
 			'random-image'     => esc_html__( 'Random Image', 'max-addons' ),
 			'rating'           => esc_html__( 'Rating', 'max-addons' ),
+			'scroll-image'     => esc_html__( 'Scroll Image', 'max-addons' ),
 			'svg-animation'    => esc_html__( 'SVG Animation', 'max-addons' ),
 			'unfold'           => esc_html__( 'Unfold', 'max-addons' ),
 		);

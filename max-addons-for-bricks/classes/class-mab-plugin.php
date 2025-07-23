@@ -319,6 +319,14 @@ class MAB_Plugin {
 		);
 
 		wp_register_script(
+			'mab-scroll-image',
+			$this->get_script_url( 'scroll-image' ),
+			'',
+			MAB_VER,
+			true
+		);
+
+		wp_register_script(
 			'mab-svg-animation',
 			$this->get_script_url( 'svg-animation' ),
 			'',

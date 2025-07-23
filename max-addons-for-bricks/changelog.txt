@@ -1,3 +1,14 @@
+== 1.6.0 ==
+Release date: July 23, 2025
+* New: Element - Scroll Image
+* Enhancement: Content Ticker - Added option to align the content text
+
+== 1.5.2 ==
+Release date: April 28, 2025
+* Enhancement: Icon List - Added support for Query Loop
+* Enhancement: Renamed Icon List to Dynamic List
+* Fix: Hotspots - Fixed issue with hotspot transparent background color
+
 == 1.5.1 ==
 Release date: April 24, 2025
 * Fix: Hotspots - JS error
