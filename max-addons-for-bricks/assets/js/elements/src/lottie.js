@@ -29,6 +29,8 @@ MabLottie.prototype = {
 	init: function() {
 		this.firstFrame  = this.lottie.firstFrame;
 		this.totalFrames = this.lottie.totalFrames;
+		this.loopCount   = parseInt(this.settings.loopCount || 1);
+		this.loopIndex   = 0;
 
 		var offset = this.getOffset();
 		var frames = this.getFrameRange();
@@ -184,19 +186,18 @@ MabLottie.prototype = {
 
 		this.element.dispatchEvent(new Event('max_lottie:complete'));
 
-		if ( 'viewport' !== this.settings.trigger ) {
-			return;
-		}
+		if ( 'yes' === this.settings.loop ) {
+			if ( this.loopIndex < this.loopCount - 1 ) {
+				if ( 'yes' === this.settings.reverse ) {
+					this.playDirection = 'forward' === this.playDirection ? 'backward' : 'forward';
+				}
 
-		if ( 'yes' === this.settings.loop && 'yes' !== this.settings.reverse ) {
-			this.playLottie();
-		}
-		if ( 'yes' === this.settings.loop && 'yes' === this.settings.reverse ) {
-			this.playDirection = 'forward' === this.playDirection ? 'backward' : 'forward';
-			this.playLottie();
-		}
-		if ( 'yes' !== this.settings.loop && 'yes' === this.settings.reverse ) {
-			this.playDirection = 'backward';
+				this.playLottie();
+				this.loopIndex++;
+			} else {
+				// Stop looping after max loops.
+				this.loopIndex = 0;
+			}
 		}
 	},
 
@@ -258,7 +259,7 @@ MabLottie.prototype = {
 
 		//start = Math.min(100, Math.max(0, start));
 		//end = Math.min(100, Math.max(0, end));
-		
+
 		return {
 			start: start,
 			end: end
@@ -308,7 +309,7 @@ MabLottie.prototype = {
 				this.lottie.play();
 				directionMenu = 'yes' === this.settings.reverse ? 1 : -1;
 			});
-	  
+
 			this.animation.addEventListener('mouseleave', (e) => {
 				this.lottie.setDirection(directionMenu);
 				this.lottie.play();
@@ -367,8 +368,6 @@ MabLottie.prototype = {
 			} );
 
 			this.observer.observe( this.player );
-
-			
 		}
 
 	},

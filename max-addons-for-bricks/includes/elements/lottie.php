@@ -24,8 +24,21 @@ class Lottie_Element extends \Bricks\Element {
 		wp_enqueue_script( 'mab-lottie' );
 	}
 
-	// Set builder controls
+	// Set builder control groups
+	public function set_control_groups() {
+		$this->control_groups['lottie'] = [
+			'title' => esc_html__( 'Lottie', 'max-addons' ),
+			'tab'   => 'content',
+		];
+
+		$this->control_groups['settings'] = [
+			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'tab'   => 'content',
+		];
+	}
+
 	public function set_controls() {
+
 		$this->controls['_background']['css'][0]['selector'] = '';
 		$this->controls['_gradient']['css'][0]['selector'] = '';
 
@@ -35,8 +48,10 @@ class Lottie_Element extends \Bricks\Element {
 
 	// Set Lottie controls
 	public function set_lottie_controls() {
+
 		$this->controls['sourceExternalUrl'] = [
 			'tab'     => 'content',
+			'group'   => 'lottie',
 			'label'   => esc_html__( 'Lottie File URL', 'max-addons' ),
 			'type'    => 'text',
 			'default' => 'https://assets2.lottiefiles.com/private_files/lf30_kjpkr2oh.json'
@@ -44,6 +59,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['link'] = [
 			'tab'         => 'content',
+			'group'       => 'lottie',
 			'label'       => esc_html__( 'Link', 'max-addons' ),
 			'type'        => 'link',
 			'pasteStyles' => false,
@@ -59,6 +75,7 @@ class Lottie_Element extends \Bricks\Element {
 	public function set_settings_controls() {
 		$this->controls['trigger'] = [
 			'tab'     => 'content',
+			'group'   => 'settings',
 			'label'   => esc_html__( 'Trigger', 'max-addons' ),
 			'type'    => 'select',
 			'options' => [
@@ -75,6 +92,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['clickSelector'] = [
 			'tab'         => 'content',
+			'group'       => 'settings',
 			'label'       => esc_html__( 'Custom Element Selector', 'max-addons' ),
 			'description' => esc_html__( 'By default clicking on the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons' ),
 			'type'        => 'text',
@@ -84,6 +102,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['hoverSelector'] = [
 			'tab'         => 'content',
+			'group'       => 'settings',
 			'label'       => esc_html__( 'Custom Element Selector', 'max-addons' ),
 			'description' => esc_html__( 'By default hovering over the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons' ),
 			'type'        => 'text',
@@ -93,6 +112,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['cursorSelector'] = [
 			'tab'         => 'content',
+			'group'       => 'settings',
 			'label'       => esc_html__( 'Custom Element Selector', 'max-addons' ),
 			'description' => esc_html__( 'By default moving cursor over the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons' ),
 			'type'        => 'text',
@@ -102,6 +122,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['onAnotherClick'] = [
 			'tab'      => 'content',
+			'group'    => 'settings',
 			'label'    => esc_html__( 'On another click', 'max-addons' ),
 			'type'     => 'select',
 			'options'  => [
@@ -114,6 +135,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['viewportBottom'] = [
 			'tab'      => 'content',
+			'group'    => 'settings',
 			'label'    => esc_html__( 'Offset Bottom (%)', 'max-addons' ),
 			'type'     => 'number',
 			'default'  => 0,
@@ -126,6 +148,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['viewportTop'] = [
 			'tab'      => 'content',
+			'group'    => 'settings',
 			'label'    => esc_html__( 'Offset Top (%)', 'max-addons' ),
 			'type'     => 'number',
 			'default'  => 0,
@@ -138,6 +161,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['loop'] = [
 			'tab'      => 'content',
+			'group'    => 'settings',
 			'label'    => esc_html__( 'Loop', 'max-addons' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
@@ -145,8 +169,23 @@ class Lottie_Element extends \Bricks\Element {
 			'required' => [ 'trigger', '=', ['auto', 'viewport'] ]
 		];
 
+		$this->controls['loopCount'] = [
+			'tab'      => 'content',
+			'group'    => 'settings',
+			'label'    => esc_html__( 'Loop Count', 'max-addons' ),
+			'type'     => 'number',
+			'default'  => 3,
+			'units'    => false,
+			'min'      => 1,
+			'max'      => 100,
+			'inline'   => true,
+			'small'    => true,
+			'required' => [ 'loop', '=', true ],
+		];
+
 		$this->controls['speed'] = [
 			'tab'     => 'content',
+			'group'   => 'settings',
 			'label'   => esc_html__( 'Play Speed', 'max-addons' ),
 			'type'    => 'number',
 			'units'   => false,
@@ -159,6 +198,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['start'] = [
 			'tab'     => 'content',
+			'group'   => 'settings',
 			'label'   => esc_html__( 'Start Frame', 'max-addons' ),
 			'type'    => 'number',
 			'units'   => false,
@@ -171,6 +211,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['end'] = [
 			'tab'     => 'content',
+			'group'   => 'settings',
 			'label'   => esc_html__( 'End Frame', 'max-addons' ),
 			'type'    => 'number',
 			'units'   => false,
@@ -183,6 +224,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['reverse'] = [
 			'tab'      => 'content',
+			'group'    => 'settings',
 			'label'    => esc_html__( 'Reverse', 'max-addons' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
@@ -192,6 +234,7 @@ class Lottie_Element extends \Bricks\Element {
 
 		$this->controls['renderer'] = [
 			'tab'     => 'content',
+			'group'   => 'settings',
 			'label'   => esc_html__( 'Renderer', 'max-addons' ),
 			'type'    => 'select',
 			'options' => [
@@ -208,15 +251,17 @@ class Lottie_Element extends \Bricks\Element {
 	}
 
 	public function get_settings_attrs() {
-		$settings = $this->settings;
-		$trigger  = isset( $settings['trigger'] ) ? $settings['trigger'] : 'none';
-		$loop     = isset( $settings['loop'] ) && $settings['loop'] ? 'yes' : 'no';
-		$speed    = isset( $settings['speed'] ) && $settings['speed'] ? $settings['speed'] : 1;
-		$reverse  = isset( $settings['reverse'] ) && $settings['reverse'] ? 'yes' : 'no';
+		$settings  = $this->settings;
+		$trigger   = isset( $settings['trigger'] ) ? $settings['trigger'] : 'none';
+		$loop      = isset( $settings['loop'] ) && $settings['loop'] ? 'yes' : 'no';
+		$speed     = isset( $settings['speed'] ) && $settings['speed'] ? $settings['speed'] : 1;
+		$reverse   = isset( $settings['reverse'] ) && $settings['reverse'] ? 'yes' : 'no';
+		$loopCount = isset( $settings['loopCount'] ) ? intval( $settings['loopCount'] ) : 3;
+
 
 		$viewport = [
 			'top' => 1,
-			'bottom' => 0 
+			'bottom' => 0
 		];
 
 		if ( isset( $settings['viewportBottom'] ) ) {
@@ -227,12 +272,13 @@ class Lottie_Element extends \Bricks\Element {
 		}
 
 		$attrs = [
-			'trigger'  => $trigger,
-			'loop'     => $loop,
-			'speed'    => $speed,
-			'start'    => 0,
-			'end'      => 0,
-			'viewport' => $viewport,
+			'trigger'   => $trigger,
+			'loop'      => $loop,
+			'speed'     => $speed,
+			'start'     => 0,
+			'end'       => 0,
+			'viewport'  => $viewport,
+			'loopCount' => $loopCount,
 		];
 
 		if ( 'scroll' !== $trigger ) {
@@ -289,10 +335,6 @@ class Lottie_Element extends \Bricks\Element {
 
 		if ( 'auto' === $attrs['trigger'] ) {
 			$this->set_attribute( 'player', 'autoplay', '' );
-		}
-
-		if ( 'yes' === $attrs['loop'] ) {
-			$this->set_attribute( 'player', 'loop', '' );
 		}
 
 		if ( $this->has_link() ) {

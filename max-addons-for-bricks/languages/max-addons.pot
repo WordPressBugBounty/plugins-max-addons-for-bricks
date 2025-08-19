@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Max Addons for Bricks 1.6.0\n"
+"Project-Id-Version: Max Addons for Bricks 1.6.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/max-addons-for-bricks\n"
-"POT-Creation-Date: 2025-07-23 11:48:05+00:00\n"
+"POT-Creation-Date: 2025-08-19 10:56:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,6 +58,7 @@ msgid "Image Comparison"
 msgstr ""
 
 #: classes/class-mab-admin-settings.php:82 includes/elements/lottie.php:17
+#: includes/elements/lottie.php:30
 msgid "Lottie"
 msgstr ""
 
@@ -530,7 +531,7 @@ msgstr ""
 
 #: includes/elements/content-ticker.php:36 includes/elements/flip-box.php:44
 #: includes/elements/image-accordion.php:35
-#: includes/elements/image-comparison.php:55
+#: includes/elements/image-comparison.php:55 includes/elements/lottie.php:35
 #: includes/elements/random-image.php:281 includes/elements/scroll-image.php:35
 #: includes/elements/svg-animation.php:30 includes/elements/unfold.php:45
 #: max-addons-bricks.php:44
@@ -560,7 +561,7 @@ msgstr ""
 #: includes/elements/content-ticker.php:85 includes/elements/cta-button.php:141
 #: includes/elements/flip-box.php:298 includes/elements/hotspots.php:158
 #: includes/elements/icon-list.php:143
-#: includes/elements/image-accordion.php:100 includes/elements/lottie.php:47
+#: includes/elements/image-accordion.php:100 includes/elements/lottie.php:63
 msgid "Link"
 msgstr ""
 
@@ -768,7 +769,7 @@ msgstr ""
 msgid "Duration of transition between slides (in ms)"
 msgstr ""
 
-#: includes/elements/content-ticker.php:506 includes/elements/lottie.php:141
+#: includes/elements/content-ticker.php:506 includes/elements/lottie.php:165
 msgid "Loop"
 msgstr ""
 
@@ -1381,18 +1382,18 @@ msgstr ""
 msgid "Box shadow"
 msgstr ""
 
-#: includes/elements/hotspots.php:386 includes/elements/lottie.php:62
+#: includes/elements/hotspots.php:386 includes/elements/lottie.php:79
 #: includes/elements/scroll-image.php:188
 msgid "Trigger"
 msgstr ""
 
 #: includes/elements/hotspots.php:387 includes/elements/hotspots.php:390
-#: includes/elements/lottie.php:67 includes/elements/scroll-image.php:191
+#: includes/elements/lottie.php:84 includes/elements/scroll-image.php:191
 #: includes/elements/scroll-image.php:197
 msgid "Hover"
 msgstr ""
 
-#: includes/elements/hotspots.php:391 includes/elements/lottie.php:66
+#: includes/elements/hotspots.php:391 includes/elements/lottie.php:83
 #: includes/elements/scroll-image.php:192
 msgid "Click"
 msgstr ""
@@ -1543,7 +1544,7 @@ msgstr ""
 msgid "Icon color"
 msgstr ""
 
-#: includes/elements/icon-list.php:481 includes/elements/lottie.php:198
+#: includes/elements/icon-list.php:481 includes/elements/lottie.php:241
 msgid "SVG"
 msgstr ""
 
@@ -1815,94 +1816,98 @@ msgstr ""
 msgid "Mouse Move"
 msgstr ""
 
-#: includes/elements/lottie.php:40
+#: includes/elements/lottie.php:55
 msgid "Lottie File URL"
 msgstr ""
 
-#: includes/elements/lottie.php:65
+#: includes/elements/lottie.php:82
 msgid "Automatic"
 msgstr ""
 
-#: includes/elements/lottie.php:68
+#: includes/elements/lottie.php:85
 msgid "Cursor Movement"
 msgstr ""
 
-#: includes/elements/lottie.php:69 includes/elements/scroll-image.php:193
+#: includes/elements/lottie.php:86 includes/elements/scroll-image.php:193
 msgid "Scroll"
 msgstr ""
 
-#: includes/elements/lottie.php:70 includes/elements/scroll-image.php:194
+#: includes/elements/lottie.php:87 includes/elements/scroll-image.php:194
 msgid "Viewport"
 msgstr ""
 
-#: includes/elements/lottie.php:78 includes/elements/lottie.php:87
-#: includes/elements/lottie.php:96
+#: includes/elements/lottie.php:96 includes/elements/lottie.php:106
+#: includes/elements/lottie.php:116
 msgid "Custom Element Selector"
 msgstr ""
 
-#: includes/elements/lottie.php:79
+#: includes/elements/lottie.php:97
 msgid ""
 "By default clicking on the lottie element will trigger the animation. You "
 "can change this by adding your custom selector here."
 msgstr ""
 
-#: includes/elements/lottie.php:88
+#: includes/elements/lottie.php:107
 msgid ""
 "By default hovering over the lottie element will trigger the animation. You "
 "can change this by adding your custom selector here."
 msgstr ""
 
-#: includes/elements/lottie.php:97
+#: includes/elements/lottie.php:117
 msgid ""
 "By default moving cursor over the lottie element will trigger the "
 "animation. You can change this by adding your custom selector here."
 msgstr ""
 
-#: includes/elements/lottie.php:105
+#: includes/elements/lottie.php:126
 msgid "On another click"
 msgstr ""
 
-#: includes/elements/lottie.php:108
+#: includes/elements/lottie.php:129
 msgid "Do nothing"
 msgstr ""
 
-#: includes/elements/lottie.php:109
+#: includes/elements/lottie.php:130
 msgid "Play again"
 msgstr ""
 
-#: includes/elements/lottie.php:117
+#: includes/elements/lottie.php:139
 msgid "Offset Bottom (%)"
 msgstr ""
 
-#: includes/elements/lottie.php:129
+#: includes/elements/lottie.php:152
 msgid "Offset Top (%)"
 msgstr ""
 
-#: includes/elements/lottie.php:150
+#: includes/elements/lottie.php:175
+msgid "Loop Count"
+msgstr ""
+
+#: includes/elements/lottie.php:189
 msgid "Play Speed"
 msgstr ""
 
-#: includes/elements/lottie.php:162
+#: includes/elements/lottie.php:202
 msgid "Start Frame"
 msgstr ""
 
-#: includes/elements/lottie.php:174
+#: includes/elements/lottie.php:215
 msgid "End Frame"
 msgstr ""
 
-#: includes/elements/lottie.php:186
+#: includes/elements/lottie.php:228
 msgid "Reverse"
 msgstr ""
 
-#: includes/elements/lottie.php:195
+#: includes/elements/lottie.php:238
 msgid "Renderer"
 msgstr ""
 
-#: includes/elements/lottie.php:199
+#: includes/elements/lottie.php:242
 msgid "Canvas"
 msgstr ""
 
-#: includes/elements/lottie.php:275
+#: includes/elements/lottie.php:321
 msgid "No Lottie file provided."
 msgstr ""
 
