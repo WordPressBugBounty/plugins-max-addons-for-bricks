@@ -195,7 +195,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		];
 	}
 
-	// Set labels controls
+	// Set title and description controls
 	public function set_title_description_controls() {
 		$this->controls['titleTypography'] = [
 			'tab'      => 'content',
@@ -344,7 +344,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'   => [
 				[
 					'property' => 'margin-top',
-					'selector' => '.gform_footer input[type="submit"], .mab-gravity-form .gform_page_footer input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
 				],
 			],
 		];
@@ -360,7 +360,22 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'    => [
 				[
 					'property' => 'font',
-					'selector' => '.gfield label',
+					'selector' => '.gfield .gfield_label',
+				],
+			],
+			'inline' => true,
+			'small'  => true,
+		];
+
+		$this->controls['subLabelsTypography'] = [
+			'tab'    => 'content',
+			'group'  => 'inputFields',
+			'type'   => 'typography',
+			'label'  => esc_html__( 'Sub-Labels Typography', 'max-addons' ),
+			'css'    => [
+				[
+					'property' => 'font',
+					'selector' => '.gfield .gform-field-label--type-sub',
 				],
 			],
 			'inline' => true,
@@ -753,7 +768,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'   => [
 				[
 					'property' => 'width',
-					'selector' => '.gform_footer input[type="submit"], .mab-gravity-form .gform_page_footer input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
 				],
 			],
 		];
@@ -766,7 +781,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'    => [
 				[
 					'property' => 'font',
-					'selector' => '.gform_footer input[type="submit"], .mab-gravity-form .gform_page_footer input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
 				],
 			],
 			'inline' => true,
@@ -780,7 +795,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'    => [
 				[
 					'property' => 'background-color',
-					'selector' => '.gform_footer input[type="submit"], .mab-gravity-form .gform_page_footer input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
 				],
 			],
 			'inline' => true,
@@ -797,7 +812,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'    => [
 				[
 					'property' => 'border',
-					'selector' => '.gform_footer input[type="submit"], .mab-gravity-form .gform_page_footer input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
 				],
 			],
 		];
@@ -810,7 +825,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'    => [
 				[
 					'property' => 'box-shadow',
-					'selector' => '.gform_footer input[type="submit"], .mab-gravity-form .gform_page_footer input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
 				],
 			],
 			'inline' => true,
@@ -825,7 +840,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'css'   => [
 				[
 					'property' => 'padding',
-					'selector' => '.gform_footer input[type="submit"], .mab-gravity-form .gform_page_footer input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
 				],
 			],
 		];
