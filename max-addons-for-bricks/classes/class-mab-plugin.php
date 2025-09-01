@@ -129,6 +129,12 @@ class MAB_Plugin {
 
 		require MAB_DIR . 'classes/class-mab-admin-settings.php';
 		require MAB_DIR . 'classes/class-mab-helper.php';
+
+		if ( is_admin() ) {
+			require_once MAB_DIR . 'includes/admin/feedback/plugin-feedback.php';
+
+			$this->init_feedback_system();
+		}
 	}
 
 	/**
@@ -417,6 +423,42 @@ class MAB_Plugin {
 				\Bricks\Elements::register_element( $path );
 			}
 		}
+	}
+
+	/**
+	 * Add plugin deactivation feedback
+	 *
+	 * @since 1.6.3
+	 */
+	public function init_feedback_system() {
+		$config = [
+			// Required settings.
+			'plugin_slug'    => 'max-addons-for-bricks',
+			'plugin_name'    => 'Max Addons for Bricks',
+			'plugin_url'     => MAB_URL,
+			'plugin_version' => MAB_VER,
+			'assets_url'     => MAB_URL . 'includes/admin/feedback/',
+
+			// Optional settings.
+			'review_link'        => 'https://wordpress.org/support/plugin/max-addons-for-bricks/reviews/#new-post',
+			'buy_link'           => '',
+			'plugin_logo'        => MAB_URL . 'assets/images/max-addons-logo-sm.png',
+			'review_notice_days' => 10, // Show review notice after 10 days.
+
+			// Customization options.
+			'show_review_notice'         => true,
+			'show_deactivation_feedback' => true,
+			'collect_system_info'        => true,
+
+			// Custom deactivation reasons (optional)
+			'custom_deactivation_reasons' => [],
+
+			'installation_date_option' => '{plugin_slug}_install_date',
+			'review_option'            => '{plugin_slug}_review_dismissed',
+		];
+
+		$feedback_system = new Mab_Plugin_Feedback($config);
+		$feedback_system->cleanup();
 	}
 }
 

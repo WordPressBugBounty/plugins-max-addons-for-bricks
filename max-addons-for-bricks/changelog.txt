@@ -1,3 +1,11 @@
+== 1.6.4 ==
+Release date: September 1, 2025
+* Fix: Review notice dismiss functionality was not working
+
+== 1.6.3 ==
+Release date: August 31, 2025
+* Enhancement: Added plugin deactivation feedback form
+
 == 1.6.2 ==
 Release date: August 29, 2025
 * Enhancement: Gravity Forms Styler - Added option to change typography of sub fields

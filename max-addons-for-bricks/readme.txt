@@ -130,6 +130,12 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 == Changelog ==
 
+= 1.6.4 - September 1, 2025 =
+* 	Fix: Review notice dismiss functionality was not working
+
+= 1.6.3 - August 31, 2025 =
+* 	Enhancement: Added plugin deactivation feedback form
+
 = 1.6.2 - August 29, 2025 =
 * 	Enhancement: Gravity Forms Styler - Added option to change typography of sub fields
 * 	Fix: Gravity Forms - Submit button style options were not working when button location is set to "End of the last row"
