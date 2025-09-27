@@ -130,6 +130,10 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 == Changelog ==
 
+= 1.6.5 - September 27, 2025 =
+* 	Enhancement: Gravity Forms - Improved default styling
+* 	Fix: Gravity Forms - Form was not displaying in editor in some cases
+
 = 1.6.4 - September 1, 2025 =
 * 	Fix: Review notice dismiss functionality was not working
 

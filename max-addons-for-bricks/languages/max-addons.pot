@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Max Addons for Bricks 1.6.4\n"
+"Project-Id-Version: Max Addons for Bricks 1.6.5\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/max-addons-for-bricks\n"
-"POT-Creation-Date: 2025-09-01 07:45:40+00:00\n"
+"POT-Creation-Date: 2025-09-27 04:50:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -280,14 +280,14 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:32
 #: includes/elements/fluent-forms-styler.php:118
 #: includes/elements/formidable-forms-styler.php:32
-#: includes/elements/gravity-forms-styler.php:26
+#: includes/elements/gravity-forms-styler.php:44
 msgid "Contact Form"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:37
 #: includes/elements/fluent-forms-styler.php:37
 #: includes/elements/formidable-forms-styler.php:42
-#: includes/elements/gravity-forms-styler.php:36
+#: includes/elements/gravity-forms-styler.php:54
 msgid "Input Fields"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 #: includes/elements/flip-box.php:1011
 #: includes/elements/fluent-forms-styler.php:42
 #: includes/elements/formidable-forms-styler.php:47
-#: includes/elements/gravity-forms-styler.php:41
+#: includes/elements/gravity-forms-styler.php:59
 #: includes/elements/multi-heading.php:334 includes/elements/unfold.php:424
 msgid "Spacing"
 msgstr ""
@@ -304,28 +304,28 @@ msgstr ""
 #: includes/elements/cf7-styler.php:47
 #: includes/elements/fluent-forms-styler.php:52
 #: includes/elements/formidable-forms-styler.php:57
-#: includes/elements/gravity-forms-styler.php:61
+#: includes/elements/gravity-forms-styler.php:79
 msgid "Radio And Checkbox"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:52
 #: includes/elements/fluent-forms-styler.php:57
 #: includes/elements/formidable-forms-styler.php:62
-#: includes/elements/gravity-forms-styler.php:66
+#: includes/elements/gravity-forms-styler.php:84
 msgid "Submit Button"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:76
 #: includes/elements/fluent-forms-styler.php:97
 #: includes/elements/formidable-forms-styler.php:104
-#: includes/elements/gravity-forms-styler.php:126
+#: includes/elements/gravity-forms-styler.php:144
 msgid "Select Form"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:81
 #: includes/elements/fluent-forms-styler.php:102
 #: includes/elements/formidable-forms-styler.php:109
-#: includes/elements/gravity-forms-styler.php:131
+#: includes/elements/gravity-forms-styler.php:149
 #: includes/elements/random-image.php:444
 msgid "Select"
 msgstr ""
@@ -341,7 +341,7 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:117
 #: includes/elements/formidable-forms-styler.php:115
 #: includes/elements/formidable-forms-styler.php:155
-#: includes/elements/gravity-forms-styler.php:137
+#: includes/elements/gravity-forms-styler.php:155
 #: includes/elements/icon-list.php:100 includes/elements/image-accordion.php:83
 #: includes/elements/image-accordion.php:259
 msgid "Title"
@@ -350,8 +350,8 @@ msgstr ""
 #: includes/elements/cf7-styler.php:103
 #: includes/elements/fluent-forms-styler.php:153
 #: includes/elements/formidable-forms-styler.php:163
-#: includes/elements/gravity-forms-styler.php:204
-#: includes/elements/gravity-forms-styler.php:556
+#: includes/elements/gravity-forms-styler.php:222
+#: includes/elements/gravity-forms-styler.php:574
 #: includes/elements/image-accordion.php:435
 msgid "Title Typography"
 msgstr ""
@@ -359,21 +359,21 @@ msgstr ""
 #: includes/elements/cf7-styler.php:122
 #: includes/elements/fluent-forms-styler.php:235
 #: includes/elements/formidable-forms-styler.php:294
-#: includes/elements/gravity-forms-styler.php:359
+#: includes/elements/gravity-forms-styler.php:377
 msgid "Labels Typography"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:137
 #: includes/elements/fluent-forms-styler.php:250
 #: includes/elements/formidable-forms-styler.php:317
-#: includes/elements/gravity-forms-styler.php:389
+#: includes/elements/gravity-forms-styler.php:407
 msgid "Placeholder Typography"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:152
 #: includes/elements/fluent-forms-styler.php:269
 #: includes/elements/formidable-forms-styler.php:336
-#: includes/elements/gravity-forms-styler.php:404
+#: includes/elements/gravity-forms-styler.php:422
 msgid "Fields Typography"
 msgstr ""
 
@@ -385,9 +385,9 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:634
 #: includes/elements/formidable-forms-styler.php:359
 #: includes/elements/formidable-forms-styler.php:703
-#: includes/elements/gravity-forms-styler.php:419
-#: includes/elements/gravity-forms-styler.php:793
-#: includes/elements/gravity-forms-styler.php:882
+#: includes/elements/gravity-forms-styler.php:437
+#: includes/elements/gravity-forms-styler.php:811
+#: includes/elements/gravity-forms-styler.php:900
 #: includes/elements/hotspots.php:289 includes/elements/hotspots.php:457
 #: includes/elements/image-accordion.php:480
 #: includes/elements/image-comparison.php:170
@@ -410,12 +410,12 @@ msgstr ""
 #: includes/elements/formidable-forms-styler.php:718
 #: includes/elements/formidable-forms-styler.php:791
 #: includes/elements/formidable-forms-styler.php:854
-#: includes/elements/gravity-forms-styler.php:434
-#: includes/elements/gravity-forms-styler.php:585
-#: includes/elements/gravity-forms-styler.php:808
-#: includes/elements/gravity-forms-styler.php:897
-#: includes/elements/gravity-forms-styler.php:1004
-#: includes/elements/gravity-forms-styler.php:1208
+#: includes/elements/gravity-forms-styler.php:452
+#: includes/elements/gravity-forms-styler.php:603
+#: includes/elements/gravity-forms-styler.php:826
+#: includes/elements/gravity-forms-styler.php:915
+#: includes/elements/gravity-forms-styler.php:1022
+#: includes/elements/gravity-forms-styler.php:1226
 #: includes/elements/hotspots.php:303 includes/elements/hotspots.php:368
 #: includes/elements/hotspots.php:492 includes/elements/icon-list.php:256
 #: includes/elements/image-accordion.php:347
@@ -436,10 +436,10 @@ msgstr ""
 #: includes/elements/formidable-forms-styler.php:733
 #: includes/elements/formidable-forms-styler.php:806
 #: includes/elements/formidable-forms-styler.php:868
-#: includes/elements/gravity-forms-styler.php:448
-#: includes/elements/gravity-forms-styler.php:823
-#: includes/elements/gravity-forms-styler.php:912
-#: includes/elements/gravity-forms-styler.php:1019
+#: includes/elements/gravity-forms-styler.php:466
+#: includes/elements/gravity-forms-styler.php:841
+#: includes/elements/gravity-forms-styler.php:930
+#: includes/elements/gravity-forms-styler.php:1037
 #: includes/elements/image-accordion.php:361
 #: includes/elements/image-accordion.php:672
 #: includes/elements/image-comparison.php:201 includes/elements/unfold.php:366
@@ -449,14 +449,14 @@ msgstr ""
 #: includes/elements/cf7-styler.php:254
 #: includes/elements/fluent-forms-styler.php:360
 #: includes/elements/formidable-forms-styler.php:427
-#: includes/elements/gravity-forms-styler.php:463
+#: includes/elements/gravity-forms-styler.php:481
 msgid "Input Width"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:272
 #: includes/elements/fluent-forms-styler.php:378
 #: includes/elements/formidable-forms-styler.php:445
-#: includes/elements/gravity-forms-styler.php:477
+#: includes/elements/gravity-forms-styler.php:495
 msgid "Textarea Width"
 msgstr ""
 
@@ -469,10 +469,10 @@ msgstr ""
 #: includes/elements/formidable-forms-styler.php:474
 #: includes/elements/formidable-forms-styler.php:748
 #: includes/elements/formidable-forms-styler.php:883
-#: includes/elements/gravity-forms-styler.php:505
-#: includes/elements/gravity-forms-styler.php:838
-#: includes/elements/gravity-forms-styler.php:927
-#: includes/elements/gravity-forms-styler.php:1222
+#: includes/elements/gravity-forms-styler.php:523
+#: includes/elements/gravity-forms-styler.php:856
+#: includes/elements/gravity-forms-styler.php:945
+#: includes/elements/gravity-forms-styler.php:1240
 #: includes/elements/hotspots.php:331 includes/elements/hotspots.php:520
 #: includes/elements/icon-list.php:213
 #: includes/elements/image-accordion.php:557
@@ -488,28 +488,28 @@ msgstr ""
 #: includes/elements/flip-box.php:795
 #: includes/elements/fluent-forms-styler.php:428
 #: includes/elements/formidable-forms-styler.php:495
-#: includes/elements/gravity-forms-styler.php:518
+#: includes/elements/gravity-forms-styler.php:536
 msgid "Text align"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:331
 #: includes/elements/fluent-forms-styler.php:175
 #: includes/elements/formidable-forms-styler.php:234
-#: includes/elements/gravity-forms-styler.php:285
+#: includes/elements/gravity-forms-styler.php:303
 msgid "Labels Spacing"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:345
 #: includes/elements/fluent-forms-styler.php:189
 #: includes/elements/formidable-forms-styler.php:248
-#: includes/elements/gravity-forms-styler.php:299
+#: includes/elements/gravity-forms-styler.php:317
 msgid "Fields Spacing"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:362
 #: includes/elements/fluent-forms-styler.php:473
 #: includes/elements/formidable-forms-styler.php:540
-#: includes/elements/gravity-forms-styler.php:649
+#: includes/elements/gravity-forms-styler.php:667
 msgid "Custom Styles"
 msgstr ""
 
@@ -519,7 +519,7 @@ msgstr ""
 #: includes/elements/flip-box.php:911
 #: includes/elements/fluent-forms-styler.php:480
 #: includes/elements/formidable-forms-styler.php:547
-#: includes/elements/gravity-forms-styler.php:656
+#: includes/elements/gravity-forms-styler.php:674
 #: includes/elements/hotspots.php:239 includes/elements/hotspots.php:350
 #: includes/elements/image-accordion.php:573
 #: includes/elements/random-image.php:454
@@ -531,7 +531,7 @@ msgstr ""
 #: includes/elements/flip-box.php:741
 #: includes/elements/fluent-forms-styler.php:509
 #: includes/elements/formidable-forms-styler.php:578
-#: includes/elements/gravity-forms-styler.php:676
+#: includes/elements/gravity-forms-styler.php:694
 #: includes/elements/hotspots.php:181 includes/elements/icon-list.php:798
 #: includes/elements/multi-heading.php:382
 #: includes/elements/scroll-image.php:341
@@ -541,14 +541,14 @@ msgstr ""
 #: includes/elements/cf7-styler.php:414
 #: includes/elements/fluent-forms-styler.php:549
 #: includes/elements/formidable-forms-styler.php:618
-#: includes/elements/gravity-forms-styler.php:708
+#: includes/elements/gravity-forms-styler.php:726
 msgid "Checkbox Border"
 msgstr ""
 
 #: includes/elements/cf7-styler.php:430
 #: includes/elements/fluent-forms-styler.php:565
 #: includes/elements/formidable-forms-styler.php:634
-#: includes/elements/gravity-forms-styler.php:724
+#: includes/elements/gravity-forms-styler.php:742
 msgid "Radio Border"
 msgstr ""
 
@@ -556,9 +556,9 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:584
 #: includes/elements/formidable-forms-styler.php:134
 #: includes/elements/formidable-forms-styler.php:653
-#: includes/elements/gravity-forms-styler.php:235
-#: includes/elements/gravity-forms-styler.php:743
-#: includes/elements/gravity-forms-styler.php:1241
+#: includes/elements/gravity-forms-styler.php:253
+#: includes/elements/gravity-forms-styler.php:761
+#: includes/elements/gravity-forms-styler.php:1259
 #: includes/elements/unfold.php:181
 msgid "Alignment"
 msgstr ""
@@ -569,7 +569,7 @@ msgstr ""
 #: includes/elements/fluent-forms-styler.php:587
 #: includes/elements/formidable-forms-styler.php:656
 #: includes/elements/formidable-forms-styler.php:660
-#: includes/elements/gravity-forms-styler.php:746
+#: includes/elements/gravity-forms-styler.php:764
 #: includes/elements/hotspots.php:413 includes/elements/image-accordion.php:534
 #: includes/elements/multi-heading.php:279
 msgid "Left"
@@ -581,7 +581,7 @@ msgstr ""
 #: includes/elements/flip-box.php:824
 #: includes/elements/fluent-forms-styler.php:588
 #: includes/elements/formidable-forms-styler.php:657
-#: includes/elements/gravity-forms-styler.php:747
+#: includes/elements/gravity-forms-styler.php:765
 #: includes/elements/image-accordion.php:535
 msgid "Center"
 msgstr ""
@@ -591,7 +591,7 @@ msgstr ""
 #: includes/elements/flip-box.php:463 includes/elements/flip-box.php:684
 #: includes/elements/fluent-forms-styler.php:589
 #: includes/elements/formidable-forms-styler.php:658
-#: includes/elements/gravity-forms-styler.php:748
+#: includes/elements/gravity-forms-styler.php:766
 #: includes/elements/hotspots.php:416 includes/elements/image-accordion.php:536
 #: includes/elements/multi-heading.php:278 includes/elements/unfold.php:306
 msgid "Right"
@@ -603,8 +603,8 @@ msgstr ""
 #: includes/elements/cta-button.php:274
 #: includes/elements/fluent-forms-styler.php:606
 #: includes/elements/formidable-forms-styler.php:675
-#: includes/elements/gravity-forms-styler.php:765
-#: includes/elements/gravity-forms-styler.php:854
+#: includes/elements/gravity-forms-styler.php:783
+#: includes/elements/gravity-forms-styler.php:872
 #: includes/elements/icon-list.php:501 includes/elements/icon-list.php:601
 #: includes/elements/multi-heading.php:291
 #: includes/elements/scroll-image.php:311
@@ -625,11 +625,11 @@ msgstr ""
 #: includes/elements/formidable-forms-styler.php:689
 #: includes/elements/formidable-forms-styler.php:771
 #: includes/elements/formidable-forms-styler.php:824
-#: includes/elements/gravity-forms-styler.php:538
-#: includes/elements/gravity-forms-styler.php:779
-#: includes/elements/gravity-forms-styler.php:868
-#: includes/elements/gravity-forms-styler.php:1062
-#: includes/elements/gravity-forms-styler.php:1178
+#: includes/elements/gravity-forms-styler.php:556
+#: includes/elements/gravity-forms-styler.php:797
+#: includes/elements/gravity-forms-styler.php:886
+#: includes/elements/gravity-forms-styler.php:1080
+#: includes/elements/gravity-forms-styler.php:1196
 #: includes/elements/hotspots.php:274 includes/elements/hotspots.php:478
 #: includes/elements/icon-list.php:622 includes/elements/icon-list.php:670
 #: includes/elements/icon-list.php:702 includes/elements/icon-list.php:720
@@ -648,7 +648,7 @@ msgstr ""
 #: includes/elements/cf7-styler.php:597
 #: includes/elements/fluent-forms-styler.php:840
 #: includes/elements/formidable-forms-styler.php:909
-#: includes/elements/gravity-forms-styler.php:1264
+#: includes/elements/gravity-forms-styler.php:1282
 msgid "No contact form selected."
 msgstr ""
 
@@ -788,7 +788,7 @@ msgstr ""
 #: includes/elements/content-ticker.php:214
 #: includes/elements/formidable-forms-styler.php:179
 #: includes/elements/formidable-forms-styler.php:217
-#: includes/elements/gravity-forms-styler.php:600
+#: includes/elements/gravity-forms-styler.php:618
 #: includes/elements/icon-list.php:200 includes/elements/icon-list.php:641
 #: includes/elements/icon-list.php:689
 #: includes/elements/image-comparison.php:270
@@ -986,7 +986,7 @@ msgstr ""
 #: includes/elements/flip-box.php:290
 #: includes/elements/formidable-forms-styler.php:123
 #: includes/elements/formidable-forms-styler.php:193
-#: includes/elements/gravity-forms-styler.php:145
+#: includes/elements/gravity-forms-styler.php:163
 #: includes/elements/icon-list.php:59 includes/elements/icon-list.php:154
 msgid "Description"
 msgstr ""
@@ -1034,8 +1034,8 @@ msgstr ""
 
 #: includes/elements/cta-button.php:125
 #: includes/elements/formidable-forms-styler.php:201
-#: includes/elements/gravity-forms-styler.php:220
-#: includes/elements/gravity-forms-styler.php:571
+#: includes/elements/gravity-forms-styler.php:238
+#: includes/elements/gravity-forms-styler.php:589
 msgid "Description Typography"
 msgstr ""
 
@@ -1077,7 +1077,7 @@ msgid "Gap"
 msgstr ""
 
 #: includes/elements/cta-button.php:259 includes/elements/flip-box.php:382
-#: includes/elements/gravity-forms-styler.php:1034
+#: includes/elements/gravity-forms-styler.php:1052
 #: includes/elements/icon-list.php:487 includes/elements/icon-list.php:587
 #: includes/elements/image-accordion.php:208
 #: includes/elements/multi-heading.php:316
@@ -1240,7 +1240,7 @@ msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:62
 #: includes/elements/formidable-forms-styler.php:67
-#: includes/elements/gravity-forms-styler.php:81
+#: includes/elements/gravity-forms-styler.php:99
 msgid "Errors"
 msgstr ""
 
@@ -1260,19 +1260,19 @@ msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:217
 #: includes/elements/formidable-forms-styler.php:276
-#: includes/elements/gravity-forms-styler.php:341
+#: includes/elements/gravity-forms-styler.php:359
 msgid "Button Top Spacing"
 msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:393
 #: includes/elements/formidable-forms-styler.php:460
-#: includes/elements/gravity-forms-styler.php:491
+#: includes/elements/gravity-forms-styler.php:509
 msgid "Textarea Height"
 msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:529
 #: includes/elements/formidable-forms-styler.php:598
-#: includes/elements/gravity-forms-styler.php:692
+#: includes/elements/gravity-forms-styler.php:710
 msgid "Checked Color"
 msgstr ""
 
@@ -1288,7 +1288,7 @@ msgstr ""
 
 #: includes/elements/fluent-forms-styler.php:769
 #: includes/elements/formidable-forms-styler.php:838
-#: includes/elements/gravity-forms-styler.php:1192
+#: includes/elements/gravity-forms-styler.php:1210
 #: includes/elements/hotspots.php:194 includes/elements/image-accordion.php:643
 #: includes/elements/unfold.php:108
 msgid "Background Color"
@@ -1299,12 +1299,12 @@ msgid "Fluent Forms is not installed or activated."
 msgstr ""
 
 #: includes/elements/formidable-forms-styler.php:37
-#: includes/elements/gravity-forms-styler.php:31
+#: includes/elements/gravity-forms-styler.php:49
 msgid "Title and Description"
 msgstr ""
 
 #: includes/elements/formidable-forms-styler.php:52
-#: includes/elements/gravity-forms-styler.php:46
+#: includes/elements/gravity-forms-styler.php:64
 msgid "Field Description"
 msgstr ""
 
@@ -1312,132 +1312,132 @@ msgstr ""
 msgid "Formidable Forms is not installed or activated."
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:51
+#: includes/elements/gravity-forms-styler.php:69
 msgid "Section Field"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:56
+#: includes/elements/gravity-forms-styler.php:74
 msgid "Price"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:71
+#: includes/elements/gravity-forms-styler.php:89
 msgid "Pagination"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:76
+#: includes/elements/gravity-forms-styler.php:94
 msgid "Progress"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:86
+#: includes/elements/gravity-forms-styler.php:104
 msgid "Thank You Message"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:153
+#: includes/elements/gravity-forms-styler.php:171
 msgid "Use Ajax"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:154
+#: includes/elements/gravity-forms-styler.php:172
 msgid "Use ajax to submit the form"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:162
-#: includes/elements/gravity-forms-styler.php:179
 #: includes/elements/gravity-forms-styler.php:180
+#: includes/elements/gravity-forms-styler.php:197
+#: includes/elements/gravity-forms-styler.php:198
 msgid "Field Values"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:170
+#: includes/elements/gravity-forms-styler.php:188
 msgid ""
 "Dynamically populate contact form with field values. Read more about field "
 "values %1$shere%2$s."
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:185
+#: includes/elements/gravity-forms-styler.php:203
 msgid "Parameter name"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:190
+#: includes/elements/gravity-forms-styler.php:208
 msgid "Field value"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:255
+#: includes/elements/gravity-forms-styler.php:273
 #: includes/elements/image-accordion.php:450
 msgid "Title Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:270
+#: includes/elements/gravity-forms-styler.php:288
 msgid "Description Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:313
+#: includes/elements/gravity-forms-styler.php:331
 msgid "Field Description Top Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:327
+#: includes/elements/gravity-forms-styler.php:345
 msgid "Pagination Top Spacing"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:374
+#: includes/elements/gravity-forms-styler.php:392
 msgid "Sub-Labels Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:616
+#: includes/elements/gravity-forms-styler.php:634
 msgid "Price Label Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:631
+#: includes/elements/gravity-forms-styler.php:649
 msgid "Price Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:944
+#: includes/elements/gravity-forms-styler.php:962
 msgid "Label Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:959
+#: includes/elements/gravity-forms-styler.php:977
 msgid "Percentage Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:974
+#: includes/elements/gravity-forms-styler.php:992
 msgid "Bar Background Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:989
+#: includes/elements/gravity-forms-styler.php:1007
 msgid "Percentage Background Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1056
+#: includes/elements/gravity-forms-styler.php:1074
 msgid "Error Messages"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1077
+#: includes/elements/gravity-forms-styler.php:1095
 msgid "Validation Errors"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1083
+#: includes/elements/gravity-forms-styler.php:1101
 msgid "Error Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1097
+#: includes/elements/gravity-forms-styler.php:1115
 msgid "Error Border Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1116
+#: includes/elements/gravity-forms-styler.php:1134
 msgid "Error Field Background Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1131
+#: includes/elements/gravity-forms-styler.php:1149
 msgid "Error Field Label Typography"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1146
+#: includes/elements/gravity-forms-styler.php:1164
 msgid "Error Field Input Border Color"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1161
+#: includes/elements/gravity-forms-styler.php:1179
 msgid "Error Field Input Border Width"
 msgstr ""
 
-#: includes/elements/gravity-forms-styler.php:1260
+#: includes/elements/gravity-forms-styler.php:1278
 msgid "Gravity forms is not installed or activated."
 msgstr ""
 

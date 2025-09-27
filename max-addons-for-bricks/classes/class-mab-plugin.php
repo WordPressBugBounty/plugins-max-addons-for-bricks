@@ -254,6 +254,14 @@ class MAB_Plugin {
 			);
 		}
 
+		wp_register_style(
+			'mab-contact-form',
+			MAB_URL . 'assets/css/elements/forms' . $debug_suffix . '.css',
+			array(),
+			MAB_VER,
+			'all'
+		);
+
 		/**
 		 * Scripts.
 		 */

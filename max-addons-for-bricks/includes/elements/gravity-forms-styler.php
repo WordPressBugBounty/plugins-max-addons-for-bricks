@@ -20,6 +20,24 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		return esc_html__( 'Gravity Forms Styler', 'max-addons' );
 	}
 
+	// Enqueue element styles and scripts
+	public function enqueue_scripts() {
+		wp_enqueue_style( 'mab-contact-form' );
+
+		if ( bricks_is_builder() ) {
+			wp_enqueue_style( 'gform_theme_components' );
+			wp_enqueue_style( 'gforms_reset_css' );
+			wp_enqueue_style( 'gforms_datepicker_css' );
+			wp_enqueue_style( 'gforms_formsmain_css' );
+			wp_enqueue_style( 'gforms_ready_class_css' );
+			wp_enqueue_style( 'gforms_browsers_css' );
+			wp_enqueue_style( 'gforms_rtl_css' );
+			wp_enqueue_style( 'gform_basic' );
+			wp_enqueue_style( 'gform_theme' );
+			wp_enqueue_style( 'gform_theme_admin' );
+		}
+	}
+
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['form'] = [ // Unique group identifier (lowercase, no spaces)
