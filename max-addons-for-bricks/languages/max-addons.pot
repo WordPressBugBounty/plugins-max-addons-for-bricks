@@ -2,10 +2,10 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Max Addons for Bricks 1.6.5\n"
+"Project-Id-Version: Max Addons for Bricks 1.6.6\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/max-addons-for-bricks\n"
-"POT-Creation-Date: 2025-09-27 04:50:14+00:00\n"
+"POT-Creation-Date: 2025-12-04 01:39:32+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -808,8 +808,8 @@ msgstr ""
 #: includes/elements/flip-box.php:96 includes/elements/flip-box.php:106
 #: includes/elements/flip-box.php:225 includes/elements/flip-box.php:235
 #: includes/elements/hotspots.php:126 includes/elements/hotspots.php:136
-#: includes/elements/icon-list.php:44 includes/elements/icon-list.php:109
-#: includes/elements/icon-list.php:119 includes/elements/random-image.php:272
+#: includes/elements/icon-list.php:109 includes/elements/icon-list.php:119
+#: includes/elements/random-image.php:272
 #: includes/elements/random-image.php:286 includes/elements/rating.php:57
 #: includes/elements/scroll-image.php:45 includes/elements/scroll-image.php:288
 #: includes/elements/unfold.php:218 includes/elements/unfold.php:253
@@ -929,19 +929,19 @@ msgid "Next arrow"
 msgstr ""
 
 #: includes/elements/content-ticker.php:799
-#: includes/elements/cta-button.php:330 includes/elements/icon-list.php:850
+#: includes/elements/cta-button.php:330 includes/elements/icon-list.php:862
 msgid ""
 "Can't render element, as the selected ACF field is not available. Please "
 "activate ACF or edit the element to select different data."
 msgstr ""
 
 #: includes/elements/content-ticker.php:801
-#: includes/elements/cta-button.php:332 includes/elements/icon-list.php:852
+#: includes/elements/cta-button.php:332 includes/elements/icon-list.php:864
 msgid "No featured image set."
 msgstr ""
 
 #: includes/elements/content-ticker.php:803
-#: includes/elements/cta-button.php:334 includes/elements/icon-list.php:854
+#: includes/elements/cta-button.php:334 includes/elements/icon-list.php:866
 msgid "Dynamic Data %1$s (%2$s) is empty."
 msgstr ""
 
@@ -1585,6 +1585,10 @@ msgstr ""
 msgid "Highlight"
 msgstr ""
 
+#: includes/elements/icon-list.php:44
+msgid "Icon/Image"
+msgstr ""
+
 #: includes/elements/icon-list.php:54 includes/elements/icon-list.php:148
 msgid "Meta"
 msgstr ""
@@ -1709,7 +1713,7 @@ msgstr ""
 msgid "Enable"
 msgstr ""
 
-#: includes/elements/icon-list.php:1003
+#: includes/elements/icon-list.php:1016
 msgid "No list items defined."
 msgstr ""
 

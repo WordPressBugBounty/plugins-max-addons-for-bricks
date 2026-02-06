@@ -1,3 +1,8 @@
+== 1.6.6 ==
+Release date: December 4, 2025
+* Enhancement: Updated compatibility with WordPress 6.9
+* Fix: Dynamic List - Issue with dynamic icon image
+
 == 1.6.5 ==
 Release date: September 27, 2025
 * Enhancement: Gravity Forms - Improved default styling

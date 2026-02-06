@@ -41,7 +41,7 @@ class Icon_List_Element extends \Bricks\Element {
 		];
 
 		$this->control_groups['icon'] = [
-			'title' => esc_html__( 'Icon', 'max-addons' ),
+			'title' => esc_html__( 'Icon/Image', 'max-addons' ),
 			'tab'   => 'content',
 		];
 
@@ -810,29 +810,38 @@ class Icon_List_Element extends \Bricks\Element {
 	}
 
 	public function get_normalized_image_settings( $settings ) {
-		if ( ! isset( $settings['image'] ) ) {
-			$settings['image'] = [
-				'id'  => 0,
-				'url' => '',
+		if ( empty( $settings['image'] ) ) {
+			return [
+				'id'   => 0,
+				'url'  => false,
+				'size' => BRICKS_DEFAULT_IMAGE_SIZE,
 			];
-			return $settings;
 		}
 
 		$image = $settings['image'];
 
-		if ( isset( $image['useDynamicData']['name'] ) ) {
-			$images = $this->render_dynamic_data_tag( $image['useDynamicData']['name'] );
-			$image['id'] = empty( $images ) ? 0 : $images[0];
-		} else {
-			$image['id'] = isset( $image['id'] ) ? $image['id'] : 0;
+		// Size
+		$image['size'] = empty( $image['size'] ) ? BRICKS_DEFAULT_IMAGE_SIZE : $settings['image']['size'];
+
+		// Image ID or URL from dynamic data
+		if ( ! empty( $image['useDynamicData'] ) ) {
+
+			$images = $this->render_dynamic_data_tag( $image['useDynamicData'], 'image', [ 'size' => $image['size'] ] );
+
+			if ( ! empty( $images[0] ) ) {
+				if ( is_numeric( $images[0] ) ) {
+					$image['id'] = $images[0];
+				} else {
+					$image['url'] = $images[0];
+				}
+			}
 		}
 
-		// Image Size
-		$image['size'] = isset( $image['size'] ) ? $settings['image']['size'] : BRICKS_DEFAULT_IMAGE_SIZE;
+		$image['id'] = empty( $image['id'] ) ? 0 : $image['id'];
 
-		// Image URL
+		// If External URL, $image['url'] is already set
 		if ( ! isset( $image['url'] ) ) {
-			$image['url'] = wp_get_attachment_image_url( $image['id'], $image['size'] );
+			$image['url'] = ! empty( $image['id'] ) ? wp_get_attachment_image_url( $image['id'], $image['size'] ) : false;
 		}
 
 		$settings['image'] = $image;
@@ -841,6 +850,9 @@ class Icon_List_Element extends \Bricks\Element {
 	}
 
 	public function render_icon_image( $settings ) {
+		if ( empty( $settings['image'] ) ) {
+			return;
+		}
 
 		if ( isset( $settings['image']['useDynamicData']['name'] ) ) {
 
@@ -873,7 +885,8 @@ class Icon_List_Element extends \Bricks\Element {
 		$image_wrapper_classes = [ 'mab-icon-list-icon' ];
 		$img_classes = [ 'post-thumbnail', 'css-filter' ];
 
-		$img_classes[] = 'size-' . $settings['image']['size'];
+		$img_size = ! empty( $settings['image']['size'] ) ? $settings['image']['size'] : 'large';
+		$img_classes[] = 'size-' . esc_attr( $img_size );
 		$image_atts['class'] = join( ' ', $img_classes );
 
 		$this->set_attribute( 'image-wrapper', 'class', $image_wrapper_classes );
@@ -882,7 +895,7 @@ class Icon_List_Element extends \Bricks\Element {
 
 		// Lazy load atts set via 'wp_get_attachment_image_attributes' filter
 		if ( isset( $settings['image']['id'] ) ) {
-			$img_html .= wp_get_attachment_image( $settings['image']['id'], $settings['image']['size'], false, $image_atts );
+			$img_html .= wp_get_attachment_image( $settings['image']['id'], $img_size, false, $image_atts );
 		} elseif ( ! empty( $settings['image']['url'] ) ) {
 			$img_html .= '<img src="' . $settings['image']['url'] . '">';
 		}

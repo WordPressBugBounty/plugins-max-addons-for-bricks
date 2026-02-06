@@ -2,9 +2,9 @@
 Contributors: bloompixel, simrandeep, gurpreetbassi
 Tags: bricks, addons, bricks addon, elements, bricks builder
 Requires at least: 6.3
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: trunk
+Stable tag: 1.6.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,10 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 
 == Changelog ==
+
+= 1.6.6 - December 4, 2025 =
+* 	Enhancement: Updated compatibility with WordPress 6.9
+* 	Fix: Dynamic List - Issue with dynamic icon image
 
 = 1.6.5 - September 27, 2025 =
 * 	Enhancement: Gravity Forms - Improved default styling
