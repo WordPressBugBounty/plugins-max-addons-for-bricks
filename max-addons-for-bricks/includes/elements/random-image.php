@@ -1,11 +1,13 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Random_Image_Element extends \Bricks\Element {
+class Random_Image_Element extends Element_Base {
 	// Element properties
 	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-random-image'; // Make sure to prefix your elements
@@ -14,7 +16,7 @@ class Random_Image_Element extends \Bricks\Element {
 	public $scripts      = []; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public function get_label() {
-		return esc_html__( 'Random Image', 'max-addons' );
+		return esc_html__( 'Random Image', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -44,13 +46,13 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['tag'] = [
-			'label'       => esc_html__( 'HTML tag', 'max-addons' ),
+			'label'       => esc_html__( 'HTML tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
 				'figure'  => 'figure',
 				'picture' => 'picture',
 				'div'     => 'div',
-				'custom'  => esc_html__( 'Custom', 'max-addons' ),
+				'custom'  => esc_html__( 'Custom', 'max-addons-for-bricks' ),
 			],
 			'lowercase'   => true,
 			'inline'      => true,
@@ -58,7 +60,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['customTag'] = [
-			'label'       => esc_html__( 'Custom tag', 'max-addons' ),
+			'label'       => esc_html__( 'Custom tag', 'max-addons-for-bricks' ),
 			'type'        => 'text',
 			'inline'      => true,
 			'dd'          => false,
@@ -71,7 +73,7 @@ class Random_Image_Element extends \Bricks\Element {
 			unset( $this->controls['_aspectRatio'] );
 
 			$this->controls['_aspectRatio'] = [
-				'label'       => esc_html__( 'Aspect ratio', 'max-addons' ),
+				'label'       => esc_html__( 'Aspect ratio', 'max-addons-for-bricks' ),
 				'type'        => 'text',
 				'inline'      => true,
 				'dd'          => false,
@@ -90,7 +92,7 @@ class Random_Image_Element extends \Bricks\Element {
 		}
 
 		$this->controls['_objectFit'] = [
-			'label'   => esc_html__( 'Object fit', 'max-addons' ),
+			'label'   => esc_html__( 'Object fit', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'inline'  => true,
 			'options' => $this->control_options['objectFit'],
@@ -107,7 +109,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['_objectPosition'] = [
-			'label'  => esc_html__( 'Object position', 'max-addons' ),
+			'label'  => esc_html__( 'Object position', 'max-addons-for-bricks' ),
 			'type'   => 'text',
 			'inline' => true,
 			'dd'     => false,
@@ -126,7 +128,7 @@ class Random_Image_Element extends \Bricks\Element {
 		// Alt text
 		$this->controls['altText'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Custom alt text', 'max-addons' ),
+			'label'    => esc_html__( 'Custom alt text', 'max-addons-for-bricks' ),
 			'type'     => 'text',
 			'inline'   => true,
 			'rerender' => false,
@@ -134,32 +136,32 @@ class Random_Image_Element extends \Bricks\Element {
 
 		// Caption
 		$caption_options = [
-			'none'       => esc_html__( 'No caption', 'max-addons' ),
-			'attachment' => esc_html__( 'Attachment', 'max-addons' ),
-			'custom'     => esc_html__( 'Custom', 'max-addons' ),
+			'none'       => esc_html__( 'No caption', 'max-addons-for-bricks' ),
+			'attachment' => esc_html__( 'Attachment', 'max-addons-for-bricks' ),
+			'custom'     => esc_html__( 'Custom', 'max-addons-for-bricks' ),
 		];
 
 		// Get caption placeholder from theme option value
 		$show_caption = ! empty( $this->theme_styles['caption'] ) ? $this->theme_styles['caption'] : 'attachment';
 
 		$this->controls['caption'] = [
-			'label'       => esc_html__( 'Caption Type', 'max-addons' ),
+			'label'       => esc_html__( 'Caption Type', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $caption_options,
 			'inline'      => true,
-			'placeholder' => ! empty( $caption_options[ $show_caption ] ) ? $caption_options[ $show_caption ] : esc_html__( 'Attachment', 'max-addons' ),
+			'placeholder' => ! empty( $caption_options[ $show_caption ] ) ? $caption_options[ $show_caption ] : esc_html__( 'Attachment', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['captionCustom'] = [
 			'tab'         => 'content',
-			'label'       => esc_html__( 'Custom caption', 'max-addons' ),
+			'label'       => esc_html__( 'Custom caption', 'max-addons-for-bricks' ),
 			'type'        => 'text',
-			'placeholder' => esc_html__( 'Here goes your caption ...', 'max-addons' ),
+			'placeholder' => esc_html__( 'Here goes your caption ...', 'max-addons-for-bricks' ),
 			'required'    => [ 'caption', '=', 'custom' ],
 		];
 
 		$this->controls['loading'] = [
-			'label'       => esc_html__( 'Loading', 'max-addons' ),
+			'label'       => esc_html__( 'Loading', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'inline'      => true,
 			'options'     => [
@@ -170,14 +172,14 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['showTitle'] = [
-			'label'    => esc_html__( 'Show title', 'max-addons' ),
+			'label'    => esc_html__( 'Show title', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'required' => [ 'randomImages', '!=', '' ],
 		];
 
 		$this->controls['stretch'] = [
-			'label' => esc_html__( 'Stretch', 'max-addons' ),
+			'label' => esc_html__( 'Stretch', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'css'   => [
 				[
@@ -189,7 +191,7 @@ class Random_Image_Element extends \Bricks\Element {
 
 		$this->controls['popupOverlay'] = [
 			// 'deprecated' => true, // Redundant: Use _gradient settings instead
-			'label'    => esc_html__( 'Image Overlay', 'max-addons' ),
+			'label'    => esc_html__( 'Image Overlay', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -203,61 +205,61 @@ class Random_Image_Element extends \Bricks\Element {
 		// Link To
 		$this->controls['linkToSep'] = [
 			'type'  => 'separator',
-			'label' => esc_html__( 'Link To', 'max-addons' ),
+			'label' => esc_html__( 'Link To', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['link'] = [
 			'type'        => 'select',
 			'options'     => [
-				'lightbox'   => esc_html__( 'Lightbox', 'max-addons' ),
-				'attachment' => esc_html__( 'Attachment Page', 'max-addons' ),
-				'media'      => esc_html__( 'Media File', 'max-addons' ),
-				'url'        => esc_html__( 'Other (URL)', 'max-addons' ),
+				'lightbox'   => esc_html__( 'Lightbox', 'max-addons-for-bricks' ),
+				'attachment' => esc_html__( 'Attachment Page', 'max-addons-for-bricks' ),
+				'media'      => esc_html__( 'Media File', 'max-addons-for-bricks' ),
+				'url'        => esc_html__( 'Other (URL)', 'max-addons-for-bricks' ),
 			],
 			'rerender'    => true,
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['lightboxImageSize'] = [
-			'label'       => esc_html__( 'Lightbox', 'max-addons' ) . ': ' . esc_html__( 'Image size', 'max-addons' ),
+			'label'       => esc_html__( 'Lightbox', 'max-addons-for-bricks' ) . ': ' . esc_html__( 'Image size', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['imageSizes'],
-			'placeholder' => esc_html__( 'Full', 'max-addons' ),
+			'placeholder' => esc_html__( 'Full', 'max-addons-for-bricks' ),
 			'required'    => [ 'link', '=', 'lightbox' ],
 		];
 
 		$this->controls['lightboxAnimationType'] = [
-			'label'       => esc_html__( 'Lightbox', 'max-addons' ) . ': ' . esc_html__( 'Animation', 'max-addons' ),
+			'label'       => esc_html__( 'Lightbox', 'max-addons-for-bricks' ) . ': ' . esc_html__( 'Animation', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['lightboxAnimationTypes'],
-			'placeholder' => esc_html__( 'Zoom', 'max-addons' ),
+			'placeholder' => esc_html__( 'Zoom', 'max-addons-for-bricks' ),
 			'required'    => [ 'link', '=', 'lightbox' ],
 		];
 
 		$this->controls['lightboxCaption'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Lightbox', 'max-addons' ) . ': ' . esc_html__( 'Caption', 'max-addons' ),
+			'label'    => esc_html__( 'Lightbox', 'max-addons-for-bricks' ) . ': ' . esc_html__( 'Caption', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'required' => [ 'link', '=', 'lightbox' ],
 		];
 
 		$this->controls['lightboxPadding'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Lightbox', 'max-addons' ) . ': ' . esc_html__( 'Padding', 'max-addons' ) . ' (px)',
+			'label'    => esc_html__( 'Lightbox', 'max-addons-for-bricks' ) . ': ' . esc_html__( 'Padding', 'max-addons-for-bricks' ) . ' (px)',
 			'type'     => 'dimensions',
 			'required' => [ 'link', '=', 'lightbox' ],
 		];
 
 		$this->controls['lightboxId'] = [
-			'label'       => esc_html__( 'Lightbox', 'max-addons' ) . ': ID',
+			'label'       => esc_html__( 'Lightbox', 'max-addons-for-bricks' ) . ': ID',
 			'type'        => 'text',
 			'inline'      => true,
 			'required'    => [ 'link', '=', 'lightbox' ],
-			'description' => esc_html__( 'Images of the same lightbox ID are grouped together.', 'max-addons' ),
+			'description' => esc_html__( 'Images of the same lightbox ID are grouped together.', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['newTab'] = [
-			'label'    => esc_html__( 'Open in new tab', 'max-addons' ),
+			'label'    => esc_html__( 'Open in new tab', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'required' => [ 'link', '=', [ 'attachment', 'media' ] ],
 		];
@@ -269,7 +271,7 @@ class Random_Image_Element extends \Bricks\Element {
 
 		// Icon
 		$this->controls['popupSep'] = [
-			'label'  => esc_html__( 'Icon', 'max-addons' ),
+			'label'  => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'   => 'separator',
 			'inline' => true,
 			'small'  => true,
@@ -277,13 +279,13 @@ class Random_Image_Element extends \Bricks\Element {
 
 		// To hide icon for specific elements when image icon set in theme styles
 		$this->controls['popupIconDisable'] = [
-			'label' => esc_html__( 'Disable icon', 'max-addons' ),
-			'info'  => esc_html__( 'Settings', 'max-addons' ) . ' > ' . esc_html__( 'Theme styles', 'max-addons' ) . ' > ' . esc_html__( 'Image', 'max-addons' ),
+			'label' => esc_html__( 'Disable icon', 'max-addons-for-bricks' ),
+			'info'  => esc_html__( 'Settings', 'max-addons-for-bricks' ) . ' > ' . esc_html__( 'Theme styles', 'max-addons-for-bricks' ) . ' > ' . esc_html__( 'Image', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 		];
 
 		$this->controls['popupIcon'] = [
-			'label'    => esc_html__( 'Icon', 'max-addons' ),
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'inline'   => true,
 			'small'    => true,
@@ -292,7 +294,7 @@ class Random_Image_Element extends \Bricks\Element {
 
 		// NOTE: Set popup CSS control outside of control 'link' (CSS is not applied to nested controls)
 		$this->controls['popupIconBackgroundColor'] = [
-			'label'    => esc_html__( 'Icon background color', 'max-addons' ),
+			'label'    => esc_html__( 'Icon background color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -304,7 +306,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['popupIconBorder'] = [
-			'label'    => esc_html__( 'Icon border', 'max-addons' ),
+			'label'    => esc_html__( 'Icon border', 'max-addons-for-bricks' ),
 			'type'     => 'border',
 			'css'      => [
 				[
@@ -316,7 +318,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['popupIconBoxShadow'] = [
-			'label'    => esc_html__( 'Icon box shadow', 'max-addons' ),
+			'label'    => esc_html__( 'Icon box shadow', 'max-addons-for-bricks' ),
 			'type'     => 'box-shadow',
 			'css'      => [
 				[
@@ -328,7 +330,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['popupIconTypography'] = [
-			'label'       => esc_html__( 'Icon typography', 'max-addons' ),
+			'label'       => esc_html__( 'Icon typography', 'max-addons-for-bricks' ),
 			'type'        => 'typography',
 			'css'         => [
 				[
@@ -353,7 +355,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['popupIconHeight'] = [
-			'label'    => esc_html__( 'Icon height', 'max-addons' ),
+			'label'    => esc_html__( 'Icon height', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -366,7 +368,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['popupIconWidth'] = [
-			'label'    => esc_html__( 'Icon width', 'max-addons' ),
+			'label'    => esc_html__( 'Icon width', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -379,7 +381,7 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['popupIconTransition'] = [
-			'label'    => esc_html__( 'Icon transition', 'max-addons' ),
+			'label'    => esc_html__( 'Icon transition', 'max-addons-for-bricks' ),
 			'type'     => 'text',
 			'inline'   => true,
 			'css'      => [
@@ -395,15 +397,15 @@ class Random_Image_Element extends \Bricks\Element {
 
 		$this->controls['maskSep'] = [
 			'type'  => 'separator',
-			'label' => esc_html__( 'Mask', 'max-addons' ),
+			'label' => esc_html__( 'Mask', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['mask'] = [
-			'label'       => esc_html__( 'Mask', 'max-addons' ),
+			'label'       => esc_html__( 'Mask', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'inline'      => true,
 			'options'     => [
-				'custom'                          => esc_html__( 'Custom', 'max-addons' ),
+				'custom'                          => esc_html__( 'Custom', 'max-addons-for-bricks' ),
 				'mask-boom'                       => 'Boom',
 				'mask-box'                        => 'Box',
 				'mask-bubbles'                    => 'Bubbles',
@@ -441,7 +443,7 @@ class Random_Image_Element extends \Bricks\Element {
 				'mask-tiles'                      => 'Tiles',
 				'mask-waves'                      => 'Waves',
 			],
-			'placeholder' => esc_html__( 'Select', 'max-addons' ),
+			'placeholder' => esc_html__( 'Select', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['maskCustom'] = [
@@ -451,22 +453,22 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['maskSize'] = [
-			'label'       => esc_html__( 'Size', 'max-addons' ),
+			'label'       => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'inline'      => true,
 			'large'       => true,
 			'options'     => [
-				'auto'    => esc_html__( 'Auto', 'max-addons' ),
-				'cover'   => esc_html__( 'Cover', 'max-addons' ),
-				'contain' => esc_html__( 'Contain', 'max-addons' ),
-				'custom'  => esc_html__( 'Custom', 'max-addons' ),
+				'auto'    => esc_html__( 'Auto', 'max-addons-for-bricks' ),
+				'cover'   => esc_html__( 'Cover', 'max-addons-for-bricks' ),
+				'contain' => esc_html__( 'Contain', 'max-addons-for-bricks' ),
+				'custom'  => esc_html__( 'Custom', 'max-addons-for-bricks' ),
 			],
-			'placeholder' => esc_html__( 'Contain', 'max-addons' ),
+			'placeholder' => esc_html__( 'Contain', 'max-addons-for-bricks' ),
 			'required'    => [ 'mask', '!=', '' ],
 		];
 
 		$this->controls['maskSizeCustom'] = [
-			'label'    => esc_html__( 'Custom size', 'max-addons' ),
+			'label'    => esc_html__( 'Custom size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'large'    => true,
@@ -474,37 +476,37 @@ class Random_Image_Element extends \Bricks\Element {
 		];
 
 		$this->controls['maskPosition'] = [
-			'label'       => esc_html__( 'Position', 'max-addons' ),
+			'label'       => esc_html__( 'Position', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'inline'      => true,
 			'options'     => [
-				'center center' => esc_html__( 'Center center', 'max-addons' ),
-				'center left'   => esc_html__( 'Center left', 'max-addons' ),
-				'center right'  => esc_html__( 'Center right', 'max-addons' ),
-				'top center'    => esc_html__( 'Top center', 'max-addons' ),
-				'top left'      => esc_html__( 'Top left', 'max-addons' ),
-				'top right'     => esc_html__( 'Top right', 'max-addons' ),
-				'bottom center' => esc_html__( 'Bottom center', 'max-addons' ),
-				'bottom left'   => esc_html__( 'Bottom left', 'max-addons' ),
-				'bottom right'  => esc_html__( 'Bottom right', 'max-addons' ),
+				'center center' => esc_html__( 'Center center', 'max-addons-for-bricks' ),
+				'center left'   => esc_html__( 'Center left', 'max-addons-for-bricks' ),
+				'center right'  => esc_html__( 'Center right', 'max-addons-for-bricks' ),
+				'top center'    => esc_html__( 'Top center', 'max-addons-for-bricks' ),
+				'top left'      => esc_html__( 'Top left', 'max-addons-for-bricks' ),
+				'top right'     => esc_html__( 'Top right', 'max-addons-for-bricks' ),
+				'bottom center' => esc_html__( 'Bottom center', 'max-addons-for-bricks' ),
+				'bottom left'   => esc_html__( 'Bottom left', 'max-addons-for-bricks' ),
+				'bottom right'  => esc_html__( 'Bottom right', 'max-addons-for-bricks' ),
 			],
-			'placeholder' => esc_html__( 'Center center', 'max-addons' ),
+			'placeholder' => esc_html__( 'Center center', 'max-addons-for-bricks' ),
 			'required'    => [ 'mask', '!=', '' ],
 		];
 
 		$this->controls['maskRepeat'] = [
-			'label'       => esc_html__( 'Repeat', 'max-addons' ),
+			'label'       => esc_html__( 'Repeat', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'inline'      => true,
 			'options'     => [
-				'no-repeat' => esc_html__( 'No repeat', 'max-addons' ),
-				'repeat'    => esc_html__( 'Repeat', 'max-addons' ),
-				'repeat-x'  => esc_html__( 'Repeat-x', 'max-addons' ),
-				'repeat-y'  => esc_html__( 'Repeat-y', 'max-addons' ),
-				'round'     => esc_html__( 'Round', 'max-addons' ),
-				'space'     => esc_html__( 'Space', 'max-addons' ),
+				'no-repeat' => esc_html__( 'No repeat', 'max-addons-for-bricks' ),
+				'repeat'    => esc_html__( 'Repeat', 'max-addons-for-bricks' ),
+				'repeat-x'  => esc_html__( 'Repeat-x', 'max-addons-for-bricks' ),
+				'repeat-y'  => esc_html__( 'Repeat-y', 'max-addons-for-bricks' ),
+				'round'     => esc_html__( 'Round', 'max-addons-for-bricks' ),
+				'space'     => esc_html__( 'Space', 'max-addons-for-bricks' ),
 			],
-			'placeholder' => esc_html__( 'No repeat', 'max-addons' ),
+			'placeholder' => esc_html__( 'No repeat', 'max-addons-for-bricks' ),
 			'required'    => [ 'mask', '!=', '' ],
 		];
 	}
@@ -618,180 +620,137 @@ class Random_Image_Element extends \Bricks\Element {
 		return $settings;
 	}
 
-	// NOTE: Use WP function 'wp_get_attachment_image' to render image (built-in responsive image implementation)
-	public function render() {
-		$settings   = $this->settings;
-		$link       = ! empty( $settings['link'] ) ? $settings['link'] : false;
-		$settings   = $this->get_normalized_image_settings( $settings );
-		$images     = ! empty( $settings['randomImages']['images'] ) ? $settings['randomImages']['images'] : false;
-		$image_size = ! empty( $settings['randomImages']['size'] ) ? $settings['randomImages']['size'] : BRICKS_DEFAULT_IMAGE_SIZE;
+	/**
+	 * Get random image ID from settings.
+	 *
+	 * @param array $settings Element settings.
+	 * @return int Image ID or 0.
+	 */
+	protected function get_random_image_id( $settings ) {
 
-		// Return placeholder
-		if ( ! $images ) {
-			if ( ! empty( $settings['randomImages']['useDynamicData'] ) ) {
-				if ( BRICKS_DB_TEMPLATE_SLUG !== get_post_type( $this->post_id ) ) {
-					return $this->render_element_placeholder(
-						[
-							'title' => esc_html__( 'Dynamic data is empty.', 'max-addons' )
-						]
-					);
-				}
-			} else {
-				return $this->render_element_placeholder(
-					[
-						'title' => esc_html__( 'No image selected.', 'max-addons' ),
-					]
-				);
-			}
+		if ( empty( $settings['randomImages']['images'] ) || ! is_array( $settings['randomImages']['images'] ) ) {
+			return 0;
 		}
 
-		if ( isset( $settings['randomImages'] ) ) {
-			$count    = count( $settings['randomImages']['images'] );
-			$index    = ( $count > 1 ) ? rand( 0, $count - 1 ) : 0;
-			$image_id = $settings['randomImages']['images'][ $index ]['id'];
+		$images = $settings['randomImages']['images'];
+		$count  = count( $images );
+
+		if ( 0 === $count ) {
+			return 0;
 		}
 
-		// Render
-		/* $image_atts = [];
-		$image_atts['id'] = 'image-' . $image_id;
+		$index = ( $count > 1 ) ? wp_rand( 0, $count - 1 ) : 0;
 
-		// Check for alternartive "Alt Text" setting
-		if ( isset( $settings['altText'] ) ) {
-			$image_atts['alt'] = esc_attr( $settings['altText'] );
-		}
+		return ! empty( $images[ $index ]['id'] ) ? absint( $images[ $index ]['id'] ) : 0;
+	}
 
-		$image_wrapper_classes = [ 'mab-random-image image-wrapper' ];
-
-		$img_classes = [ 'post-thumbnail', 'css-filter' ];
-
-		if ( isset( $settings['link'] ) ) {
-			$image_wrapper_classes[] = 'image-overlay';
-		}
-
-		$img_classes[] = 'size-' . $size;
-		$image_atts['class'] = join( ' ', $img_classes ); */
-
-		// STEP: Image caption
-		$show_caption = isset( $this->theme_styles['caption'] ) ? $this->theme_styles['caption'] : 'attachment';
-
-		if ( isset( $settings['caption'] ) ) {
-			$show_caption = $settings['caption'];
-		}
-
-		$image_caption = false;
-
-		if ( $show_caption === 'none' ) {
-			$image_caption = false;
-		} elseif ( $show_caption === 'custom' && isset( $settings['captionCustom'] ) ) {
-			$image_caption = trim( $settings['captionCustom'] );
-		} else {
-			$image_data = get_post( $image_id );
-			$image_caption = $image_data ? $image_data->post_excerpt : '';
-		}
-
-		$has_overlay = isset( $settings['popupOverlay'] );
-
-		$has_html_tag = $image_caption || $has_overlay || isset( $settings['_gradient'] ) || isset( $settings['tag'] );
-
-		// Check: Element classes for 'popupOverlay' setting to add .overlay class to make ::before work
-		if ( ! $has_overlay && $this->element_classes_have( 'popupOverlay' ) ) {
-			$has_overlay = true;
-		}
-
-		// Default: 'figure' HTML tag (needed to apply overlay::before to as not possible on self-closing 'img' tag)
-		if ( $has_overlay ) {
-			$has_html_tag = true;
-		}
-
-		// Check: Element classes for 'gradient' setting to add HTML tag to Image element to make ::before work
-		if ( ! $has_html_tag && $this->element_classes_have( '_gradient' ) ) {
-			$has_html_tag = true;
-		}
+	/**
+	 * Prepare image attributes for wp_get_attachment_image().
+	 *
+	 * @param int    $image_id  Image ID.
+	 * @param array  $settings  Element settings.
+	 * @param string $image_size Image size.
+	 * @return array
+	 */
+	protected function prepare_image_attributes( $image_id, $settings, $image_size ) {
 
 		$this->set_attribute( 'img', 'class', 'css-filter' );
+		$this->set_attribute( 'img', 'class', 'size-' . sanitize_html_class( $image_size ) );
 
-		$this->set_attribute( 'img', 'class', "size-$image_size" );
-
-		// Check for custom "Alt Text" setting
+		// Image Alt.
 		if ( ! empty( $settings['altText'] ) ) {
 			$this->set_attribute( 'img', 'alt', esc_attr( $settings['altText'] ) );
 		}
 
-		// Set 'loading' attribute: eager or lazy
+		// Loading.
 		if ( ! empty( $settings['loading'] ) ) {
 			$this->set_attribute( 'img', 'loading', esc_attr( $settings['loading'] ) );
 		}
 
-		// Show image 'title' attribute
-		if ( isset( $settings['showTitle'] ) ) {
-			$image_title = $image_id ? get_the_title( $image_id ) : false;
-
-			if ( $image_title ) {
-				$this->set_attribute( 'img', 'title', esc_attr( $image_title ) );
+		// Title.
+		if ( ! empty( $settings['showTitle'] ) ) {
+			$title = get_the_title( $image_id );
+			if ( $title ) {
+				$this->set_attribute( 'img', 'title', esc_attr( $title ) );
 			}
 		}
 
-		// Wrap image element in 'figure' to allow for image caption, overlay, icon
-		if ( $has_overlay ) {
-			$this->set_attribute( '_root', 'class', 'overlay' );
+		// Mask.
+		$mask_url = $this->get_mask_url( $settings );
+		if ( $mask_url ) {
+			$this->set_mask_attributes( esc_url_raw( $mask_url ), $settings );
 		}
 
-		$output = '';
+		$image_attributes = $this->attributes['img'] ?? [];
 
-		// Add _root attributes to outermost tag
-		if ( $has_html_tag ) {
-			$this->set_attribute( '_root', 'class', 'tag' );
-
-			// Has image caption (add position: relative through class)
-			if ( $image_caption ) {
-				$this->set_attribute( '_root', 'class', 'caption' );
+		// Flatten attribute values
+		foreach ( $image_attributes as $key => $value ) {
+			if ( is_array( $value ) ) {
+				$image_attributes[ $key ] = implode( ' ', array_map( 'esc_attr', $value ) );
 			}
-
-			$output .= "<{$this->tag} {$this->render_attributes( '_root' )}>";
 		}
 
-		/* if ( $image_caption ) {
-			echo '<figure>';
-		} */
+		// Merge custom attributes (flattened too)
+		$custom_attributes = $this->get_custom_attributes( $settings );
 
-		// $this->set_attribute( '_root', 'class', $image_wrapper_classes );
+		foreach ( $custom_attributes as $key => $value ) {
+			if ( is_array( $value ) ) {
+				$custom_attributes[ $key ] = implode( ' ', array_map( 'esc_attr', $value ) );
+			}
+		}
 
-		// echo '<div ' . $this->render_attributes( '_root' ) . '>';
+		return array_merge( $image_attributes, $custom_attributes );
+	}
 
-		// $close_a_tag = false;
+	/**
+	 * Build link attributes.
+	 *
+	 * @param int   $image_id Image ID.
+	 * @param array $settings Element settings.
+	 * @return bool Whether link should be rendered.
+	 */
+	protected function build_link_attributes( $image_id, $settings ) {
 
-		if ( $link ) {
-			// Link is outermost tag: Merge _root attributes into link attributes it
-			if ( ! $has_html_tag ) {
-				foreach ( $this->attributes['_root'] as $key => $value ) {
-					$this->attributes['link'][ $key ] = $value;
-					unset( $this->attributes['_root'][ $key ] );
+		if ( empty( $settings['link'] ) ) {
+			return false;
+		}
+
+		$link = $settings['link'];
+
+		if ( ! empty( $settings['newTab'] ) ) {
+			$this->set_attribute( 'link', 'target', '_blank' );
+			$this->set_attribute( 'link', 'rel', 'noopener noreferrer' );
+		}
+
+		switch ( $link ) {
+
+			case 'media':
+				$this->set_attribute( 'link', 'href', esc_url( wp_get_attachment_url( $image_id ) ) );
+				break;
+
+			case 'attachment':
+				$this->set_attribute( 'link', 'href', esc_url( get_permalink( $image_id ) ) );
+				break;
+
+			case 'url':
+				if ( ! empty( $settings['url'] ) ) {
+					$this->set_link_attributes( 'link', $settings['url'] );
 				}
-			}
+				break;
 
-			$this->set_attribute( 'link', 'class', 'tag' );
-
-			if ( isset( $settings['newTab'] ) ) {
-				$this->set_attribute( 'link', 'target', '_blank' );
-			}
-
-			if ( $link === 'media' && $image_id ) {
-				$this->set_attribute( 'link', 'href', wp_get_attachment_url( $image_id ) );
-			} elseif ( $link === 'attachment' && $image_id ) {
-				$this->set_attribute( 'link', 'href', get_permalink( $image_id ) );
-			} elseif ( $link === 'url' && ! empty( $settings['url'] ) ) {
-				$this->set_link_attributes( 'link', $settings['url'] );
-			} elseif ( $link === 'lightbox' ) {
+			case 'lightbox':
 				$this->set_attribute( 'link', 'class', 'bricks-lightbox' );
 
-				// Lightbox image size (@since 1.8.1)
-				$lightbox_image_size = ! empty( $settings['lightboxImageSize'] ) ? $settings['lightboxImageSize'] : 'full';
-				$lightbox_image_src  = $image_id ? wp_get_attachment_image_src( $image_id, $lightbox_image_size ) : [ $image_placeholder_url, 800, 600 ];
+				$size = ! empty( $settings['lightboxImageSize'] ) ? $settings['lightboxImageSize'] : 'full';
 
-				$this->set_attribute( 'link', 'href', $lightbox_image_src[0] );
-				$this->set_attribute( 'link', 'data-pswp-src', $lightbox_image_src[0] );
-				$this->set_attribute( 'link', 'data-pswp-width', $lightbox_image_src[1] );
-				$this->set_attribute( 'link', 'data-pswp-height', $lightbox_image_src[2] );
+				$src = wp_get_attachment_image_src( $image_id, $size );
+
+				if ( $src ) {
+					$this->set_attribute( 'link', 'href', esc_url( $src[0] ) );
+					$this->set_attribute( 'link', 'data-pswp-src', esc_url( $src[0] ) );
+					$this->set_attribute( 'link', 'data-pswp-width', absint( $src[1] ) );
+					$this->set_attribute( 'link', 'data-pswp-height', absint( $src[2] ) );
+				}
 
 				if ( ! empty( $settings['lightboxId'] ) ) {
 					$this->set_attribute( 'link', 'data-pswp-id', esc_attr( $settings['lightboxId'] ) );
@@ -805,99 +764,88 @@ class Random_Image_Element extends \Bricks\Element {
 					$this->set_attribute( 'link', 'data-lightbox-padding', wp_json_encode( $settings['lightboxPadding'] ) );
 				}
 
-				// Lightbox caption (@since 1.10)
-				if ( isset( $settings['lightboxCaption'] ) ) {
-					$this->set_attribute( 'link', 'class', 'has-lightbox-caption' );
-
-					$lightbox_caption = $image_id ? wp_get_attachment_caption( $image_id ) : false;
-					if ( $lightbox_caption ) {
-						$this->set_attribute( 'link', 'data-lightbox-caption', esc_attr( $lightbox_caption ) );
+				if ( ! empty( $settings['lightboxCaption'] ) ) {
+					$caption = wp_get_attachment_caption( $image_id );
+					if ( $caption ) {
+						$this->set_attribute( 'link', 'data-lightbox-caption', esc_attr( $caption ) );
+						$this->set_attribute( 'link', 'class', 'has-lightbox-caption' );
 					}
 				}
-			}
-
-			$output .= "<a {$this->render_attributes( 'link' )}>";
+				break;
 		}
 
-		// Show popup icon if link is set
-		$icon = ! empty( $settings['popupIcon'] ) ? $settings['popupIcon'] : false;
+		return true;
+	}
 
-		// Check: Theme style for video 'popupIcon' setting
-		if ( ! $icon && ! empty( $this->theme_styles['popupIcon'] ) ) {
-			$icon = $this->theme_styles['popupIcon'];
+	/**
+	 * Build wrapper opening tag.
+	 *
+	 * @param array  $settings Element settings.
+	 * @param string $image_caption Image caption.
+	 * @return bool Whether wrapper is used.
+	 */
+	protected function build_wrapper( $settings, $image_caption ) {
+
+		$has_overlay  = ! empty( $settings['popupOverlay'] ) || $this->element_classes_have( 'popupOverlay' );
+		$has_gradient = ! empty( $settings['_gradient'] ) || $this->element_classes_have( '_gradient' );
+
+		$has_wrapper = $image_caption || $has_overlay || $has_gradient || ! empty( $settings['tag'] );
+
+		if ( ! $has_wrapper ) {
+			return false;
 		}
 
-		if ( ! isset( $settings['popupIconDisable'] ) && $link && $icon ) {
-			$output .= self::render_icon( $icon, [ 'icon' ] );
+		if ( $has_overlay ) {
+			$this->set_attribute( '_root', 'class', 'overlay' );
 		}
-
-		// Determine the URL of the mask image
-		$mask_url = $this->get_mask_url( $settings );
-
-		// If a mask URL was found, apply the mask to the image
-		if ( $mask_url ) {
-			$this->set_mask_attributes( $mask_url, $settings );
-		}
-
-		// Lazy load atts set via 'wp_get_attachment_image_attributes' filter
-		if ( $image_id ) {
-			$image_attributes = [];
-
-			// 'img' is root (no caption, no overlay)
-			if ( ! $has_html_tag && ! $link ) {
-				foreach ( $this->attributes['_root'] as $key => $value ) {
-					$image_attributes[ $key ] = is_array( $value ) ? join( ' ', $value ) : $value;
-				}
-			}
-
-			foreach ( $this->attributes['img'] as $key => $value ) {
-				if ( isset( $image_attributes[ $key ] ) ) {
-					$image_attributes[ $key ] .= ' ' . ( is_array( $value ) ? join( ' ', $value ) : $value );
-				} else {
-					$image_attributes[ $key ] = is_array( $value ) ? join( ' ', $value ) : $value;
-				}
-			}
-
-			// Merge custom attributes with img attributes
-			$custom_attributes = $this->get_custom_attributes( $settings );
-			$image_attributes  = array_merge( $image_attributes, $custom_attributes );
-
-			$output .= wp_get_attachment_image( $image_id, $image_size, false, $image_attributes );
-		} elseif ( $image_url ) {
-			if ( ! $has_html_tag && ! $link ) {
-				foreach ( $this->attributes['_root'] as $key => $value ) {
-					$this->attributes['img'][ $key ] = $value;
-				}
-			}
-
-			$this->set_attribute( 'img', 'src', $image_url );
-
-			// Set empty 'alt' attribute for a11y (@since 1.9.2)
-			if ( ! isset( $this->attributes['img']['alt'] ) ) {
-				$this->set_attribute( 'img', 'alt', '' );
-			}
-
-			$output .= "<img {$this->render_attributes( 'img', true )}>";
-		}
-
-		/* if ( $close_a_tag ) {
-			echo '</a>';
-		} */
 
 		if ( $image_caption ) {
-			$output .= '<figcaption class="bricks-image-caption">' . $image_caption . '</figcaption>';
+			$this->set_attribute( '_root', 'class', 'caption' );
 		}
 
-		if ( $link ) {
-			$output .= '</a>';
+		echo '<' . tag_escape( $this->tag ) . ' ';
+		$this->print_render_attributes( '_root' );
+		echo '>';
+
+		return true;
+	}
+
+	public function render() {
+		$settings   = $this->get_normalized_image_settings( $this->settings );
+		$image_size = ! empty( $settings['randomImages']['size'] ) ? $settings['randomImages']['size'] : BRICKS_DEFAULT_IMAGE_SIZE;
+
+		$image_id = $this->get_random_image_id( $settings );
+
+		if ( ! $image_id ) {
+			return;
 		}
 
-		if ( $has_html_tag ) {
-			$output .= "</{$this->tag}>";
+		$image_caption = wp_get_attachment_caption( $image_id );
+
+		$has_wrapper = $this->build_wrapper( $settings, $image_caption );
+
+		$has_link = $this->build_link_attributes( $image_id, $settings );
+
+		if ( $has_link ) {
+			echo '<a ';
+			$this->print_render_attributes( 'link' );
+			echo '>';
 		}
 
-		// echo '</div>';
+		$image_attributes = $this->prepare_image_attributes( $image_id, $settings, $image_size );
 
-		echo $output;
+		echo wp_get_attachment_image( $image_id, $image_size, false, $image_attributes );
+
+		if ( $image_caption ) {
+			echo '<figcaption class="bricks-image-caption">' . wp_kses_post( $image_caption ) . '</figcaption>';
+		}
+
+		if ( $has_link ) {
+			echo '</a>';
+		}
+
+		if ( $has_wrapper ) {
+			echo '</' . tag_escape( $this->tag ) . '>';
+		}
 	}
 }

@@ -1,11 +1,13 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Unfold_Element extends \Bricks\Element {
+class Unfold_Element extends Element_Base {
 	// Element properties
 	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-unfold'; // Make sure to prefix your elements
@@ -15,7 +17,7 @@ class Unfold_Element extends \Bricks\Element {
 	public $nestable     = true;
 
 	public function get_label() {
-		return esc_html__( 'Unfold', 'max-addons' );
+		return esc_html__( 'Unfold', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -27,22 +29,22 @@ class Unfold_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['contentSettings'] = [
-			'title' => esc_html__( 'Content', 'max-addons' ),
+			'title' => esc_html__( 'Content', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['separator'] = [
-			'title' => esc_html__( 'Separator', 'max-addons' ),
+			'title' => esc_html__( 'Separator', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['button'] = [
-			'title' => esc_html__( 'Button', 'max-addons' ),
+			'title' => esc_html__( 'Button', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['settings'] = [
-			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'title' => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
@@ -66,12 +68,12 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['contentType'] = [
 			'tab'       => 'content',
 			'group'     => 'contentSettings',
-			'label'     => esc_html__( 'Content Type', 'max-addons' ),
+			'label'     => esc_html__( 'Content Type', 'max-addons-for-bricks' ),
 			'type'      => 'select',
 			'default'   => 'editor',
 			'options'   => [
-				'editor' => esc_html__( 'Text Editor', 'max-addons' ),
-				'nested' => esc_html__( 'Nested Elements', 'max-addons' ),
+				'editor' => esc_html__( 'Text Editor', 'max-addons-for-bricks' ),
+				'nested' => esc_html__( 'Nested Elements', 'max-addons-for-bricks' ),
 			],
 			'inline'    => true,
 			'clearable' => false,
@@ -80,7 +82,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['content'] = [
 			'tab'      => 'content',
 			'group'    => 'contentSettings',
-			'label'    => esc_html__( 'Content', 'max-addons' ),
+			'label'    => esc_html__( 'Content', 'max-addons-for-bricks' ),
 			'type'     => 'editor',
 			'default'  => '<p>Nam condimentum et quam in dignissim. Integer in ante diam. Nunc leo sem, dignissim in finibus at, pretium sit amet neque. Nunc sed turpis volutpat, molestie tortor eu, pretium nisl. Quisque vitae leo augue. Aliquam venenatis sagittis magna nec ullamcorper. Aenean sollicitudin fermentum felis, eget vulputate risus. Sed sit amet sem ac ipsum ornare lacinia. In mi felis, egestas at fringilla non, posuere vitae tortor.</p>',
 			'required' => [ 'contentType', '!=', 'nested' ],
@@ -90,7 +92,7 @@ class Unfold_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'contentSettings',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -105,7 +107,7 @@ class Unfold_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'contentSettings',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Background Color', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -119,7 +121,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['contentPadding'] = [
 			'tab'   => 'content',
 			'group' => 'contentSettings',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -136,7 +138,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['separator'] = [
 			'tab'     => 'content',
 			'group'   => 'separator',
-			'label'   => esc_html__( 'Show separator', 'max-addons' ),
+			'label'   => esc_html__( 'Show separator', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
 			'default' => true, // Default: false
 		];
@@ -144,14 +146,14 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['separatorHeight'] = [
 			'tab'      => 'content',
 			'group'    => 'separator',
-			'label'    => esc_html__( 'Height', 'max-addons' ),
+			'label'    => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'default'  => '50px',
 			'css'      => [
 				[
 					'property' => 'height',
-					'selector' => '.mab-unfold-saparator',
+					'selector' => '.mab-unfold-separator',
 				],
 			],
 			'required' => [ 'separator', '!=', '' ],
@@ -160,12 +162,12 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['separatorBackground'] = [
 			'tab'      => 'content',
 			'group'    => 'separator',
-			'label'    => esc_html__( 'Background', 'max-addons' ),
+			'label'    => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'     => 'gradient',
 			'css'      => [
 				[
 					'property' => 'background-image',
-					'selector' => '.mab-unfold-saparator',
+					'selector' => '.mab-unfold-separator',
 				],
 			],
 			'required' => [ 'separator', '!=', '' ],
@@ -178,7 +180,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonAlign'] = [
 			'tab'     => 'content',
 			'group'   => 'button',
-			'label'   => esc_html__( 'Alignment', 'max-addons' ),
+			'label'   => esc_html__( 'Alignment', 'max-addons-for-bricks' ),
 			'type'    => 'justify-content',
 			'css'     => [
 				[
@@ -197,7 +199,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['contentUnfoldSeparator'] = [
 			'tab'   => 'content',
 			'group' => 'button',
-			'label' => esc_html__( 'Unfold', 'max-addons' ),
+			'label' => esc_html__( 'Unfold', 'max-addons-for-bricks' ),
 			'type'  => 'separator',
 		];
 
@@ -205,9 +207,9 @@ class Unfold_Element extends \Bricks\Element {
 			'tab'            => 'content',
 			'group'          => 'button',
 			'type'           => 'text',
-			'label'          => esc_html__( 'Text', 'max-addons' ),
-			'default'        => esc_html__( 'Read More', 'max-addons' ),
-			'placeholder'    => esc_html__( 'Read More', 'max-addons' ),
+			'label'          => esc_html__( 'Text', 'max-addons-for-bricks' ),
+			'default'        => esc_html__( 'Read More', 'max-addons-for-bricks' ),
+			'placeholder'    => esc_html__( 'Read More', 'max-addons-for-bricks' ),
 			'hasDynamicData' => 'text',
 			'inline'         => true,
 		];
@@ -215,7 +217,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonIconOpen'] = [
 			'tab'     => 'content',
 			'group'   => 'button',
-			'label'   => esc_html__( 'Icon', 'max-addons' ),
+			'label'   => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'    => 'icon',
 			'default' => [
 				'library' => 'themify',
@@ -232,7 +234,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['contentFoldSeparator'] = [
 			'tab'   => 'content',
 			'group' => 'button',
-			'label' => esc_html__( 'Fold', 'max-addons' ),
+			'label' => esc_html__( 'Fold', 'max-addons-for-bricks' ),
 			'type'  => 'separator',
 		];
 
@@ -240,9 +242,9 @@ class Unfold_Element extends \Bricks\Element {
 			'tab'            => 'content',
 			'group'          => 'button',
 			'type'           => 'text',
-			'label'          => esc_html__( 'Text', 'max-addons' ),
-			'default'        => esc_html__( 'Read Less', 'max-addons' ),
-			'placeholder'    => esc_html__( 'Read Less', 'max-addons' ),
+			'label'          => esc_html__( 'Text', 'max-addons-for-bricks' ),
+			'default'        => esc_html__( 'Read Less', 'max-addons-for-bricks' ),
+			'placeholder'    => esc_html__( 'Read Less', 'max-addons-for-bricks' ),
 			'hasDynamicData' => 'text',
 			'inline'         => true,
 		];
@@ -250,7 +252,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonIconClosed'] = [
 			'tab'     => 'content',
 			'group'   => 'button',
-			'label'   => esc_html__( 'Icon', 'max-addons' ),
+			'label'   => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'    => 'icon',
 			'default' => [
 				'library' => 'themify',
@@ -267,14 +269,14 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonSettingSeparator'] = [
 			'tab'   => 'content',
 			'group' => 'button',
-			'label' => esc_html__( 'Button Style', 'max-addons' ),
+			'label' => esc_html__( 'Button Style', 'max-addons-for-bricks' ),
 			'type'  => 'separator',
 		];
 
 		$this->controls['buttonIconTypography'] = [
 			'tab'     => 'content',
 			'group'   => 'button',
-			'label'   => esc_html__( 'Icon Typography', 'max-addons' ),
+			'label'   => esc_html__( 'Icon Typography', 'max-addons-for-bricks' ),
 			'type'    => 'typography',
 			'css'     => [
 				[
@@ -299,40 +301,40 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonIconPosition'] = [
 			'tab'         => 'content',
 			'group'       => 'button',
-			'label'       => esc_html__( 'Icon Position', 'max-addons' ),
+			'label'       => esc_html__( 'Icon Position', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['iconPosition'],
 			'inline'      => true,
-			'placeholder' => esc_html__( 'Right', 'max-addons' ),
+			'placeholder' => esc_html__( 'Right', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['buttonSize'] = [
 			'tab'         => 'content',
 			'group'       => 'button',
-			'label'       => esc_html__( 'Size', 'max-addons' ),
+			'label'       => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['buttonSizes'],
 			'inline'      => true,
 			'reset'       => true,
-			'placeholder' => esc_html__( 'Medium', 'max-addons' ),
+			'placeholder' => esc_html__( 'Medium', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['buttonStyle'] = [
 			'tab'         => 'content',
 			'group'       => 'button',
-			'label'       => esc_html__( 'Style', 'max-addons' ),
+			'label'       => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['styles'],
 			'inline'      => true,
 			'reset'       => true,
 			'default'     => 'primary',
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['buttonCircle'] = [
 			'tab'   => 'content',
 			'group' => 'button',
-			'label' => esc_html__( 'Circle', 'max-addons' ),
+			'label' => esc_html__( 'Circle', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'reset' => true,
 		];
@@ -340,7 +342,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonOutline'] = [
 			'tab'   => 'content',
 			'group' => 'button',
-			'label' => esc_html__( 'Outline', 'max-addons' ),
+			'label' => esc_html__( 'Outline', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'reset' => true,
 		];
@@ -349,7 +351,7 @@ class Unfold_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'button',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -363,7 +365,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'button',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -379,7 +381,7 @@ class Unfold_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'button',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -394,7 +396,7 @@ class Unfold_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'button',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -408,7 +410,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['buttonPadding'] = [
 			'tab'   => 'content',
 			'group' => 'button',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -421,7 +423,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['spacing'] = [
 			'tab'   => 'content',
 			'group' => 'button',
-			'label' => esc_html__( 'Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -439,7 +441,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['speedUnreveal'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'Transition Speed in Seconds', 'max-addons' ),
+			'label'   => esc_html__( 'Transition Speed in Seconds', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'min'     => 0.1,
 			'min'     => 2,
@@ -452,12 +454,12 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['visibleType'] = [
 			'tab'       => 'content',
 			'group'     => 'settings',
-			'label'     => esc_html__( 'Content Visibility By', 'max-addons' ),
+			'label'     => esc_html__( 'Content Visibility By', 'max-addons-for-bricks' ),
 			'type'      => 'select',
 			'default'   => 'pixels',
 			'options'   => [
-				'lines'  => esc_html__( 'Lines', 'max-addons' ),
-				'pixels' => esc_html__( 'Pixels', 'max-addons' ),
+				'lines'  => esc_html__( 'Lines', 'max-addons-for-bricks' ),
+				'pixels' => esc_html__( 'Pixels', 'max-addons-for-bricks' ),
 			],
 			'inline'    => true,
 			'clearable' => false,
@@ -466,7 +468,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['visibleAmount'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Visible Amount in Px', 'max-addons' ),
+			'label'    => esc_html__( 'Visible Amount in Px', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'min'      => 10,
 			'max'      => 200,
@@ -479,7 +481,7 @@ class Unfold_Element extends \Bricks\Element {
 		$this->controls['visibleLines'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Visible Amount in Lines', 'max-addons' ),
+			'label'    => esc_html__( 'Visible Amount in Lines', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'min'      => 1,
 			'max'      => 20,
@@ -490,164 +492,160 @@ class Unfold_Element extends \Bricks\Element {
 		];
 	}
 
+	private function render_button( string $text, array $icon_settings, string $icon_position ) : string {
+		$output    = '';
+		$icon_html = ! empty( $icon_settings ) ? self::render_icon( $icon_settings ) : '';
+
+		if ( $icon_html && 'left' === $icon_position ) {
+			$output .= $icon_html;
+		}
+
+		if ( '' !== $text ) {
+			$output .= sprintf(
+				'<span class="mab-unfold-button-text">%s</span>',
+				esc_html( trim( $text ) )
+			);
+		}
+
+		if ( $icon_html && 'right' === $icon_position ) {
+			$output .= $icon_html;
+		}
+
+		return $output;
+	}
+
+	private function render_content( array $settings, string $content_type ) {
+		if ( 'nested' === $content_type ) {
+			if ( method_exists( '\Bricks\Frontend', 'render_children' ) ) {
+				echo \Bricks\Frontend::render_children( $this ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
+			return;
+		}
+
+		if ( empty( $settings['content'] ) ) {
+			return;
+		}
+
+		$content = $this->render_dynamic_data( $settings['content'] );
+
+		if ( method_exists( '\Bricks\Helpers', 'parse_editor_content' ) ) {
+			$content = \Bricks\Helpers::parse_editor_content( $content );
+		} else {
+			$content = shortcode_unautop( $content );
+			$content = do_shortcode( $content );
+		}
+
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Content already processed via Bricks/editor.
+		echo $content;
+	}
+
 	public function render() {
 		$settings = $this->settings;
 
-		$content_type   = isset( $settings['contentType'] ) ? $settings['contentType'] : 'editor';
-		$visibility     = ( 'editor' === $content_type ) ? ( isset( $settings['visibleType'] ) ? $settings['visibleType'] : 'pixels' ) : 'pixels';
-		$visible_amount = isset( $settings['visibleAmount'] ) ? $settings['visibleAmount'] : '50';
-		$visible_lines  = isset( $settings['visibleLines'] ) ? $settings['visibleLines'] : '2';
+		$content_type   = $settings['contentType'] ?? 'editor';
+		$visibility     = ( 'editor' === $content_type ) ? ( $settings['visibleType'] ?? 'pixels' ) : 'pixels';
+		$visible_amount = $settings['visibleAmount'] ?? '50';
+		$visible_lines  = $settings['visibleLines'] ?? '2';
 
-		// Element placeholder
-		if ( 'nested' !== $content_type ) {
-			if ( ! isset( $settings['content'] ) || empty( $settings['content'] ) ) {
-				return $this->render_element_placeholder( [ 'title' => esc_html__( 'No content added.', 'max-addons' ) ] );
-			}
+		if ( 'nested' !== $content_type && empty( $settings['content'] ) ) {
+			return $this->render_element_placeholder(
+				[
+					'title' => esc_html__( 'No content added.', 'max-addons-for-bricks' ),
+				]
+			);
 		}
 
-		$mab_unfold_options = array(
+		$unfold_options = [
 			'content_type' => $content_type,
-			'speed'        => isset( $settings['speedUnreveal'] ) ? $settings['speedUnreveal'] : '',
+			'speed'        => $settings['speedUnreveal'] ?? '',
 			'visibility'   => $visibility,
-		);
+		];
 
 		if ( 'pixels' === $visibility ) {
-			$mab_unfold_options['content_height'] = $visible_amount;
+			$unfold_options['content_height'] = absint( $visible_amount );
 		}
 
 		if ( 'lines' === $visibility ) {
-			$mab_unfold_options['lines'] = $visible_lines;
+			$unfold_options['lines'] = absint( $visible_lines );
 		}
 
-		$this->set_attribute( '_root', 'data-unfold', wp_json_encode( $mab_unfold_options ) );
-
+		$this->set_attribute( '_root', 'data-unfold', wp_json_encode( $unfold_options ) );
 		$this->set_attribute( 'wrapper', 'class', 'mab-unfold-content-wrapper' );
+		$this->set_attribute( 'buttonInner', 'class', 'mab-unfold-button-inner' );
 
-		$button_classes[] = 'bricks-button mab-unfold-button';
+		$button_classes = [ 'bricks-button', 'mab-unfold-button' ];
 
-		if ( isset( $settings['buttonSize'] ) ) {
-			$button_classes[] = $settings['buttonSize'];
+		if ( ! empty( $settings['buttonSize'] ) ) {
+			$button_classes[] = sanitize_html_class( $settings['buttonSize'] );
 		}
 
-		if ( isset( $settings['buttonStyle'] ) ) {
-			// Outline
-			if ( isset( $settings['buttonOutline'] ) ) {
-				$button_classes[] = 'buttonOutline outline';
-				$button_classes[] = 'bricks-color-' . $settings['buttonStyle'];
+		if ( ! empty( $settings['buttonStyle'] ) ) {
+			$style = sanitize_html_class( $settings['buttonStyle'] );
+
+			if ( ! empty( $settings['buttonOutline'] ) ) {
+				$button_classes[] = 'buttonOutline';
+				$button_classes[] = 'outline';
+				$button_classes[] = 'bricks-color-' . $style;
 			} else {
-				// Fill (default)
-				$button_classes[] = 'bricks-background-' . $settings['buttonStyle'];
+				$button_classes[] = 'bricks-background-' . $style;
 			}
 		}
 
-		// Button circle
-		if ( isset( $settings['buttonCircle'] ) ) {
-			$button_classes[] = 'buttonCircle circle';
+		if ( ! empty( $settings['buttonCircle'] ) ) {
+			$button_classes[] = 'buttonCircle';
+			$button_classes[] = 'circle';
 		}
 
-		if ( isset( $settings['block'] ) ) {
+		if ( ! empty( $settings['block'] ) ) {
 			$button_classes[] = 'block';
 		}
 
-		$this->set_attribute( 'buttonInner', 'class', 'mab-unfold-button-inner' );
+		$icon_position = $settings['buttonIconPosition'] ?? 'right';
 
-		$icon_position = isset( $settings['buttonIconPosition'] ) ? $settings['buttonIconPosition'] : 'right';
+		$has_open_icon   = ! empty( $settings['buttonIconOpen'] );
+		$has_closed_icon = ! empty( $settings['buttonIconClosed'] );
 
-		if ( isset( $settings['buttonIconOpen']['icon'] ) ) {
-			$this->set_attribute( 'icon-open', 'class', $settings['buttonIconOpen']['icon'] );
+		if ( $has_open_icon || $has_closed_icon ) {
+			$this->set_attribute( 'buttonInner', 'class', 'icon-' . esc_attr( $icon_position ) );
 		}
 
-		if ( isset( $settings['buttonIconClosed']['icon'] ) ) {
-			$this->set_attribute( 'icon-closed', 'class', $settings['buttonIconClosed']['icon'] );
-		}
-
-		if ( isset( $settings['buttonIconOpen']['icon'] ) || isset( $settings['buttonIconOpen']['svg'] ) || isset( $settings['buttonIconClosed']['icon'] ) || isset( $settings['buttonIconClosed']['svg'] ) ) {
-			$this->set_attribute( 'buttonInner', 'class', "icon-$icon_position" );
-		}
-
-		$this->set_attribute( 'buttonOpen', 'class', $button_classes );
-		$this->set_attribute( 'buttonOpen', 'class', 'mab-unfold-button-open' );
-		$this->set_attribute( 'buttonClosed', 'class', $button_classes );
-		$this->set_attribute( 'buttonClosed', 'class', 'mab-unfold-button-closed' );
+		$this->set_attribute( 'buttonOpen', 'class', array_merge( $button_classes, [ 'mab-unfold-button-open' ] ) );
+		$this->set_attribute( 'buttonClosed', 'class', array_merge( $button_classes, [ 'mab-unfold-button-closed' ] ) );
 		?>
-		<div <?php echo $this->render_attributes( '_root' ); ?>>
-			<div <?php echo wp_kses_post( $this->render_attributes( 'wrapper' ) ); ?>>
+		<div <?php $this->print_render_attributes( '_root' ); ?>>
+			<div <?php $this->print_render_attributes( 'wrapper' ); ?>>
 				<div class="mab-unfold-content">
-					<?php
-					if ( 'nested' === $content_type ) {
-						if ( method_exists( '\Bricks\Frontend', 'render_children' ) ) {
-							echo \Bricks\Frontend::render_children( $this );
-						}
-					} else {
-						$content = ! empty( $settings['content'] ) ? $settings['content'] : false;
-
-						if ( $content ) {
-							$content = $this->render_dynamic_data( $content );
-
-							if ( method_exists( '\Bricks\Helpers', 'parse_editor_content' ) ) {
-								$content = \Bricks\Helpers::parse_editor_content( $content );
-							} else {
-								$content = shortcode_unautop( $content );
-								$content = do_shortcode( $content );
-							}
-
-							echo $content;
-						}
-					}
-					?>
+					<?php $this->render_content( $settings, $content_type ); ?>
 				</div>
-				<?php if ( isset( $settings['separator'] ) ) { ?>
-					<div class="mab-unfold-saparator"></div>
-				<?php } ?>
+
+				<?php if ( ! empty( $settings['separator'] ) ) : ?>
+					<div class="mab-unfold-separator"></div>
+				<?php endif; ?>
 			</div>
+
 			<div class="mab-unfold-buttons-wrapper">
-				<div <?php echo wp_kses_post( $this->render_attributes( 'buttonInner' ) ); ?>>
-					<div <?php echo wp_kses_post( $this->render_attributes( 'buttonOpen' ) ); ?>>
+				<div <?php $this->print_render_attributes( 'buttonInner' ); ?>>
+
+					<div <?php $this->print_render_attributes( 'buttonOpen' ); ?>>
 						<?php
-						// Render button
-						$button_html = '';
+						$button_text_open = $settings['buttonTextOpen'] ?? '';
+						$button_icon_open = $settings['buttonIconOpen'] ?? [];
 
-						// Get icon HTML ('i' or 'svg')
-						$icon_html = isset( $settings['buttonIconOpen'] ) ? self::render_icon( $settings['buttonIconOpen'] ) : false;
-
-						if ( $icon_html && 'left' === $icon_position ) {
-							$button_html .= $icon_html;
-						}
-
-						if ( isset( $settings['buttonTextOpen'] ) ) {
-							$button_html .= '<span class="mab-unfold-button-text">' . trim( $settings['buttonTextOpen'] ) . '</span>';
-						}
-
-						if ( $icon_html && 'right' === $icon_position ) {
-							$button_html .= $icon_html;
-						}
-
-						echo $button_html;
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped inside render_button().
+						echo $this->render_button( $button_text_open, $button_icon_open, $icon_position );
 						?>
 					</div>
-					<div <?php echo wp_kses_post( $this->render_attributes( 'buttonClosed' ) ); ?>>
+
+					<div <?php $this->print_render_attributes( 'buttonClosed' ); ?>>
 						<?php
-						// Render button
-						$button_html = '';
+						$button_text_closed = $settings['buttonTextClosed'] ?? '';
+						$button_icon_closed = $settings['buttonIconClosed'] ?? [];
 
-						// Get icon HTML ('i' or 'svg')
-						$icon_html = isset( $settings['buttonIconClosed'] ) ? self::render_icon( $settings['buttonIconClosed'] ) : false;
-
-						if ( $icon_html && 'left' === $icon_position ) {
-							$button_html .= $icon_html;
-						}
-
-						if ( isset( $settings['buttonTextClosed'] ) ) {
-							$button_html .= '<span class="mab-unfold-button-text">' . trim( $settings['buttonTextClosed'] ) . '</span>';
-						}
-
-						if ( $icon_html && 'right' === $icon_position ) {
-							$button_html .= $icon_html;
-						}
-
-						echo $button_html;
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped inside render_button().
+						echo $this->render_button( $button_text_closed, $button_icon_closed, $icon_position );
 						?>
 					</div>
+
 				</div>
 			</div>
 		</div>

@@ -1,8 +1,12 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 use \MaxAddons\Classes\MAB_Admin_Settings;
 
-$elements         = MAB_Admin_Settings::get_elements();
-$enabled_elements = MAB_Admin_Settings::get_enabled_elements();
+$maxaddons_elements         = MAB_Admin_Settings::get_elements();
+$maxaddons_enabled_elements = MAB_Admin_Settings::get_enabled_elements();
 ?>
 <div class="mab-settings-section">
 	<div class="mab-settings-section-content">
@@ -10,37 +14,37 @@ $enabled_elements = MAB_Admin_Settings::get_enabled_elements();
 			<tr>
 				<th>
 					<label for="elements">
-						<?php esc_html_e( 'Elements', 'max-addons' ); ?>
+						<?php esc_html_e( 'Elements', 'max-addons-for-bricks' ); ?>
 					</label>
 				</th>
 				<td>
-					<button type="button" class="button toggle-all-widgets"><?php esc_html_e( 'Toggle All', 'max-addons' ); ?></button>
+					<button type="button" class="button toggle-all-widgets"><?php esc_html_e( 'Toggle All', 'max-addons-for-bricks' ); ?></button>
 
 					<table class="form-table mab-settings-elements-grid">
 						<?php
-						foreach ( $elements as $element_name => $element_title ) :
-							if ( ! is_array( $enabled_elements ) && 'disabled' != $enabled_elements ) {
-								$element_enabled = true;
-							} elseif ( ! is_array( $enabled_elements ) && 'disabled' === $enabled_elements ) {
-								$element_enabled = false;
+						foreach ( $maxaddons_elements as $maxaddons_element_name => $maxaddons_element_title ) :
+							if ( ! is_array( $maxaddons_enabled_elements ) && 'disabled' != $maxaddons_enabled_elements ) {
+								$maxaddons_element_enabled = true;
+							} elseif ( ! is_array( $maxaddons_enabled_elements ) && 'disabled' === $maxaddons_enabled_elements ) {
+								$maxaddons_element_enabled = false;
 							} else {
-								$element_enabled = in_array( $element_name, $enabled_elements ) || isset( $enabled_elements[ $element_name ] );
+								$maxaddons_element_enabled = in_array( $maxaddons_element_name, $maxaddons_enabled_elements ) || isset( $maxaddons_enabled_elements[ $maxaddons_element_name ] );
 							}
 							?>
 							<tr valign="top">
 								<th>
-									<label for="<?php echo esc_attr( $element_name ); ?>">
-										<?php echo esc_attr( $element_title ); ?>
+									<label for="<?php echo esc_attr( $maxaddons_element_name ); ?>">
+										<?php echo esc_attr( $maxaddons_element_title ); ?>
 									</label>
 								</th>
 								<td>
 									<label class="mab-admin-field-toggle">
 										<input
-											id="<?php echo esc_attr( $element_name ); ?>"
+											id="<?php echo esc_attr( $maxaddons_element_name ); ?>"
 											name="mab_enabled_elements[]"
 											type="checkbox"
-											value="<?php echo esc_attr( $element_name ); ?>"
-											<?php echo $element_enabled ? ' checked="checked"' : ''; ?>
+											value="<?php echo esc_attr( $maxaddons_element_name ); ?>"
+											<?php echo $maxaddons_element_enabled ? ' checked="checked"' : ''; ?>
 										/>
 										<span class="mab-admin-field-toggle-slider" aria-hidden="true"></span>
 									</label>

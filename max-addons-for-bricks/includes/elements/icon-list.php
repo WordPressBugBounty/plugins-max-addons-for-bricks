@@ -15,7 +15,7 @@ class Icon_List_Element extends \Bricks\Element {
 	public $scripts      = []; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public function get_label() {
-		return esc_html__( 'Dynamic List', 'max-addons' );
+		return esc_html__( 'Dynamic List', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -26,42 +26,42 @@ class Icon_List_Element extends \Bricks\Element {
 	public function set_control_groups() {
 
 		$this->control_groups['items'] = [
-			'title' => esc_html__( 'Items', 'max-addons' ),
+			'title' => esc_html__( 'Items', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['item'] = [
-			'title' => esc_html__( 'List item', 'max-addons' ),
+			'title' => esc_html__( 'List item', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['highlight'] = [
-			'title' => esc_html__( 'Highlight', 'max-addons' ),
+			'title' => esc_html__( 'Highlight', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['icon'] = [
-			'title' => esc_html__( 'Icon/Image', 'max-addons' ),
+			'title' => esc_html__( 'Icon/Image', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['title'] = [
-			'title' => esc_html__( 'Text', 'max-addons' ),
+			'title' => esc_html__( 'Text', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['meta'] = [
-			'title' => esc_html__( 'Meta', 'max-addons' ),
+			'title' => esc_html__( 'Meta', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['description'] = [
-			'title' => esc_html__( 'Description', 'max-addons' ),
+			'title' => esc_html__( 'Description', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['separator'] = [
-			'title' => esc_html__( 'Separator', 'max-addons' ),
+			'title' => esc_html__( 'Separator', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
@@ -91,24 +91,24 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['items'] = [
 			'tab'           => 'content',
 			'group'         => 'items',
-			'placeholder'   => esc_html__( 'List items', 'max-addons' ),
+			'placeholder'   => esc_html__( 'List items', 'max-addons-for-bricks' ),
 			'type'          => 'repeater',
 			'titleProperty' => 'title',
 			'checkLoop'     => true,
 			'fields'        => [
 				'title'          => [
-					'label'          => esc_html__( 'Title', 'max-addons' ),
+					'label'          => esc_html__( 'Title', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
 
 				'iconType'       => [
-					'label'     => esc_html__( 'Icon Type', 'max-addons' ),
+					'label'     => esc_html__( 'Icon Type', 'max-addons-for-bricks' ),
 					'type'      => 'select',
 					'options'   => [
-						'icon'  => esc_html__( 'Icon', 'max-addons' ),
-						'image' => esc_html__( 'Image', 'max-addons' ),
-						'text'  => esc_html__( 'Text', 'max-addons' ),
+						'icon'  => esc_html__( 'Icon', 'max-addons-for-bricks' ),
+						'image' => esc_html__( 'Image', 'max-addons-for-bricks' ),
+						'text'  => esc_html__( 'Text', 'max-addons-for-bricks' ),
 					],
 					'inline'    => true,
 					'clearable' => false,
@@ -116,7 +116,7 @@ class Icon_List_Element extends \Bricks\Element {
 				],
 
 				'icon' 		=> [
-					'label' => esc_html__( 'Icon', 'max-addons' ),
+					'label' => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 					'type' 	=> 'icon',
 					'default' 		=> [
 						'library' 	=> 'themify',
@@ -126,13 +126,13 @@ class Icon_List_Element extends \Bricks\Element {
 				],
 
 				'image'          => [
-					'label'    => esc_html__( 'Image', 'max-addons' ),
+					'label'    => esc_html__( 'Image', 'max-addons-for-bricks' ),
 					'type'     => 'image',
 					'required' => [ 'iconType', '=', [ 'image' ] ],
 				],
 
 				'iconText'       => [
-					'label'          => esc_html__( 'Text', 'max-addons' ),
+					'label'          => esc_html__( 'Text', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 					'inline'         => true,
@@ -140,29 +140,29 @@ class Icon_List_Element extends \Bricks\Element {
 				],
 
 				'link'           => [
-					'label' => esc_html__( 'Link', 'max-addons' ),
+					'label' => esc_html__( 'Link', 'max-addons-for-bricks' ),
 					'type'  => 'link',
 				],
 
 				'meta'           => [
-					'label'          => esc_html__( 'Meta', 'max-addons' ),
+					'label'          => esc_html__( 'Meta', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
 
 				'description'    => [
-					'label'          => esc_html__( 'Description', 'max-addons' ),
+					'label'          => esc_html__( 'Description', 'max-addons-for-bricks' ),
 					'type'           => 'textarea',
 					'hasDynamicData' => 'text',
 				],
 
 				'highlight'      => [
-					'label' => esc_html__( 'Highlight', 'max-addons' ),
+					'label' => esc_html__( 'Highlight', 'max-addons-for-bricks' ),
 					'type'  => 'checkbox',
 				],
 
 				'highlightLabel' => [
-					'label'    => esc_html__( 'Highlight label', 'max-addons' ),
+					'label'    => esc_html__( 'Highlight label', 'max-addons-for-bricks' ),
 					'type'     => 'text',
 					'inline'   => true,
 					'required' => [ 'highlight', '!=', '' ],
@@ -170,7 +170,7 @@ class Icon_List_Element extends \Bricks\Element {
 			],
 			'default'       => [
 				[
-					'title'    => esc_html__( 'List item #1', 'max-addons' ),
+					'title'    => esc_html__( 'List item #1', 'max-addons-for-bricks' ),
 					'iconType' => 'icon',
 					'icon'     => [
 						'library' => 'themify',
@@ -178,7 +178,7 @@ class Icon_List_Element extends \Bricks\Element {
 					],
 				],
 				[
-					'title'    => esc_html__( 'List item #2', 'max-addons' ),
+					'title'    => esc_html__( 'List item #2', 'max-addons-for-bricks' ),
 					'iconType' => 'icon',
 					'icon'     => [
 						'library' => 'themify',
@@ -197,7 +197,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['itemMargin'] = [
 			'tab'   => 'content',
 			'group' => 'item',
-			'label' => esc_html__( 'Margin', 'max-addons' ),
+			'label' => esc_html__( 'Margin', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -210,7 +210,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['itemPadding'] = [
 			'tab'   => 'content',
 			'group' => 'item',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -223,7 +223,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['itemOddBackground'] = [
 			'tab'    => 'content',
 			'group'  => 'item',
-			'label'  => esc_html__( 'Odd background', 'max-addons' ),
+			'label'  => esc_html__( 'Odd background', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -238,7 +238,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['itemEvenBackground'] = [
 			'tab'    => 'content',
 			'group'  => 'item',
-			'label'  => esc_html__( 'Even background', 'max-addons' ),
+			'label'  => esc_html__( 'Even background', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -253,7 +253,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['itemBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'item',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'css'    => [
 				[
@@ -268,7 +268,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['itemAutoWidth'] = [
 			'tab'   => 'content',
 			'group' => 'item',
-			'label' => esc_html__( 'Auto width', 'max-addons' ),
+			'label' => esc_html__( 'Auto width', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'css'   => [
 				[
@@ -290,7 +290,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightBlock'] = [
 			'tab'   => 'content',
 			'group' => 'highlight',
-			'label' => esc_html__( 'Block', 'max-addons' ),
+			'label' => esc_html__( 'Block', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'css'   => [
 				[
@@ -304,7 +304,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightLabelPadding'] = [
 			'tab'   => 'content',
 			'group' => 'highlight',
-			'label' => esc_html__( 'Label padding', 'max-addons' ),
+			'label' => esc_html__( 'Label padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -317,7 +317,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightLabelBackground'] = [
 			'tab'    => 'content',
 			'group'  => 'highlight',
-			'label'  => esc_html__( 'Label background', 'max-addons' ),
+			'label'  => esc_html__( 'Label background', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -332,7 +332,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightLabelBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'highlight',
-			'label'  => esc_html__( 'Label border', 'max-addons' ),
+			'label'  => esc_html__( 'Label border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'css'    => [
 				[
@@ -347,7 +347,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightLabelTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'highlight',
-			'label'  => esc_html__( 'Label typography', 'max-addons' ),
+			'label'  => esc_html__( 'Label typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -362,7 +362,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightContentPadding'] = [
 			'tab'   => 'content',
 			'group' => 'highlight',
-			'label' => esc_html__( 'Content padding', 'max-addons' ),
+			'label' => esc_html__( 'Content padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -375,7 +375,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightContentBackground'] = [
 			'tab'    => 'content',
 			'group'  => 'highlight',
-			'label'  => esc_html__( 'Content background', 'max-addons' ),
+			'label'  => esc_html__( 'Content background', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -390,7 +390,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightContentBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'highlight',
-			'label'  => esc_html__( 'Content border', 'max-addons' ),
+			'label'  => esc_html__( 'Content border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'css'    => [
 				[
@@ -405,7 +405,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['highlightContentColor'] = [
 			'tab'    => 'content',
 			'group'  => 'highlight',
-			'label'  => esc_html__( 'Content text color', 'max-addons' ),
+			'label'  => esc_html__( 'Content text color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -432,7 +432,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['iconVerticalAlign'] = [
 			'tab'     => 'content',
 			'group'   => 'icon',
-			'label'   => esc_html__( 'Vertical Align', 'max-addons' ),
+			'label'   => esc_html__( 'Vertical Align', 'max-addons-for-bricks' ),
 			'type'    => 'align-items',
 			'exclude' => [
 				'stretch',
@@ -449,7 +449,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['iconSize'] = [
 			'tab'   => 'content',
 			'group' => 'icon',
-			'label' => esc_html__( 'Icon size', 'max-addons' ),
+			'label' => esc_html__( 'Icon size', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -463,7 +463,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['iconColor'] = [
 			'tab'    => 'content',
 			'group'  => 'icon',
-			'label'  => esc_html__( 'Icon color', 'max-addons' ),
+			'label'  => esc_html__( 'Icon color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'inline' => true,
 			'css'    => [
@@ -478,13 +478,13 @@ class Icon_List_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'icon',
 			'type'  => 'separator',
-			'label' => esc_html__( 'SVG', 'max-addons' ),
+			'label' => esc_html__( 'SVG', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['svgHeight'] = [
 			'tab'   => 'content',
 			'group' => 'icon',
-			'label' => esc_html__( 'Height', 'max-addons' ),
+			'label' => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -498,7 +498,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['svgWidth'] = [
 			'tab'   => 'content',
 			'group' => 'icon',
-			'label' => esc_html__( 'Width', 'max-addons' ),
+			'label' => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -512,7 +512,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['strokeWidth'] = [
 			'tab'    => 'content',
 			'group'  => 'icon',
-			'label'  => esc_html__( 'Stroke width', 'max-addons' ),
+			'label'  => esc_html__( 'Stroke width', 'max-addons-for-bricks' ),
 			'type'   => 'number',
 			'css'    => [
 				[
@@ -528,7 +528,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['stroke'] = [
 			'tab'    => 'content',
 			'group'  => 'icon',
-			'label'  => esc_html__( 'Stroke color', 'max-addons' ),
+			'label'  => esc_html__( 'Stroke color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -543,7 +543,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['fill'] = [
 			'tab'    => 'content',
 			'group'  => 'icon',
-			'label'  => esc_html__( 'Fill', 'max-addons' ),
+			'label'  => esc_html__( 'Fill', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -559,18 +559,18 @@ class Icon_List_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'icon',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Image', 'max-addons' ),
+			'label' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['imageObjectFit'] = [
 			'tab'     => 'content',
 			'group'   => 'icon',
-			'label'   => esc_html__( 'Object Fit', 'max-addons' ),
+			'label'   => esc_html__( 'Object Fit', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'options' => [
-				'contain' => esc_html__( 'Contain', 'max-addons' ),
-				'cover'   => esc_html__( 'Cover', 'max-addons' ),
-				'fill'    => esc_html__( 'Fill', 'max-addons' ),
+				'contain' => esc_html__( 'Contain', 'max-addons-for-bricks' ),
+				'cover'   => esc_html__( 'Cover', 'max-addons-for-bricks' ),
+				'fill'    => esc_html__( 'Fill', 'max-addons-for-bricks' ),
 			],
 			'css'     => [
 				[
@@ -584,7 +584,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['imageHeight'] = [
 			'tab'   => 'content',
 			'group' => 'icon',
-			'label' => esc_html__( 'Height', 'max-addons' ),
+			'label' => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -598,7 +598,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['imageWidth'] = [
 			'tab'   => 'content',
 			'group' => 'icon',
-			'label' => esc_html__( 'Width', 'max-addons' ),
+			'label' => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -613,13 +613,13 @@ class Icon_List_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'icon',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Text', 'max-addons' ),
+			'label' => esc_html__( 'Text', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['iconTextTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'icon',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -638,7 +638,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['textMargin'] = [
 			'tab'   => 'content',
 			'group' => 'title',
-			'label' => esc_html__( 'Margin', 'max-addons' ),
+			'label' => esc_html__( 'Margin', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -651,14 +651,14 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['textTag'] = [
 			'tab'         => 'content',
 			'group'       => 'title',
-			'label'       => esc_html__( 'Tag', 'max-addons' ),
+			'label'       => esc_html__( 'Tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'h2' => esc_html__( 'Heading 2 (h2)', 'max-addons' ),
-				'h3' => esc_html__( 'Heading 3 (h3)', 'max-addons' ),
-				'h4' => esc_html__( 'Heading 4 (h4)', 'max-addons' ),
-				'h5' => esc_html__( 'Heading 5 (h5)', 'max-addons' ),
-				'h6' => esc_html__( 'Heading 6 (h6)', 'max-addons' ),
+				'h2' => esc_html__( 'Heading 2 (h2)', 'max-addons-for-bricks' ),
+				'h3' => esc_html__( 'Heading 3 (h3)', 'max-addons-for-bricks' ),
+				'h4' => esc_html__( 'Heading 4 (h4)', 'max-addons-for-bricks' ),
+				'h5' => esc_html__( 'Heading 5 (h5)', 'max-addons-for-bricks' ),
+				'h6' => esc_html__( 'Heading 6 (h6)', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'placeholder' => 'span',
@@ -667,7 +667,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['textTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'title',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -686,7 +686,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['metaMargin'] = [
 			'tab'   => 'content',
 			'group' => 'meta',
-			'label' => esc_html__( 'Margin', 'max-addons' ),
+			'label' => esc_html__( 'Margin', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -699,7 +699,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['metaTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'meta',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -717,7 +717,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['descriptionTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'description',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -735,14 +735,14 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['separatorEnable'] = [
 			'tab'   => 'content',
 			'group' => 'separator',
-			'label' => esc_html__( 'Enable', 'max-addons' ),
+			'label' => esc_html__( 'Enable', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 		];
 
 		$this->controls['separatorStyle'] = [
 			'tab'      => 'content',
 			'group'    => 'separator',
-			'label'    => esc_html__( 'Style', 'max-addons' ),
+			'label'    => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'     => 'select',
 			'options'  => $this->control_options['borderStyle'],
 			'css'      => [
@@ -758,7 +758,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['separatorWidth'] = [
 			'tab'      => 'content',
 			'group'    => 'separator',
-			'label'    => esc_html__( 'Width in px', 'max-addons' ),
+			'label'    => esc_html__( 'Width in px', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'unit'     => 'px',
 			'css'      => [
@@ -779,7 +779,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['separatorHeight'] = [
 			'tab'      => 'content',
 			'group'    => 'separator',
-			'label'    => esc_html__( 'Height in px', 'max-addons' ),
+			'label'    => esc_html__( 'Height in px', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'unit'     => 'px',
 			'css'      => [
@@ -795,7 +795,7 @@ class Icon_List_Element extends \Bricks\Element {
 		$this->controls['separatorColor'] = [
 			'tab'      => 'content',
 			'group'    => 'separator',
-			'label'    => esc_html__( 'Color', 'max-addons' ),
+			'label'    => esc_html__( 'Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -850,54 +850,88 @@ class Icon_List_Element extends \Bricks\Element {
 	}
 
 	public function render_icon_image( $settings ) {
-		if ( empty( $settings['image'] ) ) {
+
+		if ( empty( $settings['image'] ) || ! is_array( $settings['image'] ) ) {
 			return;
 		}
 
-		if ( isset( $settings['image']['useDynamicData']['name'] ) ) {
+		$image_settings = $settings['image'];
 
-			if ( empty( $settings['image']['id'] ) ) {
+		if ( ! empty( $image_settings['useDynamicData'] ) && is_array( $image_settings['useDynamicData'] ) && isset( $image_settings['useDynamicData']['name'] ) ) {
 
-				if ( 'ACF' === $settings['image']['useDynamicData']['group'] && ! class_exists( 'ACF' ) ) {
-					$message = esc_html__( 'Can\'t render element, as the selected ACF field is not available. Please activate ACF or edit the element to select different data.', 'max-addons' );
-				} elseif ( '{featured_image}' == $settings['image']['useDynamicData']['name'] ) {
-					$message = esc_html__( 'No featured image set.', 'max-addons' );
+			$dynamic_data = $image_settings['useDynamicData'];
+
+			if ( empty( $image_settings['id'] ) ) {
+
+				if ( isset( $dynamic_data['group'] ) && 'ACF' === $dynamic_data['group'] && ! class_exists( 'ACF' ) ) {
+
+					$title = esc_html__(
+						'Can\'t render element, as the selected ACF field is not available. Please activate ACF or edit the element to select different data.',
+						'max-addons-for-bricks'
+					);
+
+				} elseif ( isset( $dynamic_data['name'] ) && '{featured_image}' === $dynamic_data['name'] ) {
+
+					$title = esc_html__(
+						'No featured image set.',
+						'max-addons-for-bricks'
+					);
+
 				} else {
-					$message = esc_html__( 'Dynamic Data %1$s (%2$s) is empty.', 'max-addons' );
+
+					$title = sprintf(
+						/* translators: 1: Dynamic data label, 2: Dynamic data group name. */
+						esc_html__(
+							'Dynamic Data %1$s (%2$s) is empty.',
+							'max-addons-for-bricks'
+						),
+						isset( $dynamic_data['label'] ) ? esc_html( $dynamic_data['label'] ) : '',
+						isset( $dynamic_data['group'] ) ? esc_html( $dynamic_data['group'] ) : ''
+					);
 				}
 
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => sprintf(
-						$message,
-						$settings['image']['useDynamicData']['label'],
-						$settings['image']['useDynamicData']['group']
-					),
-				] );
+				return $this->render_element_placeholder(
+					[
+						'icon-class' => 'ti-image',
+						'title'      => $title,
+					]
+				);
 			}
 		}
 
-		// Render
-		$img_html = '';
-		$image_atts = [];
-		$image_atts['id'] = 'image-' . $settings['image']['id'];
+		$img_size = ! empty( $image_settings['size'] ) ? sanitize_key( $image_settings['size'] ) : 'large';
 
-		$image_wrapper_classes = [ 'mab-icon-list-icon' ];
-		$img_classes = [ 'post-thumbnail', 'css-filter' ];
+		$image_atts = [
+			'id'    => 'image-' . absint( $image_settings['id'] ),
+			'class' => implode(
+				' ',
+				[
+					'post-thumbnail',
+					'css-filter',
+					'size-' . esc_attr( $img_size ),
+				]
+			),
+		];
 
-		$img_size = ! empty( $settings['image']['size'] ) ? $settings['image']['size'] : 'large';
-		$img_classes[] = 'size-' . esc_attr( $img_size );
-		$image_atts['class'] = join( ' ', $img_classes );
+		$this->set_attribute( 'image-wrapper', 'class', 'mab-icon-list-icon' );
 
-		$this->set_attribute( 'image-wrapper', 'class', $image_wrapper_classes );
+		$img_html  = '<span ' . $this->render_attributes( 'image-wrapper' ) . '>';
 
-		$img_html .= '<span ' . $this->render_attributes( 'image-wrapper' ) . '>';
+		if ( ! empty( $image_settings['id'] ) ) {
 
-		// Lazy load atts set via 'wp_get_attachment_image_attributes' filter
-		if ( isset( $settings['image']['id'] ) ) {
-			$img_html .= wp_get_attachment_image( $settings['image']['id'], $img_size, false, $image_atts );
-		} elseif ( ! empty( $settings['image']['url'] ) ) {
-			$img_html .= '<img src="' . $settings['image']['url'] . '">';
+			$img_html .= wp_get_attachment_image(
+				absint( $image_settings['id'] ),
+				$img_size,
+				false,
+				$image_atts
+			);
+
+		} elseif ( ! empty( $image_settings['url'] ) ) {
+
+			$img_html .= sprintf(
+				'<img src="%s" alt="" />',
+				esc_url( $image_settings['url'] )
+			);
 		}
 
 		$img_html .= '</span>';
@@ -1007,16 +1041,17 @@ class Icon_List_Element extends \Bricks\Element {
 
 	public function render() {
 		$settings = $this->settings;
-		$items  = empty( $settings['items'] ) ? false : $settings['items'];
 
 		// Element placeholder
-		if ( empty( $items ) ) {
+		if ( empty( $settings['items'] ) || ! is_array( $settings['items'] ) ) {
 			return $this->render_element_placeholder(
 				[
-					'title' => esc_html__( 'No list items defined.', 'max-addons' ),
+					'title' => esc_html__( 'No list items defined.', 'max-addons-for-bricks' ),
 				]
 			);
 		}
+
+		$items = $settings['items'];
 
 		$this->set_attribute( '_root', 'class', 'mab-icon-list' );
 
@@ -1044,6 +1079,7 @@ class Icon_List_Element extends \Bricks\Element {
 
 		$output .= '</ul>';
 
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in render_repeater_item() and render_attributes().
 		echo $output;
 	}
 }

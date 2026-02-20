@@ -64,6 +64,30 @@ class MAB_Plugin {
 		$this->includes();
 
 		add_action( 'init', array( $this, 'init' ), 11 );
+
+		// Add settings link
+		add_filter( 'plugin_action_links_' . MAB_BASE, array( $this, 'add_settings_link_plugin_page' ) );
+	}
+
+	/**
+	 * Add settings page link to plugin page.
+	 *
+	 * @since 1.1.1
+	 *
+	 * @param array $links Plugin action links.
+	 * @return array
+	 */
+	public function add_settings_link_plugin_page( $links ) {
+
+		$settings_url = admin_url( 'admin.php?page=mab-settings' );
+
+		$links[] = sprintf(
+			'<a href="%1$s">%2$s</a>',
+			esc_url( $settings_url ),
+			esc_html__( 'Settings', 'max-addons-for-bricks' )
+		);
+
+		return $links;
 	}
 
 	/**
@@ -80,7 +104,7 @@ class MAB_Plugin {
 	
 		$message = sprintf(
 			/* translators: 1: Max Addons 2: Bricks Builder */
-			esc_html__( '%1$s requires %2$s to be installed and activated.', 'max-addons' ),
+			esc_html__( '%1$s requires %2$s to be installed and activated.', 'max-addons-for-bricks' ),
 			'<strong>Max Addons</strong>',
 			'<strong>Bricks Builder</strong>'
 		);
@@ -129,6 +153,7 @@ class MAB_Plugin {
 
 		require MAB_DIR . 'classes/class-mab-admin-settings.php';
 		require MAB_DIR . 'classes/class-mab-helper.php';
+		require MAB_DIR . 'classes/class-mab-deprecated.php';
 
 		if ( is_admin() ) {
 			require_once MAB_DIR . 'includes/admin/feedback/plugin-feedback.php';
@@ -153,21 +178,10 @@ class MAB_Plugin {
 			return;
 		}
 
-		$this->load_textdomain();
+		require_once MAB_DIR . 'includes/base/class-element-base.php';
+
 		$this->init_actions_filters();
 		$this->load_elements();
-	}
-
-	/**
-	 * Loads Max Addons text domain.
-	 *
-	 * @since 1.0.0
-	 * @access public
-	 *
-	 * @return void
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'max-addons', false, basename( MAB_DIR ) . '/languages' );
 	}
 
 	/**
@@ -197,7 +211,7 @@ class MAB_Plugin {
 	 * @param array $i18n.
 	 */
 	public function elements_category( $i18n ) {
-		$i18n['max-addons-elements'] = esc_html__( 'Max Addons', 'max-addons' );
+		$i18n['max-addons-elements'] = esc_html__( 'Max Addons', 'max-addons-for-bricks' );
 
 		return $i18n;
 	}

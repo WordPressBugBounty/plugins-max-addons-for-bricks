@@ -1,11 +1,13 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Cta_Button_Element extends \Bricks\Element {
+class Cta_Button_Element extends Element_Base {
 	// Element properties
 	public $category = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name     = 'max-cta-button'; // Make sure to prefix your elements
@@ -14,7 +16,7 @@ class Cta_Button_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'CTA Button', 'max-addons' );
+		return esc_html__( 'CTA Button', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -25,12 +27,12 @@ class Cta_Button_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->controls['text'] = [ // Unique group identifier (lowercase, no spaces)
-			'title' => esc_html__( 'Text', 'max-addons' ), // Localized control group title
+			'title' => esc_html__( 'Text', 'max-addons-for-bricks' ), // Localized control group title
 			'tab'   => 'content', // Set to either "content" or "style"
 		];
 
 		$this->control_groups['icon'] = [
-			'title' => esc_html__( 'Icon', 'max-addons' ),
+			'title' => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -42,24 +44,24 @@ class Cta_Button_Element extends \Bricks\Element {
 
 		$this->controls['text'] = [
 			'tab'            => 'content',
-			'label'          => esc_html__( 'Text', 'max-addons' ),
+			'label'          => esc_html__( 'Text', 'max-addons-for-bricks' ),
 			'type'           => 'text',
-			'default'        => esc_html__( 'Sign up now!', 'max-addons' ),
+			'default'        => esc_html__( 'Sign up now!', 'max-addons-for-bricks' ),
 			// 'hidden' => true,
 			'hasDynamicData' => 'text',
 		];
 
 		$this->controls['description'] = [
 			'tab'            => 'content',
-			'label'          => esc_html__( 'Description', 'max-addons' ),
+			'label'          => esc_html__( 'Description', 'max-addons-for-bricks' ),
 			'type'           => 'textarea',
 			'rows'           => 3,
-			'default'        => esc_html__( 'Free for first 30 days', 'max-addons' ),
+			'default'        => esc_html__( 'Free for first 30 days', 'max-addons-for-bricks' ),
 			'hasDynamicData' => 'text',
 		];
 
 		$this->controls['tag'] = [
-			'label'          => esc_html__( 'HTML tag', 'max-addons' ),
+			'label'          => esc_html__( 'HTML tag', 'max-addons-for-bricks' ),
 			'type'           => 'text',
 			'hasDynamicData' => false,
 			'inline'         => true,
@@ -69,35 +71,35 @@ class Cta_Button_Element extends \Bricks\Element {
 
 		$this->controls['size'] = [
 			'tab'         => 'content',
-			'label'       => esc_html__( 'Size', 'max-addons' ),
+			'label'       => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['buttonSizes'],
 			'inline'      => true,
 			'reset'       => true,
-			'placeholder' => esc_html__( 'Medium', 'max-addons' ),
+			'placeholder' => esc_html__( 'Medium', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['style'] = [
 			'tab'         => 'content',
-			'label'       => esc_html__( 'Style', 'max-addons' ),
+			'label'       => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['styles'],
 			'inline'      => true,
 			'reset'       => true,
 			'default'     => 'primary',
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['circle'] = [
 			'tab'   => 'content',
-			'label' => esc_html__( 'Circle', 'max-addons' ),
+			'label' => esc_html__( 'Circle', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'reset' => true,
 		];
 
 		$this->controls['outline'] = [
 			'tab'   => 'content',
-			'label' => esc_html__( 'Outline', 'max-addons' ),
+			'label' => esc_html__( 'Outline', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'reset' => true,
 		];
@@ -107,7 +109,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['textTypography'] = [
 			'tab'    => 'content',
 			'group'  => '_typography',
-			'label'  => esc_html__( 'Text Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Text Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -122,7 +124,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['descriptionTypography'] = [
 			'tab'    => 'content',
 			'group'  => '_typography',
-			'label'  => esc_html__( 'Description Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Description Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -138,13 +140,13 @@ class Cta_Button_Element extends \Bricks\Element {
 
 		$this->controls['linkSeparator'] = [
 			'tab'   => 'content',
-			'label' => esc_html__( 'Link', 'max-addons' ),
+			'label' => esc_html__( 'Link', 'max-addons-for-bricks' ),
 			'type'  => 'separator',
 		];
 
 		$this->controls['link'] = [
 			'tab'   => 'content',
-			'label' => esc_html__( 'Link type', 'max-addons' ),
+			'label' => esc_html__( 'Link type', 'max-addons-for-bricks' ),
 			'type'  => 'link',
 		];
 
@@ -153,11 +155,11 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['icon_type'] = [
 			'tab'         => 'content',
 			'group'       => 'icon',
-			'label'       => esc_html__( 'Icon Type', 'max-addons' ),
+			'label'       => esc_html__( 'Icon Type', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'icon'  => esc_html__( 'Icon', 'max-addons' ),
-				'image' => esc_html__( 'Image', 'max-addons' ),
+				'icon'  => esc_html__( 'Icon', 'max-addons-for-bricks' ),
+				'image' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => true,
@@ -168,16 +170,16 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['iconPosition'] = [
 			'tab'         => 'content',
 			'group'       => 'icon',
-			'label'       => esc_html__( 'Position', 'max-addons' ),
+			'label'       => esc_html__( 'Position', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'before-title' => esc_html__( 'Before Title', 'max-addons' ),
-				'after-title'  => esc_html__( 'After Title', 'max-addons' ),
-				'left'         => esc_html__( 'Before Title & Description', 'max-addons' ),
-				'right'        => esc_html__( 'After Title & Description', 'max-addons' ),
+				'before-title' => esc_html__( 'Before Title', 'max-addons-for-bricks' ),
+				'after-title'  => esc_html__( 'After Title', 'max-addons-for-bricks' ),
+				'left'         => esc_html__( 'Before Title & Description', 'max-addons-for-bricks' ),
+				'right'        => esc_html__( 'After Title & Description', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
-			'placeholder' => esc_html__( 'After Title & Description', 'max-addons' ),
+			'placeholder' => esc_html__( 'After Title & Description', 'max-addons-for-bricks' ),
 			'default'     => 'right',
 			'required'    => [ 'icon_type', '!=', '' ],
 		];
@@ -185,7 +187,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['icon'] = [
 			'tab'      => 'content',
 			'group'    => 'icon',
-			'label'    => esc_html__( 'Icon', 'max-addons' ),
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'default'  => [
 				'library' => 'themify',
@@ -203,14 +205,14 @@ class Cta_Button_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'icon',
 			'type'     => 'image',
-			'label'    => esc_html__( 'Image', 'max-addons' ),
+			'label'    => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			'required' => [ 'icon_type', '=', 'image' ],
 		];
 
 		$this->controls['iconTypography'] = [
 			'tab'      => 'content',
 			'group'    => 'icon',
-			'label'    => esc_html__( 'Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'     => 'typography',
 			'css'      => [
 				[
@@ -236,7 +238,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['iconSpacing'] = [
 			'tab'      => 'content',
 			'group'    => 'icon',
-			'label'    => esc_html__( 'Gap', 'max-addons' ),
+			'label'    => esc_html__( 'Gap', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -256,7 +258,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['height'] = [
 			'tab'      => 'content',
 			'group'    => 'icon',
-			'label'    => esc_html__( 'Height', 'max-addons' ),
+			'label'    => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'css'      => [
 				[
@@ -271,7 +273,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->controls['width'] = [
 			'tab'      => 'content',
 			'group'    => 'icon',
-			'label'    => esc_html__( 'Width', 'max-addons' ),
+			'label'    => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'css'      => [
 				[
@@ -317,70 +319,91 @@ class Cta_Button_Element extends \Bricks\Element {
 	}
 
 	// Render element HTML
-	public function render_image( $image_type ) {
-		$settings = $this->settings;
-		$settings = $this->get_normalized_image_settings( $settings, $image_type );
+	public function render_image() {
 
-		// Dynamic Data is empty
-		if ( isset( $settings[ $image_type ]['useDynamicData']['name'] ) ) {
+		if ( empty( $this->settings['image'] ) || ! is_array( $this->settings['image'] ) ) {
+			return '';
+		}
 
-			if ( empty( $settings[ $image_type ]['id'] ) ) {
+		$image = $this->settings['image'];
 
-				if ( 'ACF' === $settings[ $image_type ]['useDynamicData']['group'] && ! class_exists( 'ACF' ) ) {
-					$message = esc_html__( 'Can\'t render element, as the selected ACF field is not available. Please activate ACF or edit the element to select different data.', 'max-addons' );
-				} elseif ( '{featured_image}' == $settings[ $image_type ]['useDynamicData']['name'] ) {
-					$message = esc_html__( 'No featured image set.', 'max-addons' );
+		if ( ! empty( $image['useDynamicData'] ) && is_array( $image['useDynamicData'] ) && isset( $image['useDynamicData']['name'] ) ) {
+
+			$dynamic = $image['useDynamicData'];
+
+			if ( empty( $image['id'] ) ) {
+
+				if ( isset( $dynamic['group'] ) && 'ACF' === $dynamic['group'] && ! class_exists( 'ACF' ) ) {
+
+					$title = esc_html__( 'Can\'t render element, as the selected ACF field is not available. Please activate ACF or edit the element to select different data.', 'max-addons-for-bricks' );
+
+				} elseif ( isset( $dynamic['name'] ) && '{featured_image}' === $dynamic['name'] ) {
+
+					$title = esc_html__( 'No featured image set.', 'max-addons-for-bricks' );
+
 				} else {
-					$message = esc_html__( 'Dynamic Data %1$s (%2$s) is empty.', 'max-addons' );
+
+					$title = sprintf(
+						/* translators: 1: Dynamic data label, 2: Dynamic data group. */
+						esc_html__( 'Dynamic Data %1$s (%2$s) is empty.', 'max-addons-for-bricks' ),
+						isset( $dynamic['label'] ) ? esc_html( $dynamic['label'] ) : '',
+						isset( $dynamic['group'] ) ? esc_html( $dynamic['group'] ) : ''
+					);
 				}
 
-				return $this->render_element_placeholder( [
+				return $this->render_element_placeholder(
+					[
+						'icon-class' => 'ti-image',
+						'title'      => $title,
+					]
+				);
+			}
+		}
+
+		if ( empty( $image['id'] ) ) {
+
+			return $this->render_element_placeholder(
+				[
+					'icon-class' => 'ti-image',
+					'title'      => esc_html__( 'No image selected.', 'max-addons-for-bricks' ),
+				]
+			);
+		}
+
+		if ( ! wp_get_attachment_image_src( $image['id'] ) ) {
+
+			return $this->render_element_placeholder(
+				[
 					'icon-class' => 'ti-image',
 					'title'      => sprintf(
-						$message,
-						$settings[ $image_type ]['useDynamicData']['label'],
-						$settings[ $image_type ]['useDynamicData']['group']
+						/* translators: %s: Image ID. */
+						esc_html__( 'Image ID (%s) no longer exists. Please select another image.', 'max-addons-for-bricks' ),
+						absint( $image['id'] )
 					),
-				] );
-			}
-		} else {
-			// Image id is empty or doesn't exist
-
-			// No image
-			if ( empty( $settings[ $image_type ]['id'] ) ) {
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => esc_html__( 'No image selected.', 'max-addons' ),
-				] );
-			}
-
-			// Return if image ID does not exist
-			if ( ! wp_get_attachment_image_src( $settings[ $image_type ]['id'] ) ) {
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $settings[ $image_type ]['id'] ),
-				] );
-			}
+				]
+			);
 		}
 
-		$image_atts = [];
-		$image_atts['id'] = 'image-' . $settings[ $image_type ]['id'];
+		$size = ! empty( $image['size'] ) ? sanitize_key( $image['size'] ) : 'full';
 
-		$image_wrapper_classes = [ 'image-wrapper' ];
-		$img_classes = [ 'post-thumbnail', 'css-filter' ];
+		$image_atts = [
+			'id'    => 'image-' . absint( $image['id'] ),
+			'class' => implode(
+				' ',
+				[
+					'post-thumbnail',
+					'css-filter',
+					'size-' . esc_attr( $size ),
+				]
+			),
+		];
 
-		$img_classes[] = 'size-' . $settings[ $image_type ]['size'];
-		$image_atts['class'] = join( ' ', $img_classes );
-
-		$image_html = '';
-
-		if ( isset( $settings[ $image_type ]['id'] ) ) {
-			$image_html = wp_get_attachment_image( $settings[ $image_type ]['id'], $settings[ $image_type ]['size'], false, $image_atts );
-		} elseif ( ! empty( $settings[ $image_type ]['url'] ) ) {
-			$image_html = '<img src="' . esc_url( $settings[ $image_type ]['url'] ) . '">';
-		}
-
-		return $image_html;
+		return wp_get_attachment_image(
+			absint( $image['id'] ),
+			$size,
+			false,
+			$image_atts
+		);
 	}
 
 	public function render_button_icon() {
@@ -410,7 +433,7 @@ class Cta_Button_Element extends \Bricks\Element {
 				$icon_html .= isset( $settings['icon'] ) ? self::render_icon( $settings['icon'] ) : false;
 			}
 		} elseif ( 'image' === $icon_type ) {
-			$icon_html .= wp_kses_post( $this->render_image( 'image' ) );
+			$icon_html .= wp_kses_post( $this->render_image() );
 		}
 
 		$icon_html .= '</span>';
@@ -424,7 +447,9 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->set_attribute( 'button-text', 'class', 'mab-button-text' );
 
 		if ( isset( $settings['text'] ) ) { ?>
-			<span <?php echo wp_kses_post( $this->render_attributes( 'button-text' ) ); ?>><?php echo trim( $settings['text'] ); ?> </span>
+			<span <?php $this->print_render_attributes( 'button-text' ); ?>>
+				<?php echo esc_html( trim( $settings['text'] ) ); ?>
+			</span>
 			<?php
 		}
 	}
@@ -435,7 +460,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		$this->set_attribute( 'button-description', 'class', 'mab-button-description' );
 
 		if ( isset( $settings['description'] ) ) { ?>
-			<span <?php echo wp_kses_post( $this->render_attributes( 'button-description' ) ); ?>><?php echo wp_kses_post( $settings['description'] ); ?> </span>
+			<span <?php $this->print_render_attributes( 'button-description' ); ?>><?php echo wp_kses_post( $settings['description'] ); ?> </span>
 			<?php
 		}
 	}
@@ -526,7 +551,7 @@ class Cta_Button_Element extends \Bricks\Element {
 		}
 
 		// Render button ?>
-		<<?php echo esc_attr( $this->tag ) . ' ' . wp_kses_post( $this->render_attributes( '_root' ) ); ?> >
+		<<?php echo esc_attr( $this->tag ); ?> <?php $this->print_render_attributes( '_root' ); ?>>
 
 			<?php
 			if ( 'before-title' === $icon_position || 'after-title' === $icon_position ) {

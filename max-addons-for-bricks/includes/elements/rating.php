@@ -15,7 +15,7 @@ class Star_Rating_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'Rating', 'max-addons' );
+		return esc_html__( 'Rating', 'max-addons-for-bricks' );
 	}
 
 	public function get_keywords() {
@@ -36,7 +36,7 @@ class Star_Rating_Element extends \Bricks\Element {
 	public function set_rating_controls() {
 		$this->controls['ratingScale'] = [
 			'tab'            => 'content',
-			'label'          => esc_html__( 'Rating Scale', 'max-addons' ),
+			'label'          => esc_html__( 'Rating Scale', 'max-addons-for-bricks' ),
 			'type'           => 'number',
 			'hasDynamicData' => true,
 			'min'            => 1,
@@ -46,7 +46,7 @@ class Star_Rating_Element extends \Bricks\Element {
 
 		$this->controls['rating'] = [
 			'tab'            => 'content',
-			'label'          => esc_html__( 'Rating', 'max-addons' ),
+			'label'          => esc_html__( 'Rating', 'max-addons-for-bricks' ),
 			'type'           => 'number',
 			'hasDynamicData' => true,
 			'default'        => 5,
@@ -54,7 +54,7 @@ class Star_Rating_Element extends \Bricks\Element {
 
 		$this->controls['ratingIcon'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Icon', 'max-addons' ),
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'default'  => [
 				'library' => 'themify',
@@ -69,7 +69,7 @@ class Star_Rating_Element extends \Bricks\Element {
 
 		$this->controls['iconColor'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Marked Icon color', 'max-addons' ),
+			'label'    => esc_html__( 'Marked Icon color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'default'  => array(
@@ -89,7 +89,7 @@ class Star_Rating_Element extends \Bricks\Element {
 
 		$this->controls['iconUnmarkedColor'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Unmarked Icon color', 'max-addons' ),
+			'label'    => esc_html__( 'Unmarked Icon color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'default'  => array(
@@ -109,7 +109,7 @@ class Star_Rating_Element extends \Bricks\Element {
 
 		$this->controls['iconSize'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Icon Size', 'max-addons' ),
+			'label'    => esc_html__( 'Icon Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -122,7 +122,7 @@ class Star_Rating_Element extends \Bricks\Element {
 
 		$this->controls['iconGap'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Icon Spacing', 'max-addons' ),
+			'label'    => esc_html__( 'Icon Spacing', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -227,7 +227,9 @@ class Star_Rating_Element extends \Bricks\Element {
 		$this->set_attribute( 'widget_wrapper', 'itemprop', 'reviewRating' );
 		$this->set_attribute( 'widget_wrapper', 'content', $this->get_rating_value() );
 		$this->set_attribute( 'widget_wrapper', 'role', 'img' );
-		$this->set_attribute( 'widget_wrapper', 'aria-label',  sprintf( esc_html__( 'Rated %1$s out of %2$s', 'max-addons' ),
+		$this->set_attribute( 'widget_wrapper', 'aria-label', sprintf(
+			/* translators: 1: rating value, 2: rating scale */
+			esc_html__( 'Rated %1$s out of %2$s', 'max-addons-for-bricks' ),
 			$this->get_rating_value(),
 			$this->get_rating_scale()
 		) );

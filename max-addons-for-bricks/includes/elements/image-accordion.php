@@ -1,11 +1,13 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Image_Accordion_Element extends \Bricks\Element {
+class Image_Accordion_Element extends Element_Base {
 	// Element properties
 	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-image-accordion'; // Make sure to prefix your elements
@@ -16,7 +18,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'Image Accordion', 'max-addons' );
+		return esc_html__( 'Image Accordion', 'max-addons-for-bricks' );
 	}
 
 	public function get_keywords() {
@@ -32,22 +34,22 @@ class Image_Accordion_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['settings'] = [
-			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'title' => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['accordionItems'] = [
-			'title' => esc_html__( 'Items', 'max-addons' ),
+			'title' => esc_html__( 'Items', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['accordionContent'] = [
-			'title' => esc_html__( 'Content', 'max-addons' ),
+			'title' => esc_html__( 'Content', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['accordionButton'] = [
-			'title' => esc_html__( 'Button', 'max-addons' ),
+			'title' => esc_html__( 'Button', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -70,45 +72,45 @@ class Image_Accordion_Element extends \Bricks\Element {
 	public function set_accordion_controls() {
 		$this->controls['accordionItems'] = [
 			'tab'         => 'content',
-			'placeholder' => esc_html__( 'Accordion', 'max-addons' ),
+			'placeholder' => esc_html__( 'Accordion', 'max-addons-for-bricks' ),
 			'type'        => 'repeater',
 			'checkLoop'   => true,
 			'fields'      => [
 				'itemLabel'              => [
-					'label'          => esc_html__( 'Item Label', 'max-addons' ),
+					'label'          => esc_html__( 'Item Label', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
 				'title'              => [
-					'label'          => esc_html__( 'Title', 'max-addons' ),
+					'label'          => esc_html__( 'Title', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
 				'content'            => [
-					'label' => esc_html__( 'Content', 'max-addons' ),
+					'label' => esc_html__( 'Content', 'max-addons-for-bricks' ),
 					'type'  => 'editor',
 				],
 				'image'              => [
-					'label' => esc_html__( 'Image', 'max-addons' ),
+					'label' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 					'type'  => 'image',
 				],
 				'showButton'         => [
-					'label' => esc_html__( 'Show Button', 'max-addons' ),
+					'label' => esc_html__( 'Show Button', 'max-addons-for-bricks' ),
 					'type'  => 'checkbox',
 				],
 				'link'               => [
-					'label'    => esc_html__( 'Link', 'max-addons' ),
+					'label'    => esc_html__( 'Link', 'max-addons-for-bricks' ),
 					'type'     => 'link',
 					'required' => [ 'showButton', '!=', '' ],
 				],
 				'buttonText'         => [
-					'label'          => esc_html__( 'Button Text', 'max-addons' ),
+					'label'          => esc_html__( 'Button Text', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 					'required'       => [ 'showButton', '!=', '' ],
 				],
 				'buttonIcon'         => [
-					'label'    => esc_html__( 'Button Icon', 'max-addons' ),
+					'label'    => esc_html__( 'Button Icon', 'max-addons-for-bricks' ),
 					'type'     => 'icon',
 					'css' => [
 						[
@@ -118,7 +120,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 					'required' => [ 'showButton', '!=', '' ],
 				],
 				'buttonIconPosition' => [
-					'label'       => esc_html__( 'Icon Position', 'max-addons' ),
+					'label'       => esc_html__( 'Icon Position', 'max-addons-for-bricks' ),
 					'type'        => 'select',
 					'options'     => $this->control_options['iconPosition'],
 					'inline'      => true,
@@ -128,7 +130,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 					'required'    => [ 'showButton', '!=', '' ],
 				],
 				'overlay'            => [
-					'label' => esc_html__( 'Overlay', 'max-addons' ),
+					'label' => esc_html__( 'Overlay', 'max-addons-for-bricks' ),
 					'type'  => 'color',
 					'css'   => [
 						[
@@ -140,14 +142,14 @@ class Image_Accordion_Element extends \Bricks\Element {
 			],
 			'default'     => [
 				[
-					'title'   => esc_html__( 'Accordion title 1', 'max-addons' ),
-					'content' => esc_html__( 'Accordion content goes here ..', 'max-addons' ),
-					'buttonText' => esc_html__( 'Click Here', 'max-addons' ),
+					'title'   => esc_html__( 'Accordion title 1', 'max-addons-for-bricks' ),
+					'content' => esc_html__( 'Accordion content goes here ..', 'max-addons-for-bricks' ),
+					'buttonText' => esc_html__( 'Click Here', 'max-addons-for-bricks' ),
 				],
 				[
-					'title'   => esc_html__( 'Accordion title 2', 'max-addons' ),
-					'content' => esc_html__( 'Accordion content goes here ..', 'max-addons' ),
-					'buttonText' => esc_html__( 'Click Here', 'max-addons' ),
+					'title'   => esc_html__( 'Accordion title 2', 'max-addons-for-bricks' ),
+					'content' => esc_html__( 'Accordion content goes here ..', 'max-addons-for-bricks' ),
+					'buttonText' => esc_html__( 'Click Here', 'max-addons-for-bricks' ),
 				],
 			],
 		];
@@ -160,8 +162,8 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['activeTab'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Default Active Item', 'max-addons' ),
-			'description' => __( 'Add item index to make an item active by default', 'max-addons' ),
+			'label'       => esc_html__( 'Default Active Item', 'max-addons-for-bricks' ),
+			'description' => __( 'Add item index to make an item active by default', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'min'         => 0,
 			'max'         => 100,
@@ -173,8 +175,8 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['disableActiveTab'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Disable Default Active Item on Stack', 'max-addons' ),
-			'description' => __( 'Turn on this option to disable default active item when items are stacked', 'max-addons' ),
+			'label'       => esc_html__( 'Disable Default Active Item on Stack', 'max-addons-for-bricks' ),
+			'description' => __( 'Turn on this option to disable default active item when items are stacked', 'max-addons-for-bricks' ),
 			'type'        => 'checkbox',
 			'reset'       => true,
 			'required'    => [
@@ -187,7 +189,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['wordsLimit'] = [
 			'tab'   => 'content',
 			'group' => 'settings',
-			'label' => esc_html__( 'Words limit', 'max-addons' ),
+			'label' => esc_html__( 'Words limit', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'min'   => 1,
 		];
@@ -195,7 +197,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['readMore'] = [
 			'tab'            => 'content',
 			'group'          => 'settings',
-			'label'          => esc_html__( 'Read more', 'max-addons' ),
+			'label'          => esc_html__( 'Read more', 'max-addons-for-bricks' ),
 			'type'           => 'text',
 			'inline'         => true,
 			'hasDynamicData' => false,
@@ -205,7 +207,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['accordionHeight'] = [
 			'tab'   => 'content',
 			'group' => 'settings',
-			'label' => esc_html__( 'Height', 'max-addons' ),
+			'label' => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -219,11 +221,11 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['accordionAction'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Accordion Action', 'max-addons' ),
+			'label'       => esc_html__( 'Accordion Action', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'on-hover' => esc_html__( 'On Hover', 'max-addons' ),
-				'on-click' => esc_html__( 'On Click', 'max-addons' ),
+				'on-hover' => esc_html__( 'On Hover', 'max-addons-for-bricks' ),
+				'on-click' => esc_html__( 'On Click', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => false,
@@ -234,13 +236,13 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['onMouseOut'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'On Mouse Out', 'max-addons' ),
+			'label'       => esc_html__( 'On Mouse Out', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'close-all'      => esc_html__( 'Close all', 'max-addons' ),
-				'last-active'    => esc_html__( 'Open last active', 'max-addons' ),
-				'default-active' => esc_html__( 'Open default active', 'max-addons' ),
-				'first-item'     => esc_html__( 'Open first item', 'max-addons' ),
+				'close-all'      => esc_html__( 'Close all', 'max-addons-for-bricks' ),
+				'last-active'    => esc_html__( 'Open last active', 'max-addons-for-bricks' ),
+				'default-active' => esc_html__( 'Open default active', 'max-addons-for-bricks' ),
+				'first-item'     => esc_html__( 'Open first item', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => true,
@@ -252,27 +254,27 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['itemLabelType'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Item Label Type', 'max-addons' ),
+			'label'       => esc_html__( 'Item Label Type', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'item-label' => esc_html__( 'Item Label', 'max-addons' ),
-				'title'      => esc_html__( 'Title', 'max-addons' ),
+				'item-label' => esc_html__( 'Item Label', 'max-addons-for-bricks' ),
+				'title'      => esc_html__( 'Title', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => true,
 			'pasteStyles' => false,
 			'default'     => 'item-label',
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['orientation'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Orientation', 'max-addons' ),
+			'label'       => esc_html__( 'Orientation', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'vertical'   => esc_html__( 'Vertical', 'max-addons' ),
-				'horizontal' => esc_html__( 'Horizontal', 'max-addons' ),
+				'vertical'   => esc_html__( 'Vertical', 'max-addons-for-bricks' ),
+				'horizontal' => esc_html__( 'Horizontal', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => true,
@@ -283,13 +285,13 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['itemLabelDirection'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Label Direction', 'max-addons' ),
+			'label'       => esc_html__( 'Label Direction', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'vertical'   => esc_html__( 'Vertical', 'max-addons' ),
-				'horizontal' => esc_html__( 'Horizontal', 'max-addons' ),
+				'vertical'   => esc_html__( 'Vertical', 'max-addons-for-bricks' ),
+				'horizontal' => esc_html__( 'Horizontal', 'max-addons-for-bricks' ),
 			],
-			'placeholder' => esc_html__( 'Vertical', 'max-addons' ),
+			'placeholder' => esc_html__( 'Vertical', 'max-addons-for-bricks' ),
 			'inline'      => true,
 			'clearable'   => true,
 			'rerender'    => true,
@@ -304,15 +306,15 @@ class Image_Accordion_Element extends \Bricks\Element {
 			$breakpoint_options[ $breakpoint['key'] ] = $breakpoint['label'] . ' (<= ' . $breakpoint['width'] . 'px)';
 		}
 
-		$breakpoint_options['none']  = esc_html__( 'None', 'max-addons' );
+		$breakpoint_options['none']  = esc_html__( 'None', 'max-addons-for-bricks' );
 
 		$this->controls['stackOn'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Stack On', 'max-addons' ),
+			'label'       => esc_html__( 'Stack On', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $breakpoint_options,
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 			'clearable'   => true,
 			'pasteStyles' => false,
 			'default'     => 'mobile_landscape',
@@ -325,7 +327,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['itemsGap'] = [
 			'tab'   => 'content',
 			'group' => 'accordionItems',
-			'label' => esc_html__( 'Spacing between Items', 'max-addons' ),
+			'label' => esc_html__( 'Spacing between Items', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -344,7 +346,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'accordionItems',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -358,7 +360,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['itemBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'accordionItems',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -373,7 +375,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['overlayColor'] = [
 			'tab'     => 'content',
 			'group'   => 'accordionItems',
-			'label'   => esc_html__( 'Overlay Color', 'max-addons' ),
+			'label'   => esc_html__( 'Overlay Color', 'max-addons-for-bricks' ),
 			'type'    => 'color',
 			'inline'  => true,
 			'css'     => [
@@ -394,7 +396,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['itemLabelTypography'] = [
 			'tab'      => 'content',
 			'group'    => 'accordionContent',
-			'label'    => esc_html__( 'Item Label Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Item Label Typography', 'max-addons-for-bricks' ),
 			'type'     => 'typography',
 			'css'      => [
 				[
@@ -410,7 +412,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['titleTag'] = [
 			'tab'         => 'content',
 			'group'       => 'accordionContent',
-			'label'       => esc_html__( 'Title HTML Tag', 'max-addons' ),
+			'label'       => esc_html__( 'Title HTML Tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
 				'h1'   => 'h1',
@@ -432,7 +434,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['titleTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'accordionContent',
-			'label'  => esc_html__( 'Title Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Title Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -447,7 +449,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['titleSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'accordionContent',
-			'label' => esc_html__( 'Title Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Title Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -461,7 +463,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['contentTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'accordionContent',
-			'label'  => esc_html__( 'Content Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Content Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -477,7 +479,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'accordionContent',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -492,7 +494,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'accordionContent',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -506,12 +508,12 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['contentVerticalAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'accordionContent',
-			'label'       => esc_html__( 'Vertical Align', 'max-addons' ),
+			'label'       => esc_html__( 'Vertical Align', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'flex-start' => esc_html__( 'Top', 'max-addons' ),
-				'center'     => esc_html__( 'Middle', 'max-addons' ),
-				'flex-end'   => esc_html__( 'Bottom', 'max-addons' ),
+				'flex-start' => esc_html__( 'Top', 'max-addons-for-bricks' ),
+				'center'     => esc_html__( 'Middle', 'max-addons-for-bricks' ),
+				'flex-end'   => esc_html__( 'Bottom', 'max-addons-for-bricks' ),
 			],
 			'css'         => [
 				[
@@ -528,12 +530,12 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['contentHorizontalAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'accordionContent',
-			'label'       => esc_html__( 'Horizontal Align', 'max-addons' ),
+			'label'       => esc_html__( 'Horizontal Align', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'flex-start' => esc_html__( 'Left', 'max-addons' ),
-				'center'     => esc_html__( 'Center', 'max-addons' ),
-				'flex-end'   => esc_html__( 'Right', 'max-addons' ),
+				'flex-start' => esc_html__( 'Left', 'max-addons-for-bricks' ),
+				'center'     => esc_html__( 'Center', 'max-addons-for-bricks' ),
+				'flex-end'   => esc_html__( 'Right', 'max-addons-for-bricks' ),
 			],
 			'css'         => [
 				[
@@ -554,7 +556,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['contentPadding'] = [
 			'tab'   => 'content',
 			'group' => 'accordionContent',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -570,30 +572,30 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['size'] = [
 			'tab'         => 'content',
 			'group'       => 'accordionButton',
-			'label'       => esc_html__( 'Size', 'max-addons' ),
+			'label'       => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['buttonSizes'],
 			'inline'      => true,
 			'reset'       => true,
-			'placeholder' => esc_html__( 'Medium', 'max-addons' ),
+			'placeholder' => esc_html__( 'Medium', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['buttonStyle'] = [
 			'tab'         => 'content',
 			'group'       => 'accordionButton',
-			'label'       => esc_html__( 'Style', 'max-addons' ),
+			'label'       => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['styles'],
 			'inline'      => true,
 			'reset'       => true,
 			'default'     => 'primary',
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['buttonCircle'] = [
 			'tab'   => 'content',
 			'group' => 'accordionButton',
-			'label' => esc_html__( 'Circle', 'max-addons' ),
+			'label' => esc_html__( 'Circle', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'reset' => true,
 		];
@@ -601,7 +603,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['buttonOutline'] = [
 			'tab'   => 'content',
 			'group' => 'accordionButton',
-			'label' => esc_html__( 'Outline', 'max-addons' ),
+			'label' => esc_html__( 'Outline', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'reset' => true,
 		];
@@ -609,7 +611,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['buttonTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'accordionButton',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -624,7 +626,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['buttonSpacing'] = [
 			'tab'     => 'content',
 			'group'   => 'accordionButton',
-			'label'   => esc_html__( 'Button Spacing', 'max-addons' ),
+			'label'   => esc_html__( 'Button Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'     => [
@@ -640,7 +642,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'accordionButton',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Background Color', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -655,7 +657,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'accordionButton',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -669,7 +671,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['buttonBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'accordionButton',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -684,7 +686,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['buttonIconSize'] = [
 			'tab'   => 'content',
 			'group' => 'accordionButton',
-			'label' => esc_html__( 'Icon Size', 'max-addons' ),
+			'label' => esc_html__( 'Icon Size', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -698,7 +700,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['buttonIconSpacing'] = [
 			'tab'     => 'content',
 			'group'   => 'accordionButton',
-			'label'   => esc_html__( 'Icon Spacing', 'max-addons' ),
+			'label'   => esc_html__( 'Icon Spacing', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'units'   => true,
 			'css'     => [
@@ -717,7 +719,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 		$this->controls['buttonPadding'] = [
 			'tab'   => 'content',
 			'group' => 'accordionButton',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -957,13 +959,13 @@ class Image_Accordion_Element extends \Bricks\Element {
 		if ( empty( $accordion_items ) ) {
 			return $this->render_element_placeholder( [
 				'icon-class' => esc_attr( $this->icon ),
-				'title'      => esc_html__( 'No accordion items added.', 'max-addons' ),
+				'title'      => esc_html__( 'No accordion items added.', 'max-addons-for-bricks' ),
 			] );
 		}
 
 		$this->set_attribute( '_root', 'data-settings', wp_json_encode( $img_accordion_settings ) );
 		?>
-		<div <?php echo wp_kses_post( $this->render_attributes( '_root' ) ); ?>>
+		<div <?php $this->print_render_attributes( '_root' ); ?>>
 			<?php
 			$output = '';
 
@@ -987,6 +989,7 @@ class Image_Accordion_Element extends \Bricks\Element {
 				}
 			}
 
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in render_repeater_item() and render_attributes().
 			echo $output;
 			?>
 		</div>

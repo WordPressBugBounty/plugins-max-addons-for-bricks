@@ -10,7 +10,7 @@ MabUnfold = function( element ) {
 		this.contentOuterHeight   = this.content.offsetHeight;
 		this.contentWrapperHeight = '';
 		this.button               = this.element.querySelector('.mab-unfold-button-inner');
-		this.saparator            = this.element.querySelector('.mab-unfold-saparator');
+		this.saparator            = this.element.querySelector('.mab-unfold-separator');
 
 		this.init();
 	}

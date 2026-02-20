@@ -1,11 +1,13 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Content_Ticker_Element extends \Bricks\Element {
+class Content_Ticker_Element extends Element_Base {
 	// Element properties
 	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-content-ticker'; // Make sure to prefix your elements
@@ -15,7 +17,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 	public $scripts      = [ 'mabTicker' ]; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public function get_label() {
-		return esc_html__( 'Content Ticker', 'max-addons' );
+		return esc_html__( 'Content Ticker', 'max-addons-for-bricks' );
 	}
 
 	public function get_keywords() {
@@ -33,22 +35,22 @@ class Content_Ticker_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['tickerSettings'] = [
-			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'title' => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['content'] = [
-			'title' => esc_html__( 'Content', 'max-addons' ),
+			'title' => esc_html__( 'Content', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['header'] = [
-			'title' => esc_html__( 'Header', 'max-addons' ),
+			'title' => esc_html__( 'Header', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['arrowsStyle'] = [
-			'title' => esc_html__( 'Arrows', 'max-addons' ),
+			'title' => esc_html__( 'Arrows', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -69,41 +71,41 @@ class Content_Ticker_Element extends \Bricks\Element {
 
 		$this->controls['items'] = [
 			'tab'           => 'content',
-			'label'         => esc_html__( 'Ticker Items', 'max-addons' ),
+			'label'         => esc_html__( 'Ticker Items', 'max-addons-for-bricks' ),
 			'type'          => 'repeater',
 			'checkLoop'     => true,
-			'placeholder'   => esc_html__( 'Ticker Items', 'max-addons' ),
+			'placeholder'   => esc_html__( 'Ticker Items', 'max-addons-for-bricks' ),
 			'titleProperty' => 'tickerTitle',
 			'fields'        => [
 				'tickerTitle' => [
-					'label'          => esc_html__( 'Title', 'max-addons' ),
+					'label'          => esc_html__( 'Title', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
 
 				'link'         => [
-					'label' => esc_html__( 'Link', 'max-addons' ),
+					'label' => esc_html__( 'Link', 'max-addons-for-bricks' ),
 					'type'  => 'link',
 				],
 
 				'image'        => [
-					'label'    => esc_html__( 'Image', 'max-addons' ),
+					'label'    => esc_html__( 'Image', 'max-addons-for-bricks' ),
 					'type'     => 'image',
 				],
 
 			],
 			'default'       => [
 				[
-					'tickerTitle' => esc_html__( 'Content Ticker Item 1', 'max-addons' ),
+					'tickerTitle' => esc_html__( 'Content Ticker Item 1', 'max-addons-for-bricks' ),
 				],
 				[
-					'tickerTitle' => esc_html__( 'Content Ticker Item 2', 'max-addons' ),
+					'tickerTitle' => esc_html__( 'Content Ticker Item 2', 'max-addons-for-bricks' ),
 				],
 				[
-					'tickerTitle' => esc_html__( 'Content Ticker Item 3', 'max-addons' ),
+					'tickerTitle' => esc_html__( 'Content Ticker Item 3', 'max-addons-for-bricks' ),
 				],
 				[
-					'tickerTitle' => esc_html__( 'Content Ticker Item 4', 'max-addons' ),
+					'tickerTitle' => esc_html__( 'Content Ticker Item 4', 'max-addons-for-bricks' ),
 				],
 			],
 		];
@@ -112,12 +114,12 @@ class Content_Ticker_Element extends \Bricks\Element {
 
 		$this->controls['applyLinkTo'] = [
 			'tab'         => 'content',
-			'label'       => esc_html__( 'Apply Link To', 'max-addons' ),
+			'label'       => esc_html__( 'Apply Link To', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'title' => esc_html__( 'Title', 'max-addons' ),
-				'image' => esc_html__( 'Image', 'max-addons' ),
-				'both'  => esc_html__( 'Title + Image', 'max-addons' ),
+				'title' => esc_html__( 'Title', 'max-addons-for-bricks' ),
+				'image' => esc_html__( 'Image', 'max-addons-for-bricks' ),
+				'both'  => esc_html__( 'Title + Image', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => true,
@@ -129,25 +131,25 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['titleSeparator'] = [
 			'tab'   => 'content',
 			'group' => 'content',
-			'label' => esc_html__( 'Title', 'max-addons' ),
+			'label' => esc_html__( 'Title', 'max-addons-for-bricks' ),
 			'type'  => 'separator',
 		];
 
 		$this->controls['titleHtmlTag'] = [
 			'tab'         => 'content',
 			'group'       => 'content',
-			'label'       => esc_html__( 'HTML Tag', 'max-addons' ),
+			'label'       => esc_html__( 'HTML Tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'h1'   => esc_html__( 'Heading 1 (h1)', 'max-addons' ),
-				'h2'   => esc_html__( 'Heading 2 (h2)', 'max-addons' ),
-				'h3'   => esc_html__( 'Heading 3 (h3)', 'max-addons' ),
-				'h4'   => esc_html__( 'Heading 4 (h4)', 'max-addons' ),
-				'h5'   => esc_html__( 'Heading 5 (h5)', 'max-addons' ),
-				'h6'   => esc_html__( 'Heading 6 (h6)', 'max-addons' ),
-				'div'  => esc_html__( 'Div (div)', 'max-addons' ),
-				'span' => esc_html__( 'Span (span)', 'max-addons' ),
-				'p'    => esc_html__( 'Paragraph (p)', 'max-addons' ),
+				'h1'   => esc_html__( 'Heading 1 (h1)', 'max-addons-for-bricks' ),
+				'h2'   => esc_html__( 'Heading 2 (h2)', 'max-addons-for-bricks' ),
+				'h3'   => esc_html__( 'Heading 3 (h3)', 'max-addons-for-bricks' ),
+				'h4'   => esc_html__( 'Heading 4 (h4)', 'max-addons-for-bricks' ),
+				'h5'   => esc_html__( 'Heading 5 (h5)', 'max-addons-for-bricks' ),
+				'h6'   => esc_html__( 'Heading 6 (h6)', 'max-addons-for-bricks' ),
+				'div'  => esc_html__( 'Div (div)', 'max-addons-for-bricks' ),
+				'span' => esc_html__( 'Span (span)', 'max-addons-for-bricks' ),
+				'p'    => esc_html__( 'Paragraph (p)', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => true,
@@ -159,7 +161,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'tab'     => 'content',
 			'group'   => 'content',
 			'type'    => 'typography',
-			'label'   => esc_html__( 'Typography', 'max-addons' ),
+			'label'   => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'     => [
 				[
 					'property' => 'font',
@@ -174,7 +176,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['imageSeparator'] = [
 			'tab'   => 'content',
 			'group' => 'content',
-			'label' => esc_html__( 'Image', 'max-addons' ),
+			'label' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			'type'  => 'separator',
 		];
 
@@ -182,7 +184,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'content',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -196,7 +198,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['imageWidth'] = [
 			'tab'   => 'content',
 			'group' => 'content',
-			'label' => esc_html__( 'Width', 'max-addons' ),
+			'label' => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -211,7 +213,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'content',
 			'type'  => 'spacing',
-			'label' => esc_html__( 'Margin', 'max-addons' ),
+			'label' => esc_html__( 'Margin', 'max-addons-for-bricks' ),
 			'css'   => [
 				[
 					'property' => 'margin',
@@ -227,7 +229,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['showHeading'] = [
 			'tab'     => 'content',
 			'group'   => 'header',
-			'label'   => esc_html__( 'Show Heading', 'max-addons' ),
+			'label'   => esc_html__( 'Show Heading', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
 			'inline'  => true,
 			'reset'   => true,
@@ -237,7 +239,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['heading'] = [
 			'tab'            => 'content',
 			'group'          => 'header',
-			'label'          => esc_html__( 'Heading Text', 'max-addons' ),
+			'label'          => esc_html__( 'Heading Text', 'max-addons-for-bricks' ),
 			'type'           => 'text',
 			'spellcheck'     => true,
 			'inlineEditing'  => false,
@@ -250,7 +252,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headingIcon'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Icon', 'max-addons' ),
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'default'  => [
 				'library' => 'themify',
@@ -262,13 +264,13 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['iconPosition'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Icon position', 'max-addons' ),
+			'label'    => esc_html__( 'Icon position', 'max-addons-for-bricks' ),
 			'type'     => 'select',
 			'options'  => [
-				'top'    => esc_html__( 'Top', 'max-addons' ),
-				'right'  => esc_html__( 'Right', 'max-addons' ),
-				'bottom' => esc_html__( 'Bottom', 'max-addons' ),
-				'left'   => esc_html__( 'Left', 'max-addons' ),
+				'top'    => esc_html__( 'Top', 'max-addons-for-bricks' ),
+				'right'  => esc_html__( 'Right', 'max-addons-for-bricks' ),
+				'bottom' => esc_html__( 'Bottom', 'max-addons-for-bricks' ),
+				'left'   => esc_html__( 'Left', 'max-addons-for-bricks' ),
 			],
 			'inline'   => true,
 			'default'  => 'left',
@@ -281,7 +283,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headingArrow'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Show Arrow', 'max-addons' ),
+			'label'    => esc_html__( 'Show Arrow', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'reset'    => true,
@@ -292,7 +294,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headingStyleSeparator'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Style', 'max-addons' ),
+			'label'    => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'     => 'separator',
 			'required' => [ 'showHeading', '!=', '' ],
 		];
@@ -300,7 +302,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headerTextAlignVertical'] = [
 			'tab'         => 'content',
 			'group'       => 'header',
-			'label'       => esc_html__( 'Text align vertical', 'max-addons' ),
+			'label'       => esc_html__( 'Text align vertical', 'max-addons-for-bricks' ),
 			'type'        => 'justify-content',
 			'css'         => [
 				[
@@ -310,7 +312,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			],
 			'inline'      => true,
 			'exclude'     => 'space',
-			'placeholder' => esc_html__( 'Center', 'max-addons' ),
+			'placeholder' => esc_html__( 'Center', 'max-addons-for-bricks' ),
 			'required'    => [ 'showHeading', '!=', '' ],
 		];
 
@@ -318,7 +320,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'header',
 			'type'     => 'spacing',
-			'label'    => esc_html__( 'Padding', 'max-addons' ),
+			'label'    => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'padding',
@@ -331,7 +333,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headerBackgroundColor'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Background', 'max-addons' ),
+			'label'    => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'css'      => [
@@ -351,7 +353,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'header',
 			'type'     => 'typography',
-			'label'    => esc_html__( 'Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'font',
@@ -370,7 +372,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'header',
 			'type'     => 'border',
-			'label'    => esc_html__( 'Border', 'max-addons' ),
+			'label'    => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'border',
@@ -385,7 +387,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headerWidth'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Width', 'max-addons' ),
+			'label'    => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -401,7 +403,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headingIconStyleSeparator'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Icon Style', 'max-addons' ),
+			'label'    => esc_html__( 'Icon Style', 'max-addons-for-bricks' ),
 			'type'     => 'separator',
 			'required' => [
 				[ 'showHeading', '!=', '' ],
@@ -412,7 +414,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headerIconTypography'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Icon Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Icon Typography', 'max-addons-for-bricks' ),
 			'type'     => 'typography',
 			'css'      => [
 				[
@@ -441,7 +443,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['headerIconSpacing'] = [
 			'tab'      => 'content',
 			'group'    => 'header',
-			'label'    => esc_html__( 'Icon spacing', 'max-addons' ),
+			'label'    => esc_html__( 'Icon spacing', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'   => [
@@ -475,12 +477,12 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['tickerDirection'] = [
 			'tab'       => 'content',
 			'group'     => 'tickerSettings',
-			'label'     => esc_html__( 'Mode', 'max-addons' ),
+			'label'     => esc_html__( 'Mode', 'max-addons-for-bricks' ),
 			'type'      => 'select',
 			'options'   => [
-				'horizontal' => esc_html__( 'Horizontal', 'max-addons' ),
-				'vertical'   => esc_html__( 'Vertical', 'max-addons' ),
-				'fade'  	 => esc_html__( 'Fade', 'max-addons' ),
+				'horizontal' => esc_html__( 'Horizontal', 'max-addons-for-bricks' ),
+				'vertical'   => esc_html__( 'Vertical', 'max-addons-for-bricks' ),
+				'fade'  	 => esc_html__( 'Fade', 'max-addons-for-bricks' ),
 			],
 			'inline'    => true,
 			'clearable' => false,
@@ -490,8 +492,8 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['sliderSpeed'] = [
 			'tab'         => 'content',
 			'group'       => 'tickerSettings',
-			'label'       => esc_html__( 'Slider Speed', 'max-addons' ),
-			'description' => __( 'Duration of transition between slides (in ms)', 'max-addons' ),
+			'label'       => esc_html__( 'Slider Speed', 'max-addons-for-bricks' ),
+			'description' => __( 'Duration of transition between slides (in ms)', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'min'         => 100,
 			'max'         => 3000,
@@ -503,7 +505,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['infiniteLoop'] = [
 			'tab'     => 'content',
 			'group'   => 'tickerSettings',
-			'label'   => esc_html__( 'Loop', 'max-addons' ),
+			'label'   => esc_html__( 'Loop', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
 			'default' => true,
 			'inline'  => true,
@@ -513,7 +515,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['autoPlay'] = [
 			'tab'     => 'content',
 			'group'   => 'tickerSettings',
-			'label'   => esc_html__( 'Autoplay', 'max-addons' ),
+			'label'   => esc_html__( 'Autoplay', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
 			'inline'  => true,
 			'reset'   => true,
@@ -522,7 +524,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['pauseOnHover'] = [
 			'tab'      => 'content',
 			'group'    => 'tickerSettings',
-			'label'    => esc_html__( 'Pause on Hover', 'max-addons' ),
+			'label'    => esc_html__( 'Pause on Hover', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'reset'    => true,
@@ -532,7 +534,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['autoplaySpeed'] = [
 			'tab'      => 'content',
 			'group'    => 'tickerSettings',
-			'label'    => esc_html__( 'Autoplay Speed in Ms', 'max-addons' ),
+			'label'    => esc_html__( 'Autoplay Speed in Ms', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'default'  => 4000,
 			'min'      => 500,
@@ -549,7 +551,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['arrows'] = [
 			'tab'       => 'content',
 			'group'     => 'arrowsStyle',
-			'label'     => esc_html__( 'Show Arrows', 'max-addons' ),
+			'label'     => esc_html__( 'Show Arrows', 'max-addons-for-bricks' ),
 			'type'      => 'checkbox',
 			'inline'    => true,
 			'reset'     => true,
@@ -560,7 +562,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['arrowHeight'] = [
 			'tab'         => 'content',
 			'group'       => 'arrowsStyle',
-			'label'       => esc_html__( 'Height in px', 'max-addons' ),
+			'label'       => esc_html__( 'Height in px', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'unit'        => 'px',
 			'css'         => [
@@ -582,7 +584,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['arrowWidth'] = [
 			'tab'         => 'content',
 			'group'       => 'arrowsStyle',
-			'label'       => esc_html__( 'Width in px', 'max-addons' ),
+			'label'       => esc_html__( 'Width in px', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'unit'        => 'px',
 			'css'         => [
@@ -600,7 +602,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['arrowBackground'] = [
 			'tab'      => 'content',
 			'group'    => 'arrowsStyle',
-			'label'    => esc_html__( 'Background', 'max-addons' ),
+			'label'    => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'css'      => [
@@ -616,7 +618,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'arrowsStyle',
 			'type'     => 'border',
-			'label'    => esc_html__( 'Border', 'max-addons' ),
+			'label'    => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'border',
@@ -631,7 +633,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['arrowTypography'] = [
 			'tab'      => 'content',
 			'group'    => 'arrowsStyle',
-			'label'    => esc_html__( 'Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'     => 'typography',
 			'css'      => [
 				[
@@ -657,7 +659,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['prevArrow'] = [
 			'tab'      => 'content',
 			'group'    => 'arrowsStyle',
-			'label'    => esc_html__( 'Prev arrow', 'max-addons' ),
+			'label'    => esc_html__( 'Prev arrow', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'default'  => [
 				'library' => 'themify',
@@ -669,7 +671,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['nextArrow'] = [
 			'tab'      => 'content',
 			'group'    => 'arrowsStyle',
-			'label'    => esc_html__( 'Next arrow', 'max-addons' ),
+			'label'    => esc_html__( 'Next arrow', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'default'  => [
 				'library' => 'themify',
@@ -681,7 +683,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$this->controls['arrowSpacing'] = [
 			'tab'      => 'content',
 			'group'    => 'arrowsStyle',
-			'label'    => esc_html__( 'Spacing', 'max-addons' ),
+			'label'    => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -787,69 +789,84 @@ class Content_Ticker_Element extends \Bricks\Element {
 
 	// Render element HTML
 	public function render_image( $image_type ) {
-		$settings = $this->settings;
-		$settings = $this->get_normalized_image_settings( $settings, $image_type );
 
-		// Dynamic Data is empty
-		if ( isset( $image_type['useDynamicData']['name'] ) ) {
+		if ( empty( $image_type ) || ! is_array( $image_type ) ) {
+			return;
+		}
 
-			if ( empty( $settings[ $image_type ]['id'] ) ) {
+		if ( ! empty( $image_type['useDynamicData'] ) ) {
 
-				if ( 'ACF' === $settings[ $image_type ]['useDynamicData']['group'] && ! class_exists( 'ACF' ) ) {
-					$message = esc_html__( 'Can\'t render element, as the selected ACF field is not available. Please activate ACF or edit the element to select different data.', 'max-addons' );
-				} elseif ( '{featured_image}' == $settings[ $image_type ]['useDynamicData']['name'] ) {
-					$message = esc_html__( 'No featured image set.', 'max-addons' );
+			$dynamic_tag = $image_type['useDynamicData'];
+
+			// No ID resolved from dynamic data
+			if ( empty( $image_type['id'] ) ) {
+
+				if ( '{featured_image}' === $dynamic_tag ) {
+
+					$title = esc_html__( 'No featured image set.', 'max-addons-for-bricks' );
+
 				} else {
-					$message = esc_html__( 'Dynamic Data %1$s (%2$s) is empty.', 'max-addons' );
+
+					$title = sprintf(
+						/* translators: %s: Dynamic data tag. */
+						esc_html__( 'Dynamic Data (%s) is empty.', 'max-addons-for-bricks' ),
+						esc_html( $dynamic_tag )
+					);
 				}
 
-				return $this->render_element_placeholder( [
+				return $this->render_element_placeholder(
+					[
+						'icon-class' => 'ti-image',
+						'title'      => $title,
+					]
+				);
+			}
+		}
+
+		if ( empty( $image_type['id'] ) ) {
+
+			return $this->render_element_placeholder(
+				[
+					'icon-class' => 'ti-image',
+					'title'      => esc_html__( 'No image selected.', 'max-addons-for-bricks' ),
+				]
+			);
+		}
+
+		if ( ! wp_get_attachment_image_src( $image_type['id'] ) ) {
+
+			return $this->render_element_placeholder(
+				[
 					'icon-class' => 'ti-image',
 					'title'      => sprintf(
-						$message,
-						$settings[ $image_type ]['useDynamicData']['label'],
-						$settings[ $image_type ]['useDynamicData']['group']
+						/* translators: %s: Image ID. */
+						esc_html__( 'Image ID (%s) no longer exists. Please select another image.', 'max-addons-for-bricks' ),
+						absint( $image_type['id'] )
 					),
-				] );
-			}
+				]
+			);
 		}
 
-		// Image id is empty or doesn't exist
-		else {
+		$size = ! empty( $image_type['size'] ) ? sanitize_key( $image_type['size'] ) : 'full';
 
-			// No image
-			if ( empty( $image_type['id'] ) ) {
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => esc_html__( 'No image selected.', 'max-addons' ),
-				] );
-			}
+		$image_atts = [
+			'id'    => 'image-' . absint( $image_type['id'] ),
+			'class' => implode(
+				' ',
+				[
+					'post-thumbnail',
+					'css-filter',
+					'size-' . esc_attr( $size ),
+				]
+			),
+		];
 
-			// Return if image ID does not exist
-			if ( ! wp_get_attachment_image_src( $image_type['id'] ) ) {
-				return $this->render_element_placeholder( [
-					'icon-class' => 'ti-image',
-					'title'      => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $settings[ $image_type ]['id'] ),
-				] );
-			}
-		}
-
-		$image_atts = [];
-		$image_atts['id'] = 'image-' . $image_type['id'];
-
-		$image_wrapper_classes = [ 'image-wrapper' ];
-		$img_classes = [ 'post-thumbnail', 'css-filter' ];
-
-		$img_classes[] = 'size-' . $image_type['size'];
-		$image_atts['class'] = join( ' ', $img_classes );
-
-		if ( isset( $image_type['id'] ) ) {
-			$show_image = wp_get_attachment_image( $image_type['id'], $image_type['size'], false, $image_atts );
-		} elseif ( ! empty( $image_type['url'] ) ) {
-			$show_image = '<img src="' . $image_type['url'] . '">';
-		}
-
-		return $show_image;
+		return wp_get_attachment_image(
+			absint( $image_type['id'] ),
+			$size,
+			false,
+			$image_atts
+		);
 	}
 
 	/**
@@ -917,7 +934,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 		if ( ! $ticker ) {
 			return $this->render_element_placeholder(
 				[
-					'title' => esc_html__( 'No ticker item added.', 'max-addons' ),
+					'title' => esc_html__( 'No ticker item added.', 'max-addons-for-bricks' ),
 				]
 			);
 		}
@@ -938,11 +955,16 @@ class Content_Ticker_Element extends \Bricks\Element {
 		$icon_html = isset( $settings['headingIcon'] ) ? self::render_icon( $settings['headingIcon'] ) : false;
 		$icon_position = isset( $settings['iconPosition'] ) ? $settings['iconPosition'] : 'right';
 		$has_heading_text = isset( $settings['heading'] );
+
+		$this->set_attribute( 'heading', 'class', [
+			'mab-ticker-heading',
+			'mab-ticker-icon-' . esc_attr( $icon_position )
+		] );
 		?>
-		<div <?php echo wp_kses_post( $this->render_attributes( '_root' ) ); ?>>
+		<div <?php $this->print_render_attributes( '_root' ); ?>>
 			<?php if ( isset( $settings['showHeading'] ) ) { ?>
 				<?php if ( $icon_html || $has_heading_text ) { ?>
-					<div class="mab-ticker-heading mab-ticker-icon-<?php echo $icon_position; ?> ">
+					<div <?php $this->print_render_attributes( 'heading' ); ?>>
 						<?php if ( $icon_html ) { ?>
 							<span class="mab-ticker-heading-icon">
 								<?php echo wp_kses_post( $icon_html ); ?>
@@ -956,7 +978,7 @@ class Content_Ticker_Element extends \Bricks\Element {
 					</div>
 				<?php } ?>
 			<?php } ?>
-			<div <?php echo wp_kses_post( $this->render_attributes( 'content-ticker' ) ); ?>>
+			<div <?php $this->print_render_attributes( 'content-ticker' ); ?>>
 				<div class="swiper-wrapper">
 					<?php
 					$output = '';
@@ -981,47 +1003,20 @@ class Content_Ticker_Element extends \Bricks\Element {
 						}
 					}
 
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in render_repeater_item() and render_attributes().
 					echo $output;
 					?>
 				</div>
 			</div>
 			<?php if ( isset( $settings['arrows'] ) ) { ?>
 				<div class="mab-ticker-navigation">
-				<?php
+					<?php
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in render_swiper_nav().
 					echo $this->render_swiper_nav();
-				?>
+					?>
 				</div>
 			<?php } ?>
 		</div>
 		<?php
-	}
-
-	/**
-	 * Render content ticker arrows output on the frontend.
-	 *
-	 * Written in PHP and used to generate the final HTML.
-	 *
-	 * @access protected
-	 */
-	protected function render_arrows() {
-		$settings = $this->settings;
-
-		if ( isset( $settings['arrows'] ) ) {
-			if ( isset( $settings['prevArrow'] ) ) {
-				$prev_arrow = self::render_icon( $settings['prevArrow'] );
-
-				if ( $prev_arrow ) {
-					echo '<div id="bx-prev-' . esc_attr( $this->id ) . '" class="mab-slider-arrow abx-prev bx-button-prev-' . esc_attr( $this->id ) . '" data-prev-icon="'.esc_attr($prev_arrow).'"></div>';
-				}
-			}
-
-			if ( isset( $settings['nextArrow'] ) ) {
-				$next_arrow = self::render_icon( $settings['nextArrow'] );
-
-				if ( $next_arrow ) {
-					echo '<div id="bx-next-' . esc_attr( $this->id ) . '" class="mab-slider-arrow abx-next bx-button-next-' . esc_attr( $this->id ) . '" data-next-icon="'.esc_attr($next_arrow).'"></div>';
-				}
-			}
-		}
 	}
 }

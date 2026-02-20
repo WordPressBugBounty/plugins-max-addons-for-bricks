@@ -1,20 +1,21 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Lottie_Element extends \Bricks\Element {
+class Lottie_Element extends Element_Base {
 	// Element properties
-	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-lottie'; // Make sure to prefix your elements
 	public $icon         = 'ti-pencil-alt max-element'; // Themify icon font class
 	public $css_selector = ''; // Default CSS selector
 	public $scripts      = ['mabLottie']; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public function get_label() {
-		return esc_html__( 'Lottie', 'max-addons' );
+		return esc_html__( 'Lottie', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -27,12 +28,12 @@ class Lottie_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['lottie'] = [
-			'title' => esc_html__( 'Lottie', 'max-addons' ),
+			'title' => esc_html__( 'Lottie', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['settings'] = [
-			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'title' => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -52,7 +53,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['sourceExternalUrl'] = [
 			'tab'     => 'content',
 			'group'   => 'lottie',
-			'label'   => esc_html__( 'Lottie File URL', 'max-addons' ),
+			'label'   => esc_html__( 'Lottie File URL', 'max-addons-for-bricks' ),
 			'type'    => 'text',
 			'default' => 'https://assets2.lottiefiles.com/private_files/lf30_kjpkr2oh.json'
 		];
@@ -60,7 +61,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['link'] = [
 			'tab'         => 'content',
 			'group'       => 'lottie',
-			'label'       => esc_html__( 'Link', 'max-addons' ),
+			'label'       => esc_html__( 'Link', 'max-addons-for-bricks' ),
 			'type'        => 'link',
 			'pasteStyles' => false,
 			'exclude'     => [
@@ -76,15 +77,15 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['trigger'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'Trigger', 'max-addons' ),
+			'label'   => esc_html__( 'Trigger', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'options' => [
-				'auto'     => esc_html__( 'Automatic', 'max-addons' ),
-				'click'    => esc_html__( 'Click', 'max-addons' ),
-				'hover'    => esc_html__( 'Hover', 'max-addons' ),
-				'cursor'   => esc_html__( 'Cursor Movement', 'max-addons' ),
-				'scroll'   => esc_html__( 'Scroll', 'max-addons' ),
-				'viewport' => esc_html__( 'Viewport', 'max-addons' ),
+				'auto'     => esc_html__( 'Automatic', 'max-addons-for-bricks' ),
+				'click'    => esc_html__( 'Click', 'max-addons-for-bricks' ),
+				'hover'    => esc_html__( 'Hover', 'max-addons-for-bricks' ),
+				'cursor'   => esc_html__( 'Cursor Movement', 'max-addons-for-bricks' ),
+				'scroll'   => esc_html__( 'Scroll', 'max-addons-for-bricks' ),
+				'viewport' => esc_html__( 'Viewport', 'max-addons-for-bricks' ),
 			],
 			'inline'  => true,
 			'default' => 'auto',
@@ -93,8 +94,8 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['clickSelector'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Custom Element Selector', 'max-addons' ),
-			'description' => esc_html__( 'By default clicking on the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons' ),
+			'label'       => esc_html__( 'Custom Element Selector', 'max-addons-for-bricks' ),
+			'description' => esc_html__( 'By default clicking on the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons-for-bricks' ),
 			'type'        => 'text',
 			'placeholder' => '#my-element or .my-element',
 			'required'    => [ 'trigger', '=', 'click' ]
@@ -103,8 +104,8 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['hoverSelector'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Custom Element Selector', 'max-addons' ),
-			'description' => esc_html__( 'By default hovering over the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons' ),
+			'label'       => esc_html__( 'Custom Element Selector', 'max-addons-for-bricks' ),
+			'description' => esc_html__( 'By default hovering over the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons-for-bricks' ),
 			'type'        => 'text',
 			'placeholder' => '#my-element or .my-element',
 			'required'    => [ 'trigger', '=', 'hover' ]
@@ -113,8 +114,8 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['cursorSelector'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Custom Element Selector', 'max-addons' ),
-			'description' => esc_html__( 'By default moving cursor over the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons' ),
+			'label'       => esc_html__( 'Custom Element Selector', 'max-addons-for-bricks' ),
+			'description' => esc_html__( 'By default moving cursor over the lottie element will trigger the animation. You can change this by adding your custom selector here.', 'max-addons-for-bricks' ),
 			'type'        => 'text',
 			'placeholder' => '#my-element or .my-element',
 			'required'    => [ 'trigger', '=', 'cursor' ]
@@ -123,11 +124,11 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['onAnotherClick'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'On another click', 'max-addons' ),
+			'label'    => esc_html__( 'On another click', 'max-addons-for-bricks' ),
 			'type'     => 'select',
 			'options'  => [
-				'no'     => esc_html__( 'Do nothing', 'max-addons' ),
-				'replay' => esc_html__( 'Play again', 'max-addons' ),
+				'no'     => esc_html__( 'Do nothing', 'max-addons-for-bricks' ),
+				'replay' => esc_html__( 'Play again', 'max-addons-for-bricks' ),
 			],
 			'inline'   => true,
 			'required' => [ 'trigger', '=', 'click' ]
@@ -136,7 +137,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['viewportBottom'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Offset Bottom (%)', 'max-addons' ),
+			'label'    => esc_html__( 'Offset Bottom (%)', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'default'  => 0,
 			'min'      => 0,
@@ -149,7 +150,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['viewportTop'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Offset Top (%)', 'max-addons' ),
+			'label'    => esc_html__( 'Offset Top (%)', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'default'  => 0,
 			'min'      => 0,
@@ -162,7 +163,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['loop'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Loop', 'max-addons' ),
+			'label'    => esc_html__( 'Loop', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'small'    => true,
@@ -172,7 +173,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['loopCount'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Loop Count', 'max-addons' ),
+			'label'    => esc_html__( 'Loop Count', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'default'  => 3,
 			'units'    => false,
@@ -186,7 +187,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['speed'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'Play Speed', 'max-addons' ),
+			'label'   => esc_html__( 'Play Speed', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'units'   => false,
 			'default' => 1,
@@ -199,7 +200,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['start'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'Start Frame', 'max-addons' ),
+			'label'   => esc_html__( 'Start Frame', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'units'   => false,
 			'default' => 0,
@@ -212,7 +213,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['end'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'End Frame', 'max-addons' ),
+			'label'   => esc_html__( 'End Frame', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'units'   => false,
 			'default' => 300,
@@ -225,7 +226,7 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['reverse'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Reverse', 'max-addons' ),
+			'label'    => esc_html__( 'Reverse', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'small'    => true,
@@ -235,11 +236,11 @@ class Lottie_Element extends \Bricks\Element {
 		$this->controls['renderer'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'Renderer', 'max-addons' ),
+			'label'   => esc_html__( 'Renderer', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'options' => [
-				'svg'    => esc_html__( 'SVG', 'max-addons' ),
-				'canvas' => esc_html__( 'Canvas', 'max-addons' ),
+				'svg'    => esc_html__( 'SVG', 'max-addons-for-bricks' ),
+				'canvas' => esc_html__( 'Canvas', 'max-addons-for-bricks' ),
 			],
 			'inline'  => true,
 			'default' => 'svg',
@@ -318,7 +319,7 @@ class Lottie_Element extends \Bricks\Element {
 		if ( empty( $external_url ) ) {
 			return $this->render_element_placeholder( [
 				'icon-class' => $this->icon,
-				'title'      => esc_html__( 'No Lottie file provided.', 'max-addons' ),
+				'title'      => esc_html__( 'No Lottie file provided.', 'max-addons-for-bricks' ),
 			] );
 		}
 
@@ -341,12 +342,12 @@ class Lottie_Element extends \Bricks\Element {
 			$this->set_link_attributes( 'link', $settings['link'] );
 		}
 		?>
-		<div <?php echo $this->render_attributes( '_root', true ); ?>>
+		<div <?php $this->print_render_attributes( '_root', true ); ?>>
 			<div class="mab-lottie-container">
 				<?php if ( $this->has_link() ) { ?>
-				<a class="mab-lottie-link" <?php echo $this->render_attributes( 'link' ); ?>>
+				<a class="mab-lottie-link" <?php $this->print_render_attributes( 'link' ); ?>>
 				<?php } ?>
-				<lottie-player <?php echo $this->render_attributes( 'player' ); ?>></lottie-player>
+				<lottie-player <?php $this->print_render_attributes( 'player' ); ?>></lottie-player>
 				<?php if ( $this->has_link() ) { ?>
 				</a>
 				<?php } ?>

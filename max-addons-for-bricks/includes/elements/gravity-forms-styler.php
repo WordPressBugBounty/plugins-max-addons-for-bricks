@@ -1,15 +1,15 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
 use MaxAddons\Classes\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Gravity_Forms_Element extends \Bricks\Element {
+class Gravity_Forms_Element extends Element_Base {
 	// Element properties
-	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-gravity-forms'; // Make sure to prefix your elements
 	public $icon         = 'ti-layout-accordion-merged max-element'; // Themify icon font class
 	public $css_selector = ''; // Default CSS selector
@@ -17,7 +17,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'Gravity Forms Styler', 'max-addons' );
+		return esc_html__( 'Gravity Forms Styler', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -41,67 +41,67 @@ class Gravity_Forms_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['form'] = [ // Unique group identifier (lowercase, no spaces)
-			'title' => esc_html__( 'Contact Form', 'max-addons' ), // Localized control group title
+			'title' => esc_html__( 'Contact Form', 'max-addons-for-bricks' ), // Localized control group title
 			'tab'   => 'content', // Set to either "content" or "style"
 		];
 
 		$this->control_groups['titleDescriptionStyle'] = [
-			'title' => esc_html__( 'Title and Description', 'max-addons' ),
+			'title' => esc_html__( 'Title and Description', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['inputFields'] = [
-			'title' => esc_html__( 'Input Fields', 'max-addons' ),
+			'title' => esc_html__( 'Input Fields', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['spacing'] = [
-			'title' => esc_html__( 'Spacing', 'max-addons' ),
+			'title' => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['fieldDescription'] = [
-			'title' => esc_html__( 'Field Description', 'max-addons' ),
+			'title' => esc_html__( 'Field Description', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['sectionField'] = [
-			'title' => esc_html__( 'Section Field', 'max-addons' ),
+			'title' => esc_html__( 'Section Field', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['price'] = [
-			'title' => esc_html__( 'Price', 'max-addons' ),
+			'title' => esc_html__( 'Price', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['customCheckbox'] = [
-			'title' => esc_html__( 'Radio And Checkbox', 'max-addons' ),
+			'title' => esc_html__( 'Radio And Checkbox', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['submitButton'] = [
-			'title' => esc_html__( 'Submit Button', 'max-addons' ),
+			'title' => esc_html__( 'Submit Button', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['pagination'] = [
-			'title' => esc_html__( 'Pagination', 'max-addons' ),
+			'title' => esc_html__( 'Pagination', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['progress'] = [
-			'title' => esc_html__( 'Progress', 'max-addons' ),
+			'title' => esc_html__( 'Progress', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['errors'] = [
-			'title' => esc_html__( 'Errors', 'max-addons' ),
+			'title' => esc_html__( 'Errors', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['thankyou'] = [
-			'title' => esc_html__( 'Thank You Message', 'max-addons' ),
+			'title' => esc_html__( 'Thank You Message', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -141,18 +141,18 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['selectForm'] = array(
 			'tab'         => 'content',
 			'group'       => 'form',
-			'label'       => esc_html__( 'Select Form', 'max-addons' ),
+			'label'       => esc_html__( 'Select Form', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => bricks_is_builder() ? Helper::get_contact_forms( 'Gravity_Forms' ) : [],
 			'inline'      => false,
 			'default'     => '',
-			'placeholder' => esc_html__( 'Select', 'max-addons' ),
+			'placeholder' => esc_html__( 'Select', 'max-addons-for-bricks' ),
 		);
 
 		$this->controls['formTitle'] = [
 			'tab'     => 'content',
 			'group'   => 'form',
-			'label'   => esc_html__( 'Title', 'max-addons' ),
+			'label'   => esc_html__( 'Title', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
 			'default' => 'true',
 		];
@@ -160,7 +160,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['formDescription'] = [
 			'tab'     => 'content',
 			'group'   => 'form',
-			'label'   => esc_html__( 'Description', 'max-addons' ),
+			'label'   => esc_html__( 'Description', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
 			'default' => 'true',
 		];
@@ -168,8 +168,8 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['form_ajax'] = [
 			'tab'         => 'content',
 			'group'       => 'form',
-			'label'       => esc_html__( 'Use Ajax', 'max-addons' ),
-			'description' => esc_html__( 'Use ajax to submit the form', 'max-addons' ),
+			'label'       => esc_html__( 'Use Ajax', 'max-addons-for-bricks' ),
+			'description' => esc_html__( 'Use ajax to submit the form', 'max-addons-for-bricks' ),
 			'type'        => 'checkbox',
 		];
 
@@ -177,35 +177,38 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'form',
 			'type'     => 'separator',
-			'label'    => esc_html__( 'Field Values', 'max-addons' ),
+			'label'    => esc_html__( 'Field Values', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['fieldValuesInfo'] = [
 			'tab'     => 'content',
 			'group'   => 'form',
 			'type'    => 'info',
-			'content' => sprintf(
-				esc_html__( 'Dynamically populate contact form with field values. Read more about field values %1$shere%2$s.', 'max-addons' ),
-				'<a href="https://www.gravityforms.com/blog/dynamic-population-tutorial/" target="_blank">',
-				'</a>',
+			'content' => wp_kses_post(
+				sprintf(
+					/* translators: 1: opening anchor tag, 2: closing anchor tag */
+					__( 'Dynamically populate contact form with field values. Read more about field values %1$shere%2$s.', 'max-addons-for-bricks' ),
+					'<a href="https://www.gravityforms.com/blog/dynamic-population-tutorial/" target="_blank" rel="noopener noreferrer">',
+					'</a>'
+				)
 			),
 		];
 
 		$this->controls['fieldValues'] = [
 			'tab'           => 'content',
 			'group'         => 'form',
-			'label'         => esc_html__( 'Field Values', 'max-addons' ),
-			'placeholder'   => esc_html__( 'Field Values', 'max-addons' ),
+			'label'         => esc_html__( 'Field Values', 'max-addons-for-bricks' ),
+			'placeholder'   => esc_html__( 'Field Values', 'max-addons-for-bricks' ),
 			'type'          => 'repeater',
 			'titleProperty' => 'parameterName',
 			'fields'        => [
 				'parameterName'         => [
-					'label'          => esc_html__( 'Parameter name', 'max-addons' ),
+					'label'          => esc_html__( 'Parameter name', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
 				'fieldValue'         => [
-					'label'          => esc_html__( 'Field value', 'max-addons' ),
+					'label'          => esc_html__( 'Field value', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
@@ -219,7 +222,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'titleDescriptionStyle',
 			'type'     => 'typography',
-			'label'    => esc_html__( 'Title Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Title Typography', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'font',
@@ -235,7 +238,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'titleDescriptionStyle',
 			'type'     => 'typography',
-			'label'    => esc_html__( 'Description Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Description Typography', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'font',
@@ -250,7 +253,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['titleAlign'] = array(
 			'tab'         => 'content',
 			'group'       => 'titleDescriptionStyle',
-			'label'       => esc_html__( 'Alignment', 'max-addons' ),
+			'label'       => esc_html__( 'Alignment', 'max-addons-for-bricks' ),
 			'type'        => 'text-align',
 			'css'         => [
 				[
@@ -270,7 +273,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['titleSpacing'] = [
 			'tab'      => 'content',
 			'group'    => 'spacing',
-			'label'    => esc_html__( 'Title Spacing', 'max-addons' ),
+			'label'    => esc_html__( 'Title Spacing', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -285,7 +288,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['descriptionSpacing'] = [
 			'tab'      => 'content',
 			'group'    => 'spacing',
-			'label'    => esc_html__( 'Description Spacing', 'max-addons' ),
+			'label'    => esc_html__( 'Description Spacing', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -300,7 +303,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['labelSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Labels Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Labels Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -314,7 +317,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['inputSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Fields Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Fields Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -328,7 +331,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['fieldDescriptionSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Field Description Top Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Field Description Top Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -342,7 +345,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['paginationTopSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Pagination Top Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Pagination Top Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -356,7 +359,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonTopSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Button Top Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Button Top Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -374,7 +377,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Labels Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Labels Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -389,7 +392,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Sub-Labels Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Sub-Labels Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -404,7 +407,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Placeholder Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Placeholder Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -419,7 +422,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Fields Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Fields Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -434,7 +437,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -449,7 +452,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -463,7 +466,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['inputBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'inputFields',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -478,7 +481,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['inputWidth'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Input Width', 'max-addons' ),
+			'label' => esc_html__( 'Input Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -492,7 +495,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['textareaWidth'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Textarea Width', 'max-addons' ),
+			'label' => esc_html__( 'Textarea Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -506,7 +509,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['textareaHeight'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Textarea Height', 'max-addons' ),
+			'label' => esc_html__( 'Textarea Height', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -520,7 +523,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['inputPadding'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -533,7 +536,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['inputTextAlign'] = array(
 			'tab'         => 'content',
 			'group'       => 'inputFields',
-			'label'       => esc_html__( 'Text align', 'max-addons' ),
+			'label'       => esc_html__( 'Text align', 'max-addons-for-bricks' ),
 			'type'        => 'text-align',
 			'css'         => [
 				[
@@ -553,7 +556,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'fieldDescription',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -571,7 +574,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'sectionField',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Title Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Title Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -586,7 +589,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'sectionField',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Description Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Description Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -600,7 +603,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['sectionFieldBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'sectionField',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'inline' => true,
 			'small'  => true,
@@ -615,7 +618,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['sectionFieldPadding'] = [
 			'tab'   => 'content',
 			'group' => 'sectionField',
-			'label' => esc_html__( 'Margin', 'max-addons' ),
+			'label' => esc_html__( 'Margin', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -631,7 +634,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['priceLabelColor'] = [
 			'tab'    => 'content',
 			'group'  => 'price',
-			'label'  => esc_html__( 'Price Label Color', 'max-addons' ),
+			'label'  => esc_html__( 'Price Label Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -646,7 +649,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['priceColor'] = [
 			'tab'    => 'content',
 			'group'  => 'price',
-			'label'  => esc_html__( 'Price Color', 'max-addons' ),
+			'label'  => esc_html__( 'Price Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -664,14 +667,14 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['customRadioCheckbox'] = [
 			'tab'   => 'content',
 			'group' => 'customCheckbox',
-			'label' => esc_html__( 'Custom Styles', 'max-addons' ),
+			'label' => esc_html__( 'Custom Styles', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 		];
 
 		$this->controls['radioCheckboxSize'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Size', 'max-addons' ),
+			'label'    => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -691,7 +694,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['radioCheckboxColor'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Color', 'max-addons' ),
+			'label'    => esc_html__( 'Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -707,7 +710,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['radioCheckboxColorChecked'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Checked Color', 'max-addons' ),
+			'label'    => esc_html__( 'Checked Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -723,7 +726,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['checkboxBorder'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Checkbox Border', 'max-addons' ),
+			'label'    => esc_html__( 'Checkbox Border', 'max-addons-for-bricks' ),
 			'type'     => 'border',
 			'inline'   => true,
 			'small'    => true,
@@ -739,7 +742,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['radioBorder'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Radio Border', 'max-addons' ),
+			'label'    => esc_html__( 'Radio Border', 'max-addons-for-bricks' ),
 			'type'     => 'border',
 			'inline'   => true,
 			'small'    => true,
@@ -758,12 +761,12 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'submitButton',
-			'label'       => esc_html__( 'Alignment', 'max-addons' ),
+			'label'       => esc_html__( 'Alignment', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'left'   => esc_html__( 'Left', 'max-addons' ),
-				'center' => esc_html__( 'Center', 'max-addons' ),
-				'right'  => esc_html__( 'Right', 'max-addons' ),
+				'left'   => esc_html__( 'Left', 'max-addons-for-bricks' ),
+				'center' => esc_html__( 'Center', 'max-addons-for-bricks' ),
+				'right'  => esc_html__( 'Right', 'max-addons-for-bricks' ),
 			],
 			'css'         => [
 				[
@@ -780,7 +783,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonWidth'] = [
 			'tab'   => 'content',
 			'group' => 'submitButton',
-			'label' => esc_html__( 'Width', 'max-addons' ),
+			'label' => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -794,7 +797,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -808,7 +811,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonBackgroundColor'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -823,7 +826,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'inline' => true,
 			'small'  => true,
@@ -838,7 +841,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -853,7 +856,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonPadding'] = [
 			'tab'   => 'content',
 			'group' => 'submitButton',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -869,7 +872,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['paginationWidth'] = [
 			'tab'   => 'content',
 			'group' => 'pagination',
-			'label' => esc_html__( 'Width', 'max-addons' ),
+			'label' => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -883,7 +886,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['paginationButtonTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'pagination',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -897,7 +900,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['paginationButtonBackgroundColor'] = [
 			'tab'    => 'content',
 			'group'  => 'pagination',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -912,7 +915,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['paginationButtonBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'pagination',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'inline' => true,
 			'small'  => true,
@@ -927,7 +930,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['paginationButtonBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'pagination',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -942,7 +945,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['paginationButtonPadding'] = [
 			'tab'   => 'content',
 			'group' => 'pagination',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -959,7 +962,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['progressLabelTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'progress',
-			'label'  => esc_html__( 'Label Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Label Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -974,7 +977,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['percentageTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'progress',
-			'label'  => esc_html__( 'Percentage Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Percentage Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -989,7 +992,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['progressBarBg'] = [
 			'tab'    => 'content',
 			'group'  => 'progress',
-			'label'  => esc_html__( 'Bar Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Bar Background Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -1004,7 +1007,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['progressBarPercentageBg'] = [
 			'tab'    => 'content',
 			'group'  => 'progress',
-			'label'  => esc_html__( 'Percentage Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Percentage Background Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -1019,7 +1022,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['progressBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'progress',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'inline' => true,
 			'small'  => true,
@@ -1034,7 +1037,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['progressBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'progress',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -1049,7 +1052,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['progressBarHeight'] = [
 			'tab'   => 'content',
 			'group' => 'progress',
-			'label' => esc_html__( 'Height', 'max-addons' ),
+			'label' => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -1071,13 +1074,13 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'errors',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Error Messages', 'max-addons' ),
+			'label' => esc_html__( 'Error Messages', 'max-addons-for-bricks' ),
 		);
 
 		$this->controls['errorTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -1092,13 +1095,13 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'errors',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Validation Errors', 'max-addons' ),
+			'label' => esc_html__( 'Validation Errors', 'max-addons-for-bricks' ),
 		);
 
 		$this->controls['validationErrorTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Error Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Error Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -1112,7 +1115,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['validation_error_border_color'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Error Border Color', 'max-addons' ),
+			'label'  => esc_html__( 'Error Border Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -1131,7 +1134,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['validation_error_bg_color'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Error Field Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Error Field Background Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -1146,7 +1149,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['validation_error_field_label_typography'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Error Field Label Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Error Field Label Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -1161,7 +1164,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['validation_error_field_input_border_color'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Error Field Input Border Color', 'max-addons' ),
+			'label'  => esc_html__( 'Error Field Input Border Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -1176,7 +1179,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['validation_error_field_input_border_width'] = [
 			'tab'   => 'content',
 			'group' => 'errors',
-			'label' => esc_html__( 'Error Field Input Border Width', 'max-addons' ),
+			'label' => esc_html__( 'Error Field Input Border Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -1193,7 +1196,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['ty_message_typography'] = [
 			'tab'    => 'content',
 			'group'  => 'thankyou',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -1207,7 +1210,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['ty_bg_color'] = [
 			'tab'    => 'content',
 			'group'  => 'thankyou',
-			'label'  => esc_html__( 'Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Background Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -1223,7 +1226,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'thankyou',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -1237,7 +1240,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['tyPadding'] = [
 			'tab'     => 'content',
 			'group'   => 'thankyou',
-			'label'   => esc_html__( 'Padding', 'max-addons' ),
+			'label'   => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'    => 'spacing',
 			'css'     => [
 				[
@@ -1256,7 +1259,7 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$this->controls['tyAlign'] = array(
 			'tab'         => 'content',
 			'group'       => 'thankyou',
-			'label'       => esc_html__( 'Alignment', 'max-addons' ),
+			'label'       => esc_html__( 'Alignment', 'max-addons-for-bricks' ),
 			'type'        => 'text-align',
 			'css'         => [
 				[
@@ -1275,11 +1278,11 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$settings = $this->settings;
 
 		if ( ! class_exists( 'GFCommon' ) ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'Gravity forms is not installed or activated.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'Gravity forms is not installed or activated.', 'max-addons-for-bricks' ) ] );
 		}
 
 		if ( ! isset( $settings['selectForm'] ) || empty( $settings['selectForm'] ) ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No contact form selected.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No contact form selected.', 'max-addons-for-bricks' ) ] );
 		}
 
 		$this->set_attribute( '_root', 'class', 'mab-contact-form-container' );
@@ -1300,8 +1303,8 @@ class Gravity_Forms_Element extends \Bricks\Element {
 		$form_title = '';
 		$form_description = '';
 		?>
-		<div <?php echo $this->render_attributes( '_root' ); ?>>
-			<div <?php echo $this->render_attributes( 'container' ); ?>>
+		<div <?php $this->print_render_attributes( '_root' ); ?>>
+			<div <?php $this->print_render_attributes( 'container' ); ?>>
 				<?php
 				$form_title       = isset( $settings['formTitle'] );
 				$form_description = isset( $settings['formDescription'] );

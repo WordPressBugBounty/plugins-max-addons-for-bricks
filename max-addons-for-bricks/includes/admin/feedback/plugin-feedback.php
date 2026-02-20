@@ -1,6 +1,6 @@
 <?php
 /**
- * Universal WordPress Plugin Feedback System
+ * BloomPixel WordPress Plugin Feedback System
  *
  * A reusable feedback system for WordPress plugins that handles:
  * - Deactivation feedback
@@ -8,7 +8,7 @@
  * - User data collection
  * - Customizable configurations
  *
- * @package UniversalPluginFeedback
+ * @package BloomPixelPluginFeedback
  * @version 1.0.0
  */
 
@@ -62,7 +62,6 @@ class Mab_Plugin_Feedback {
 			'assets_url'                  => '',
 			'feedback_api_url'            => 'https://feedback.bloompixel.com/wp-json/feedback/v1/feedback',
 			'review_link'                 => '',
-			'buy_link'                    => '',
 			'plugin_logo'                 => 'assets/images/logo.png',
 			'company_name'                => 'BloomPixel',
 			'company_url'                 => 'https://www.bloompixel.com/',
@@ -86,16 +85,17 @@ class Mab_Plugin_Feedback {
 			return;
 		}
 
-		add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
+		add_action('admin_enqueue_scripts', [ $this, 'enqueue_scripts' ]);
+		add_action('admin_enqueue_scripts', [ $this, 'enqueue_review_notice_script' ]);
 
 		$this->plugin_slug = str_replace( "-", "_", $this->plugin_slug );
 
-		if ($this->config['show_deactivation_feedback']) {
+		if ( $this->config['show_deactivation_feedback'] ) {
 			add_action('admin_head', [$this, 'show_deactivation_feedback_popup']);
 			add_action('wp_ajax_' . $this->plugin_slug . '_submit_deactivation_response', [$this, 'submit_deactivation_response']);
 		}
 
-		if ($this->config['show_review_notice']) {
+		if ( $this->config['show_review_notice'] ) {
 			add_action('admin_notices', [$this, 'show_review_notice']);
 			add_action('wp_ajax_' . $this->plugin_slug . '_dismiss_review_notice', [$this, 'dismiss_review_notice']);
 		}
@@ -111,7 +111,10 @@ class Mab_Plugin_Feedback {
 
 		foreach ( $required_fields as $field ) {
 			if ( empty( $this->config[ $field ] ) ) {
-				error_log( "Universal_Plugin_Feedback: Missing required field: {$field}" );
+				if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+					error_log( "Mab_Plugin_Feedback: Missing required field: {$field}" ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- Debugging only.
+				}
+
 				return false;
 			}
 		}
@@ -155,11 +158,75 @@ class Mab_Plugin_Feedback {
 				'plugin_slug' => $this->plugin_slug,
 				'nonce'       => wp_create_nonce( $this->plugin_slug . '_feedback_nonce' ),
 				'strings'     => [
-					'submitting' => esc_html__( 'Submitting...', 'max-addons' ),
-					'error'      => esc_html__( 'An error occurred. Please try again.', 'max-addons' ),
-					'success'    => esc_html__( 'Thank you for your feedback!', 'max-addons' )
+					'submitting' => esc_html__( 'Submitting...', 'max-addons-for-bricks' ),
+					'error'      => esc_html__( 'An error occurred. Please try again.', 'max-addons-for-bricks' ),
+					'success'    => esc_html__( 'Thank you for your feedback!', 'max-addons-for-bricks' )
 				]
 			]
+		);
+	}
+
+	public function enqueue_review_notice_script( $hook ) {
+
+		// Only load where needed (optional but recommended)
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		$handle = 'maxaddons-review-notice';
+
+		wp_register_script(
+			$handle,
+			false,
+			array( 'jquery' ),
+			'1.0.0',
+			true
+		);
+
+		wp_enqueue_script( $handle );
+
+		wp_localize_script(
+			$handle,
+			'MaxAddonsPluginReviewNotice',
+			array(
+				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'action'  => $this->plugin_slug . '_dismiss_review_notice',
+				'nonce'   => wp_create_nonce( $this->plugin_slug . '_feedback_nonce' ),
+				'slug'    => $this->plugin_slug,
+			)
+		);
+
+		wp_add_inline_script(
+			$handle,
+			"
+			jQuery(function($){
+
+				// Persist dismissal for: Already Rated, No Thanks, Dismiss
+				$(document).on('click', '.' + MaxAddonsPluginReviewNotice.slug + '-review-notice .dismiss-notice', function(e){
+					e.preventDefault();
+
+					var \$notice = $(this).closest('.' + MaxAddonsPluginReviewNotice.slug + '-review-notice');
+
+					$.post(MaxAddonsPluginReviewNotice.ajaxUrl, {
+						action: MaxAddonsPluginReviewNotice.action,
+						nonce: MaxAddonsPluginReviewNotice.nonce,
+						reason: $(this).data('reason') || 'dismiss'
+					}).always(function(){
+						\$notice.fadeOut(150, function(){ $(this).remove(); });
+					});
+				});
+
+				// Persist dismissal when user clicks the core \"×\" button
+				$(document).on('click', '.' + MaxAddonsPluginReviewNotice.slug + '-review-notice .notice-dismiss', function(){
+					$.post(MaxAddonsPluginReviewNotice.ajaxUrl, {
+						action: MaxAddonsPluginReviewNotice.action,
+						nonce: MaxAddonsPluginReviewNotice.nonce,
+						reason: 'x'
+					});
+				});
+
+			});
+			"
 		);
 	}
 
@@ -191,7 +258,7 @@ class Mab_Plugin_Feedback {
 		$difference   = $install_date->diff( $current_date );
 
 		if ( $difference->days >= $this->config['review_notice_days'] ) {
-			echo $this->get_review_notice_html();
+			$this->render_review_notice_html();
 		}
 	}
 
@@ -200,7 +267,7 @@ class Mab_Plugin_Feedback {
 	 *
 	 * @return string HTML content
 	 */
-	private function get_review_notice_html() {
+	private function render_review_notice_html() {
 		$logo = $this->config['plugin_logo'];
 
 		if ( filter_var( $logo, FILTER_VALIDATE_URL ) ) {
@@ -210,16 +277,8 @@ class Mab_Plugin_Feedback {
 		}
 
 		$review_link  = $this->config['review_link'];
-		$buy_link     = $this->config['buy_link'];
 		$company_name = $this->config['company_name'];
 		$company_url  = $this->config['company_url'];
-
-		$buy_button = '';
-		if ( ! empty( $buy_link ) ) {
-			$buy_button = '<li><a href="' . esc_url( $buy_link ) . '" target="_blank" class="button button-secondary buy-pro-btn">Buy Pro</a></li>';
-		}
-
-		ob_start();
 		?>
 		<div class="<?php echo esc_attr( $this->plugin_slug ); ?>-review-notice notice notice-info is-dismissible" data-plugin-slug="<?php echo esc_attr( $this->plugin_slug ); ?>">
 			<p>
@@ -228,7 +287,7 @@ class Mab_Plugin_Feedback {
 					/* translators: 1: Plugin name */
 					esc_html__(
 						'Thank you for using %1$s. If our plugin has made your workflow easier or brought value to your site, we\'d be truly grateful if you could leave us a ★★★★★ review on WordPress.org. Your support keeps us motivated!',
-						'max-addons'
+						'max-addons-for-bricks'
 					),
 					'<strong>' . esc_html( $this->plugin_name ) . '</strong>',
 				);
@@ -240,7 +299,7 @@ class Mab_Plugin_Feedback {
 						<?php
 							printf(
 								/* translators: %s: Star rating */
-								esc_html__( 'Rate Now! %s', 'max-addons' ),
+								esc_html__( 'Rate Now! %s', 'max-addons-for-bricks' ),
 								'★★★★★'
 							);
 						?>
@@ -248,45 +307,17 @@ class Mab_Plugin_Feedback {
 				</li>
 				<li>
 					<a href="javascript:void(0);" class="button button-secondary dismiss-notice" data-reason="already-rated">
-						<?php echo esc_html__( '🙌 Already Rated', 'max-addons' ); ?>
+						<?php echo esc_html__( '🙌 Already Rated', 'max-addons-for-bricks' ); ?>
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class="button button-secondary dismiss-notice" data-reason="not-interested">
-						<?php echo esc_html__( 'No Thanks', 'max-addons' ); ?>
+						<?php echo esc_html__( 'No Thanks', 'max-addons-for-bricks' ); ?>
 					</a>
 				</li>
-				<?php echo $buy_button; ?>
 			</ul>
 		</div>
-		<script>
-		jQuery(function($){
-			// Persist dismissal for: Already Rated, No Thanks, Dismiss
-			$(document).on('click', '.<?php echo esc_js( $this->plugin_slug ); ?>-review-notice .dismiss-notice', function(e){
-				e.preventDefault();
-				var $notice = $(this).closest('.<?php echo esc_js( $this->plugin_slug ); ?>-review-notice');
-
-				$.post(ajaxurl, {
-				action: '<?php echo esc_js( $this->plugin_slug ); ?>_dismiss_review_notice',
-				nonce: '<?php echo esc_js( wp_create_nonce( $this->plugin_slug . "_feedback_nonce" ) ); ?>',
-				reason: $(this).data('reason') || 'dismiss'
-				}).always(function(){
-				$notice.fadeOut(150, function(){ $(this).remove(); });
-				});
-			});
-
-			// Persist dismissal when user clicks the core "×" on the notice
-			$(document).on('click', '.<?php echo esc_js( $this->plugin_slug ); ?>-review-notice .notice-dismiss', function(){
-				$.post(ajaxurl, {
-				action: '<?php echo esc_js( $this->plugin_slug ); ?>_dismiss_review_notice',
-				nonce: '<?php echo esc_js( wp_create_nonce( $this->plugin_slug . "_feedback_nonce" ) ); ?>',
-				reason: 'x'
-				});
-			});
-		});
-		</script>
 		<?php
-		return ob_get_clean();
 	}
 
 	/**
@@ -307,7 +338,7 @@ class Mab_Plugin_Feedback {
 			update_user_meta( get_current_user_id(), $review_option, 'yes' );
 		}
 
-		wp_send_json_success( [ 'message' => esc_html__( 'Notice dismissed successfully', 'max-addons' ) ] );
+		wp_send_json_success( [ 'message' => esc_html__( 'Notice dismissed successfully', 'max-addons-for-bricks' ) ] );
 	}
 
 	/**
@@ -324,7 +355,7 @@ class Mab_Plugin_Feedback {
 		<div id="<?php echo esc_attr( $this->plugin_slug ); ?>-feedback-popup" class="feedback-popup-overlay">
 			<div class="feedback-popup-container">
 				<div class="feedback-popup-header">
-					<h3><?php esc_html_e( 'Quick Feedback', 'max-addons' ); ?></h3>
+					<h3><?php esc_html_e( 'Quick Feedback', 'max-addons-for-bricks' ); ?></h3>
 				</div>
 
 				<div class="feedback-popup-content">
@@ -334,7 +365,13 @@ class Mab_Plugin_Feedback {
 
 					<div class="feedback-form-container">
 						<p class="feedback-form-title">
-							<?php printf( esc_html__( 'If you have a moment, please let us know why you\'re deactivating %s:', 'max-addons' ), $this->plugin_name ); ?>
+							<?php
+							printf(
+								/* translators: %s: Plugin name */
+								esc_html__( 'If you have a moment, please let us know why you\'re deactivating %s:', 'max-addons-for-bricks' ),
+								esc_html( $this->plugin_name )
+							);
+							?>
 						</p>
 
 						<form class="feedback-form" data-plugin-slug="<?php echo esc_attr( $this->plugin_slug ); ?>">
@@ -361,7 +398,13 @@ class Mab_Plugin_Feedback {
 									<label class="feedback-consent-label">
 										<input type="checkbox" class="feedback-consent-checkbox" required>
 										<span class="feedback-consent-text">
-											<?php printf( esc_html__( 'I agree to share anonymous usage data and basic site details to help improve %s.', 'max-addons' ), $this->plugin_name ); ?>
+											<?php
+											printf(
+												/* translators: %s: Plugin name */
+												esc_html__( 'I agree to share anonymous usage data and basic site details to help improve %s.', 'max-addons-for-bricks' ),
+												esc_html( $this->plugin_name )
+											);
+											?>
 										</span>
 									</label>
 								</div>
@@ -369,13 +412,13 @@ class Mab_Plugin_Feedback {
 
 							<div class="feedback-actions">
 								<button type="submit" class="button button-primary feedback-submit-btn">
-									<?php esc_html_e( 'Submit & Deactivate', 'max-addons' ); ?>
+									<?php esc_html_e( 'Submit & Deactivate', 'max-addons-for-bricks' ); ?>
 								</button>
 								<button type="button" class="button button-secondary feedback-skip-btn">
-									<?php esc_html_e( 'Skip & Deactivate', 'max-addons' ); ?>
+									<?php esc_html_e( 'Skip & Deactivate', 'max-addons-for-bricks' ); ?>
 								</button>
 								<button type="button" class="button button-secondary feedback-cancel-btn">
-									<?php esc_html_e( 'Cancel', 'max-addons' ); ?>
+									<?php esc_html_e( 'Cancel', 'max-addons-for-bricks' ); ?>
 								</button>
 							</div>
 						</form>
@@ -394,28 +437,28 @@ class Mab_Plugin_Feedback {
 	private function get_deactivation_reasons() {
 		$default_reasons = [
 			'not_working' => [
-				'title' => esc_html__( 'The plugin is not working', 'max-addons' ),
-				'placeholder' => esc_html__( 'Please describe the issue you encountered', 'max-addons' ),
+				'title' => esc_html__( 'The plugin is not working', 'max-addons-for-bricks' ),
+				'placeholder' => esc_html__( 'Please describe the issue you encountered', 'max-addons-for-bricks' ),
 			],
 			'found_better' => [
-				'title' => esc_html__( 'I found a better alternative', 'max-addons' ),
-				'placeholder' => esc_html__( 'Please share which plugin you\'re switching to', 'max-addons' ),
+				'title' => esc_html__( 'I found a better alternative', 'max-addons-for-bricks' ),
+				'placeholder' => esc_html__( 'Please share which plugin you\'re switching to', 'max-addons-for-bricks' ),
 			],
 			'no_longer_required' => [
-				'title' => esc_html__( 'I no longer need the plugin', 'max-addons' ),
+				'title' => esc_html__( 'I no longer need the plugin', 'max-addons-for-bricks' ),
 				'placeholder' => ''
 			],
 			'temporary' => [
-				'title' => esc_html__( 'It\'s a temporary deactivation', 'max-addons' ),
+				'title' => esc_html__( 'It\'s a temporary deactivation', 'max-addons-for-bricks' ),
 				'placeholder' => ''
 			],
 			'missing_feature' => [
-				'title' => esc_html__( 'Missing a feature I need', 'max-addons' ),
-				'placeholder' => esc_html__( 'What feature were you looking for?', 'max-addons' ),
+				'title' => esc_html__( 'Missing a feature I need', 'max-addons-for-bricks' ),
+				'placeholder' => esc_html__( 'What feature were you looking for?', 'max-addons-for-bricks' ),
 			],
 			'other' => [
-				'title' => esc_html__( 'Other', 'max-addons' ),
-				'placeholder' => esc_html__( 'Please share your reason', 'max-addons' ),
+				'title' => esc_html__( 'Other', 'max-addons-for-bricks' ),
+				'placeholder' => esc_html__( 'Please share your reason', 'max-addons-for-bricks' ),
 			]
 		];
 
@@ -433,8 +476,8 @@ class Mab_Plugin_Feedback {
 	public function submit_deactivation_response() {
 		check_ajax_referer( $this->plugin_slug . '_feedback_nonce', 'nonce' );
 
-		$reason  = sanitize_text_field( $_POST['reason'] ?? '' );
-		$details = sanitize_textarea_field( $_POST['details'] ?? '' );
+		$reason  = isset( $_POST['reason'] ) ? sanitize_text_field( wp_unslash( $_POST['reason'] ) ) : '';
+		$details = isset( $_POST['details'] ) ? sanitize_textarea_field( wp_unslash( $_POST['details'] ) ) : '';
 		$consent = isset( $_POST['consent'] ) ? true : false;
 
 		$data = [
@@ -456,10 +499,10 @@ class Mab_Plugin_Feedback {
 		$response = $this->send_feedback( $data );
 
 		if ( is_wp_error( $response ) ) {
-			wp_send_json_error( [ 'message' => esc_html__( 'Failed to send feedback', 'max-addons' ) ] );
+			wp_send_json_error( [ 'message' => esc_html__( 'Failed to send feedback', 'max-addons-for-bricks' ) ] );
 		}
 
-		wp_send_json_success( [ 'message' => esc_html__( 'Feedback submitted successfully', 'max-addons' ) ] );
+		wp_send_json_success( [ 'message' => esc_html__( 'Feedback submitted successfully', 'max-addons-for-bricks' ) ] );
 	}
 
 	/**
@@ -470,13 +513,15 @@ class Mab_Plugin_Feedback {
 	private function get_system_info() {
 		global $wpdb;
 
+		$server_software = isset( $_SERVER['SERVER_SOFTWARE'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) ) : '';
+
 		return [
 			'wp_version'      => get_bloginfo( 'version' ),
 			'php_version'     => phpversion(),
-			'mysql_version'   => $wpdb->get_var( "SELECT VERSION()" ),
-			'server_software' => $_SERVER['SERVER_SOFTWARE'] ?? 'Unknown',
+			'mysql_version'   => $wpdb->db_version(),
+			'server_software' => $server_software,
 			'wp_memory_limit' => ini_get( 'memory_limit' ),
-			'wp_debug'        => defined( 'WP_DEBUG' ) && WP_DEBUG ? esc_html__( 'Enabled', 'max-addons' ) : esc_html__( 'Disabled', 'max-addons' ),
+			'wp_debug'        => defined( 'WP_DEBUG' ) && WP_DEBUG ? esc_html__( 'Enabled', 'max-addons-for-bricks' ) : esc_html__( 'Disabled', 'max-addons-for-bricks' ),
 			'wp_multisite'    => is_multisite() ? 'Yes' : 'No',
 			'wp_language'     => get_locale(),
 			'active_theme'    => wp_get_theme()->get( 'Name' ),
@@ -518,7 +563,7 @@ class Mab_Plugin_Feedback {
 		$api_url = $this->config['feedback_api_url'];
 
 		if ( empty( $api_url ) ) {
-			return new WP_Error( 'no_api_url', esc_html__( 'No feedback API URL configured', 'max-addons' ) );
+			return new WP_Error( 'no_api_url', esc_html__( 'No feedback API URL configured', 'max-addons-for-bricks' ) );
 		}
 
 		$json_data = json_encode( $data );

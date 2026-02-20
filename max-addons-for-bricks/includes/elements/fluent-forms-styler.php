@@ -1,13 +1,14 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
 use MaxAddons\Classes\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Fluent_Forms_Element extends \Bricks\Element {
+class Fluent_Forms_Element extends Element_Base {
 	// Element properties
 	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-fluent-forms'; // Make sure to prefix your elements
@@ -17,7 +18,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'Fluent Forms Styler', 'max-addons' );
+		return esc_html__( 'Fluent Forms Styler', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -29,42 +30,42 @@ class Fluent_Forms_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['form'] = [ // Unique group identifier (lowercase, no spaces)
-			'title' => esc_html__( 'Contact Form', 'max-addons' ), // Localized control group title
+			'title' => esc_html__( 'Contact Form', 'max-addons-for-bricks' ), // Localized control group title
 			'tab'   => 'content', // Set to either "content" or "style"
 		];
 
 		$this->control_groups['inputFields'] = [
-			'title' => esc_html__( 'Input Fields', 'max-addons' ),
+			'title' => esc_html__( 'Input Fields', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['spacing'] = [
-			'title' => esc_html__( 'Spacing', 'max-addons' ),
+			'title' => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['helpMessage'] = [
-			'title' => esc_html__( 'Help Message', 'max-addons' ),
+			'title' => esc_html__( 'Help Message', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['customCheckbox'] = [
-			'title' => esc_html__( 'Radio And Checkbox', 'max-addons' ),
+			'title' => esc_html__( 'Radio And Checkbox', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['submitButton'] = [
-			'title' => esc_html__( 'Submit Button', 'max-addons' ),
+			'title' => esc_html__( 'Submit Button', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['errors'] = [
-			'title' => esc_html__( 'Errors', 'max-addons' ),
+			'title' => esc_html__( 'Errors', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['confirmation'] = [
-			'title' => esc_html__( 'Confirmation Message', 'max-addons' ),
+			'title' => esc_html__( 'Confirmation Message', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -94,18 +95,18 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['selectForm'] = array(
 			'tab'         => 'content',
 			'group'       => 'form',
-			'label'       => esc_html__( 'Select Form', 'max-addons' ),
+			'label'       => esc_html__( 'Select Form', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => bricks_is_builder() ? Helper::get_contact_forms( 'Fluent_Forms' ) : [],
 			'inline'      => false,
 			'default'     => '',
-			'placeholder' => esc_html__( 'Select', 'max-addons' ),
+			'placeholder' => esc_html__( 'Select', 'max-addons-for-bricks' ),
 		);
 
 		$this->controls['showTitle'] = [
 			'tab'      => 'content',
 			'group'    => 'form',
-			'label'    => esc_html__( 'Show Custom Title', 'max-addons' ),
+			'label'    => esc_html__( 'Show Custom Title', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'required' => [ 'selectForm', '!=', '' ],
 		];
@@ -114,8 +115,8 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'form',
 			'type'     => 'text',
-			'label'    => esc_html__( 'Title', 'max-addons' ),
-			'default'  => esc_html__( 'Contact Form', 'max-addons' ),
+			'label'    => esc_html__( 'Title', 'max-addons-for-bricks' ),
+			'default'  => esc_html__( 'Contact Form', 'max-addons-for-bricks' ),
 			'inline'   => true,
 			'required' => [
 				[ 'selectForm', '!=', '' ],
@@ -126,16 +127,16 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['titleTag'] = [
 			'tab'         => 'content',
 			'group'       => 'form',
-			'label'       => esc_html__( 'Title Tag', 'max-addons' ),
+			'label'       => esc_html__( 'Title Tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'h1'  => esc_html__( 'Heading 1 (h1)', 'max-addons' ),
-				'h2'  => esc_html__( 'Heading 2 (h2)', 'max-addons' ),
-				'h3'  => esc_html__( 'Heading 3 (h3)', 'max-addons' ),
-				'h4'  => esc_html__( 'Heading 4 (h4)', 'max-addons' ),
-				'h5'  => esc_html__( 'Heading 5 (h5)', 'max-addons' ),
-				'h6'  => esc_html__( 'Heading 6 (h6)', 'max-addons' ),
-				'div' => esc_html__( 'Division (div)', 'max-addons' ),
+				'h1'  => esc_html__( 'Heading 1 (h1)', 'max-addons-for-bricks' ),
+				'h2'  => esc_html__( 'Heading 2 (h2)', 'max-addons-for-bricks' ),
+				'h3'  => esc_html__( 'Heading 3 (h3)', 'max-addons-for-bricks' ),
+				'h4'  => esc_html__( 'Heading 4 (h4)', 'max-addons-for-bricks' ),
+				'h5'  => esc_html__( 'Heading 5 (h5)', 'max-addons-for-bricks' ),
+				'h6'  => esc_html__( 'Heading 6 (h6)', 'max-addons-for-bricks' ),
+				'div' => esc_html__( 'Division (div)', 'max-addons-for-bricks' ),
 			],
 			'clearable'   => false,
 			'pasteStyles' => false,
@@ -150,7 +151,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['titleTypography'] = [
 			'tab'      => 'content',
 			'group'    => 'form',
-			'label'    => esc_html__( 'Title Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Title Typography', 'max-addons-for-bricks' ),
 			'type'     => 'typography',
 			'css'      => [
 				[
@@ -172,7 +173,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['labelSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Labels Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Labels Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -186,7 +187,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['inputSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Fields Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Fields Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -200,7 +201,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['fieldDescriptionSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Help Message Top Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Help Message Top Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -214,7 +215,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonTopSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'spacing',
-			'label' => esc_html__( 'Button Top Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Button Top Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -232,7 +233,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Labels Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Labels Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -247,7 +248,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Placeholder Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Placeholder Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -266,7 +267,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Fields Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Fields Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -289,7 +290,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -312,7 +313,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'inputFields',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -334,7 +335,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['inputBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'inputFields',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -357,7 +358,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['inputWidth'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Input Width', 'max-addons' ),
+			'label' => esc_html__( 'Input Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -375,7 +376,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['textareaWidth'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Textarea Width', 'max-addons' ),
+			'label' => esc_html__( 'Textarea Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -390,7 +391,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['textareaHeight'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Textarea Height', 'max-addons' ),
+			'label' => esc_html__( 'Textarea Height', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -404,7 +405,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['inputPadding'] = [
 			'tab'   => 'content',
 			'group' => 'inputFields',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -425,7 +426,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['inputTextAlign'] = array(
 			'tab'         => 'content',
 			'group'       => 'inputFields',
-			'label'       => esc_html__( 'Text align', 'max-addons' ),
+			'label'       => esc_html__( 'Text align', 'max-addons-for-bricks' ),
 			'type'        => 'text-align',
 			'css'         => [
 				[
@@ -453,7 +454,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'helpMessage',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -470,14 +471,14 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['customRadioCheckbox'] = [
 			'tab'   => 'content',
 			'group' => 'customCheckbox',
-			'label' => esc_html__( 'Custom Styles', 'max-addons' ),
+			'label' => esc_html__( 'Custom Styles', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 		];
 
 		$this->controls['radioCheckboxSize'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Size', 'max-addons' ),
+			'label'    => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -506,7 +507,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['radioCheckboxColor'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Color', 'max-addons' ),
+			'label'    => esc_html__( 'Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -526,7 +527,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['radioCheckboxColorChecked'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Checked Color', 'max-addons' ),
+			'label'    => esc_html__( 'Checked Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -546,7 +547,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['checkboxBorder'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Checkbox Border', 'max-addons' ),
+			'label'    => esc_html__( 'Checkbox Border', 'max-addons-for-bricks' ),
 			'type'     => 'border',
 			'inline'   => true,
 			'small'    => true,
@@ -562,7 +563,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['radioBorder'] = [
 			'tab'      => 'content',
 			'group'    => 'customCheckbox',
-			'label'    => esc_html__( 'Radio Border', 'max-addons' ),
+			'label'    => esc_html__( 'Radio Border', 'max-addons-for-bricks' ),
 			'type'     => 'border',
 			'inline'   => true,
 			'small'    => true,
@@ -581,12 +582,12 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'submitButton',
-			'label'       => esc_html__( 'Alignment', 'max-addons' ),
+			'label'       => esc_html__( 'Alignment', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'left'   => esc_html__( 'Left', 'max-addons' ),
-				'center' => esc_html__( 'Center', 'max-addons' ),
-				'right'  => esc_html__( 'Right', 'max-addons' ),
+				'left'   => esc_html__( 'Left', 'max-addons-for-bricks' ),
+				'center' => esc_html__( 'Center', 'max-addons-for-bricks' ),
+				'right'  => esc_html__( 'Right', 'max-addons-for-bricks' ),
 			],
 			'css'         => [
 				[
@@ -603,7 +604,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonWidth'] = [
 			'tab'   => 'content',
 			'group' => 'submitButton',
-			'label' => esc_html__( 'Width', 'max-addons' ),
+			'label' => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -617,7 +618,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -631,7 +632,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonBackgroundColor'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -646,7 +647,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['submitButtonBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'inline' => true,
 			'small'  => true,
@@ -661,7 +662,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'submitButton',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -676,7 +677,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['buttonPadding'] = [
 			'tab'   => 'content',
 			'group' => 'submitButton',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -693,13 +694,13 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'errors',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Error Message', 'max-addons' ),
+			'label' => esc_html__( 'Error Message', 'max-addons-for-bricks' ),
 		);
 
 		$this->controls['errorTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -713,13 +714,13 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'errors',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Error Field', 'max-addons' ),
+			'label' => esc_html__( 'Error Field', 'max-addons-for-bricks' ),
 		);
 
 		$this->controls['errorFieldBorder'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'   => 'border',
 			'inline' => true,
 			'small'  => true,
@@ -734,7 +735,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['errorFieldBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'errors',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -752,7 +753,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['tyMessageTypography'] = [
 			'tab'    => 'content',
 			'group'  => 'confirmation',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'   => 'typography',
 			'css'    => [
 				[
@@ -766,7 +767,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['tyBackgroundColor'] = [
 			'tab'    => 'content',
 			'group'  => 'confirmation',
-			'label'  => esc_html__( 'Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Background Color', 'max-addons-for-bricks' ),
 			'type'   => 'color',
 			'css'    => [
 				[
@@ -782,7 +783,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'confirmation',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -796,7 +797,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['tyBoxShadow'] = [
 			'tab'    => 'content',
 			'group'  => 'confirmation',
-			'label'  => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'   => 'box-shadow',
 			'css'    => [
 				[
@@ -811,7 +812,7 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$this->controls['tyPadding'] = [
 			'tab'     => 'content',
 			'group'   => 'confirmation',
-			'label'   => esc_html__( 'Padding', 'max-addons' ),
+			'label'   => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'    => 'spacing',
 			'css'     => [
 				[
@@ -833,11 +834,11 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$settings = $this->settings;
 
 		if ( ! function_exists( 'wpFluentForm' ) ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'Fluent Forms is not installed or activated.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'Fluent Forms is not installed or activated.', 'max-addons-for-bricks' ) ] );
 		}
 
 		if ( ! isset( $settings['selectForm'] ) || empty( $settings['selectForm'] ) ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No contact form selected.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No contact form selected.', 'max-addons-for-bricks' ) ] );
 		}
 
 		$this->set_attribute( '_root', 'class', 'mab-contact-form-container' );
@@ -858,8 +859,8 @@ class Fluent_Forms_Element extends \Bricks\Element {
 		$form_title = '';
 		$form_description = '';
 		?>
-		<div <?php echo $this->render_attributes( '_root' ); ?>>
-			<div <?php echo $this->render_attributes( 'container' ); ?>>
+		<div <?php $this->print_render_attributes( '_root' ); ?>>
+			<div <?php $this->print_render_attributes( 'container' ); ?>>
 				<?php
 				if ( isset( $settings['showTitle'] ) ) {
 					$title_tag = isset( $settings['titleTag'] ) ? $settings['titleTag'] : 'h3';

@@ -15,7 +15,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'Image Comparison', 'max-addons' );
+		return esc_html__( 'Image Comparison', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -27,32 +27,32 @@ class Image_Comparison_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->controls['text'] = [ // Unique group identifier (lowercase, no spaces)
-			'title' => esc_html__( 'Text', 'max-addons' ), // Localized control group title
+			'title' => esc_html__( 'Text', 'max-addons-for-bricks' ), // Localized control group title
 			'tab'   => 'content', // Set to either "content" or "style"
 		];
 
 		$this->control_groups['before'] = [
-			'title' => esc_html__( 'Before Image', 'max-addons' ),
+			'title' => esc_html__( 'Before Image', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['after'] = [
-			'title' => esc_html__( 'After Image', 'max-addons' ),
+			'title' => esc_html__( 'After Image', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['labels'] = [
-			'title' => esc_html__( 'Labels', 'max-addons' ),
+			'title' => esc_html__( 'Labels', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['handle'] = [
-			'title' => esc_html__( 'Handle', 'max-addons' ),
+			'title' => esc_html__( 'Handle', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['settings'] = [
-			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'title' => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -77,21 +77,21 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'before',
 			'type'  => 'image',
-			'label' => esc_html__( 'Image', 'max-addons' ),
+			'label' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['beforeLabel'] = [
 			'tab'     => 'content',
 			'group'   => 'before',
 			'type'    => 'text',
-			'label'   => esc_html__( 'Label', 'max-addons' ),
-			'default' => esc_html__( 'Before', 'max-addons' ),
+			'label'   => esc_html__( 'Label', 'max-addons-for-bricks' ),
+			'default' => esc_html__( 'Before', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['beforeImageFilters'] = [
 			'tab'    => 'content',
 			'group'  => 'before',
-			'label'  => esc_html__( 'CSS filters', 'max-addons' ),
+			'label'  => esc_html__( 'CSS filters', 'max-addons-for-bricks' ),
 			'type'   => 'filters',
 			'inline' => true,
 			'css'    => [
@@ -109,21 +109,21 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'after',
 			'type'  => 'image',
-			'label' => esc_html__( 'Image', 'max-addons' ),
+			'label' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['afterLabel'] = [
 			'tab'     => 'content',
 			'group'   => 'after',
 			'type'    => 'text',
-			'label'   => esc_html__( 'Label', 'max-addons' ),
-			'default' => esc_html__( 'After', 'max-addons' ),
+			'label'   => esc_html__( 'Label', 'max-addons-for-bricks' ),
+			'default' => esc_html__( 'After', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['afterImageFilters'] = [
 			'tab'    => 'content',
 			'group'  => 'after',
-			'label'  => esc_html__( 'CSS filters', 'max-addons' ),
+			'label'  => esc_html__( 'CSS filters', 'max-addons-for-bricks' ),
 			'type'   => 'filters',
 			'inline' => true,
 			'css'    => [
@@ -141,7 +141,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['showLabels'] = [
 			'tab'    => 'content',
 			'group'  => 'labels',
-			'label'  => esc_html__( 'Show Labels', 'max-addons' ),
+			'label'  => esc_html__( 'Show Labels', 'max-addons-for-bricks' ),
 			'type'   => 'checkbox',
 			'inline' => true,
 			'small'  => true,
@@ -151,7 +151,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'      => 'style',
 			'group'    => 'labels',
 			'type'     => 'typography',
-			'label'    => esc_html__( 'Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'font',
@@ -167,7 +167,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'      => 'style',
 			'group'    => 'labels',
 			'type'     => 'color',
-			'label'    => esc_html__( 'Background', 'max-addons' ),
+			'label'    => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'background-color',
@@ -183,7 +183,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'      => 'style',
 			'group'    => 'labels',
 			'type'     => 'border',
-			'label'    => esc_html__( 'Border', 'max-addons' ),
+			'label'    => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'border',
@@ -198,7 +198,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['labelsBoxShadow'] = [
 			'tab'      => 'content',
 			'group'    => 'labels',
-			'label'    => esc_html__( 'Box Shadow', 'max-addons' ),
+			'label'    => esc_html__( 'Box Shadow', 'max-addons-for-bricks' ),
 			'type'     => 'box-shadow',
 			'css'      => [
 				[
@@ -225,7 +225,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['labelsPadding'] = [
 			'tab'      => 'content',
 			'group'    => 'labels',
-			'label'    => esc_html__( 'Padding', 'max-addons' ),
+			'label'    => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'type'     => 'spacing',
 			'css'      => [
 				[
@@ -239,7 +239,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['labelsPositionHorizontal'] = [
 			'tab'      => 'content',
 			'group'    => 'labels',
-			'label'    => esc_html__( 'Position', 'max-addons' ),
+			'label'    => esc_html__( 'Position', 'max-addons-for-bricks' ),
 			'type'     => 'justify-content',
 			'exclude'  => 'space',
 			'css'      => [
@@ -253,7 +253,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['labelsPositionVertical'] = [
 			'tab'      => 'content',
 			'group'    => 'labels',
-			'label'    => esc_html__( 'Position', 'max-addons' ),
+			'label'    => esc_html__( 'Position', 'max-addons-for-bricks' ),
 			'type'     => 'align-items',
 			'exclude'  => 'stretch',
 			'css'      => [
@@ -267,7 +267,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['labelsMargin'] = [
 			'tab'   => 'content',
 			'group' => 'labels',
-			'label' => esc_html__( 'Margin', 'max-addons' ),
+			'label' => esc_html__( 'Margin', 'max-addons-for-bricks' ),
 			'type'  => 'spacing',
 			'css'   => [
 				[
@@ -285,7 +285,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'handle',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Handle Color', 'max-addons' ),
+			'label'  => esc_html__( 'Handle Color', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border-color',
@@ -304,7 +304,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'handle',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Arrows Color', 'max-addons' ),
+			'label'  => esc_html__( 'Arrows Color', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border-bottom-color',
@@ -331,7 +331,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'handle',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Circle Background Color', 'max-addons' ),
+			'label'  => esc_html__( 'Circle Background Color', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -345,7 +345,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['circleSize'] = [
 			'tab'     => 'content',
 			'group'   => 'handle',
-			'label'   => esc_html__( 'Circle Size', 'max-addons' ),
+			'label'   => esc_html__( 'Circle Size', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'units'   => true,
 			'css'     => [
@@ -364,7 +364,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['handleThickness'] = [
 			'tab'     => 'content',
 			'group'   => 'handle',
-			'label'   => esc_html__( 'Handle Thickness', 'max-addons' ),
+			'label'   => esc_html__( 'Handle Thickness', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'units'   => true,
 			'css'     => [
@@ -391,7 +391,7 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['startingPoint'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'Visible Ratio', 'max-addons' ),
+			'label'   => esc_html__( 'Visible Ratio', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'min'     => 0,
 			'max'     => 100,
@@ -403,11 +403,11 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['orientation'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Orientation', 'max-addons' ),
+			'label'       => esc_html__( 'Orientation', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'vertical'   => esc_html__( 'Vertical', 'max-addons' ),
-				'horizontal' => esc_html__( 'Horizontal', 'max-addons' ),
+				'vertical'   => esc_html__( 'Vertical', 'max-addons-for-bricks' ),
+				'horizontal' => esc_html__( 'Horizontal', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => false,
@@ -418,11 +418,11 @@ class Image_Comparison_Element extends \Bricks\Element {
 		$this->controls['moveSlider'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Move Slider', 'max-addons' ),
+			'label'       => esc_html__( 'Move Slider', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'drag'       => esc_html__( 'Drag', 'max-addons' ),
-				'mouse_move' => esc_html__( 'Mouse Move', 'max-addons' ),
+				'drag'       => esc_html__( 'Drag', 'max-addons-for-bricks' ),
+				'mouse_move' => esc_html__( 'Mouse Move', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => false,
@@ -488,20 +488,20 @@ class Image_Comparison_Element extends \Bricks\Element {
 		if ( ! empty( $settings[ $image_type ]['useDynamicData'] ) && ! $image ) {
 			return $this->render_element_placeholder(
 				[
-					'title' => esc_html__( 'Dynamic data is empty.', 'max-addons' )
+					'title' => esc_html__( 'Dynamic data is empty.', 'max-addons-for-bricks' )
 				]
 			);
 		}
 
 		// Check: No image selected: No image ID provided && not a placeholder URL
 		if ( ! isset( $image['external'] ) && ! $image_id && ! $image_url ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No image selected.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No image selected.', 'max-addons-for-bricks' ) ] );
 		}
 
 		// Check: Image with ID doesn't exist
 		if ( ! isset( $image['external'] ) && ! $image_url ) {
 			// translators: %s: Image ID
-			return $this->render_element_placeholder( [ 'title' => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $image_id ) ] );
+			return $this->render_element_placeholder( [ 'title' => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons-for-bricks' ), $image_id ) ] );
 		}
 	}
 

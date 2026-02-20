@@ -1,11 +1,13 @@
 <?php
 namespace MaxAddons\Elements;
 
+use MaxAddons\Base\Element_Base;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Hotspots_Element extends \Bricks\Element {
+class Hotspots_Element extends Element_Base {
 	// Element properties
 	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-hotspots'; // Make sure to prefix your elements
@@ -16,7 +18,7 @@ class Hotspots_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'Hotspots', 'max-addons' );
+		return esc_html__( 'Hotspots', 'max-addons-for-bricks' );
 	}
 
 	public function get_keywords() {
@@ -32,27 +34,27 @@ class Hotspots_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->controls['text'] = [ // Unique group identifier (lowercase, no spaces)
-			'title' => esc_html__( 'Text', 'max-addons' ), // Localized control group title
+			'title' => esc_html__( 'Text', 'max-addons-for-bricks' ), // Localized control group title
 			'tab'   => 'content', // Set to either "content" or "style"
 		];
 
 		$this->control_groups['image'] = [
-			'title' => esc_html__( 'Image', 'max-addons' ),
+			'title' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['hotspots'] = [
-			'title' => esc_html__( 'Hotspots', 'max-addons' ),
+			'title' => esc_html__( 'Hotspots', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['hotspotStyle'] = [
-			'title' => esc_html__( 'Hotspot Style', 'max-addons' ),
+			'title' => esc_html__( 'Hotspot Style', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['tooltipStyle'] = [
-			'title' => esc_html__( 'Tooltip', 'max-addons' ),
+			'title' => esc_html__( 'Tooltip', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -83,49 +85,57 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['hasLoop'] = [
 			'tab'      => 'content',
 			'group'    => 'hotspots',
-			'label'    => esc_html__( 'Query loop', 'max-addons' ),
+			'label'    => esc_html__( 'Query loop', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 		];
 
 		$this->controls['hasLoopInfo'] = [
 			'tab'      => 'content',
 			'group'    => 'hotspots',
-			'content'  => esc_html__( 'Query loop option is available in Max Addons Pro.', 'max-addons' ) . ' ' . sprintf( esc_html__( 'Upgrade to %1$s Pro Version %2$s for 50+ creative elements, exciting extensions and advanced features.', 'max-addons' ), '<a href="https://wpbricksaddons.com/pricing/" target="_blank" rel="noopener">', '</a>' ),
 			'type'     => 'info',
-			'required' => ['hasLoop', '!=', ''],
+			'content'  => wp_kses_post(
+				esc_html__( 'Query loop option is available in Max Addons Pro.', 'max-addons-for-bricks' ) . ' ' .
+				sprintf(
+					/* translators: 1: opening anchor tag, 2: closing anchor tag */
+					__( 'Upgrade to %1$s Pro Version %2$s for 50+ creative elements, exciting extensions and advanced features.', 'max-addons-for-bricks' ),
+					'<a href="https://wpbricksaddons.com/pricing/" target="_blank" rel="noopener noreferrer">',
+					'</a>'
+				)
+			),
+			'required' => [ 'hasLoop', '!=', '' ],
 		];
 
 		$this->controls['hotspots'] = [
 			'tab'           => 'content',
 			'group'         => 'hotspots',
-			'placeholder'   => esc_html__( 'Hotspots', 'max-addons' ),
+			'placeholder'   => esc_html__( 'Hotspots', 'max-addons-for-bricks' ),
 			'type'          => 'repeater',
 			'titleProperty' => 'title',
 			'fields'        => [
 				'title' => [
-					'label' => esc_html__( 'Admin Label', 'max-addons' ),
+					'label' => esc_html__( 'Admin Label', 'max-addons-for-bricks' ),
 					'type'  => 'text',
 				],
 
 				'horizontalPosition' => [
-					'label'       => esc_html__( 'Horizontal Position', 'max-addons' ) . ' (%)',
+					'label'       => esc_html__( 'Horizontal Position', 'max-addons-for-bricks' ) . ' (%)',
 					'type'        => 'text',
 					'placeholder' => '30',
 				],
 
 				'verticalPosition' => [
-					'label'       => esc_html__( 'Vertical Position', 'max-addons' ) . ' (%)',
+					'label'       => esc_html__( 'Vertical Position', 'max-addons-for-bricks' ) . ' (%)',
 					'type'        => 'text',
 					'placeholder' => '30',
 				],
 
 				'hotspotType' => [
-					'label'     => esc_html__( 'Type', 'max-addons' ),
+					'label'     => esc_html__( 'Type', 'max-addons-for-bricks' ),
 					'type'      => 'select',
 					'options'   => array(
-						'icon'  => esc_html__( 'Icon', 'max-addons' ),
-						'image' => esc_html__( 'Image', 'max-addons' ),
-						'text'  => esc_html__( 'Text', 'max-addons' ),
+						'icon'  => esc_html__( 'Icon', 'max-addons-for-bricks' ),
+						'image' => esc_html__( 'Image', 'max-addons-for-bricks' ),
+						'text'  => esc_html__( 'Text', 'max-addons-for-bricks' ),
 					),
 					'inline'    => true,
 					'clearable' => true,
@@ -133,7 +143,7 @@ class Hotspots_Element extends \Bricks\Element {
 				],
 
 				'hotspotIcon' => [
-					'label'    => esc_html__( 'Icon', 'max-addons' ),
+					'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 					'type'     => 'icon',
 					'default'  => [
 						'library' => 'themify',
@@ -143,42 +153,42 @@ class Hotspots_Element extends \Bricks\Element {
 				],
 
 				'hotspotImage' => [
-					'label'    => esc_html__( 'Image', 'max-addons' ),
+					'label'    => esc_html__( 'Image', 'max-addons-for-bricks' ),
 					'type'     => 'image',
 					'required' => [ 'hotspotType', '=', [ 'image' ] ],
 				],
 
 				'hotspotText' => [
-					'label'    => esc_html__( 'Text', 'max-addons' ),
+					'label'    => esc_html__( 'Text', 'max-addons-for-bricks' ),
 					'type'     => 'text',
 					'required' => [ 'hotspotType', '=', [ 'text' ] ],
 				],
 
 				'hotspotLink' => [
-					'label'   => esc_html__( 'Link', 'max-addons' ),
+					'label'   => esc_html__( 'Link', 'max-addons-for-bricks' ),
 					'type'    => 'link',
 					'default' => '#',
 				],
 
 				'showTooltip' => [
-					'label' => esc_html__( 'Tooltip', 'max-addons' ),
+					'label' => esc_html__( 'Tooltip', 'max-addons-for-bricks' ),
 					'type'  => 'checkbox',
 				],
 
 				'tooltipContent' => [
-					'label'    => esc_html__( 'Tooltip Content', 'max-addons' ),
+					'label'    => esc_html__( 'Tooltip Content', 'max-addons-for-bricks' ),
 					'type'     => 'textarea',
 					'required' => [ 'showTooltip', '!=', '' ],
 				],
 
 				'customStyleSeparator' => [
-					'label' => esc_html__( 'Custom Style', 'max-addons' ),
+					'label' => esc_html__( 'Custom Style', 'max-addons-for-bricks' ),
 					'type'  => 'separator',
 				],
 
 				'customHotspotColor' => [
 					'type'   => 'color',
-					'label'  => esc_html__( 'Color', 'max-addons' ),
+					'label'  => esc_html__( 'Color', 'max-addons-for-bricks' ),
 					'css'    => [
 						[
 							'property' => 'color',
@@ -191,7 +201,7 @@ class Hotspots_Element extends \Bricks\Element {
 
 				'customHotspotBgColor' => [
 					'type'   => 'color',
-					'label'  => esc_html__( 'Background Color', 'max-addons' ),
+					'label'  => esc_html__( 'Background Color', 'max-addons-for-bricks' ),
 					'css'    => [
 						[
 							'property' => 'background-color',
@@ -204,7 +214,7 @@ class Hotspots_Element extends \Bricks\Element {
 			],
 			'default' => [
 				[
-					'title'          => esc_html__( 'Hotspot #1', 'max-addons' ),
+					'title'          => esc_html__( 'Hotspot #1', 'max-addons-for-bricks' ),
 					'hotspotType'    => 'icon',
 					'hotspotIcon'    => [
 						'library' => 'themify',
@@ -216,14 +226,14 @@ class Hotspots_Element extends \Bricks\Element {
 		];
 
 		$this->controls['hotspotAnimation'] = [
-			'label'       => esc_html__( 'Animation', 'max-addons' ),
+			'label'       => esc_html__( 'Animation', 'max-addons-for-bricks' ),
 			'tab'         => 'content',
 			'group'       => 'hotspots',
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => array(
-				'heartbeat' => esc_html__( 'Heart Beat', 'max-addons' ),
-				'expand'    => esc_html__( 'Expand', 'max-addons' ),
+				'heartbeat' => esc_html__( 'Heart Beat', 'max-addons-for-bricks' ),
+				'expand'    => esc_html__( 'Expand', 'max-addons-for-bricks' ),
 			),
 			'inline'      => true,
 			'default'     => 'expand',
@@ -236,7 +246,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['hotspotSize'] = [
 			'tab'   => 'style',
 			'group' => 'hotspotStyle',
-			'label' => esc_html__( 'Size', 'max-addons' ),
+			'label' => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -271,7 +281,7 @@ class Hotspots_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'hotspotStyle',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -286,7 +296,7 @@ class Hotspots_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'hotspotStyle',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background',
@@ -300,7 +310,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['hotspotBorder'] = [
 			'type'   => 'border',
 			'group'  => 'hotspotStyle',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -314,7 +324,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['hotspotBoxShadow'] = [
 			'type'   => 'box-shadow',
 			'group'  => 'hotspotStyle',
-			'label'  => esc_html__( 'Box shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box shadow', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'box-shadow',
@@ -328,7 +338,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['hotspotPadding'] = [
 			'type'  => 'spacing',
 			'group' => 'hotspotStyle',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'css'   => [
 				[
 					'property' => 'padding',
@@ -341,13 +351,13 @@ class Hotspots_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'hotspotStyle',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Image', 'max-addons' ),
+			'label' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['hotspotImageSize'] = [
 			'tab'   => 'style',
 			'group' => 'hotspotStyle',
-			'label' => esc_html__( 'Size', 'max-addons' ),
+			'label' => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -365,7 +375,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['hotspotImageBorder'] = [
 			'type'   => 'border',
 			'group'  => 'hotspotStyle',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -383,12 +393,12 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipTrigger'] = [
 			'tab'         => 'content',
 			'group'       => 'tooltipStyle',
-			'label'       => esc_html__( 'Trigger', 'max-addons' ),
-			'placeholder' => esc_html__( 'Hover', 'max-addons' ),
+			'label'       => esc_html__( 'Trigger', 'max-addons-for-bricks' ),
+			'placeholder' => esc_html__( 'Hover', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'hover' => esc_html__( 'Hover', 'max-addons' ),
-				'click' => esc_html__( 'Click', 'max-addons' ),
+				'hover' => esc_html__( 'Hover', 'max-addons-for-bricks' ),
+				'click' => esc_html__( 'Click', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'clearable'   => false,
@@ -399,22 +409,22 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipPosition'] = [
 			'tab'     => 'content',
 			'group'   => 'tooltipStyle',
-			'label'   => esc_html__( 'Tooltip Position', 'max-addons' ),
-			'placeholder' => esc_html__( 'Top', 'max-addons' ),
+			'label'   => esc_html__( 'Tooltip Position', 'max-addons-for-bricks' ),
+			'placeholder' => esc_html__( 'Top', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'options' => [
-				'topleft'		=> __( 'Top Left', 'max-addons' ),
-				'top'    		=> __( 'Top', 'max-addons' ),
-				'topright'    	=> __( 'Top Right', 'max-addons' ),
-				'bottomleft' 	=> __( 'Bottom Left', 'max-addons' ),
-				'bottom' 		=> __( 'Bottom', 'max-addons' ),
-				'bottomright' 	=> __( 'Bottom Right', 'max-addons' ),
-				'lefttop'   	=> __( 'Left Top', 'max-addons' ),
-				'left'   		=> __( 'Left', 'max-addons' ),
-				'leftbottom'   	=> __( 'Left Bottom', 'max-addons' ),
-				'righttop'  	=> __( 'Right Top', 'max-addons' ),
-				'right'  		=> __( 'Right', 'max-addons' ),
-				'rightbottom'  	=> __( 'Right Bottom', 'max-addons' ),
+				'topleft'		=> __( 'Top Left', 'max-addons-for-bricks' ),
+				'top'    		=> __( 'Top', 'max-addons-for-bricks' ),
+				'topright'    	=> __( 'Top Right', 'max-addons-for-bricks' ),
+				'bottomleft' 	=> __( 'Bottom Left', 'max-addons-for-bricks' ),
+				'bottom' 		=> __( 'Bottom', 'max-addons-for-bricks' ),
+				'bottomright' 	=> __( 'Bottom Right', 'max-addons-for-bricks' ),
+				'lefttop'   	=> __( 'Left Top', 'max-addons-for-bricks' ),
+				'left'   		=> __( 'Left', 'max-addons-for-bricks' ),
+				'leftbottom'   	=> __( 'Left Bottom', 'max-addons-for-bricks' ),
+				'righttop'  	=> __( 'Right Top', 'max-addons-for-bricks' ),
+				'right'  		=> __( 'Right', 'max-addons-for-bricks' ),
+				'rightbottom'  	=> __( 'Right Bottom', 'max-addons-for-bricks' ),
 			],
 			'inline'  => true,
 			'reset'   => true,
@@ -423,7 +433,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipArrow'] = [
 			'tab'   => 'content',
 			'group' => 'tooltipStyle',
-			'label' => esc_html__( 'Show Arrow', 'max-addons' ),
+			'label' => esc_html__( 'Show Arrow', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'default' => true,
 		];
@@ -431,7 +441,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipMaxWidth'] = [
 			'tab'     => 'style',
 			'group'   => 'tooltipStyle',
-			'label'   => esc_html__( 'Max Width', 'max-addons' ),
+			'label'   => esc_html__( 'Max Width', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'min'  	  => 1,
 			'step' 	  => 1,
@@ -442,8 +452,8 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipDistance'] = [
 			'tab'         => 'style',
 			'group'       => 'tooltipStyle',
-			'label'       => esc_html__( 'Distance', 'max-addons' ),
-			'description' => esc_html__( 'Distance between hotspot and tooltip', 'max-addons' ),
+			'label'       => esc_html__( 'Distance', 'max-addons-for-bricks' ),
+			'description' => esc_html__( 'Distance between hotspot and tooltip', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'min'  	      => 1,
 			'step' 	      => 1,
@@ -454,7 +464,7 @@ class Hotspots_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'tooltipStyle',
 			'type'   => 'color',
-			'label'  => esc_html__( 'Background', 'max-addons' ),
+			'label'  => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'background-color',
@@ -475,7 +485,7 @@ class Hotspots_Element extends \Bricks\Element {
 			'tab'    => 'style',
 			'group'  => 'tooltipStyle',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Typography', 'max-addons' ),
+			'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -489,7 +499,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipBorder'] = [
 			'type'   => 'border',
 			'group'  => 'tooltipStyle',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -503,7 +513,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipBoxShadow'] = [
 			'type'   => 'box-shadow',
 			'group'  => 'tooltipStyle',
-			'label'  => esc_html__( 'Box shadow', 'max-addons' ),
+			'label'  => esc_html__( 'Box shadow', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'box-shadow',
@@ -517,7 +527,7 @@ class Hotspots_Element extends \Bricks\Element {
 		$this->controls['tooltipPadding'] = [
 			'type'  => 'spacing',
 			'group' => 'tooltipStyle',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'css'   => [
 				[
 					'property' => 'padding',
@@ -737,14 +747,14 @@ class Hotspots_Element extends \Bricks\Element {
 		if ( ! empty( $settings['image']['useDynamicData'] ) && ! $image ) {
 			return $this->render_element_placeholder(
 				[
-					'title' => esc_html__( 'Dynamic data is empty.', 'max-addons' )
+					'title' => esc_html__( 'Dynamic data is empty.', 'max-addons-for-bricks' )
 				]
 			);
 		}
 
 		// Check: No image selected: No image ID provided && not a placeholder URL
 		if ( ! isset( $image['external'] ) && ! $image_id && ! $image_url) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No image selected.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No image selected.', 'max-addons-for-bricks' ) ] );
 		}
 
 		// Check: Image with ID doesn't exist
@@ -754,7 +764,7 @@ class Hotspots_Element extends \Bricks\Element {
 				[
 					'title' => sprintf(
 						// Translators: %s: Image ID.
-						esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ),
+						esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons-for-bricks' ),
 						$image_id
 					)
 				]
@@ -788,7 +798,7 @@ class Hotspots_Element extends \Bricks\Element {
 
 		$this->set_attribute( '_root', 'data-tooltip-options', wp_json_encode( $tooltip_settings ) );
 		?>
-		<div <?php echo $this->render_attributes( '_root' ); ?>>
+		<div <?php $this->print_render_attributes( '_root' ); ?>>
 			<?php
 			$hotspots = ! empty( $settings['hotspots'] ) ? $settings['hotspots'] : false;
 			$output   = '';
@@ -797,6 +807,7 @@ class Hotspots_Element extends \Bricks\Element {
 				$output .= self::render_repeater_item( $item );
 			}
 
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output escaped in render_repeater_item() and render_attributes().
 			echo $output;
 			?>
 

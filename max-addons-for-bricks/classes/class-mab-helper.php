@@ -88,11 +88,11 @@ class Helper {
 
 		// Fluent Forms
 		if ( 'Fluent_Forms' == $plugin && function_exists( 'wpFluentForm' ) ) {
-			global $wpdb;
+			$fluent_forms = \FluentForm\App\Models\Form::select( array( 'id', 'title' ) )
+				->orderBy( 'id', 'DESC' )
+				->get();
 
-			$fluent_forms = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fluentform_forms" );
-
-			if ( $fluent_forms ) {
+			if ( ! empty( $fluent_forms ) ) {
 				foreach ( $fluent_forms as $form ) {
 					$contact_forms[ $form->id ] = $form->title;
 				}
@@ -156,7 +156,7 @@ class Helper {
 		}
 
 		if ( empty( $options ) ) {
-			$options[0] = esc_html__( 'No contact forms found!', 'max-addons' );
+			$options[0] = esc_html__( 'No contact forms found!', 'max-addons-for-bricks' );
 		}
 
 		return $options;

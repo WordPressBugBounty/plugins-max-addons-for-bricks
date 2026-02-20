@@ -13,7 +13,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 	public $tag      = 'h3';
 
 	public function get_label() {
-		return esc_html__( 'Multi Heading', 'max-addons' );
+		return esc_html__( 'Multi Heading', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -24,23 +24,23 @@ class Multi_Heading_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['heading'] = [
-			'title' => esc_html__( 'Heading', 'max-addons' ),
+			'title' => esc_html__( 'Heading', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['backgroundText'] = [
-			'title' => esc_html__( 'Background Text', 'max-addons' ),
+			'title' => esc_html__( 'Background Text', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['separator'] = [
-			'title'      => esc_html__( 'Separator', 'max-addons' ),
+			'title'      => esc_html__( 'Separator', 'max-addons-for-bricks' ),
 			'tab'        => 'content',
 			'fullAccess' => true, // NOTE: Undocumented (show if user role has full_access capability)
 		];
 
 		$this->control_groups['headingStyle'] = [
-			'title' => esc_html__( 'Heading Style', 'max-addons' ),
+			'title' => esc_html__( 'Heading Style', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -62,19 +62,19 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['items'] = [
 			'tab'           => 'content',
 			'group'         => 'heading',
-			'label'         => esc_html__( 'Heading', 'max-addons' ),
+			'label'         => esc_html__( 'Heading', 'max-addons-for-bricks' ),
 			'type'          => 'repeater',
-			'placeholder'   => esc_html__( 'Heading', 'max-addons' ),
+			'placeholder'   => esc_html__( 'Heading', 'max-addons-for-bricks' ),
 			'titleProperty' => 'heading',
 			'fields'        => [
 				'heading'            => [
-					'label'          => esc_html__( 'Heading', 'max-addons' ),
+					'label'          => esc_html__( 'Heading', 'max-addons-for-bricks' ),
 					'type'           => 'text',
 					'hasDynamicData' => 'text',
 				],
 
 				'headingTypography'  => [
-					'label'  => esc_html__( 'Typography', 'max-addons' ),
+					'label'  => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 					'type'   => 'typography',
 					'css'    => [
 						[
@@ -88,7 +88,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 
 				'headingBackground'  => [
 					'type'    => 'background',
-					'label'   => esc_html__( 'Background', 'max-addons' ),
+					'label'   => esc_html__( 'Background', 'max-addons-for-bricks' ),
 					'css'     => [
 						[
 							'property'         => 'background',
@@ -105,7 +105,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 				],
 
 				'applyGradient'      => [
-					'label'  => esc_html__( 'Gradient Background', 'max-addons' ),
+					'label'  => esc_html__( 'Gradient Background', 'max-addons-for-bricks' ),
 					'type'   => 'checkbox',
 					'inline' => true,
 					'reset'  => true,
@@ -124,7 +124,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 				],
 
 				'headingBorder'      => [
-					'label'  => esc_html__( 'Border', 'max-addons' ),
+					'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 					'type'   => 'border',
 					'css'    => [
 						[
@@ -137,7 +137,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 				],
 
 				'headingBoxShadow' => [
-					'label'  => esc_html__( 'Box shadow', 'max-addons' ),
+					'label'  => esc_html__( 'Box shadow', 'max-addons-for-bricks' ),
 					'type'   => 'box-shadow',
 					'css'    => [
 						[
@@ -150,7 +150,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 				],
 
 				'headingPadding'     => [
-					'label' => esc_html__( 'Padding', 'max-addons' ),
+					'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 					'type'  => 'spacing',
 					'css'   => [
 						[
@@ -162,10 +162,10 @@ class Multi_Heading_Element extends \Bricks\Element {
 			],
 			'default'       => [
 				[
-					'heading' => esc_html__( 'Heading Text #1', 'max-addons' ),
+					'heading' => esc_html__( 'Heading Text #1', 'max-addons-for-bricks' ),
 				],
 				[
-					'heading' => esc_html__( 'Heading Text #2', 'max-addons' ),
+					'heading' => esc_html__( 'Heading Text #2', 'max-addons-for-bricks' ),
 				],
 			],
 		];
@@ -173,7 +173,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['tag'] = [
 			'tab'         => 'content',
 			'group'       => 'heading',
-			'label'       => esc_html__( 'Tag', 'max-addons' ),
+			'label'       => esc_html__( 'Tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
 				'h1'     => 'h1',
@@ -183,7 +183,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 				'h5'     => 'h5',
 				'h6'     => 'h6',
 				'div'    => 'div',
-				'custom' => esc_html__( 'Custom', 'max-addons' ),
+				'custom' => esc_html__( 'Custom', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'default'     => 'h3',
@@ -193,7 +193,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['customTag'] = [
 			'tab'         => 'content',
 			'group'       => 'heading',
-			'label'       => esc_html__( 'Custom tag', 'max-addons' ),
+			'label'       => esc_html__( 'Custom tag', 'max-addons-for-bricks' ),
 			'type'        => 'text',
 			'inline'      => true,
 			'placeholder' => 'div',
@@ -203,7 +203,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['link'] = [
 			'tab'         => 'content',
 			'group'       => 'heading',
-			'label'       => esc_html__( 'Link to', 'max-addons' ),
+			'label'       => esc_html__( 'Link to', 'max-addons-for-bricks' ),
 			'type'        => 'link',
 			'pasteStyles' => false,
 		];
@@ -215,7 +215,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['bgText'] = [
 			'tab'            => 'content',
 			'group'          => 'backgroundText',
-			'label'          => esc_html__( 'Background Text', 'max-addons' ),
+			'label'          => esc_html__( 'Background Text', 'max-addons-for-bricks' ),
 			'type'           => 'text',
 			'hasDynamicData' => 'text',
 		];
@@ -223,7 +223,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['bgTextTypography'] = [
 			'tab'      => 'content',
 			'group'    => 'backgroundText',
-			'label'    => esc_html__( 'Typography', 'max-addons' ),
+			'label'    => esc_html__( 'Typography', 'max-addons-for-bricks' ),
 			'type'     => 'typography',
 			'css'      => [
 				[
@@ -239,7 +239,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['bgTextHorizontalPosition'] = [
 			'tab'      => 'content',
 			'group'    => 'backgroundText',
-			'label'    => esc_html__( 'Horizontal Position', 'max-addons' ),
+			'label'    => esc_html__( 'Horizontal Position', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -254,7 +254,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['bgTextVerticalPosition'] = [
 			'tab'      => 'content',
 			'group'    => 'backgroundText',
-			'label'    => esc_html__( 'Vertical Position', 'max-addons' ),
+			'label'    => esc_html__( 'Vertical Position', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -272,23 +272,23 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['separator'] = [
 			'tab'         => 'content',
 			'group'       => 'separator',
-			'label'       => esc_html__( 'Separator', 'max-addons' ),
+			'label'       => esc_html__( 'Separator', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'right' => esc_html__( 'Right', 'max-addons' ),
-				'left'  => esc_html__( 'Left', 'max-addons' ),
-				'both'  => esc_html__( 'Both', 'max-addons' ),
-				'none'  => esc_html__( 'None', 'max-addons' ),
+				'right' => esc_html__( 'Right', 'max-addons-for-bricks' ),
+				'left'  => esc_html__( 'Left', 'max-addons-for-bricks' ),
+				'both'  => esc_html__( 'Both', 'max-addons-for-bricks' ),
+				'none'  => esc_html__( 'None', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
 			'pasteStyles' => true,
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['separatorWidth'] = [
 			'tab'   => 'content',
 			'group' => 'separator',
-			'label' => esc_html__( 'Width', 'max-addons' ),
+			'label' => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -313,7 +313,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['separatorHeight'] = [
 			'tab'   => 'content',
 			'group' => 'separator',
-			'label' => esc_html__( 'Height', 'max-addons' ),
+			'label' => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -331,7 +331,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['separatorSpacing'] = [
 			'tab'         => 'content',
 			'group'       => 'separator',
-			'label'       => esc_html__( 'Spacing', 'max-addons' ),
+			'label'       => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'units'       => true,
 			'small'       => false,
@@ -347,7 +347,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['separatorStyle'] = [
 			'tab'     => 'content',
 			'group'   => 'separator',
-			'label'   => esc_html__( 'Style', 'max-addons' ),
+			'label'   => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'options' => $this->control_options['borderStyle'],
 			'css'     => [
@@ -362,7 +362,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['separatorAlignItems'] = [
 			'tab'       => 'content',
 			'group'     => 'separator',
-			'label'     => esc_html__( 'Align', 'max-addons' ),
+			'label'     => esc_html__( 'Align', 'max-addons-for-bricks' ),
 			'type'      => 'align-items',
 			'direction' => 'row',
 			'exclude'   => 'stretch',
@@ -379,7 +379,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['separatorColor'] = [
 			'tab'   => 'content',
 			'group' => 'separator',
-			'label' => esc_html__( 'Color', 'max-addons' ),
+			'label' => esc_html__( 'Color', 'max-addons-for-bricks' ),
 			'type'  => 'color',
 			'css'   => [
 				[
@@ -396,7 +396,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['spacing'] = [
 			'tab'   => 'content',
 			'group' => 'headingStyle',
-			'label' => esc_html__( 'Gap between headings', 'max-addons' ),
+			'label' => esc_html__( 'Gap between headings', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -414,23 +414,23 @@ class Multi_Heading_Element extends \Bricks\Element {
 		$this->controls['style'] = [
 			'tab'         => 'content',
 			'group'       => 'headingStyle',
-			'label'       => esc_html__( 'Style', 'max-addons' ),
+			'label'       => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['styles'],
 			'inline'      => true,
 			'reset'       => true,
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['stackOrder'] = [
 			'tab'     => 'content',
 			'group'   => 'headingStyle',
-			'label'   => esc_html__( 'Display', 'max-addons' ),
+			'label'   => esc_html__( 'Display', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'default' => 'inline',
 			'options' => [
-				'inline' => esc_html__( 'Inline', 'max-addons' ),
-				'block'  => esc_html__( 'Stack', 'max-addons' ),
+				'inline' => esc_html__( 'Inline', 'max-addons-for-bricks' ),
+				'block'  => esc_html__( 'Stack', 'max-addons-for-bricks' ),
 			],
 			'inline'  => true,
 			'css'     => [
@@ -447,7 +447,7 @@ class Multi_Heading_Element extends \Bricks\Element {
 
 		// Element placeholder
 		if ( ! isset( $settings['items'] ) || empty( $settings['items'] ) ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No heading added.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No heading added.', 'max-addons-for-bricks' ) ] );
 		}
 
 		$heading_classes = [

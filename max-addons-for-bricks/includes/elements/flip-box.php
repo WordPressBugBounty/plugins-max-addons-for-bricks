@@ -15,7 +15,7 @@ class FlipBox_Element extends \Bricks\Element {
 
 	// Return localized element label
 	public function get_label() {
-		return esc_html__( 'Flip Box', 'max-addons' );
+		return esc_html__( 'Flip Box', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -26,42 +26,42 @@ class FlipBox_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->controls['text'] = [ // Unique group identifier (lowercase, no spaces)
-			'title' => esc_html__( 'Text', 'max-addons' ), // Localized control group title
+			'title' => esc_html__( 'Text', 'max-addons-for-bricks' ), // Localized control group title
 			'tab'   => 'content', // Set to either "content" or "style"
 		];
 
 		$this->control_groups['front'] = [
-			'title' => esc_html__( 'Front', 'max-addons' ),
+			'title' => esc_html__( 'Front', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['back'] = [
-			'title' => esc_html__( 'Back', 'max-addons' ),
+			'title' => esc_html__( 'Back', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['settings'] = [
-			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'title' => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['frontIconStyle'] = [
-			'title' => esc_html__( 'Front Icon Style', 'max-addons' ),
+			'title' => esc_html__( 'Front Icon Style', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['frontStyle'] = [
-			'title' => esc_html__( 'Front Style', 'max-addons' ),
+			'title' => esc_html__( 'Front Style', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['backIconStyle'] = [
-			'title' => esc_html__( 'Back Icon Style', 'max-addons' ),
+			'title' => esc_html__( 'Back Icon Style', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['backStyle'] = [
-			'title' => esc_html__( 'Back Style', 'max-addons' ),
+			'title' => esc_html__( 'Back Style', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -90,11 +90,11 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontIconType'] = [
 			'tab'     => 'content',
 			'group'   => 'front',
-			'label'   => esc_html__( 'Icon Type', 'max-addons' ),
+			'label'   => esc_html__( 'Icon Type', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'options' => [
-				'icon'  => esc_html__( 'Icon', 'max-addons' ),
-				'image' => esc_html__( 'Image', 'max-addons' ),
+				'icon'  => esc_html__( 'Icon', 'max-addons-for-bricks' ),
+				'image' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			],
 			'inline'  => true,
 			'default' => 'icon',
@@ -103,7 +103,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontIcon'] = [
 			'tab'      => 'content',
 			'group'    => 'front',
-			'label'    => esc_html__( 'Icon', 'max-addons' ),
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'default'  => [
 				'library' => 'themify',
@@ -121,14 +121,14 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'front',
 			'type'     => 'image',
-			'label'    => esc_html__( 'Image', 'max-addons' ),
+			'label'    => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			'required' => [ 'frontIconType', '=', [ 'image' ] ],
 		];
 
 		$this->controls['frontHeading'] = [
 			'tab'            => 'content',
 			'group'          => 'front',
-			'label'          => esc_html__( 'Heading', 'max-addons' ),
+			'label'          => esc_html__( 'Heading', 'max-addons-for-bricks' ),
 			'type'           => 'text',
 			'spellcheck'     => true,
 			'inlineEditing'  => false,
@@ -139,16 +139,16 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontHeadingTag'] = [
 			'tab'         => 'content',
 			'group'       => 'front',
-			'label'       => esc_html__( 'Heading Tag', 'max-addons' ),
+			'label'       => esc_html__( 'Heading Tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'h1'  => esc_html__( 'Heading 1 (h1)', 'max-addons' ),
-				'h2'  => esc_html__( 'Heading 2 (h2)', 'max-addons' ),
-				'h3'  => esc_html__( 'Heading 3 (h3)', 'max-addons' ),
-				'h4'  => esc_html__( 'Heading 4 (h4)', 'max-addons' ),
-				'h5'  => esc_html__( 'Heading 5 (h5)', 'max-addons' ),
-				'h6'  => esc_html__( 'Heading 6 (h6)', 'max-addons' ),
-				'div' => esc_html__( 'Division (div)', 'max-addons' ),
+				'h1'  => esc_html__( 'Heading 1 (h1)', 'max-addons-for-bricks' ),
+				'h2'  => esc_html__( 'Heading 2 (h2)', 'max-addons-for-bricks' ),
+				'h3'  => esc_html__( 'Heading 3 (h3)', 'max-addons-for-bricks' ),
+				'h4'  => esc_html__( 'Heading 4 (h4)', 'max-addons-for-bricks' ),
+				'h5'  => esc_html__( 'Heading 5 (h5)', 'max-addons-for-bricks' ),
+				'h6'  => esc_html__( 'Heading 6 (h6)', 'max-addons-for-bricks' ),
+				'div' => esc_html__( 'Division (div)', 'max-addons-for-bricks' ),
 			],
 			'clearable'   => false,
 			'pasteStyles' => false,
@@ -158,7 +158,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontContent'] = [
 			'tab'     => 'content',
 			'group'   => 'front',
-			'label'   => esc_html__( 'Description', 'max-addons' ),
+			'label'   => esc_html__( 'Description', 'max-addons-for-bricks' ),
 			'type'    => 'editor',
 			'default' => 'Aenean commodo ligula egget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
 		];
@@ -166,7 +166,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontBackground'] = [
 			'tab'     => 'content',
 			'group'   => 'front',
-			'label'   => esc_html__( 'Background', 'max-addons' ),
+			'label'   => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'    => 'background',
 			'css'     => [
 				[
@@ -192,7 +192,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['applyFrontGradient'] = array(
 			'tab'    => 'style',
 			'group'  => 'front',
-			'label'  => esc_html__( 'Gradient Background', 'max-addons' ),
+			'label'  => esc_html__( 'Gradient Background', 'max-addons-for-bricks' ),
 			'type'   => 'checkbox',
 			'inline' => true,
 			'reset'  => true,
@@ -219,11 +219,11 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backIconType'] = [
 			'tab'     => 'content',
 			'group'   => 'back',
-			'label'   => esc_html__( 'Icon Type', 'max-addons' ),
+			'label'   => esc_html__( 'Icon Type', 'max-addons-for-bricks' ),
 			'type'    => 'select',
 			'options' => [
-				'icon'  => esc_html__( 'Icon', 'max-addons' ),
-				'image' => esc_html__( 'Image', 'max-addons' ),
+				'icon'  => esc_html__( 'Icon', 'max-addons-for-bricks' ),
+				'image' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			],
 			'inline'  => true,
 			'default' => 'icon',
@@ -232,7 +232,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backIcon'] = [
 			'tab'      => 'content',
 			'group'    => 'back',
-			'label'    => esc_html__( 'Icon', 'max-addons' ),
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'default'  => [
 				'library' => 'themify',
@@ -250,14 +250,14 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'back',
 			'type'     => 'image',
-			'label'    => esc_html__( 'Image', 'max-addons' ),
+			'label'    => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			'required' => [ 'backIconType', '=', [ 'image' ] ],
 		];
 
 		$this->controls['backHeading'] = [
 			'tab'            => 'content',
 			'group'          => 'back',
-			'label'          => esc_html__( 'Heading', 'max-addons' ),
+			'label'          => esc_html__( 'Heading', 'max-addons-for-bricks' ),
 			'type'           => 'text',
 			'spellcheck'     => true,
 			'inlineEditing'  => false,
@@ -268,16 +268,16 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backHeadingTag'] = [
 			'tab'         => 'content',
 			'group'       => 'back',
-			'label'       => esc_html__( 'Heading Tag', 'max-addons' ),
+			'label'       => esc_html__( 'Heading Tag', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'h1'  => esc_html__( 'Heading 1 (h1)', 'max-addons' ),
-				'h2'  => esc_html__( 'Heading 2 (h2)', 'max-addons' ),
-				'h3'  => esc_html__( 'Heading 3 (h3)', 'max-addons' ),
-				'h4'  => esc_html__( 'Heading 4 (h4)', 'max-addons' ),
-				'h5'  => esc_html__( 'Heading 5 (h5)', 'max-addons' ),
-				'h6'  => esc_html__( 'Heading 6 (h6)', 'max-addons' ),
-				'div' => esc_html__( 'Division (div)', 'max-addons' ),
+				'h1'  => esc_html__( 'Heading 1 (h1)', 'max-addons-for-bricks' ),
+				'h2'  => esc_html__( 'Heading 2 (h2)', 'max-addons-for-bricks' ),
+				'h3'  => esc_html__( 'Heading 3 (h3)', 'max-addons-for-bricks' ),
+				'h4'  => esc_html__( 'Heading 4 (h4)', 'max-addons-for-bricks' ),
+				'h5'  => esc_html__( 'Heading 5 (h5)', 'max-addons-for-bricks' ),
+				'h6'  => esc_html__( 'Heading 6 (h6)', 'max-addons-for-bricks' ),
+				'div' => esc_html__( 'Division (div)', 'max-addons-for-bricks' ),
 			],
 			'clearable'   => false,
 			'pasteStyles' => false,
@@ -287,7 +287,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backContent'] = [
 			'tab'     => 'content',
 			'group'   => 'back',
-			'label'   => esc_html__( 'Description', 'max-addons' ),
+			'label'   => esc_html__( 'Description', 'max-addons-for-bricks' ),
 			'type'    => 'editor',
 			'default' => 'Aenean commodo ligula egget dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
 		];
@@ -295,18 +295,18 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['link'] = [
 			'tab'   => 'content',
 			'group' => 'back',
-			'label' => esc_html__( 'Link', 'max-addons' ),
+			'label' => esc_html__( 'Link', 'max-addons-for-bricks' ),
 			'type'  => 'link',
 		];
 
 		$this->controls['applyLinkOn'] = [
 			'tab'      => 'content',
 			'group'    => 'back',
-			'label'    => esc_html__( 'Apply Link On', 'max-addons' ),
+			'label'    => esc_html__( 'Apply Link On', 'max-addons-for-bricks' ),
 			'type'     => 'select',
 			'options'  => [
-				'box'    => esc_html__( 'Whole Box', 'max-addons' ),
-				'button' => esc_html__( 'Button Only', 'max-addons' ),
+				'box'    => esc_html__( 'Whole Box', 'max-addons-for-bricks' ),
+				'button' => esc_html__( 'Button Only', 'max-addons-for-bricks' ),
 			],
 			'inline'   => true,
 			'default'  => 'button',
@@ -316,9 +316,9 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['buttonText'] = [
 			'tab'            => 'content',
 			'group'          => 'back',
-			'label'          => esc_html__( 'Button Text', 'max-addons' ),
+			'label'          => esc_html__( 'Button Text', 'max-addons-for-bricks' ),
 			'type'           => 'text',
-			'default'        => esc_html__( 'Click Here', 'max-addons' ),
+			'default'        => esc_html__( 'Click Here', 'max-addons-for-bricks' ),
 			'spellcheck'     => true,
 			'inlineEditing'  => false,
 			'hasDynamicData' => 'text',
@@ -327,7 +327,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backBackground'] = [
 			'tab'     => 'content',
 			'group'   => 'back',
-			'label'   => esc_html__( 'Background', 'max-addons' ),
+			'label'   => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'type'    => 'background',
 			'css'     => [
 				[
@@ -353,7 +353,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['applyBackGradient'] = array(
 			'tab'    => 'style',
 			'group'  => 'back',
-			'label'  => esc_html__( 'Gradient Background', 'max-addons' ),
+			'label'  => esc_html__( 'Gradient Background', 'max-addons-for-bricks' ),
 			'type'   => 'checkbox',
 			'inline' => true,
 			'reset'  => true,
@@ -379,7 +379,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['height'] = [
 			'tab'     => 'content',
 			'group'   => 'settings',
-			'label'   => esc_html__( 'Height', 'max-addons' ),
+			'label'   => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'    => 'number',
 			'units'   => true,
 			'css'     => [
@@ -394,7 +394,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['borderRadius'] = [
 			'tab'   => 'content',
 			'group' => 'settings',
-			'label' => esc_html__( 'Border Radius', 'max-addons' ),
+			'label' => esc_html__( 'Border Radius', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -408,15 +408,15 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['flipEffect'] = [
 			'tab'       => 'content',
 			'group'     => 'settings',
-			'label'     => esc_html__( 'Flip Effect', 'max-addons' ),
+			'label'     => esc_html__( 'Flip Effect', 'max-addons-for-bricks' ),
 			'type'      => 'select',
 			'options'   => [
-				'flip'     => esc_html__( 'Flip', 'max-addons' ),
-				'slide'    => esc_html__( 'Slide', 'max-addons' ),
-				'push'     => esc_html__( 'Push', 'max-addons' ),
-				'zoom-in'  => esc_html__( 'Zoom In', 'max-addons' ),
-				'zoom-out' => esc_html__( 'Zoom Out', 'max-addons' ),
-				'fade'     => esc_html__( 'Fade', 'max-addons' ),
+				'flip'     => esc_html__( 'Flip', 'max-addons-for-bricks' ),
+				'slide'    => esc_html__( 'Slide', 'max-addons-for-bricks' ),
+				'push'     => esc_html__( 'Push', 'max-addons-for-bricks' ),
+				'zoom-in'  => esc_html__( 'Zoom In', 'max-addons-for-bricks' ),
+				'zoom-out' => esc_html__( 'Zoom Out', 'max-addons-for-bricks' ),
+				'fade'     => esc_html__( 'Fade', 'max-addons-for-bricks' ),
 			],
 			'inline'    => true,
 			'clearable' => false,
@@ -426,13 +426,13 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['flipDirection'] = [
 			'tab'       => 'content',
 			'group'     => 'settings',
-			'label'     => esc_html__( 'Flip Direction', 'max-addons' ),
+			'label'     => esc_html__( 'Flip Direction', 'max-addons-for-bricks' ),
 			'type'      => 'select',
 			'options'   => [
-				'left'  => esc_html__( 'Left', 'max-addons' ),
-				'right' => esc_html__( 'Right', 'max-addons' ),
-				'up'    => esc_html__( 'Up', 'max-addons' ),
-				'down'  => esc_html__( 'Down', 'max-addons' ),
+				'left'  => esc_html__( 'Left', 'max-addons-for-bricks' ),
+				'right' => esc_html__( 'Right', 'max-addons-for-bricks' ),
+				'up'    => esc_html__( 'Up', 'max-addons-for-bricks' ),
+				'down'  => esc_html__( 'Down', 'max-addons-for-bricks' ),
 			],
 			'inline'    => true,
 			'clearable' => false,
@@ -443,7 +443,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['flip3d'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( '3D Effect', 'max-addons' ),
+			'label'    => esc_html__( '3D Effect', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'required' => [ 'flipEffect', '=', 'flip' ],
@@ -456,22 +456,22 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontIconPosition'] = [
 			'tab'         => 'content',
 			'group'       => 'frontIconStyle',
-			'label'       => esc_html__( 'Position', 'max-addons' ),
+			'label'       => esc_html__( 'Position', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'top'    => esc_html__( 'Top', 'max-addons' ),
-				'right'  => esc_html__( 'Right', 'max-addons' ),
-				'bottom' => esc_html__( 'Bottom', 'max-addons' ),
-				'left'   => esc_html__( 'Left', 'max-addons' ),
+				'top'    => esc_html__( 'Top', 'max-addons-for-bricks' ),
+				'right'  => esc_html__( 'Right', 'max-addons-for-bricks' ),
+				'bottom' => esc_html__( 'Bottom', 'max-addons-for-bricks' ),
+				'left'   => esc_html__( 'Left', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
-			'placeholder' => esc_html__( 'Top', 'max-addons' ),
+			'placeholder' => esc_html__( 'Top', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['frontIconSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'frontIconStyle',
-			'label' => esc_html__( 'Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -497,7 +497,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontIconSize'] = [
 			'tab'      => 'content',
 			'group'    => 'frontIconStyle',
-			'label'    => esc_html__( 'Size', 'max-addons' ),
+			'label'    => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -512,7 +512,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontIconColor'] = [
 			'tab'      => 'content',
 			'group'    => 'frontIconStyle',
-			'label'    => esc_html__( 'Color', 'max-addons' ),
+			'label'    => esc_html__( 'Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'css'      => [
@@ -531,7 +531,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontImageSize'] = [
 			'tab'      => 'content',
 			'group'    => 'frontIconStyle',
-			'label'    => esc_html__( 'Size', 'max-addons' ),
+			'label'    => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -547,7 +547,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'frontIconStyle',
 			'type'     => 'border',
-			'label'    => esc_html__( 'Border', 'max-addons' ),
+			'label'    => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'border',
@@ -566,7 +566,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontTextAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'frontStyle',
-			'label'       => esc_html__( 'Text align', 'max-addons' ),
+			'label'       => esc_html__( 'Text align', 'max-addons-for-bricks' ),
 			'type'        => 'text-align',
 			'css'         => [
 				[
@@ -575,14 +575,14 @@ class FlipBox_Element extends \Bricks\Element {
 				],
 			],
 			'default'     => 'center',
-			'placeholder' => esc_html__( 'Center', 'max-addons' ),
+			'placeholder' => esc_html__( 'Center', 'max-addons-for-bricks' ),
 			'inline'      => true,
 		];
 
 		$this->controls['frontVerticalAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'frontStyle',
-			'label'       => esc_html__( 'Vertical align', 'max-addons' ),
+			'label'       => esc_html__( 'Vertical align', 'max-addons-for-bricks' ),
 			'type'        => 'justify-content',
 			'exclude'     => [
 				'space',
@@ -595,14 +595,14 @@ class FlipBox_Element extends \Bricks\Element {
 			],
 			'inline'      => true,
 			'default'     => 'center',
-			'placeholder' => esc_html__( 'Center', 'max-addons' ),
+			'placeholder' => esc_html__( 'Center', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['frontTypographyHeading'] = [
 			'tab'    => 'content',
 			'group'  => 'frontStyle',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Heading typography', 'max-addons' ),
+			'label'  => esc_html__( 'Heading typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -616,7 +616,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['frontHeadingSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'frontStyle',
-			'label' => esc_html__( 'Heading spacing', 'max-addons' ),
+			'label' => esc_html__( 'Heading spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -631,7 +631,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'frontStyle',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Content typography', 'max-addons' ),
+			'label'  => esc_html__( 'Content typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -646,7 +646,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'frontStyle',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -661,7 +661,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'frontStyle',
 			'type'  => 'spacing',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'css'   => [
 				[
 					'property' => 'padding',
@@ -677,22 +677,22 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backIconPosition'] = [
 			'tab'         => 'content',
 			'group'       => 'backIconStyle',
-			'label'       => esc_html__( 'Position', 'max-addons' ),
+			'label'       => esc_html__( 'Position', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'top'    => esc_html__( 'Top', 'max-addons' ),
-				'right'  => esc_html__( 'Right', 'max-addons' ),
-				'bottom' => esc_html__( 'Bottom', 'max-addons' ),
-				'left'   => esc_html__( 'Left', 'max-addons' ),
+				'top'    => esc_html__( 'Top', 'max-addons-for-bricks' ),
+				'right'  => esc_html__( 'Right', 'max-addons-for-bricks' ),
+				'bottom' => esc_html__( 'Bottom', 'max-addons-for-bricks' ),
+				'left'   => esc_html__( 'Left', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
-			'placeholder' => esc_html__( 'Top', 'max-addons' ),
+			'placeholder' => esc_html__( 'Top', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['backIconSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'backIconStyle',
-			'label' => esc_html__( 'Spacing', 'max-addons' ),
+			'label' => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -723,7 +723,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backIconSize'] = [
 			'tab'      => 'content',
 			'group'    => 'backIconStyle',
-			'label'    => esc_html__( 'Size', 'max-addons' ),
+			'label'    => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -738,7 +738,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backIconColor'] = [
 			'tab'      => 'content',
 			'group'    => 'backIconStyle',
-			'label'    => esc_html__( 'Color', 'max-addons' ),
+			'label'    => esc_html__( 'Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'css'      => [
@@ -757,7 +757,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backImageSize'] = [
 			'tab'      => 'content',
 			'group'    => 'backIconStyle',
-			'label'    => esc_html__( 'Size', 'max-addons' ),
+			'label'    => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -773,7 +773,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'backIconStyle',
 			'type'     => 'border',
-			'label'    => esc_html__( 'Border', 'max-addons' ),
+			'label'    => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'border',
@@ -792,7 +792,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backTextAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'backStyle',
-			'label'       => esc_html__( 'Text align', 'max-addons' ),
+			'label'       => esc_html__( 'Text align', 'max-addons-for-bricks' ),
 			'type'        => 'text-align',
 			'css'         => [
 				[
@@ -801,14 +801,14 @@ class FlipBox_Element extends \Bricks\Element {
 				],
 			],
 			'default'     => 'center',
-			'placeholder' => esc_html__( 'Center', 'max-addons' ),
+			'placeholder' => esc_html__( 'Center', 'max-addons-for-bricks' ),
 			'inline'      => true,
 		];
 
 		$this->controls['backVerticalAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'backStyle',
-			'label'       => esc_html__( 'Vertical align', 'max-addons' ),
+			'label'       => esc_html__( 'Vertical align', 'max-addons-for-bricks' ),
 			'type'        => 'justify-content',
 			'exclude'     => [
 				'space',
@@ -821,14 +821,14 @@ class FlipBox_Element extends \Bricks\Element {
 			],
 			'inline'      => true,
 			'default'     => 'center',
-			'placeholder' => esc_html__( 'Center', 'max-addons' ),
+			'placeholder' => esc_html__( 'Center', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['backTypographyHeading'] = [
 			'tab'    => 'content',
 			'group'  => 'backStyle',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Heading typography', 'max-addons' ),
+			'label'  => esc_html__( 'Heading typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -842,7 +842,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['backHeadingSpacing'] = [
 			'tab'   => 'content',
 			'group' => 'backStyle',
-			'label' => esc_html__( 'Heading spacing', 'max-addons' ),
+			'label' => esc_html__( 'Heading spacing', 'max-addons-for-bricks' ),
 			'type'  => 'number',
 			'units' => true,
 			'css'   => [
@@ -857,7 +857,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'backStyle',
 			'type'   => 'typography',
-			'label'  => esc_html__( 'Content typography', 'max-addons' ),
+			'label'  => esc_html__( 'Content typography', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'font',
@@ -872,7 +872,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'    => 'content',
 			'group'  => 'backStyle',
 			'type'   => 'border',
-			'label'  => esc_html__( 'Border', 'max-addons' ),
+			'label'  => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'    => [
 				[
 					'property' => 'border',
@@ -887,7 +887,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'backStyle',
 			'type'  => 'spacing',
-			'label' => esc_html__( 'Padding', 'max-addons' ),
+			'label' => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'css'   => [
 				[
 					'property' => 'padding',
@@ -900,7 +900,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['buttonSeparator'] = [
 			'tab'      => 'content',
 			'group'    => 'backStyle',
-			'label'    => esc_html__( 'Button', 'max-addons' ),
+			'label'    => esc_html__( 'Button', 'max-addons-for-bricks' ),
 			'type'     => 'separator',
 			'required' => [ 'buttonText', '!=', '' ],
 		];
@@ -908,32 +908,32 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['buttonSize'] = [
 			'tab'         => 'content',
 			'group'       => 'backStyle',
-			'label'       => esc_html__( 'Size', 'max-addons' ),
+			'label'       => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['buttonSizes'],
 			'inline'      => true,
 			'reset'       => true,
-			'placeholder' => esc_html__( 'Medium', 'max-addons' ),
+			'placeholder' => esc_html__( 'Medium', 'max-addons-for-bricks' ),
 			'required'    => [ 'buttonText', '!=', '' ],
 		];
 
 		$this->controls['buttonStyle'] = [
 			'tab'         => 'content',
 			'group'       => 'backStyle',
-			'label'       => esc_html__( 'Style', 'max-addons' ),
+			'label'       => esc_html__( 'Style', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => $this->control_options['styles'],
 			'inline'      => true,
 			'reset'       => true,
 			'default'     => 'primary',
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 			'required'    => [ 'buttonText', '!=', '' ],
 		];
 
 		$this->controls['buttonCircle'] = [
 			'tab'      => 'content',
 			'group'    => 'backStyle',
-			'label'    => esc_html__( 'Circle', 'max-addons' ),
+			'label'    => esc_html__( 'Circle', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'reset'    => true,
 			'required' => [ 'buttonText', '!=', '' ],
@@ -942,7 +942,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['buttonBlock'] = [
 			'tab'      => 'content',
 			'group'    => 'backStyle',
-			'label'    => esc_html__( 'Stretch', 'max-addons' ),
+			'label'    => esc_html__( 'Stretch', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'reset'    => true,
 			'required' => [ 'buttonText', '!=', '' ],
@@ -951,7 +951,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['buttonOutline'] = [
 			'tab'      => 'content',
 			'group'    => 'backStyle',
-			'label'    => esc_html__( 'Outline', 'max-addons' ),
+			'label'    => esc_html__( 'Outline', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'reset'    => true,
 			'required' => [ 'buttonText', '!=', '' ],
@@ -961,7 +961,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'backStyle',
 			'type'     => 'typography',
-			'label'    => esc_html__( 'Button typography', 'max-addons' ),
+			'label'    => esc_html__( 'Button typography', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'font',
@@ -977,7 +977,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'backStyle',
 			'type'     => 'color',
-			'label'    => esc_html__( 'Background', 'max-addons' ),
+			'label'    => esc_html__( 'Background', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'background-color',
@@ -993,7 +993,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'backStyle',
 			'type'     => 'border',
-			'label'    => esc_html__( 'Border', 'max-addons' ),
+			'label'    => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'border',
@@ -1008,7 +1008,7 @@ class FlipBox_Element extends \Bricks\Element {
 		$this->controls['buttonSpacing'] = [
 			'tab'      => 'content',
 			'group'    => 'backStyle',
-			'label'    => esc_html__( 'Spacing', 'max-addons' ),
+			'label'    => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -1025,7 +1025,7 @@ class FlipBox_Element extends \Bricks\Element {
 			'tab'      => 'content',
 			'group'    => 'backStyle',
 			'type'     => 'spacing',
-			'label'    => esc_html__( 'Padding', 'max-addons' ),
+			'label'    => esc_html__( 'Padding', 'max-addons-for-bricks' ),
 			'css'      => [
 				[
 					'property' => 'padding',
@@ -1093,20 +1093,20 @@ class FlipBox_Element extends \Bricks\Element {
 		if ( ! empty( $settings[ $image_type ]['useDynamicData'] ) && ! $image ) {
 			return $this->render_element_placeholder(
 				[
-					'title' => esc_html__( 'Dynamic data is empty.', 'max-addons' )
+					'title' => esc_html__( 'Dynamic data is empty.', 'max-addons-for-bricks' )
 				]
 			);
 		}
 
 		// Check: No image selected: No image ID provided && not a placeholder URL
 		if ( ! isset( $image['external'] ) && ! $image_id && ! $image_url ) {
-			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No image selected.', 'max-addons' ) ] );
+			return $this->render_element_placeholder( [ 'title' => esc_html__( 'No image selected.', 'max-addons-for-bricks' ) ] );
 		}
 
 		// Check: Image with ID doesn't exist
 		if ( ! isset( $image['external'] ) && ! $image_url ) {
 			// translators: %s: Image ID
-			return $this->render_element_placeholder( [ 'title' => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons' ), $image_id ) ] );
+			return $this->render_element_placeholder( [ 'title' => sprintf( esc_html__( 'Image ID (%s) no longer exist. Please select another image.', 'max-addons-for-bricks' ), $image_id ) ] );
 		}
 
 		$image_attributes = [];

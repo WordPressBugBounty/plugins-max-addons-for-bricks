@@ -1,6 +1,12 @@
 <?php
 namespace MaxAddons\Classes;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+use MaxAddons\Classes\MAB_Deprecated;
+
 /**
  * Handles logic for the admin settings page.
  *
@@ -46,11 +52,16 @@ final class MAB_Admin_Settings {
 
 		add_action( 'admin_menu', __CLASS__ . '::add_menu_page', 601 );
 
-		if ( isset( $_REQUEST['page'] ) && 'mab-settings' == $_REQUEST['page'] ) {
-			//add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
-			self::save();
-			self::reset_settings();
-		}
+		add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
+		add_action( 'load-bricks_page_mab-settings', __CLASS__ . '::handle_actions' );
+	}
+
+	/**
+	 * Handle settings save and reset.
+	 */
+	public static function handle_actions() {
+		self::save();
+		self::reset_settings();
 	}
 
 	/**
@@ -59,9 +70,18 @@ final class MAB_Admin_Settings {
 	 * @since 1.0.0
 	 * @return void
 	 */
-	public static function styles_scripts() {
-		// Styles
-		//wp_enqueue_style( 'mab-admin-settings', MAB_URL . 'assets/css/admin-settings.css', array(), MAB_VER );
+	public static function styles_scripts( $hook ) {
+
+		if ( 'bricks_page_mab-settings' !== $hook ) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'mab-admin-settings',
+			MAB_URL . 'assets/css/admin-settings.css',
+			array(),
+			MAB_VER
+		);
 	}
 
 	/**
@@ -72,40 +92,40 @@ final class MAB_Admin_Settings {
 	 */
 	public static function get_elements() {
 		$elements = array(
-			'cta-button'       => esc_html__( 'CTA Button', 'max-addons' ),
-			'content-ticker'   => esc_html__( 'Content Ticker', 'max-addons' ),
-			'flip-box'         => esc_html__( 'Flip Box', 'max-addons' ),
-			'hotspots'         => esc_html__( 'Hotspots', 'max-addons' ),
-			'icon-list'        => esc_html__( 'Dynamic List', 'max-addons' ),
-			'image-accordion'  => esc_html__( 'Image Accordion', 'max-addons' ),
-			'image-comparison' => esc_html__( 'Image Comparison', 'max-addons' ),
-			'lottie'           => esc_html__( 'Lottie', 'max-addons' ),
-			'multi-heading'    => esc_html__( 'Multi Heading', 'max-addons' ),
-			'random-image'     => esc_html__( 'Random Image', 'max-addons' ),
-			'rating'           => esc_html__( 'Rating', 'max-addons' ),
-			'scroll-image'     => esc_html__( 'Scroll Image', 'max-addons' ),
-			'svg-animation'    => esc_html__( 'SVG Animation', 'max-addons' ),
-			'unfold'           => esc_html__( 'Unfold', 'max-addons' ),
+			'cta-button'       => esc_html__( 'CTA Button', 'max-addons-for-bricks' ),
+			'content-ticker'   => esc_html__( 'Content Ticker', 'max-addons-for-bricks' ),
+			'flip-box'         => esc_html__( 'Flip Box', 'max-addons-for-bricks' ),
+			'hotspots'         => esc_html__( 'Hotspots', 'max-addons-for-bricks' ),
+			'icon-list'        => esc_html__( 'Dynamic List', 'max-addons-for-bricks' ),
+			'image-accordion'  => esc_html__( 'Image Accordion', 'max-addons-for-bricks' ),
+			'image-comparison' => esc_html__( 'Image Comparison', 'max-addons-for-bricks' ),
+			'lottie'           => esc_html__( 'Lottie', 'max-addons-for-bricks' ),
+			'multi-heading'    => esc_html__( 'Multi Heading', 'max-addons-for-bricks' ),
+			'random-image'     => esc_html__( 'Random Image', 'max-addons-for-bricks' ),
+			'rating'           => esc_html__( 'Rating', 'max-addons-for-bricks' ),
+			'scroll-image'     => esc_html__( 'Scroll Image', 'max-addons-for-bricks' ),
+			'svg-animation'    => esc_html__( 'SVG Animation', 'max-addons-for-bricks' ),
+			'unfold'           => esc_html__( 'Unfold', 'max-addons-for-bricks' ),
 		);
 
 		// Contact Form 7
 		if ( function_exists( 'wpcf7' ) ) {
-			$elements['cf7-styler'] = esc_html__( 'Contact Form 7 Styler', 'max-addons' );
+			$elements['cf7-styler'] = esc_html__( 'Contact Form 7 Styler', 'max-addons-for-bricks' );
 		}
 
 		// Gravity Forms
 		if ( class_exists( 'GFForms' ) ) {
-			$elements['gravity-forms-styler'] = esc_html__( 'Gravity Forms Styler', 'max-addons' );
+			$elements['gravity-forms-styler'] = esc_html__( 'Gravity Forms Styler', 'max-addons-for-bricks' );
 		}
 
 		// Fluent Forms
 		if ( function_exists( 'wpFluentForm' ) ) {
-			$elements['fluent-forms-styler'] = esc_html__( 'Fluent Forms Styler', 'max-addons' );
+			$elements['fluent-forms-styler'] = esc_html__( 'Fluent Forms Styler', 'max-addons-for-bricks' );
 		}
 
 		// Formidable Forms
 		if ( class_exists( 'FrmForm' ) ) {
-			$elements['formidable-forms-styler'] = __( 'Formidable Forms Styler', 'max-addons' );
+			$elements['formidable-forms-styler'] = __( 'Formidable Forms Styler', 'max-addons-for-bricks' );
 		}
 
 		asort( $elements );
@@ -146,7 +166,12 @@ final class MAB_Admin_Settings {
 			$settings = array_merge( $default_settings, $settings );
 		}
 
-		return apply_filters( 'mab_elements_admin_settings', $settings );
+		return MAB_Deprecated::filter(
+			'max_bricks_elements_admin_settings',
+			$settings,
+			'mab_elements_admin_settings',
+			'1.6.7'
+		);
 	}
 
 	/**
@@ -171,8 +196,14 @@ final class MAB_Admin_Settings {
 			foreach ( self::$errors as $message ) {
 				echo '<div class="error"><p>' . wp_kses_post( $message ) . '</p></div>';
 			}
-		} elseif ( ! empty( $_POST ) && ! isset( $_POST['email'] ) ) {
-			echo '<div class="updated"><p>' . esc_html__( 'Settings updated!', 'max-addons' ) . '</p></div>';
+		} elseif (
+			isset( $_POST['mab-elements-settings-nonce'] ) &&
+			wp_verify_nonce(
+				sanitize_text_field( wp_unslash( $_POST['mab-elements-settings-nonce'] ) ),
+				'mab-elements-settings'
+			)
+		) {
+			echo '<div class="updated"><p>' . esc_html__( 'Settings updated!', 'max-addons-for-bricks' ) . '</p></div>';
 		}
 	}
 
@@ -211,15 +242,22 @@ final class MAB_Admin_Settings {
 	public static function get_tabs() {
 		$settings = self::get_settings();
 
-		return apply_filters( 'mab_elements_admin_settings_tabs', array(
+		$tabs = [
 			'elements' => array(
-				'title'    => esc_html__( 'Elements', 'max-addons' ),
+				'title'    => esc_html__( 'Elements', 'max-addons-for-bricks' ),
 				'show'     => true,
 				'cap'      => 'edit_posts',
 				'file'     => MAB_DIR . 'includes/admin/admin-settings-elements.php',
 				'priority' => 150,
 			),
-		) );
+		];
+
+		return MAB_Deprecated::filter(
+			'max_bricks_elements_admin_settings_tabs',
+			$tabs,
+			'mab_elements_admin_settings_tabs',
+			'1.6.7'
+		);
 	}
 
 	public static function render_tabs( $current_tab ) {
@@ -250,7 +288,7 @@ final class MAB_Admin_Settings {
 		$current_tab = self::get_current_tab();
 
 		if ( isset( $tabs[ $current_tab ] ) ) {
-			$no_setting_file_msg = esc_html__( 'Setting page file could not be located.', 'max-addons' );
+			$no_setting_file_msg = esc_html__( 'Setting page file could not be located.', 'max-addons-for-bricks' );
 
 			if ( ! isset( $tabs[ $current_tab ]['file'] ) || empty( $tabs[ $current_tab ]['file'] ) ) {
 				echo esc_html( $no_setting_file_msg );
@@ -272,7 +310,7 @@ final class MAB_Admin_Settings {
 			}
 
 			if ( ! $render || ! current_user_can( $cap ) ) {
-				esc_html_e( 'You do not have permission to view this setting.', 'max-addons' );
+				esc_html_e( 'You do not have permission to view this setting.', 'max-addons-for-bricks' );
 				return;
 			}
 
@@ -284,6 +322,7 @@ final class MAB_Admin_Settings {
 	 * Get current tab.
 	 */
 	public static function get_current_tab() {
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reading tab parameter for UI state only.
 		$current_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'elements';
 
 		return $current_tab;
@@ -346,7 +385,18 @@ final class MAB_Admin_Settings {
 			update_site_option( $key, $value );
 		}
 		// Delete the option if network overrides are allowed and the override checkbox isn't checked.
-		elseif ( $network_override && is_multisite() && ! isset( $_POST['mab_override_ms'] ) ) {
+		elseif ( 
+			$network_override &&
+			is_multisite() &&
+			(
+				! isset( $_POST['mab-elements-settings-nonce'] ) ||
+				! wp_verify_nonce(
+					sanitize_text_field( wp_unslash( $_POST['mab-elements-settings-nonce'] ) ),
+					'mab-elements-settings'
+				) ||
+				! isset( $_POST['mab_override_ms'] )
+			)
+		) {
 			delete_option( $key );
 		} else {
 			update_option( $key, $value );
@@ -377,34 +427,63 @@ final class MAB_Admin_Settings {
 
 		self::save_elements();
 
-		do_action( 'mab_elements_admin_settings_save' );
+		MAB_Deprecated::action(
+			'max_bricks_elements_admin_settings_save',
+			[],
+			'mab_elements_admin_settings_save',
+			'1.6.7'
+		);
 	}
 
 	public static function save_elements() {
-		if ( ! isset( $_POST['mab-elements-settings-nonce'] ) || ! wp_verify_nonce( $_POST['mab-elements-settings-nonce'], 'mab-elements-settings' ) ) {
+		if ( ! isset( $_POST['mab-elements-settings-nonce'] ) ) {
+			return;
+		}
+
+		$nonce = sanitize_text_field(
+			wp_unslash( $_POST['mab-elements-settings-nonce'] )
+		);
+
+		if ( ! wp_verify_nonce( $nonce, 'mab-elements-settings' ) ) {
 			return;
 		}
 
 		$enabled_elements = array();
 
-		if ( isset( $_POST['mab_enabled_elements'] ) && ! empty( $_POST['mab_enabled_elements'] ) ) {
-			foreach ( $_POST['mab_enabled_elements'] as $enabled_element ) {
-				$enabled_elements[] = sanitize_text_field( $enabled_element );
-			}
+		if ( isset( $_POST['mab_enabled_elements'] ) && is_array( $_POST['mab_enabled_elements'] ) ) {
+
+			$enabled_elements = array_map(
+				'sanitize_text_field',
+				wp_unslash( $_POST['mab_enabled_elements'] )
+			);
 		}
 
-		if ( ! empty( $_POST['mab_enabled_elements'] ) ) {
-			update_option( 'max_bricks_elements', wp_unslash( $enabled_elements ) );
+		if ( ! empty( $enabled_elements ) ) {
+			update_option( 'max_bricks_elements', $enabled_elements );
 		} else {
 			update_option( 'max_bricks_elements', 'disabled' );
 		}
 	}
 
 	public static function reset_settings() {
-		if ( isset( $_GET['reset_elements'] ) ) {
-			delete_option( 'max_bricks_elements' );
-			self::$errors[] = __( 'Elements settings updated!', 'max-addons' );
+		if ( ! isset( $_GET['reset_elements'], $_GET['_wpnonce'] ) ) {
+			return;
 		}
+
+		$nonce = sanitize_text_field(
+			wp_unslash( $_GET['_wpnonce'] )
+		);
+
+		if ( ! wp_verify_nonce( $nonce, 'mab-reset-elements' ) ) {
+			return;
+		}
+
+		delete_option( 'max_bricks_elements' );
+
+		self::$errors[] = esc_html__(
+			'Elements settings updated!',
+			'max-addons-for-bricks'
+		);
 	}
 
 	public static function migrate_settings() {

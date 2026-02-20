@@ -14,7 +14,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 	public $scripts      = [ 'mabSvgAnimation' ]; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public function get_label() {
-		return esc_html__( 'SVG Animation', 'max-addons' );
+		return esc_html__( 'SVG Animation', 'max-addons-for-bricks' );
 	}
 
 	// Enqueue element styles and scripts
@@ -27,7 +27,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['settings'] = [
-			'title'    => esc_html__( 'Settings', 'max-addons' ),
+			'title'    => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'      => 'content',
 			'required' => [ 'file', '!=', '' ],
 		];
@@ -45,12 +45,12 @@ class Svg_Animation_Element extends \Bricks\Element {
 		$this->controls['file'] = [
 			'tab'   => 'content',
 			'type'  => 'svg',
-			'label' => esc_html__( 'Select SVG File', 'max-addons' ),
+			'label' => esc_html__( 'Select SVG File', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['svgHeight'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Height', 'max-addons' ),
+			'label'    => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -68,7 +68,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 
 		$this->controls['svgWidth'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Width', 'max-addons' ),
+			'label'    => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -86,7 +86,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 
 		$this->controls['strokeColor'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Stroke Color', 'max-addons' ),
+			'label'    => esc_html__( 'Stroke Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'default'  => [
@@ -97,7 +97,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 
 		$this->controls['svgFillColor'] = [
 			'tab'      => 'content',
-			'label'    => esc_html__( 'Fill', 'max-addons' ),
+			'label'    => esc_html__( 'Fill', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
 			'required' => [ 'file', '!=', '' ],
@@ -110,7 +110,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 		$this->controls['drawOnHover'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Draw On Hover', 'max-addons' ),
+			'label'    => esc_html__( 'Draw On Hover', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'required' => [ 'file', '!=', '' ],
@@ -119,13 +119,13 @@ class Svg_Animation_Element extends \Bricks\Element {
 		$this->controls['animationType'] = [
 			'tab'       => 'content',
 			'group'     => 'settings',
-			'label'     => esc_html__( 'Animation Type', 'max-addons' ),
+			'label'     => esc_html__( 'Animation Type', 'max-addons-for-bricks' ),
 			'type'      => 'select',
 			'options'   => [
-				'delayed'       => esc_html__( 'Delayed', 'max-addons' ),
-				'sync'          => esc_html__( 'Sync', 'max-addons' ),
-				'oneByOne'      => esc_html__( 'One By One', 'max-addons' ),
-				'scenario-sync' => esc_html__( 'Scenario Sync', 'max-addons' ),
+				'delayed'       => esc_html__( 'Delayed', 'max-addons-for-bricks' ),
+				'sync'          => esc_html__( 'Sync', 'max-addons-for-bricks' ),
+				'oneByOne'      => esc_html__( 'One By One', 'max-addons-for-bricks' ),
+				'scenario-sync' => esc_html__( 'Scenario Sync', 'max-addons-for-bricks' ),
 			],
 			'inline'    => true,
 			'clearable' => false,
@@ -136,7 +136,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 		$this->controls['duration'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
-			'label'    => esc_html__( 'Duration', 'max-addons' ),
+			'label'    => esc_html__( 'Duration', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'min'      => 0,
 			'max'      => 1000,
@@ -156,7 +156,7 @@ class Svg_Animation_Element extends \Bricks\Element {
 		if ( ! isset( $this->settings['file']['url'] ) ) {
 			return $this->render_element_placeholder(
 				[
-					'title' => esc_html__( 'No SVG selected.', 'max-addons' ),
+					'title' => esc_html__( 'No SVG selected.', 'max-addons-for-bricks' ),
 				]
 			);
 		}

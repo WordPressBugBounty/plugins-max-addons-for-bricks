@@ -13,7 +13,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 	public $scripts      = []; // Script(s) run when element is rendered on frontend or updated in builder
 
 	public function get_label() {
-		return esc_html__( 'Scroll Image', 'max-addons' );
+		return esc_html__( 'Scroll Image', 'max-addons-for-bricks' );
 	}
 
 	public function get_keywords() {
@@ -27,22 +27,22 @@ class Scroll_Image_Element extends \Bricks\Element {
 
 	public function set_control_groups() {
 		$this->control_groups['image']        = [
-			'title' => esc_html__( 'Image', 'max-addons' ),
+			'title' => esc_html__( 'Image', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['settings']     = [
-			'title' => esc_html__( 'Settings', 'max-addons' ),
+			'title' => esc_html__( 'Settings', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['overlaySettings'] = [
-			'title' => esc_html__( 'Overlay', 'max-addons' ),
+			'title' => esc_html__( 'Overlay', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 
 		$this->control_groups['iconSettings'] = [
-			'title' => esc_html__( 'Icon', 'max-addons' ),
+			'title' => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'tab'   => 'content',
 		];
 	}
@@ -64,7 +64,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['altText'] = [
 			'tab'      => 'content',
 			'group'    => 'image',
-			'label'    => esc_html__( 'Custom alt text', 'max-addons' ),
+			'label'    => esc_html__( 'Custom alt text', 'max-addons-for-bricks' ),
 			'type'     => 'text',
 			'inline'   => true,
 			'rerender' => false,
@@ -74,7 +74,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['loading'] = [
 			'tab'         => 'content',
 			'group'       => 'image',
-			'label'       => esc_html__( 'Loading', 'max-addons' ),
+			'label'       => esc_html__( 'Loading', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'inline'      => true,
 			'options'     => [
@@ -87,7 +87,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['showTitle'] = [
 			'tab'      => 'content',
 			'group'    => 'image',
-			'label'    => esc_html__( 'Show title', 'max-addons' ),
+			'label'    => esc_html__( 'Show title', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'inline'   => true,
 			'required' => [ 'image', '!=', '' ],
@@ -96,7 +96,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['stretch'] = [
 			'tab'   => 'content',
 			'group' => 'image',
-			'label' => esc_html__( 'Stretch', 'max-addons' ),
+			'label' => esc_html__( 'Stretch', 'max-addons-for-bricks' ),
 			'type'  => 'checkbox',
 			'css'   => [
 				[
@@ -116,7 +116,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'image',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Link To', 'max-addons' ),
+			'label' => esc_html__( 'Link To', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['link'] = [
@@ -124,16 +124,16 @@ class Scroll_Image_Element extends \Bricks\Element {
 			'group'       => 'image',
 			'type'        => 'select',
 			'options'     => [
-				'url'        => esc_html__( 'Other (URL)', 'max-addons' ),
+				'url'        => esc_html__( 'Other (URL)', 'max-addons-for-bricks' ),
 			],
 			'rerender'    => true,
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['newTab'] = [
 			'tab'      => 'content',
 			'group'    => 'image',
-			'label'    => esc_html__( 'Open in new tab', 'max-addons' ),
+			'label'    => esc_html__( 'Open in new tab', 'max-addons-for-bricks' ),
 			'type'     => 'checkbox',
 			'required' => [ 'link', '=', [ 'attachment', 'media'] ],
 		];
@@ -149,34 +149,35 @@ class Scroll_Image_Element extends \Bricks\Element {
 			'tab'   => 'content',
 			'group' => 'image',
 			'type'  => 'separator',
-			'label' => esc_html__( 'Frame', 'max-addons' ),
+			'label' => esc_html__( 'Frame', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['imageFrame'] = [
 			'tab'         => 'content',
 			'group'       => 'image',
-			'label'       => esc_html__( 'Image frame', 'max-addons' ) . ' (' . esc_html__( 'Pro', 'max-addons' ) . ')',
+			'label'       => esc_html__( 'Image frame', 'max-addons-for-bricks' ) . ' (' . esc_html__( 'Pro', 'max-addons-for-bricks' ) . ')',
 			'type'        => 'select',
 			'options'     => [
-				'phone'     => esc_html__( 'Phone', 'max-addons' ),
-				'tablet'    => esc_html__( 'Tablet', 'max-addons' ),
-				'laptop'    => esc_html__( 'Laptop', 'max-addons' ),
-				'desktop'   => esc_html__( 'Desktop', 'max-addons' ),
-				'window'    => esc_html__( 'Window', 'max-addons' ),
+				'phone'     => esc_html__( 'Phone', 'max-addons-for-bricks' ),
+				'tablet'    => esc_html__( 'Tablet', 'max-addons-for-bricks' ),
+				'laptop'    => esc_html__( 'Laptop', 'max-addons-for-bricks' ),
+				'desktop'   => esc_html__( 'Desktop', 'max-addons-for-bricks' ),
+				'window'    => esc_html__( 'Window', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
-			'placeholder' => esc_html__( 'None', 'max-addons' ),
+			'placeholder' => esc_html__( 'None', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['imageFrameInfo'] = [
-			'tab'      => 'content',
-			'group'    => 'image',
-			'content'  => sprintf(
-				__( 'Image Frame option is available in %1$sMax Addons Pro%2$s.', 'max-addons' ),
-				'<a href="https://wpbricksaddons.com/"><strong>',
+			'tab'   => 'content',
+			'group' => 'image',
+			'type'  => 'info',
+			'content' => sprintf(
+				/* translators: 1: opening anchor + strong tag, 2: closing strong + anchor tag */
+				__( 'Image Frame option is available in %1$sMax Addons Pro%2$s.', 'max-addons-for-bricks' ),
+				'<a href="https://wpbricksaddons.com/" target="_blank" rel="noopener noreferrer"><strong>',
 				'</strong></a>'
 			),
-			'type'     => 'info',
 			'required' => [ 'imageFrame', '!=', '' ],
 		];
 	}
@@ -185,38 +186,38 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['trigger'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Trigger', 'max-addons' ),
+			'label'       => esc_html__( 'Trigger', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'hover'    => esc_html__( 'Hover', 'max-addons' ),
-				'click'    => esc_html__( 'Click', 'max-addons' ),
-				'scroll'   => esc_html__( 'Scroll', 'max-addons' ),
-				'viewport' => esc_html__( 'Viewport', 'max-addons' ),
+				'hover'    => esc_html__( 'Hover', 'max-addons-for-bricks' ),
+				'click'    => esc_html__( 'Click', 'max-addons-for-bricks' ),
+				'scroll'   => esc_html__( 'Scroll', 'max-addons-for-bricks' ),
+				'viewport' => esc_html__( 'Viewport', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
-			'placeholder' => esc_html__( 'Hover', 'max-addons' ),
+			'placeholder' => esc_html__( 'Hover', 'max-addons-for-bricks' ),
 		];
 
 		$this->controls['scrollDirection'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Scroll Direction', 'max-addons' ),
+			'label'       => esc_html__( 'Scroll Direction', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'top'    => esc_html__( 'Top to Bottom', 'max-addons' ),
-				'bottom' => esc_html__( 'Bottom to Top', 'max-addons' ),
-				'left'   => esc_html__( 'Left to Right', 'max-addons' ),
-				'right'  => esc_html__( 'Right to Left', 'max-addons' ),
+				'top'    => esc_html__( 'Top to Bottom', 'max-addons-for-bricks' ),
+				'bottom' => esc_html__( 'Bottom to Top', 'max-addons-for-bricks' ),
+				'left'   => esc_html__( 'Left to Right', 'max-addons-for-bricks' ),
+				'right'  => esc_html__( 'Right to Left', 'max-addons-for-bricks' ),
 			],
 			'inline'      => true,
-			'placeholder' => esc_html__( 'Top to Bottom', 'max-addons' ),
+			'placeholder' => esc_html__( 'Top to Bottom', 'max-addons-for-bricks' ),
 			'required'    => [ 'trigger', '!=', 'scroll' ],
 		];
 
 		$this->controls['scrollSpeed'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Scroll speed (s)', 'max-addons' ),
+			'label'       => esc_html__( 'Scroll speed (s)', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'css'         => [
 				[
@@ -236,7 +237,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['imageHeight'] = [
 			'tab'         => 'content',
 			'group'       => 'settings',
-			'label'       => esc_html__( 'Image height', 'max-addons' ),
+			'label'       => esc_html__( 'Image height', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'css'         => [
 				[
@@ -254,7 +255,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlay'] = [
 			'tab'      => 'content',
 			'group'    => 'overlaySettings',
-			'label'    => esc_html__( 'Image overlay', 'max-addons' ),
+			'label'    => esc_html__( 'Image overlay', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -268,16 +269,16 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayVisibility'] = [
 			'tab'         => 'content',
 			'group'       => 'overlaySettings',
-			'label'       => esc_html__( 'Overlay visibility', 'max-addons' ),
+			'label'       => esc_html__( 'Overlay visibility', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'always'        => esc_html__( 'Always Visible', 'max-addons' ),
-				'show_on_hover' => esc_html__( 'Show on Hover', 'max-addons' ),
-				'hide_on_hover' => esc_html__( 'Hide on Hover', 'max-addons' ),
+				'always'        => esc_html__( 'Always Visible', 'max-addons-for-bricks' ),
+				'show_on_hover' => esc_html__( 'Show on Hover', 'max-addons-for-bricks' ),
+				'hide_on_hover' => esc_html__( 'Hide on Hover', 'max-addons-for-bricks' ),
 			],
 			'default'     => '',
 			'inline'      => true,
-			'placeholder' => esc_html__( 'Hide on Hover', 'max-addons' ),
+			'placeholder' => esc_html__( 'Hide on Hover', 'max-addons-for-bricks' ),
 		];
 	}
 
@@ -285,7 +286,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIcon'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Icon', 'max-addons' ),
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
 			'type'     => 'icon',
 			'rerender' => true,
 		];
@@ -293,7 +294,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['iconSize'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Size', 'max-addons' ),
+			'label'    => esc_html__( 'Size', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -308,7 +309,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIconWidth'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Width', 'max-addons' ),
+			'label'    => esc_html__( 'Width', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -323,7 +324,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIconHeight'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Height', 'max-addons' ),
+			'label'    => esc_html__( 'Height', 'max-addons-for-bricks' ),
 			'type'     => 'number',
 			'units'    => true,
 			'css'      => [
@@ -338,7 +339,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIconColor'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Color', 'max-addons' ),
+			'label'    => esc_html__( 'Color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -356,7 +357,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIconBackground'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Background color', 'max-addons' ),
+			'label'    => esc_html__( 'Background color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'css'      => [
 				[
@@ -370,7 +371,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIconBorder'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Border', 'max-addons' ),
+			'label'    => esc_html__( 'Border', 'max-addons-for-bricks' ),
 			'type'     => 'border',
 			'css'      => [
 				[
@@ -384,7 +385,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIconBoxShadow'] = [
 			'tab'      => 'content',
 			'group'    => 'iconSettings',
-			'label'    => esc_html__( 'Box shadow', 'max-addons' ),
+			'label'    => esc_html__( 'Box shadow', 'max-addons-for-bricks' ),
 			'type'     => 'box-shadow',
 			'css'      => [
 				[
@@ -398,23 +399,23 @@ class Scroll_Image_Element extends \Bricks\Element {
 		$this->controls['overlayIconVisibility'] = [
 			'tab'         => 'content',
 			'group'       => 'iconSettings',
-			'label'       => esc_html__( 'Icon visibility', 'max-addons' ),
+			'label'       => esc_html__( 'Icon visibility', 'max-addons-for-bricks' ),
 			'type'        => 'select',
 			'options'     => [
-				'always'        => esc_html__( 'Always Visible', 'max-addons' ),
-				'show_on_hover' => esc_html__( 'Show on Hover', 'max-addons' ),
-				'hide_on_hover' => esc_html__( 'Hide on Hover', 'max-addons' ),
+				'always'        => esc_html__( 'Always Visible', 'max-addons-for-bricks' ),
+				'show_on_hover' => esc_html__( 'Show on Hover', 'max-addons-for-bricks' ),
+				'hide_on_hover' => esc_html__( 'Hide on Hover', 'max-addons-for-bricks' ),
 			],
 			'default'     => '',
 			'inline'      => true,
-			'placeholder' => esc_html__( 'Hide on Hover', 'max-addons' ),
+			'placeholder' => esc_html__( 'Hide on Hover', 'max-addons-for-bricks' ),
 			'required'    => [ 'overlayIcon', '!=', '' ],
 		];
 
 		$this->controls['overlayIconTransition'] = [
 			'tab'         => 'content',
 			'group'       => 'iconSettings',
-			'label'       => esc_html__( 'Transition duration (ms)', 'max-addons' ),
+			'label'       => esc_html__( 'Transition duration (ms)', 'max-addons-for-bricks' ),
 			'type'        => 'number',
 			'css'         => [
 				[
@@ -628,7 +629,7 @@ class Scroll_Image_Element extends \Bricks\Element {
 		// Handle empty dynamic data.
 		if ( ! empty( $settings['image']['useDynamicData'] ) && empty( $image ) ) {
 			return $this->render_element_placeholder(
-				[ 'title' => esc_html__( 'Dynamic data is empty.', 'max-addons' ) ]
+				[ 'title' => esc_html__( 'Dynamic data is empty.', 'max-addons-for-bricks' ) ]
 			);
 		}
 
@@ -637,13 +638,19 @@ class Scroll_Image_Element extends \Bricks\Element {
 		// Handle missing images.
 		if ( ! isset( $image['external'] ) && ! $image_id && ! $image_url && $image_url !== $image_placeholder_url ) {
 			return $this->render_element_placeholder(
-				[ 'title' => esc_html__( 'No image selected.', 'max-addons' ) ]
+				[ 'title' => esc_html__( 'No image selected.', 'max-addons-for-bricks' ) ]
 			);
 		}
 
 		if ( ! isset( $image['external'] ) && empty( $image_url ) ) {
 			return $this->render_element_placeholder(
-				[ 'title' => sprintf( esc_html__( 'Image ID (%s) no longer exists. Please select another image.', 'max-addons' ), esc_html( $image_id ) ) ]
+				[
+					'title' => sprintf(
+						/* translators: %s: Image ID */
+						esc_html__( 'Image ID (%s) no longer exists. Please select another image.', 'max-addons-for-bricks' ),
+						esc_html( $image_id )
+					),
+				]
 			);
 		}
 
