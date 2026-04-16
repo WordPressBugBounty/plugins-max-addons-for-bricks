@@ -2,14 +2,13 @@
 /**
  * Plugin Name: Max Addons for Bricks
  * Plugin URI: https://www.bloompixel.com
- * Description: Extend Bricks Page Builder with 15+ Creative Elements and exciting extensions.
- * Version: 1.6.7
+ * Description: Extend Bricks Page Builder with 20+ Creative Elements and exciting extensions.
+ * Version: 1.7.0
  * Author: BloomPixel
  * Author URI: https://www.bloompixel.com/about/
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: max-addons-for-bricks
- * Domain Path: /languages
  */
 
 /**
@@ -25,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // * Define constants
-define( 'MAB_VER', '1.6.7' );
+define( 'MAB_VER', '1.7.0' );
 define( 'MAB_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MAB_BASE', plugin_basename( __FILE__ ) );
 define( 'MAB_URL', plugins_url( '/', __FILE__ ) );

@@ -4,7 +4,7 @@ Tags: bricks, addons, bricks addon, elements, bricks builder
 Requires at least: 6.3
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.6.7
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,12 +41,14 @@ Supercharge Bricks Builder with **Powerful**, **Creative**, and **Fully Customiz
 10. [**SVG Animation**](https://wpbricksaddons.com/bricks-elements/svg-animation/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add impressive animations to SVG files on your website without any coding.
 11. [**Random Image**](https://wpbricksaddons.com/bricks-elements/random-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show different image on your webpage on each page refresh with Random Image Element.
 12. [**Content Ticker**](https://wpbricksaddons.com/bricks-elements/content-ticker/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show latest updates, breaking news or featured posts with Content Ticker element.
-13. [**Rating**](https://wpbricksaddons.com/bricks-elements/rating/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show ratings on your pages with dynamic icon options with Rating element.
-14. [**Scroll Image**](https://wpbricksaddons.com/bricks-elements/scroll-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add dynamic vertical and horizontal scroll effects to your images with Scroll Image element.
-15. [**Contact Form 7 Styler**](https://wpbricksaddons.com/bricks-elements/contact-form-7-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Contact Form 7 fields and create stylish contact forms with the Contact Form 7 Form Styler Element.
-17. [**Gravity Forms Styler**](https://wpbricksaddons.com/bricks-elements/gravity-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Gravity Forms fields and create stylish contact forms with the Gravity Forms Styler Element.
-17. [**Fluent Forms Styler**](https://wpbricksaddons.com/bricks-elements/fluent-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Fluent Forms fields and create stylish contact forms with the Fluent Forms Styler Element.
-18. [**Formidable Forms Styler**](https://wpbricksaddons.com/bricks-elements/formidable-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Formidable Forms fields and create stylish contact forms with the Formidable Forms Styler Element.
+13. [**Content Toggle**](https://wpbricksaddons.com/bricks-elements/toggle/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Switch between two types of content, such as primary/secondary or annual/monthly, by using the Content Toggle Element.
+14. [**Rating**](https://wpbricksaddons.com/bricks-elements/rating/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Show ratings on your pages with dynamic icon options with Rating element.
+15. [**Scroll Image**](https://wpbricksaddons.com/bricks-elements/scroll-image/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add dynamic vertical and horizontal scroll effects to your images with Scroll Image element.
+16. [**Video**](https://wpbricksaddons.com/bricks-elements/video/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Embed videos from YouTube, Vimeo, or self-hosted sources with custom thumbnails, play icons, sticky video, and schema markup support.
+17. [**Contact Form 7 Styler**](https://wpbricksaddons.com/bricks-elements/contact-form-7-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Contact Form 7 fields and create stylish contact forms with the Contact Form 7 Form Styler Element.
+18. [**Gravity Forms Styler**](https://wpbricksaddons.com/bricks-elements/gravity-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Gravity Forms fields and create stylish contact forms with the Gravity Forms Styler Element.
+19. [**Fluent Forms Styler**](https://wpbricksaddons.com/bricks-elements/fluent-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Fluent Forms fields and create stylish contact forms with the Fluent Forms Styler Element.
+20. [**Formidable Forms Styler**](https://wpbricksaddons.com/bricks-elements/formidable-forms-styler/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Customize default Formidable Forms fields and create stylish contact forms with the Formidable Forms Styler Element.
 
 ## REVIEWS FROM OUR HAPPY CUSTOMERS 💚
 *Fast, performant and great support – best Addon for Bricks Builder - Joachim B.* ⭐⭐⭐⭐⭐
@@ -58,11 +60,11 @@ Supercharge Bricks Builder with **Powerful**, **Creative**, and **Fully Customiz
 1. [**Post Tiles**](https://wpbricksaddons.com/bricks-elements/post-tiles/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display your website's posts in a beautiful magazine tile layout.
 2. [**Dynamic Table**](https://wpbricksaddons.com/bricks-elements/table/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create data tables with advanced styling and functionalities.
 3. [**Timeline**](https://wpbricksaddons.com/bricks-elements/timeline/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display content on your website in customizable horizontal & vertical timelines.
-4. [**Content Toggle**](https://wpbricksaddons.com/bricks-elements/toggle/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Switch between two types of content, such as primary/secondary or annual/monthly, by using the Content Toggle Element.
-5. [**Image Gallery**](https://wpbricksaddons.com/bricks-elements/image-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase beautiful images on your website using advanced filters and customizable features.
-6. [**Off Canvas**](https://wpbricksaddons.com/bricks-elements/off-canvas/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add a beautiful flyout navigator and create an advanced off-canvas menu that displays the content when the trigger is activated.
-7. [**Slide Menu**](https://wpbricksaddons.com/bricks-elements/slide-menu/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create responsive menus with amazing sliding effects.
-8. [**Video**](https://wpbricksaddons.com/bricks-elements/video/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Allow to embed video on WordPress sites from popular video sources.
+4. [**Toggle Switch**](https://wpbricksaddons.com/bricks-elements/toggle/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Switch for the toggle element that can be placed anywhere on the page for switching content.
+5. [**Toggle Content**](https://wpbricksaddons.com/bricks-elements/toggle/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - A nestable element to create advanced toggle content sections with full design control.
+6. [**Image Gallery**](https://wpbricksaddons.com/bricks-elements/image-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Showcase beautiful images on your website using advanced filters and customizable features.
+7. [**Off Canvas**](https://wpbricksaddons.com/bricks-elements/off-canvas/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add a beautiful flyout navigator and create an advanced off-canvas menu that displays the content when the trigger is activated.
+8. [**Slide Menu**](https://wpbricksaddons.com/bricks-elements/slide-menu/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create responsive menus with amazing sliding effects.
 9. [**Video Gallery**](https://wpbricksaddons.com/bricks-elements/video-gallery/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Create a fast-loading video gallery with advanced filters and powerful customizations.
 10. [**Breadcrumbs**](https://wpbricksaddons.com/docs-category/elements/breadcrumbs/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Add breadcrumbs to any page of your website with extensive styling options.
 11. [**Instagram Feed**](https://wpbricksaddons.com/bricks-elements/instagram-feed/?utm_source=wp-repo&utm_medium=max-addons-bricks&utm_campaign=repo-readme-link) - Display images from your Instagram profile on your website.
@@ -129,6 +131,19 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 
 == Changelog ==
+
+= 1.6.7 - April 16, 2026 =
+* 	New: Element - Content Toggle
+* 	New: Element - Video
+* 	Enhancement: Lottie - Added option to upload JSON files to media library
+* 	Enhancement: Lottie - Added option to trigger action on animation completion
+* 	Enhancement: Lottie - Added Click Mode option
+* 	Enhancement: Rating - Added option to display rating label
+* 	Enhancement: Rating - Added option to add link to ratings
+* 	Enhancement: CTA Button - Improved code security
+* 	Enhancement: Gravity Forms Styler - Added Option Label Typography control for Radio and Checkbox fields
+* 	Fix: Gravity Forms Styler - Fixed Radio and Checkbox style options not working
+* 	Fix: Gravity Forms Styler - Fixed form CSS not loading when element is first added in the builder
 
 = 1.6.7 - February 20, 2026 =
 * 	Enhancement: Improved the code to make it more secure

@@ -378,6 +378,22 @@ class MAB_Plugin {
 			true
 		);
 
+		wp_register_script(
+			'mab-toggle',
+			$this->get_script_url( 'toggle' ),
+			'',
+			MAB_VER,
+			true
+		);
+
+		wp_register_script(
+			'mab-video',
+			$this->get_script_url( 'video' ),
+			'',
+			MAB_VER,
+			true
+		);
+
 		if ( bricks_is_builder_iframe() ) {
 			wp_enqueue_script( 'image-compare' );
 			wp_enqueue_script( 'vivus' );

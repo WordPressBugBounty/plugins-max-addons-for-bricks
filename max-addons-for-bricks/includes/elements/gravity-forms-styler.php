@@ -15,6 +15,9 @@ class Gravity_Forms_Element extends Element_Base {
 	public $css_selector = ''; // Default CSS selector
 	public $scripts      = []; // Script(s) run when element is rendered on frontend or updated in builder
 
+	// Shared input selector used across multiple control definitions.
+	private $input_selector = '.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file])';
+
 	// Return localized element label
 	public function get_label() {
 		return esc_html__( 'Gravity Forms Styler', 'max-addons-for-bricks' );
@@ -36,12 +39,17 @@ class Gravity_Forms_Element extends Element_Base {
 			wp_enqueue_style( 'gform_theme' );
 			wp_enqueue_style( 'gform_theme_admin' );
 		}
+
+		if ( class_exists( 'GFForms' ) && ! empty( $this->settings['selectForm'] ) ) {
+			$form_ajax = isset( $this->settings['form_ajax'] );
+			gravity_form_enqueue_scripts( $this->settings['selectForm'], $form_ajax );
+		}
 	}
 
 	// Set builder control groups
 	public function set_control_groups() {
 		$this->control_groups['form'] = [ // Unique group identifier (lowercase, no spaces)
-			'title' => esc_html__( 'Contact Form', 'max-addons-for-bricks' ), // Localized control group title
+			'title' => esc_html__( 'Form', 'max-addons-for-bricks' ), // Localized control group title
 			'tab'   => 'content', // Set to either "content" or "style"
 		];
 
@@ -136,9 +144,9 @@ class Gravity_Forms_Element extends Element_Base {
 		$this->set_thankyou_message_controls();
 	}
 
-	// Set before controls
+	// Set form controls
 	public function set_form_controls() {
-		$this->controls['selectForm'] = array(
+		$this->controls['selectForm'] = [
 			'tab'         => 'content',
 			'group'       => 'form',
 			'label'       => esc_html__( 'Select Form', 'max-addons-for-bricks' ),
@@ -147,14 +155,14 @@ class Gravity_Forms_Element extends Element_Base {
 			'inline'      => false,
 			'default'     => '',
 			'placeholder' => esc_html__( 'Select', 'max-addons-for-bricks' ),
-		);
+		];
 
 		$this->controls['formTitle'] = [
 			'tab'     => 'content',
 			'group'   => 'form',
 			'label'   => esc_html__( 'Title', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
-			'default' => 'true',
+			'default' => true,
 		];
 
 		$this->controls['formDescription'] = [
@@ -162,7 +170,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'group'   => 'form',
 			'label'   => esc_html__( 'Description', 'max-addons-for-bricks' ),
 			'type'    => 'checkbox',
-			'default' => 'true',
+			'default' => true,
 		];
 
 		$this->controls['form_ajax'] = [
@@ -250,7 +258,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'required' => [ 'formDescription', '!=', '' ],
 		];
 
-		$this->controls['titleAlign'] = array(
+		$this->controls['titleAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'titleDescriptionStyle',
 			'label'       => esc_html__( 'Alignment', 'max-addons-for-bricks' ),
@@ -264,7 +272,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'inline'      => true,
 			'default'     => '',
 			'placeholder' => '',
-		);
+		];
 	}
 
 	// Set spacing controls
@@ -411,7 +419,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'font',
-					'selector' => '.gfield input::-webkit-input-placeholder, .mab-gravity-form .gfield textarea::-webkit-input-placeholder',
+					'selector' => '.mab-gravity-form .gfield input::-webkit-input-placeholder, .mab-gravity-form .gfield textarea::-webkit-input-placeholder',
 				],
 			],
 			'inline' => true,
@@ -426,7 +434,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'font',
-					'selector' => '.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
+					'selector' => $this->input_selector . ', .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
 				],
 			],
 			'inline' => true,
@@ -441,7 +449,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'background-color',
-					'selector' => '.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
+					'selector' => $this->input_selector . ', .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
 				],
 			],
 			'inline' => true,
@@ -456,7 +464,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'border',
-					'selector' => '.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
+					'selector' => $this->input_selector . ', .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
 				],
 			],
 			'inline' => true,
@@ -471,7 +479,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'box-shadow',
-					'selector' => '.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
+					'selector' => $this->input_selector . ', .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
 				],
 			],
 			'inline' => true,
@@ -487,7 +495,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'   => [
 				[
 					'property' => 'width',
-					'selector' => '.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .mab-gravity-form .gfield select',
+					'selector' => $this->input_selector . ', .mab-gravity-form .gfield select',
 				],
 			],
 		];
@@ -528,12 +536,12 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'   => [
 				[
 					'property' => 'padding',
-					'selector' => '.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
+					'selector' => $this->input_selector . ', .mab-gravity-form .gfield textarea, .mab-gravity-form .gfield select',
 				],
 			],
 		];
 
-		$this->controls['inputTextAlign'] = array(
+		$this->controls['inputTextAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'inputFields',
 			'label'       => esc_html__( 'Text align', 'max-addons-for-bricks' ),
@@ -547,7 +555,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'inline'      => true,
 			'default'     => '',
 			'placeholder' => '',
-		);
+		];
 	}
 
 	// Set field description controls
@@ -681,7 +689,7 @@ class Gravity_Forms_Element extends Element_Base {
 				[
 					'property'  => 'width',
 					'selector'  => '.mab-custom-radio-checkbox input[type="checkbox"], .mab-custom-radio-checkbox input[type="radio"]',
-					'important' => 'true',
+					'important' => true,
 				],
 				[
 					'property' => 'height',
@@ -715,7 +723,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'      => [
 				[
 					'property' => 'background',
-					'selector' => '.mab-custom-radio-checkbox input[type="checkbox"], .mab-custom-radio-checkbox input[type="radio"]',
+					'selector' => '.mab-custom-radio-checkbox input[type="checkbox"]:checked:before, .mab-custom-radio-checkbox input[type="radio"]:checked:before',
 				],
 			],
 			'inline'   => true,
@@ -753,6 +761,22 @@ class Gravity_Forms_Element extends Element_Base {
 				],
 			],
 			'required' => [ 'customRadioCheckbox', '!=', '' ],
+		];
+
+		$this->controls['radioCheckboxLabelTypography'] = [
+			'tab'     => 'content',
+			'group'   => 'customCheckbox',
+			'type'    => 'typography',
+			'label'   => esc_html__( 'Option Label Typography', 'max-addons-for-bricks' ),
+			'css'     => [
+				[
+					'property' => 'font',
+					'selector' => '.gform_wrapper .gfield_radio .gchoice label, .gform_wrapper .gfield_checkbox .gchoice label',
+				],
+			],
+			'exclude' => [ 'text-align' ],
+			'inline'  => true,
+			'small'   => true,
 		];
 	}
 
@@ -1070,12 +1094,14 @@ class Gravity_Forms_Element extends Element_Base {
 
 	// Set errors controls
 	public function set_errors_controls() {
-		$this->controls['errorSeparator'] = array(
+		$error_input_selector = str_replace( '.gform_wrapper ', '.gform_wrapper li.gfield_error ', $this->input_selector );
+
+		$this->controls['errorSeparator'] = [
 			'tab'   => 'content',
 			'group' => 'errors',
 			'type'  => 'separator',
 			'label' => esc_html__( 'Error Messages', 'max-addons-for-bricks' ),
-		);
+		];
 
 		$this->controls['errorTypography'] = [
 			'tab'    => 'content',
@@ -1091,12 +1117,12 @@ class Gravity_Forms_Element extends Element_Base {
 			'inline' => true,
 		];
 
-		$this->controls['validationSeparator'] = array(
+		$this->controls['validationSeparator'] = [
 			'tab'   => 'content',
 			'group' => 'errors',
 			'type'  => 'separator',
 			'label' => esc_html__( 'Validation Errors', 'max-addons-for-bricks' ),
-		);
+		];
 
 		$this->controls['validationErrorTypography'] = [
 			'tab'    => 'content',
@@ -1169,7 +1195,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'border-color',
-					'selector' => '.gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_wrapper li.gfield_error textarea',
+					'selector' => $error_input_selector . ', .gform_wrapper li.gfield_error textarea',
 				],
 			],
 			'inline' => true,
@@ -1185,7 +1211,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'   => [
 				[
 					'property' => 'border-width',
-					'selector' => '.gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_wrapper li.gfield_error textarea',
+					'selector' => $error_input_selector . ', .gform_wrapper li.gfield_error textarea',
 				],
 			],
 		];
@@ -1256,7 +1282,7 @@ class Gravity_Forms_Element extends Element_Base {
 			],
 		];
 
-		$this->controls['tyAlign'] = array(
+		$this->controls['tyAlign'] = [
 			'tab'         => 'content',
 			'group'       => 'thankyou',
 			'label'       => esc_html__( 'Alignment', 'max-addons-for-bricks' ),
@@ -1270,7 +1296,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'inline'      => true,
 			'default'     => '',
 			'placeholder' => '',
-		);
+		];
 	}
 
 	// Render element HTML
@@ -1290,18 +1316,15 @@ class Gravity_Forms_Element extends Element_Base {
 		$this->set_attribute(
 			'container',
 			'class',
-			array(
+			[
 				'mab-contact-form',
 				'mab-gravity-form',
-			)
+			]
 		);
 
 		if ( isset( $settings['customRadioCheckbox'] ) ) {
 			$this->set_attribute( 'container', 'class', 'mab-custom-radio-checkbox' );
 		}
-
-		$form_title = '';
-		$form_description = '';
 		?>
 		<div <?php $this->print_render_attributes( '_root' ); ?>>
 			<div <?php $this->print_render_attributes( 'container' ); ?>>
@@ -1325,7 +1348,7 @@ class Gravity_Forms_Element extends Element_Base {
 				$form_id   = $settings['selectForm'];
 				$form_ajax = isset( $settings['form_ajax'] );
 
-				gravity_form( $form_id, $form_title, $form_description, $display_inactive = false, $field_values, $form_ajax, '', $echo = true );
+				gravity_form( $form_id, $form_title, $form_description, false, $field_values, $form_ajax, '', true );
 				?>
 			</div>
 		</div>

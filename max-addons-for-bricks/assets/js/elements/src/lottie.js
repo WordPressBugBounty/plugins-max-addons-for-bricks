@@ -9,6 +9,7 @@ MabLottie = function( element ) {
 	this.newCycle      = true;
 	this.playDirection = 'forward';
 	this.observer      = null;
+	this.isPlaying     = false;
 
 	this.settings = this.element.getAttribute('data-settings');
 	this.settings = JSON.parse( this.settings );
@@ -29,8 +30,9 @@ MabLottie.prototype = {
 	init: function() {
 		this.firstFrame  = this.lottie.firstFrame;
 		this.totalFrames = this.lottie.totalFrames;
-		this.loopCount   = parseInt(this.settings.loopCount || 1);
+		this.loopCount   = parseInt( this.settings.loopCount || 1 );
 		this.loopIndex   = 0;
+		this.isPlaying   = false;
 
 		var offset = this.getOffset();
 		var frames = this.getFrameRange();
@@ -105,17 +107,41 @@ MabLottie.prototype = {
 
 			this.player.seek( frames.start );
 
-			var replay = this.settings.onAnotherClick && 'replay' === this.settings.onAnotherClick;
+			var replay    = this.settings.onAnotherClick && 'replay' === this.settings.onAnotherClick;
+			var clickMode = this.settings.clickMode || 'play';
+			var self      = this;
 
 			lottie = this.player.getLottie();
 
 			elements.forEach( function( element ) {
 				element.addEventListener( 'click', function() {
-					replay && lottie.stop();
-					if ( isReverse ) {
-						lottie.playSegments( [ frames.end, frames.start ], true );
+					// Toggle mode — click alternates between play and pause.
+					if ( 'toggle' === clickMode ) {
+						if ( self.isPlaying ) {
+							lottie.pause();
+							self.isPlaying = false;
+						} else {
+							if ( isReverse ) {
+								lottie.playSegments( [ frames.end, frames.start ], true );
+							} else {
+								lottie.playSegments( [ frames.start, frames.end ], true );
+							}
+							self.isPlaying = true;
+						}
 					} else {
-						lottie.playSegments( [ frames.start, frames.end ], true );
+						// "Do nothing" — block re-click while animation is in progress.
+						if ( self.isPlaying && ! replay ) {
+							return;
+						}
+						if ( replay ) {
+							lottie.stop();
+						}
+						if ( isReverse ) {
+							lottie.playSegments( [ frames.end, frames.start ], true );
+						} else {
+							lottie.playSegments( [ frames.start, frames.end ], true );
+						}
+						self.isPlaying = true;
 					}
 				} );
 			} );
@@ -144,21 +170,18 @@ MabLottie.prototype = {
 
 			lottie.setDirection(1);
 
-			var viewportTop = 100 - ((1 + offset.top) * 100),
-				viewportBottom = offset.bottom * 100,
-				isInViewport = false;
+			var viewportTop    = 100 - ((1 + offset.top) * 100),
+				viewportBottom = offset.bottom * 100;
 
 			this.player.seek( frames.start );
 
 			if ( 'undefined' === typeof IntersectionObserver ) {
 				window.addEventListener( 'scroll', function() {
-					this.lottie = this.player.getLottie();
+					lottie = this.player.getLottie();
 
 					if ( mabFrontend.domHelpers.isInViewport( this.player ) ) {
-						isInViewport = true;
 						this.playLottie();
 					} else {
-						isInViewport = false;
 						lottie.pause();
 					}
 				}.bind(this) );
@@ -167,10 +190,8 @@ MabLottie.prototype = {
 					offset: -(viewportBottom) + '% 0% ' + (viewportTop) + '%',
 					callback: function(e) {
 						if (e.isInViewport) {
-							isInViewport = true;
 							this.playLottie();
 						} else {
-							isInViewport = false;
 							lottie.pause();
 						}
 					}.bind( this )
@@ -182,22 +203,51 @@ MabLottie.prototype = {
 	},
 
 	complete: function() {
-		this.newCycle = true;
+		this.newCycle  = true;
+		this.isPlaying = false;
 
-		this.element.dispatchEvent(new Event('max_lottie:complete'));
+		this.element.dispatchEvent( new Event('max_lottie:complete') );
+
+		var shouldRunOnComplete = true;
 
 		if ( 'yes' === this.settings.loop ) {
 			if ( this.loopIndex < this.loopCount - 1 ) {
+				shouldRunOnComplete = false;
 				if ( 'yes' === this.settings.reverse ) {
 					this.playDirection = 'forward' === this.playDirection ? 'backward' : 'forward';
 				}
-
 				this.playLottie();
 				this.loopIndex++;
+				this.isPlaying = true;
 			} else {
-				// Stop looping after max loops.
+				// All loops done.
 				this.loopIndex = 0;
 			}
+		}
+
+		if ( shouldRunOnComplete ) {
+			this.runOnCompleteAction();
+		}
+	},
+
+	runOnCompleteAction: function() {
+		var onComplete = this.settings.onComplete || 'none';
+
+		if ( 'none' === onComplete ) {
+			return;
+		}
+
+		if ( 'hide-self' === onComplete ) {
+			this.element.style.display = 'none';
+			return;
+		}
+
+		if ( this.settings.onCompleteSelector ) {
+			var displayVal = 'show-element' === onComplete ? '' : 'none';
+			var targets    = mabFrontend.domHelpers.querySelectorAll( this.settings.onCompleteSelector );
+			targets.forEach( function( el ) {
+				el.style.display = displayVal;
+			} );
 		}
 	},
 
@@ -211,7 +261,7 @@ MabLottie.prototype = {
 			};
 		}
 
-		var top = 'undefined' === typeof viewport.top ? 1 : parseInt( viewport.top );
+		var top    = 'undefined' === typeof viewport.top ? 1 : parseInt( viewport.top );
 		var bottom = 'undefined' === typeof viewport.bottom ? 0 : parseInt( viewport.bottom );
 
 		return {
@@ -226,7 +276,7 @@ MabLottie.prototype = {
 		var currentFrame = 0 === this.lottie.firstFrame ? this.lottie.currentFrame : this.lottie.firstFrame + this.lottie.currentFrame;
 
 		var firstFrame = this.firstFrame,
-			lastFrame = 0 === this.firstFrame ? this.totalFrames : this.firstFrame + this.totalFrames;
+			lastFrame  = 0 === this.firstFrame ? this.totalFrames : this.firstFrame + this.totalFrames;
 
 		if ( frameRange.start && frameRange.start > firstFrame ) {
 			firstFrame = frameRange.start;
@@ -242,23 +292,20 @@ MabLottie.prototype = {
 		// Reverse.
 		if ( 'backward' === this.playDirection && 'yes' === this.settings.reverse ) {
 			firstFrame = currentFrame;
-			lastFrame = frameRange.start && frameRange.start > this.firstFrame ? frameRange.start : this.firstFrame;
+			lastFrame  = frameRange.start && frameRange.start > this.firstFrame ? frameRange.start : this.firstFrame;
 		}
 
 		return {
-			first: firstFrame,
-			last: lastFrame,
+			first  : firstFrame,
+			last   : lastFrame,
 			current: currentFrame,
-			total: this.totalFrames
+			total  : this.totalFrames
 		};
 	},
 
 	getFrameRange: function() {
 		var start = parseInt( this.settings.start ) || 0;
-		var end = parseInt( this.settings.end ) || 0;
-
-		//start = Math.min(100, Math.max(0, start));
-		//end = Math.min(100, Math.max(0, end));
+		var end   = parseInt( this.settings.end ) || 0;
 
 		return {
 			start: start,
@@ -279,97 +326,6 @@ MabLottie.prototype = {
 		if ( this.observer ) {
 			this.observer.unobserve( this.player );
 		}
-	},
-
-	start: function() {
-		var directionMenu,
-			trigger = this.settings.trigger;
-
-		if ( 'click' === trigger ) {
-			directionMenu = 'yes' === this.settings.reverse ? -1 : 1;
-			var state = 'play';
-			this.animation.addEventListener('click', (e) => {
-				this.lottie.setDirection(directionMenu);
-				this.lottie.stop();
-				if ( 'play' === state ) {
-					this.lottie.play();
-					state = 'pause';
-				} else {
-					this.lottie.pause();
-					state = 'play';
-				}
-				directionMenu = 'yes' === this.settings.reverse ? 1 : -1;
-			});
-		}
-
-		if ( 'hover' === trigger ) {
-			directionMenu = 'yes' === this.settings.reverse ? -1 : 1;
-			this.animation.addEventListener('mouseenter', (e) => {
-				this.lottie.setDirection(directionMenu);
-				this.lottie.play();
-				directionMenu = 'yes' === this.settings.reverse ? 1 : -1;
-			});
-
-			this.animation.addEventListener('mouseleave', (e) => {
-				this.lottie.setDirection(directionMenu);
-				this.lottie.play();
-			});
-		}
-
-		var viewport = this.settings.viewport;
-
-		if ( 'undefined' === typeof viewport ) {
-			viewport = {
-				top: 100,
-				bottom: 0
-			};
-		}
-
-		viewport.top = 'undefined' === typeof viewport.top ? 100 : parseInt( viewport.top );
-		viewport.bottom = 'undefined' === typeof viewport.bottom ? 0 : parseInt( viewport.bottom );
-
-		if ( 'viewport' === trigger ) {
-			this.lottie.setDirection(1);
-
-			this.observer = this.scrollObserver( {
-				offset: viewport.bottom + '% 0% ' + viewport.top + '%',
-				callback: function(e) {
-					if (e.isInViewport) {
-						this.isInViewport = true;
-						this.lottie.play();
-					} else {
-						this.isInViewport = false;
-						this.lottie.pause();
-					}
-				}.bind( this )
-			} );
-
-			this.observer.observe( this.animation );
-		}
-
-		if ( 'scroll' === trigger ) {
-			this.lottie.setDirection(1);
-
-			this.observer = this.scrollObserver( {
-				offset: viewport.bottom + '% 0% ' + viewport.top + '%',
-				callback: function(e) {
-					if (e.isInViewport) {
-						this.isInViewport = true;
-
-						var percent = this.getElementViewportPercentage( this.animation, viewport );
-						percent = Math.min(100, Math.max(0, percent));
-
-						this.lottie.goToAndStop(percent);
-					} else {
-						this.isInViewport = false;
-						//this.lottie.pause();
-					}
-				}.bind( this )
-			} );
-
-			this.observer.observe( this.player );
-		}
-
 	},
 };
 

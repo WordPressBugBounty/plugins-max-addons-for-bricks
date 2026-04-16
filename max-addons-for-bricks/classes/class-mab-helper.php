@@ -161,4 +161,40 @@ class Helper {
 
 		return $options;
 	}
+
+	/**
+	 * Get templates list
+	 *
+	 * @param string $exclude_template_id Template ID to exclude.
+	 * @return array
+	 * @since 1.7.0
+	 */
+	public static function get_templates_list( $exclude_template_id = '' ) {
+		$args = [
+			'post_type'      => BRICKS_DB_TEMPLATE_SLUG,
+			'posts_per_page' => -1,
+			'meta_query'     => [
+				[
+					'key'   => BRICKS_DB_TEMPLATE_TYPE,
+					'value' => [ 'section', 'content' ],
+				],
+			],
+			'fields'         => 'ids',
+			'post_status'    => 'publish',
+		];
+
+		$templates = get_posts( $args );
+
+		$list = [];
+
+		foreach ( $templates as $template_id ) {
+			if ( $exclude_template_id == $template_id ) {
+				continue;
+			}
+
+			$list[ $template_id ] = get_the_title( $template_id );
+		}
+
+		return $list;
+	}
 }

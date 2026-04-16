@@ -1,3 +1,17 @@
+== 1.7.0 ==
+Release date: April 16, 2026
+* New: Element - Content Toggle
+* New: Element - Video
+* Enhancement: Lottie - Added option to upload JSON files to media library
+* Enhancement: Lottie - Added option to trigger action on animation completion
+* Enhancement: Lottie - Added Click Mode option
+* Enhancement: Rating - Added option to display rating label
+* Enhancement: Rating - Added option to add link to ratings
+* Enhancement: CTA Button - Improved code security
+* Enhancement: Gravity Forms Styler - Added Option Label Typography control for Radio and Checkbox fields
+* Fix: Gravity Forms Styler - Fixed Radio and Checkbox style options not working
+* Fix: Gravity Forms Styler - Fixed form CSS not loading when element is first added in the builder
+
 == 1.6.7 ==
 Release date: February 20, 2026
 * Enhancement: Improved the code to make it more secure

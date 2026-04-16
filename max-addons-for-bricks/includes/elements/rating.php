@@ -10,6 +10,7 @@ class Star_Rating_Element extends \Bricks\Element {
 	public $category     = 'max-addons-elements'; // Use predefined element category 'general'
 	public $name         = 'max-rating'; // Make sure to prefix your elements
 	public $icon         = 'ti-star max-element'; // Themify icon font class
+	public $tag          = 'div';
 	public $css_selector = ''; // Default CSS selector
 	public $scripts      = []; // Script(s) run when element is rendered on frontend or updated in builder
 
@@ -60,7 +61,7 @@ class Star_Rating_Element extends \Bricks\Element {
 				'library' => 'themify',
 				'icon'    => 'ti-star',
 			],
-			'css' 	=> [
+			'css'      => [
 				[
 					'selector' => '.icon-svg',
 				],
@@ -72,9 +73,9 @@ class Star_Rating_Element extends \Bricks\Element {
 			'label'    => esc_html__( 'Marked Icon color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
-			'default'  => array(
+			'default'  => [
 				'hex' => '#ffc107',
-			),
+			],
 			'css'      => [
 				[
 					'property' => 'color',
@@ -92,9 +93,9 @@ class Star_Rating_Element extends \Bricks\Element {
 			'label'    => esc_html__( 'Unmarked Icon color', 'max-addons-for-bricks' ),
 			'type'     => 'color',
 			'inline'   => true,
-			'default'  => array(
+			'default'  => [
 				'hex' => '#e0e0e0',
-			),
+			],
 			'css'      => [
 				[
 					'property' => 'color',
@@ -133,6 +134,113 @@ class Star_Rating_Element extends \Bricks\Element {
 			],
 		];
 
+		// Label controls
+		$this->controls['labelSeparator'] = [
+			'tab'   => 'content',
+			'label' => esc_html__( 'Label', 'max-addons-for-bricks' ),
+			'type'  => 'separator',
+		];
+
+		$this->controls['showLabel'] = [
+			'tab'   => 'content',
+			'label' => esc_html__( 'Show Label', 'max-addons-for-bricks' ),
+			'type'  => 'checkbox',
+		];
+
+		$this->controls['labelFormat'] = [
+			'tab'         => 'content',
+			'label'       => esc_html__( 'Format', 'max-addons-for-bricks' ),
+			'type'        => 'select',
+			'options'     => [
+				'value_scale' => esc_html__( 'Value / Scale (e.g. 4.5 / 5)', 'max-addons-for-bricks' ),
+				'value_only'  => esc_html__( 'Value only (e.g. 4.5)', 'max-addons-for-bricks' ),
+			],
+			'placeholder' => esc_html__( 'Value / Scale (e.g. 4.5 / 5)', 'max-addons-for-bricks' ),
+			'required'    => [ 'showLabel', '=', true ],
+		];
+
+		$this->controls['labelPrefix'] = [
+			'tab'         => 'content',
+			'label'       => esc_html__( 'Prefix', 'max-addons-for-bricks' ),
+			'type'        => 'text',
+			'placeholder' => esc_html__( 'e.g. Rated', 'max-addons-for-bricks' ),
+			'required'    => [ 'showLabel', '=', true ],
+		];
+
+		$this->controls['labelSuffix'] = [
+			'tab'         => 'content',
+			'label'       => esc_html__( 'Suffix', 'max-addons-for-bricks' ),
+			'type'        => 'text',
+			'placeholder' => esc_html__( 'e.g. stars', 'max-addons-for-bricks' ),
+			'required'    => [ 'showLabel', '=', true ],
+		];
+
+		$this->controls['labelPosition'] = [
+			'tab'         => 'content',
+			'label'       => esc_html__( 'Position', 'max-addons-for-bricks' ),
+			'type'        => 'select',
+			'options'     => [
+				'after'  => esc_html__( 'After stars', 'max-addons-for-bricks' ),
+				'before' => esc_html__( 'Before stars', 'max-addons-for-bricks' ),
+			],
+			'placeholder' => esc_html__( 'After stars', 'max-addons-for-bricks' ),
+			'required'    => [ 'showLabel', '=', true ],
+		];
+
+		$this->controls['labelGap'] = [
+			'tab'      => 'content',
+			'label'    => esc_html__( 'Spacing', 'max-addons-for-bricks' ),
+			'type'     => 'number',
+			'units'    => true,
+			'css'      => [
+				[
+					'property' => 'gap',
+					'selector' => '&',
+				],
+			],
+			'required' => [ 'showLabel', '=', true ],
+		];
+
+		$this->controls['labelColor'] = [
+			'tab'      => 'content',
+			'label'    => esc_html__( 'Color', 'max-addons-for-bricks' ),
+			'type'     => 'color',
+			'inline'   => true,
+			'css'      => [
+				[
+					'property' => 'color',
+					'selector' => '.mab-rating-label',
+				],
+			],
+			'required' => [ 'showLabel', '=', true ],
+		];
+
+		$this->controls['labelTypography'] = [
+			'tab'      => 'content',
+			'label'    => esc_html__( 'Typography', 'max-addons-for-bricks' ),
+			'type'     => 'typography',
+			'css'      => [
+				[
+					'property' => 'font',
+					'selector' => '.mab-rating-label',
+				],
+			],
+			'required' => [ 'showLabel', '=', true ],
+		];
+
+		// Link controls
+		$this->controls['linkSeparator'] = [
+			'tab'   => 'content',
+			'label' => esc_html__( 'Link', 'max-addons-for-bricks' ),
+			'type'  => 'separator',
+		];
+
+		$this->controls['link'] = [
+			'tab'   => 'content',
+			'label' => esc_html__( 'Link', 'max-addons-for-bricks' ),
+			'type'  => 'link',
+		];
+
 	}
 
 	public function get_rating_scale(): int {
@@ -147,13 +255,13 @@ class Star_Rating_Element extends \Bricks\Element {
 			$rating_scale = 5;
 		}
 
-		return intval( $rating_scale );
+		return max( 1, min( intval( $rating_scale ), 10 ) );
 	}
 
 	public function get_rating_value(): float {
 		$settings      = $this->settings;
 		$initial_value = $this->get_rating_scale();
-		$rating_value  = $settings['rating'];
+		$rating_value  = isset( $settings['rating'] ) ? $settings['rating'] : '';
 
 		if ( is_string( $rating_value ) && strpos( $rating_value, '{' ) !== false && strpos( $rating_value, '}' ) !== false ) {
 			$rating_value = floatval( $this->render_dynamic_data( $rating_value ) );
@@ -186,8 +294,8 @@ class Star_Rating_Element extends \Bricks\Element {
 	}
 
 	public function get_icon_markup(): string {
-		$settings = $this->settings;
-		$icon = $settings['ratingIcon'];
+		$settings     = $this->settings;
+		$icon         = isset( $settings['ratingIcon'] ) ? $settings['ratingIcon'] : [];
 		$rating_scale = $this->get_rating_scale();
 
 		ob_start();
@@ -203,10 +311,10 @@ class Star_Rating_Element extends \Bricks\Element {
 			?>
 			<div class="mab-icon">
 				<div <?php echo wp_kses_post( $this->render_attributes( 'icon_marked_' . $index ) ); ?>>
-					<?php echo self::render_icon( $icon, [ 'aria-hidden' => 'true' ] );; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo self::render_icon( $icon, [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 				<div class="mab-icon-unmarked">
-					<?php echo self::render_icon( $icon, [ 'aria-hidden' => 'true' ] );; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo self::render_icon( $icon, [ 'aria-hidden' => 'true' ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</div>
 			<?php
@@ -215,13 +323,40 @@ class Star_Rating_Element extends \Bricks\Element {
 		return ob_get_clean();
 	}
 
+	public function get_label_markup(): string {
+		$settings = $this->settings;
+
+		if ( empty( $settings['showLabel'] ) ) {
+			return '';
+		}
+
+		$format = isset( $settings['labelFormat'] ) ? $settings['labelFormat'] : 'value_scale';
+		$prefix = isset( $settings['labelPrefix'] ) ? trim( $settings['labelPrefix'] ) : '';
+		$suffix = isset( $settings['labelSuffix'] ) ? trim( $settings['labelSuffix'] ) : '';
+
+		if ( 'value_only' === $format ) {
+			$value_text = (string) $this->get_rating_value();
+		} else {
+			$value_text = sprintf(
+				/* translators: 1: rating value, 2: rating scale */
+				_x( '%1$s / %2$s', 'rating label value/scale format', 'max-addons-for-bricks' ),
+				$this->get_rating_value(),
+				$this->get_rating_scale()
+			);
+		}
+
+		$parts = array_filter( [ $prefix, $value_text, $suffix ] );
+		$label = implode( ' ', $parts );
+
+		return '<span class="mab-rating-label" aria-hidden="true">' . esc_html( $label ) . '</span>';
+	}
+
 	public function render() {
 		$settings = $this->settings;
 
 		$this->set_attribute( '_root', 'class', 'mab-rating' );
-		$this->set_attribute( '_root', 'itemtype', 'http://schema.org/Rating' );
+		$this->set_attribute( '_root', 'itemtype', 'https://schema.org/Rating' );
 		$this->set_attribute( '_root', 'itemscope', '' );
-		$this->set_attribute( '_root', 'itemprop', 'reviewRating' );
 
 		$this->set_attribute( 'widget_wrapper', 'class', 'mab-rating-wrapper' );
 		$this->set_attribute( 'widget_wrapper', 'itemprop', 'reviewRating' );
@@ -234,14 +369,27 @@ class Star_Rating_Element extends \Bricks\Element {
 			$this->get_rating_scale()
 		) );
 
-		// Render button ?>
-		<div <?php echo wp_kses_post( $this->render_attributes( '_root' ) ); ?>>
+		if ( ! empty( $settings['link'] ) ) {
+			$this->tag = 'a';
+			$this->set_link_attributes( '_root', $settings['link'] );
+		}
+
+		$label_position = isset( $settings['labelPosition'] ) ? $settings['labelPosition'] : 'after';
+		$label_markup   = $this->get_label_markup();
+		?>
+		<<?php echo esc_attr( $this->tag ); ?> <?php echo wp_kses_post( $this->render_attributes( '_root' ) ); ?>>
 			<meta itemprop="worstRating" content="0">
-			<meta itemprop="bestRating" content="<?php echo $this->get_rating_scale(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
+			<meta itemprop="bestRating" content="<?php echo esc_attr( $this->get_rating_scale() ); ?>">
+			<?php if ( $label_markup && 'before' === $label_position ) : ?>
+				<?php echo $label_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php endif; ?>
 			<div <?php echo wp_kses_post( $this->render_attributes( 'widget_wrapper' ) ); ?>>
 				<?php echo $this->get_icon_markup(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
-		</div>
+			<?php if ( $label_markup && 'before' !== $label_position ) : ?>
+				<?php echo $label_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php endif; ?>
+		</<?php echo esc_attr( $this->tag ); ?>>
 		<?php
 	}
 }

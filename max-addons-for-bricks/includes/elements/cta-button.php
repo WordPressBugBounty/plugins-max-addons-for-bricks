@@ -61,10 +61,12 @@ class Cta_Button_Element extends Element_Base {
 		];
 
 		$this->controls['tag'] = [
+			'tab'            => 'content',
 			'label'          => esc_html__( 'HTML tag', 'max-addons-for-bricks' ),
 			'type'           => 'text',
 			'hasDynamicData' => false,
 			'inline'         => true,
+			'validate'       => $this->get_in_builder_html_tag_validation_rules(),
 			'placeholder'    => 'span',
 			'required'       => [ 'link', '=', '' ],
 		];
@@ -426,11 +428,11 @@ class Cta_Button_Element extends Element_Base {
 			$this->set_attribute( 'icon', 'class', $settings['icon']['icon'] );
 		}
 
-		$icon_html = '<span class="mab-cta-button-icon icon-' . $icon_position . '">';
+		$icon_html = '<span class="mab-cta-button-icon icon-' . esc_attr( $icon_position ) . '">';
 
 		if ( 'icon' === $icon_type ) {
 			if ( isset( $settings['icon'] ) ) {
-				$icon_html .= isset( $settings['icon'] ) ? self::render_icon( $settings['icon'] ) : false;
+				$icon_html .= self::render_icon( $settings['icon'] );
 			}
 		} elseif ( 'image' === $icon_type ) {
 			$icon_html .= wp_kses_post( $this->render_image() );
@@ -515,20 +517,21 @@ class Cta_Button_Element extends Element_Base {
 	public function render() {
 		$settings = $this->settings;
 
-		$button_classes[] = 'bricks-button mab-cta-button';
+		$button_classes[] = 'bricks-button';
+		$button_classes[] = 'mab-cta-button';
 
 		if ( isset( $settings['size'] ) ) {
-			$button_classes[] = $settings['size'];
+			$button_classes[] = sanitize_html_class( $settings['size'] );
 		}
 
 		if ( isset( $settings['style'] ) ) {
 			// Outline
 			if ( isset( $settings['outline'] ) ) {
 				$button_classes[] = 'outline';
-				$button_classes[] = 'bricks-color-' . $settings['style'];
+				$button_classes[] = 'bricks-color-' . sanitize_html_class( $settings['style'] );
 			} else {
 				// Fill (default)
-				$button_classes[] = 'bricks-background-' . $settings['style'];
+				$button_classes[] = 'bricks-background-' . sanitize_html_class( $settings['style'] );
 			}
 		}
 
@@ -539,7 +542,7 @@ class Cta_Button_Element extends Element_Base {
 
 		$icon_position = isset( $settings['iconPosition'] ) ? $settings['iconPosition'] : 'right';
 
-		$button_classes[] = 'mab-cta-button-icon-align-' . $icon_position;
+		$button_classes[] = 'mab-cta-button-icon-align-' . sanitize_html_class( $icon_position );
 
 		$this->set_attribute( '_root', 'class', $button_classes );
 

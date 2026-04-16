@@ -105,7 +105,9 @@ final class MAB_Admin_Settings {
 			'rating'           => esc_html__( 'Rating', 'max-addons-for-bricks' ),
 			'scroll-image'     => esc_html__( 'Scroll Image', 'max-addons-for-bricks' ),
 			'svg-animation'    => esc_html__( 'SVG Animation', 'max-addons-for-bricks' ),
+			'toggle'           => esc_html__( 'Content Toggle', 'max-addons-for-bricks' ),
 			'unfold'           => esc_html__( 'Unfold', 'max-addons-for-bricks' ),
+			'video'            => esc_html__( 'Video', 'max-addons-for-bricks' ),
 		);
 
 		// Contact Form 7

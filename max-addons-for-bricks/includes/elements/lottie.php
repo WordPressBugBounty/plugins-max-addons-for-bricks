@@ -50,12 +50,35 @@ class Lottie_Element extends Element_Base {
 	// Set Lottie controls
 	public function set_lottie_controls() {
 
-		$this->controls['sourceExternalUrl'] = [
+		$this->controls['sourceType'] = [
 			'tab'     => 'content',
 			'group'   => 'lottie',
-			'label'   => esc_html__( 'Lottie File URL', 'max-addons-for-bricks' ),
-			'type'    => 'text',
-			'default' => 'https://assets2.lottiefiles.com/private_files/lf30_kjpkr2oh.json'
+			'label'   => esc_html__( 'Source', 'max-addons-for-bricks' ),
+			'type'    => 'select',
+			'options' => [
+				'url'   => esc_html__( 'External URL', 'max-addons-for-bricks' ),
+				'media' => esc_html__( 'Media Library', 'max-addons-for-bricks' ),
+			],
+			'inline'  => true,
+			'default' => 'url',
+		];
+
+		$this->controls['sourceExternalUrl'] = [
+			'tab'      => 'content',
+			'group'    => 'lottie',
+			'label'    => esc_html__( 'Lottie File URL', 'max-addons-for-bricks' ),
+			'type'     => 'text',
+			'default'  => 'https://assets2.lottiefiles.com/private_files/lf30_kjpkr2oh.json',
+			'required' => [ 'sourceType', '!=', 'media' ],
+		];
+
+		$this->controls['sourceFile'] = [
+			'tab'         => 'content',
+			'group'       => 'lottie',
+			'label'       => esc_html__( 'Lottie JSON File', 'max-addons-for-bricks' ),
+			'type'        => 'file',
+			'pasteStyles' => false,
+			'required'    => [ 'sourceType', '=', 'media' ],
 		];
 
 		$this->controls['link'] = [
@@ -121,6 +144,20 @@ class Lottie_Element extends Element_Base {
 			'required'    => [ 'trigger', '=', 'cursor' ]
 		];
 
+		$this->controls['clickMode'] = [
+			'tab'         => 'content',
+			'group'       => 'settings',
+			'label'       => esc_html__( 'Click Mode', 'max-addons-for-bricks' ),
+			'type'        => 'select',
+			'options'     => [
+				'play'   => esc_html__( 'Play Always', 'max-addons-for-bricks' ),
+				'toggle' => esc_html__( 'Toggle Play / Pause', 'max-addons-for-bricks' ),
+			],
+			'inline'      => true,
+			'placeholder' => esc_html__( 'Play Always', 'max-addons-for-bricks' ),
+			'required'    => [ 'trigger', '=', 'click' ],
+		];
+
 		$this->controls['onAnotherClick'] = [
 			'tab'      => 'content',
 			'group'    => 'settings',
@@ -131,7 +168,10 @@ class Lottie_Element extends Element_Base {
 				'replay' => esc_html__( 'Play again', 'max-addons-for-bricks' ),
 			],
 			'inline'   => true,
-			'required' => [ 'trigger', '=', 'click' ]
+			'required' => [
+				[ 'trigger', '=', 'click' ],
+				[ 'clickMode', '!=', 'toggle' ],
+			],
 		];
 
 		$this->controls['viewportBottom'] = [
@@ -245,6 +285,31 @@ class Lottie_Element extends Element_Base {
 			'inline'  => true,
 			'default' => 'svg',
 		];
+
+		$this->controls['onComplete'] = [
+			'tab'         => 'content',
+			'group'       => 'settings',
+			'label'       => esc_html__( 'On Complete', 'max-addons-for-bricks' ),
+			'type'        => 'select',
+			'options'     => [
+				'none'         => esc_html__( 'Nothing', 'max-addons-for-bricks' ),
+				'hide-self'    => esc_html__( 'Hide Animation', 'max-addons-for-bricks' ),
+				'show-element' => esc_html__( 'Show Element', 'max-addons-for-bricks' ),
+				'hide-element' => esc_html__( 'Hide Element', 'max-addons-for-bricks' ),
+			],
+			'inline'      => true,
+			'placeholder' => esc_html__( 'Nothing', 'max-addons-for-bricks' ),
+			'required'    => [ 'trigger', '!=', 'scroll' ],
+		];
+
+		$this->controls['onCompleteSelector'] = [
+			'tab'         => 'content',
+			'group'       => 'settings',
+			'label'       => esc_html__( 'Target Element Selector', 'max-addons-for-bricks' ),
+			'type'        => 'text',
+			'placeholder' => '#my-element or .my-element',
+			'required'    => [ 'onComplete', '=', [ 'show-element', 'hide-element' ] ],
+		];
 	}
 
 	public function has_link() {
@@ -273,13 +338,14 @@ class Lottie_Element extends Element_Base {
 		}
 
 		$attrs = [
-			'trigger'   => $trigger,
-			'loop'      => $loop,
-			'speed'     => $speed,
-			'start'     => 0,
-			'end'       => 0,
-			'viewport'  => $viewport,
-			'loopCount' => $loopCount,
+			'trigger'    => $trigger,
+			'loop'       => $loop,
+			'speed'      => $speed,
+			'start'      => 0,
+			'end'        => 0,
+			'viewport'   => $viewport,
+			'loopCount'  => $loopCount,
+			'onComplete' => isset( $settings['onComplete'] ) ? $settings['onComplete'] : 'none',
 		];
 
 		if ( 'scroll' !== $trigger ) {
@@ -294,26 +360,39 @@ class Lottie_Element extends Element_Base {
 		}
 
 		if ( 'click' === $trigger && isset( $settings['clickSelector'] ) && ! empty( $settings['clickSelector'] ) ) {
-			$attrs['selector'] = $settings['clickSelector'];
+			$attrs['selector'] = sanitize_text_field( $settings['clickSelector'] );
 		}
 		if ( 'hover' === $trigger && isset( $settings['hoverSelector'] ) && ! empty( $settings['hoverSelector'] ) ) {
-			$attrs['selector'] = $settings['hoverSelector'];
+			$attrs['selector'] = sanitize_text_field( $settings['hoverSelector'] );
 		}
 		if ( 'cursor' === $trigger && isset( $settings['cursorSelector'] ) && ! empty( $settings['cursorSelector'] ) ) {
-			$attrs['selector'] = $settings['cursorSelector'];
+			$attrs['selector'] = sanitize_text_field( $settings['cursorSelector'] );
 		}
 
-		if ( 'click' === $trigger && isset( $settings['onAnotherClick'] ) ) {
-			$attrs['onAnotherClick'] = $settings['onAnotherClick'];
+		if ( 'click' === $trigger ) {
+			if ( isset( $settings['onAnotherClick'] ) ) {
+				$attrs['onAnotherClick'] = $settings['onAnotherClick'];
+			}
+			$attrs['clickMode'] = isset( $settings['clickMode'] ) ? $settings['clickMode'] : 'play';
+		}
+
+		if ( isset( $settings['onCompleteSelector'] ) && ! empty( $settings['onCompleteSelector'] ) ) {
+			$attrs['onCompleteSelector'] = sanitize_text_field( $settings['onCompleteSelector'] );
 		}
 
 		return $attrs;
 	}
 
 	public function render() {
-		$settings     = $this->settings;
-		$external_url = isset( $settings['sourceExternalUrl'] ) ? $settings['sourceExternalUrl'] : '';
-		$renderer     = isset( $settings['renderer'] ) ? $settings['renderer'] : 'svg';
+		$settings    = $this->settings;
+		$source_type = isset( $settings['sourceType'] ) ? $settings['sourceType'] : 'url';
+		$renderer    = isset( $settings['renderer'] ) ? $settings['renderer'] : 'svg';
+
+		if ( 'media' === $source_type ) {
+			$external_url = isset( $settings['sourceFile']['url'] ) ? esc_url( $settings['sourceFile']['url'] ) : '';
+		} else {
+			$external_url = isset( $settings['sourceExternalUrl'] ) ? $settings['sourceExternalUrl'] : '';
+		}
 
 		// Element placeholder
 		if ( empty( $external_url ) ) {
@@ -327,7 +406,7 @@ class Lottie_Element extends Element_Base {
 
 		$this->set_attribute( '_root', 'class', 'mab-lottie' );
 		$this->set_attribute( '_root', 'data-element-id', $this->id );
-		$this->set_attribute( '_root', 'data-settings', htmlspecialchars( wp_json_encode( $attrs ) ) );
+		$this->set_attribute( '_root', 'data-settings', wp_json_encode( $attrs ) );
 
 		$this->set_attribute( 'player', 'id', 'lottie-player-' . $this->id );
 		$this->set_attribute( 'player', 'src', esc_url( $external_url ) );
