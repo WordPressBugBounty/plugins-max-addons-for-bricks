@@ -2,9 +2,9 @@
 Contributors: bloompixel, simrandeep, gurpreetbassi
 Tags: bricks, addons, bricks addon, elements, bricks builder
 Requires at least: 6.3
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,7 +132,10 @@ Not at all! All the elements and settings are easy to use with drag & drop inter
 
 == Changelog ==
 
-= 1.6.7 - April 16, 2026 =
+= 1.7.1 - May 14, 2026 =
+* 	Enhancement: Tested compatibility with WordPress 7.0
+
+= 1.7.0 - April 16, 2026 =
 * 	New: Element - Content Toggle
 * 	New: Element - Video
 * 	Enhancement: Lottie - Added option to upload JSON files to media library
