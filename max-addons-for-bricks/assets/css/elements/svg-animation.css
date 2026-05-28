@@ -3,9 +3,10 @@
   width: 100%;
   margin: 0;
   line-height: 1;
-  border: none; }
-
+  border: none;
+}
 .mab-svg-animation .mab-svg-inner-block {
   display: inline-flex;
   width: auto;
-  height: auto; }
+  height: auto;
+}

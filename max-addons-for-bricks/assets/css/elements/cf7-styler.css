@@ -4,26 +4,34 @@
   font-size: 0;
   height: 0;
   display: block;
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 .mab-contact-form .wpcf7-form label,
 .mab-contact-form .wpcf7-form .wpcf7-form-control-wrap {
-  display: block; }
+  display: block;
+}
 
 .mab-contact-form .wpcf7-form p {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .mab-contact-form.placeholder-show .wpcf7-form-control::placeholder {
-  color: transparent; }
+  color: transparent;
+}
 
 .mab-contact-form.labels-hide .wpcf7-form label {
-  display: none; }
+  display: none;
+}
 
 .mab-contact-form-title {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .mab-contact-form-7-description {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 .mab-contact-form-7-button-full-width .wpcf7-form-control.wpcf7-submit {
-  width: 100%; }
+  width: 100%;
+}

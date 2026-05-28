@@ -1,21 +1,21 @@
 .mab-rating {
   display: flex;
   align-items: center;
-  text-decoration: none; }
-
+  text-decoration: none;
+}
 .mab-rating-label {
-  line-height: 1; }
-
+  line-height: 1;
+}
 .mab-rating-wrapper {
   display: flex;
   justify-content: inherit;
   flex-direction: row;
   flex-wrap: wrap;
-  width: fit-content; }
-
+  width: fit-content;
+}
 .mab-rating .mab-icon {
-  position: relative; }
-
+  position: relative;
+}
 .mab-rating .mab-icon-marked {
   color: #ffc107;
   width: var(--mab-rating-icon-marked-width);
@@ -24,7 +24,8 @@
   height: 100%;
   left: 0;
   top: 0;
-  overflow: hidden; }
-
+  overflow: hidden;
+}
 .mab-rating .mab-icon-unmarked {
-  color: #e0e0e0; }
+  color: #e0e0e0;
+}

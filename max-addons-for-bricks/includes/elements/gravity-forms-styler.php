@@ -373,7 +373,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'   => [
 				[
 					'property' => 'margin-top',
-					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
 				],
 			],
 		];
@@ -813,7 +813,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'   => [
 				[
 					'property' => 'width',
-					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
 				],
 			],
 		];
@@ -826,7 +826,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'font',
-					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
 				],
 			],
 			'inline' => true,
@@ -840,7 +840,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'background-color',
-					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
 				],
 			],
 			'inline' => true,
@@ -857,7 +857,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'border',
-					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
 				],
 			],
 		];
@@ -870,7 +870,7 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'    => [
 				[
 					'property' => 'box-shadow',
-					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
 				],
 			],
 			'inline' => true,
@@ -885,9 +885,49 @@ class Gravity_Forms_Element extends Element_Base {
 			'css'   => [
 				[
 					'property' => 'padding',
-					'selector' => '.gform_footer input[type="submit"], .gform_page_footer input[type="submit"], .gfield--type-submit input[type="submit"]',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
 				],
 			],
+		];
+
+		$this->controls['submitButtonIconSeparator'] = [
+			'tab'      => 'content',
+			'group'    => 'submitButton',
+			'type'     => 'separator',
+			'label'    => esc_html__( 'Icon', 'max-addons-for-bricks' ),
+		];
+
+		$this->controls['submitButtonIcon'] = [
+			'tab'   => 'content',
+			'group' => 'submitButton',
+			'label' => esc_html__( 'Icon', 'max-addons-for-bricks' ),
+			'type'  => 'icon',
+		];
+
+		$this->controls['submitButtonIconPosition'] = [
+			'tab'         => 'content',
+			'group'       => 'submitButton',
+			'label'       => esc_html__( 'Icon Position', 'max-addons-for-bricks' ),
+			'type'        => 'select',
+			'options'     => $this->control_options['iconPosition'],
+			'inline'      => true,
+			'placeholder' => esc_html__( 'Right', 'max-addons-for-bricks' ),
+			'required'    => [ 'submitButtonIcon', '!=', '' ],
+		];
+
+		$this->controls['submitButtonIconSpacing'] = [
+			'tab'      => 'content',
+			'group'    => 'submitButton',
+			'label'    => esc_html__( 'Icon Spacing', 'max-addons-for-bricks' ),
+			'type'     => 'number',
+			'units'    => true,
+			'css'      => [
+				[
+					'property' => 'gap',
+					'selector' => '.gform_footer input[type="submit"], .gform_footer button[type="submit"], .gform_page_footer input[type="submit"], .gform_page_footer button[type="submit"], .gfield--type-submit input[type="submit"], .gfield--type-submit button[type="submit"]',
+				],
+			],
+			'required' => [ 'submitButtonIcon', '!=', '' ],
 		];
 	}
 
@@ -1299,6 +1339,81 @@ class Gravity_Forms_Element extends Element_Base {
 		];
 	}
 
+	/**
+	 * Convert the Gravity Forms submit <input> into a <button> so an icon can be placed inside it.
+	 *
+	 * All original attributes (id, class, onclick, onkeypress, data-*, aria-*) are preserved so
+	 * Gravity Forms' AJAX submission and conditional logic keep working. The button's text comes
+	 * from the original 'value' attribute. Only the flex layout needed to align the icon with the
+	 * label is added inline — padding/border/background remain driven by the element's controls.
+	 *
+	 * @param string $button_html   Original <input type="submit"> markup from Gravity Forms.
+	 * @param string $icon_html     Rendered icon markup.
+	 * @param string $icon_position 'left' or 'right'.
+	 * @return string Filtered button markup.
+	 */
+	private function get_submit_button_html( $button_html, $icon_html, $icon_position ) {
+		if ( ! class_exists( 'WP_HTML_Tag_Processor' ) ) {
+			return $button_html; // Leave the button untouched on unsupported WordPress versions.
+		}
+
+		$processor  = new \WP_HTML_Tag_Processor( $button_html );
+		$attributes = [];
+		$label      = '';
+
+		if ( $processor->next_tag() ) {
+			$names = $processor->get_attribute_names_with_prefix( '' );
+
+			if ( is_array( $names ) ) {
+				foreach ( $names as $name ) {
+					$value = $processor->get_attribute( $name );
+
+					if ( 'value' === $name ) {
+						$label = is_string( $value ) ? $value : '';
+						continue;
+					}
+
+					// Boolean attributes return true; render them without a value.
+					$attributes[ $name ] = ( true === $value ) ? '' : (string) $value;
+				}
+			}
+		}
+
+		// Nothing parsed (unexpected markup): keep the original button rather than break the form.
+		if ( empty( $attributes ) ) {
+			return $button_html;
+		}
+
+		$attributes['type'] = 'submit';
+
+		// Structural layout only — no control maps to these, so they won't fight the style controls.
+		$layout = 'display:inline-flex;align-items:center;justify-content:center;align-self:flex-end;';
+
+		$attributes['style'] = ( ! empty( $attributes['style'] ) )
+			? rtrim( $attributes['style'], '; ' ) . ';' . $layout
+			: $layout;
+
+		$attr_string = '';
+
+		foreach ( $attributes as $name => $value ) {
+			if ( '' === $value ) {
+				$attr_string .= ' ' . esc_attr( $name );
+			} else {
+				$attr_string .= ' ' . esc_attr( $name ) . '="' . esc_attr( $value ) . '"';
+			}
+		}
+
+		$label_markup = '<span class="mab-gf-submit-text">' . esc_html( $label ) . '</span>';
+
+		if ( 'left' === $icon_position ) {
+			$inner = $icon_html . $label_markup;
+		} else {
+			$inner = $label_markup . $icon_html;
+		}
+
+		return '<button' . $attr_string . '>' . $inner . '</button>';
+	}
+
 	// Render element HTML
 	public function render() {
 		$settings = $this->settings;
@@ -1348,7 +1463,28 @@ class Gravity_Forms_Element extends Element_Base {
 				$form_id   = $settings['selectForm'];
 				$form_ajax = isset( $settings['form_ajax'] );
 
+				// Gravity Forms renders the submit control as <input type="submit">, which cannot hold
+				// child markup. To support an icon we convert it to a <button> via the form-specific
+				// filter, scoped tightly around this single form render so other forms/instances
+				// on the page are unaffected.
+				$submit_icon            = ! empty( $settings['submitButtonIcon'] ) ? self::render_icon( $settings['submitButtonIcon'] ) : '';
+				$submit_button_callback = null;
+
+				if ( '' !== $submit_icon ) {
+					$icon_position = ! empty( $settings['submitButtonIconPosition'] ) ? $settings['submitButtonIconPosition'] : 'right';
+
+					$submit_button_callback = function( $button ) use ( $submit_icon, $icon_position ) {
+						return $this->get_submit_button_html( $button, $submit_icon, $icon_position );
+					};
+
+					add_filter( "gform_submit_button_{$form_id}", $submit_button_callback, 10, 1 );
+				}
+
 				gravity_form( $form_id, $form_title, $form_description, false, $field_values, $form_ajax, '', true );
+
+				if ( null !== $submit_button_callback ) {
+					remove_filter( "gform_submit_button_{$form_id}", $submit_button_callback, 10 );
+				}
 				?>
 			</div>
 		</div>

@@ -1,13 +1,16 @@
 .mab-image-accordion {
   display: flex;
   height: 50vh;
-  width: 100%; }
+  width: 100%;
+}
 
 .mab-image-accordion .mab-image-accordion-button-wrap * {
-  transition: none; }
+  transition: none;
+}
 
 .mab-image-accordion .mab-image-accordion-button {
-  transition: all 0.25s linear 0s; }
+  transition: all 0.25s linear 0s;
+}
 
 .mab-image-accordion-item {
   cursor: pointer;
@@ -18,14 +21,17 @@
   position: relative;
   flex: 1;
   text-decoration: none;
-  transition: flex .4s;
-  overflow: hidden; }
+  transition: flex 0.4s;
+  overflow: hidden;
+}
 
 .mab-image-accordion-item:last-child {
-  margin-right: 0 !important; }
+  margin-right: 0 !important;
+}
 
 .mab-image-accordion-active {
-  cursor: default; }
+  cursor: default;
+}
 
 .mab-image-accordion-overlay {
   background-color: rgba(0, 0, 0, 0.3);
@@ -33,7 +39,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  transition: background-color .4s; }
+  transition: background-color 0.4s;
+}
 
 .mab-image-accordion-item-label {
   font-size: 36px;
@@ -43,71 +50,89 @@
   white-space: nowrap;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
-  .mab-image-accordion-label-vertical.mab-image-accordion-vertical .mab-image-accordion-item-label {
-    top: 100%;
-    transform: translate(-20px, -50%) rotate(-90deg); }
-  .mab-image-accordion-active .mab-image-accordion-item-label {
-    opacity: 0; }
+  transform: translate(-50%, -50%);
+}
+.mab-image-accordion-label-vertical.mab-image-accordion-vertical .mab-image-accordion-item-label {
+  top: 100%;
+  transform: translate(-20px, -50%) rotate(-90deg);
+}
+.mab-image-accordion-active .mab-image-accordion-item-label {
+  opacity: 0;
+}
 
 .mab-media-content {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
+  bottom: 0;
+}
 
 .mab-image-accordion-overlay .mab-image-accordion-content {
-  z-index: 1; }
+  z-index: 1;
+}
 
 .mab-image-accordion-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 .mab-image-accordion-content p:last-child {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .mab-image-accordion-content * {
   visibility: hidden;
   opacity: 0;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+}
 
 .mab-image-accordion-title {
   color: #fff;
-  transform: translate3d(0, -60px, 0); }
+  transform: translate3d(0, -60px, 0);
+}
 
 .mab-image-accordion-description {
   color: #fff;
-  transform: translate3d(0, 60px, 0); }
+  transform: translate3d(0, 60px, 0);
+}
 
 .mab-image-accordion-button-wrap {
-  transform: translate3d(0, 60px, 0); }
+  transform: translate3d(0, 60px, 0);
+}
 
 .mab-image-accordion-active .mab-image-accordion-content {
-  visibility: visible; }
+  visibility: visible;
+}
 
 .mab-image-accordion-active .mab-image-accordion-content * {
   opacity: 1;
   visibility: visible;
   transform: none !important;
-  transition: all .3s .3s; }
+  transition: all 0.3s 0.3s;
+}
 
 .mab-image-accordion-on-hover .mab-image-accordion-item:hover {
-  flex: 3; }
+  flex: 3;
+}
 
 .mab-image-accordion-on-hover .mab-image-accordion-item:hover .mab-image-accordion-content * {
   opacity: 1;
   visibility: visible;
   transform: none;
-  transition: all .3s .3s; }
+  transition: all 0.3s 0.3s;
+}
 
 .mab-image-accordion-horizontal.mab-image-accordion {
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .mab-image-accordion-horizontal.mab-image-accordion a:hover .mab-image-accordion-overlay {
-  background-color: transparent; }
+  background-color: transparent;
+}
 
 .mab-image-accordion-horizontal .mab-image-accordion-item {
-  margin-right: 0 !important; }
+  margin-right: 0 !important;
+}
