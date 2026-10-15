@@ -140,6 +140,11 @@ MabVideo.prototype = {
 
 function mabVideo() {
 	bricksQuerySelectorAll(document, '.brxe-max-video').forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'video' ) ) {
+			return;
+		}
+
 		new MabVideo(e);
 	});
 }
@@ -149,3 +154,5 @@ document.addEventListener( 'DOMContentLoaded', function (e) {
 		mabVideo();
 	}
 });
+
+mabAjaxInit.add( mabVideo );

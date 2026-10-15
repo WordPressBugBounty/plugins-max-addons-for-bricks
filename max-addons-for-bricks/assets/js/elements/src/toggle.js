@@ -82,6 +82,11 @@ MabToggle.prototype = {
 
 function mabToggle() {
 	bricksQuerySelectorAll(document, '.brxe-max-content-toggle').forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'toggle' ) ) {
+			return;
+		}
+
 		new MabToggle(e);
 	});
 }
@@ -91,3 +96,5 @@ document.addEventListener( 'DOMContentLoaded', function (e) {
 		mabToggle();
 	}
 });
+
+mabAjaxInit.add( mabToggle );

@@ -1,3 +1,8 @@
+== 1.7.4 ==
+Release date: October 15, 2026
+* Fix: Elements did not initialize in content loaded via AJAX, e.g. in AJAX popups, Load more, infinite scroll, AJAX pagination and Query Filters results
+* Fix: Lottie - The Click and Viewport triggers and the "On Complete" show/hide actions did not work unless Max Addons Pro was active
+
 == 1.7.3 ==
 Release date: August 19, 2026
 * Enhancement: Tested compatibility with WordPress 7.1

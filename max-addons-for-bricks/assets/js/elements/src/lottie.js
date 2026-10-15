@@ -1,3 +1,33 @@
+/**
+ * DOM helpers for this script. The free plugin has no mabFrontend (that is
+ * Pro's), so these mirror the parts of mabFrontend.domHelpers used here.
+ */
+var mabLottieDom = {
+	querySelectorAll: function( selector ) {
+		return Array.prototype.slice.call( document.querySelectorAll( selector ) );
+	},
+
+	isInViewport: function( elem ) {
+		var rect = elem.getBoundingClientRect();
+
+		return rect.top >= 0 && rect.left >= 0 &&
+			rect.bottom <= ( window.innerHeight || document.documentElement.clientHeight ) &&
+			rect.right <= ( window.innerWidth || document.documentElement.clientWidth );
+	},
+
+	scrollObserver: function( obj ) {
+		return new IntersectionObserver( function( entries ) {
+			obj.callback( {
+				isInViewport: entries[0].isIntersecting
+			} );
+		}, {
+			root: obj.root || null,
+			rootMargin: obj.offset || '0px',
+			threshold: [ 0 ]
+		} );
+	}
+};
+
 MabLottie = function( element ) {
 	this.element       = element;
 	this.id            = this.element.getAttribute( 'data-element-id' );
@@ -99,7 +129,7 @@ MabLottie.prototype = {
 		}
 
 		if ( 'click' === trigger ) {
-			elements = mabFrontend.domHelpers.querySelectorAll( selector );
+			elements = mabLottieDom.querySelectorAll( selector );
 
 			if ( elements.length === 0 ) {
 				return;
@@ -179,14 +209,14 @@ MabLottie.prototype = {
 				window.addEventListener( 'scroll', function() {
 					lottie = this.player.getLottie();
 
-					if ( mabFrontend.domHelpers.isInViewport( this.player ) ) {
+					if ( mabLottieDom.isInViewport( this.player ) ) {
 						this.playLottie();
 					} else {
 						lottie.pause();
 					}
 				}.bind(this) );
 			} else {
-				this.observer = mabFrontend.domHelpers.scrollObserver( {
+				this.observer = mabLottieDom.scrollObserver( {
 					offset: -(viewportBottom) + '% 0% ' + (viewportTop) + '%',
 					callback: function(e) {
 						if (e.isInViewport) {
@@ -244,7 +274,7 @@ MabLottie.prototype = {
 
 		if ( this.settings.onCompleteSelector ) {
 			var displayVal = 'show-element' === onComplete ? '' : 'none';
-			var targets    = mabFrontend.domHelpers.querySelectorAll( this.settings.onCompleteSelector );
+			var targets    = mabLottieDom.querySelectorAll( this.settings.onCompleteSelector );
 			targets.forEach( function( el ) {
 				el.style.display = displayVal;
 			} );
@@ -331,6 +361,11 @@ MabLottie.prototype = {
 
 function mabLottie() {
 	bricksQuerySelectorAll(document, '.brxe-max-lottie').forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'lottie' ) ) {
+			return;
+		}
+
 		new MabLottie(e);
 	});
 }
@@ -340,3 +375,5 @@ document.addEventListener( 'DOMContentLoaded', function (e) {
 		mabLottie();
 	}
 });
+
+mabAjaxInit.add( mabLottie );

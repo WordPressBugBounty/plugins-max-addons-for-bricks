@@ -69,6 +69,11 @@ MabUnfold.prototype = {
 
 function mabUnfold() {
 	bricksQuerySelectorAll(document, '.brxe-max-unfold').forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'unfold' ) ) {
+			return;
+		}
+
 		new MabUnfold( e );
 	});
 }
@@ -78,3 +83,5 @@ document.addEventListener( 'DOMContentLoaded', function (e) {
 		mabUnfold();
 	}
 });
+
+mabAjaxInit.add( mabUnfold );

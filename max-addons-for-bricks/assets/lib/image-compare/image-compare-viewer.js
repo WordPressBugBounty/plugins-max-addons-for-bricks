@@ -2062,6 +2062,11 @@
 });
 function mabImageComparison() {
 	bricksQuerySelectorAll(document, ".bricks-element-max-image-comparison, .brxe-max-image-comparison").forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if (bricksIsFrontend && !mabAjaxInit.isNew(e, "image-comparison")) {
+			return;
+		}
+
         var settings = JSON.parse(e.dataset.settings),
             view     = new ImageComparison(e, settings).mount();
 	});
@@ -2071,3 +2076,4 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		mabImageComparison();
 	}
 });
+mabAjaxInit.add(mabImageComparison);

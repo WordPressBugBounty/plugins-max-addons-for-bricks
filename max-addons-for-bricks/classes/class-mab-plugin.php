@@ -280,11 +280,21 @@ class MAB_Plugin {
 		 * Scripts.
 		 */
 		
+		// Shared by the element scripts below: re-runs their init on content
+		// Bricks loads over AJAX.
+		wp_register_script(
+			'mab-ajax-init',
+			$this->get_script_url( 'ajax-init' ),
+			[],
+			MAB_VER,
+			true
+		);
+
 		// Vendor scripts.
 		wp_register_script(
 			'image-compare',
 			MAB_URL . 'assets/lib/image-compare/image-compare-viewer' . $debug_suffix . '.js',
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -325,7 +335,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-hotspots',
 			$this->get_script_url( 'hotspots' ),
-			[ 'tippy' ],
+			[ 'tippy', 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -333,7 +343,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-image-accordion',
 			$this->get_script_url( 'image-accordion' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -341,7 +351,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-lottie',
 			$this->get_script_url( 'lottie' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -349,7 +359,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-scroll-image',
 			$this->get_script_url( 'scroll-image' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -357,7 +367,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-svg-animation',
 			$this->get_script_url( 'svg-animation' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -365,7 +375,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-ticker',
 			$this->get_script_url( 'content-ticker' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -373,7 +383,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-unfold',
 			$this->get_script_url( 'unfold' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -381,7 +391,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-toggle',
 			$this->get_script_url( 'toggle' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);
@@ -389,7 +399,7 @@ class MAB_Plugin {
 		wp_register_script(
 			'mab-video',
 			$this->get_script_url( 'video' ),
-			'',
+			[ 'mab-ajax-init' ],
 			MAB_VER,
 			true
 		);

@@ -47,6 +47,11 @@ MabHotspots.prototype = {
 
 function mabHotspots() {
 	bricksQuerySelectorAll(document, '.brxe-max-hotspots').forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'hotspots' ) ) {
+			return;
+		}
+
 		new MabHotspots(e);
 	});
 }
@@ -56,3 +61,5 @@ document.addEventListener( 'DOMContentLoaded', function (e) {
 		mabHotspots();
 	}
 });
+
+mabAjaxInit.add( mabHotspots );

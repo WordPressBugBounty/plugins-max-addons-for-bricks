@@ -118,10 +118,18 @@ class MabScrollImage {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	if (window.bricksIsFrontend) {
-		document.querySelectorAll('.brxe-max-scroll-image').forEach(element => {
+function mabScrollImages() {
+	document.querySelectorAll('.brxe-max-scroll-image').forEach(element => {
+		if (mabAjaxInit.isNew(element, 'scroll-image')) {
 			new MabScrollImage(element);
-		});
+		}
+	});
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+	if (bricksIsFrontend) {
+		mabScrollImages();
 	}
 });
+
+mabAjaxInit.add(mabScrollImages);

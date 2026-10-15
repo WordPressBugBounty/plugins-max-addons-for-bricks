@@ -6,6 +6,11 @@ function mabSvgAnimation() {
 			return;
 		}
 
+		// The builder re-renders the element and needs it redrawn every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'svg-animation' ) ) {
+			return;
+		}
+
 		var svgId     = element.getAttribute('data-id'),
 			duration  = element.getAttribute('data-duration'),
 			type      = element.getAttribute('data-type'),
@@ -70,3 +75,5 @@ document.addEventListener('DOMContentLoaded', function (e) {
 		mabSvgAnimation();
 	}
 });
+
+mabAjaxInit.add(mabSvgAnimation);

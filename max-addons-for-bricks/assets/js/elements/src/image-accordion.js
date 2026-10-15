@@ -100,6 +100,11 @@ MabImageAccordion.prototype = {
 
 function mabImageAccordion() {
 	bricksQuerySelectorAll(document, '.brxe-max-image-accordion').forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'image-accordion' ) ) {
+			return;
+		}
+
 		new MabImageAccordion( e );
 	});
 }
@@ -109,3 +114,5 @@ document.addEventListener( 'DOMContentLoaded', function (e) {
 		mabImageAccordion();
 	}
 });
+
+mabAjaxInit.add( mabImageAccordion );

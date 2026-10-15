@@ -45,6 +45,11 @@ MabTicker.prototype = {
 
 function mabTicker() {
 	bricksQuerySelectorAll(document, '.brxe-max-content-ticker').forEach(function (e) {
+		// The builder re-renders the element and needs it set up every time.
+		if ( bricksIsFrontend && ! mabAjaxInit.isNew( e, 'content-ticker' ) ) {
+			return;
+		}
+
 		new MabTicker( e );
 	});
 }
@@ -54,3 +59,5 @@ document.addEventListener( 'DOMContentLoaded', function (e) {
 		mabTicker();
 	}
 });
+
+mabAjaxInit.add( mabTicker );
